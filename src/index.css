@@ -1,0 +1,16 @@
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input::-webkit-scrollbar {
+  display: none; /* برای کروم، سافاری، اج */
+input::placeholder {
+  font-family: vazir;
+}

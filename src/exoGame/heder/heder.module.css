@@ -1,0 +1,29 @@
+.logo_img {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+.spans {
+  margin: 16px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #606060;
+}
+.toolTip {
+  text-align: right;
+  margin-right: 20px;
+  background-color: #ffff;
+  position: relative;
+  width: 100%;
+}
+.icon_tool_Tip {
+  transition: all 0.3s ease-in-out;
+  font-size: 25px;
+}
+.icon_tool_Tip:hover {
+  color: #03c13d;
+}
+.link {
+  text-decoration: none;
+  color: #606060;
+}

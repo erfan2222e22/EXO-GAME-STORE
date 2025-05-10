@@ -1,0 +1,13 @@
+.slick-arrow {
+  width: 100px;
+  height: 100px;
+  z-index: 100;
+}
+
+.slick-prev {
+  text-align: center;
+  margin-left: -7px;
+}
+.slick-next {
+  text-align: center;
+}

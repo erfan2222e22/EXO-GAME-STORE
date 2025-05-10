@@ -1,0 +1,12 @@
+.icons {
+  color: #606060;
+  cursor: pointer;
+}
+.img {
+  /* margin-top: 20px; */
+  width: 60px;
+  height: 60px;
+}
+.icons:hover {
+  color: #03c13d;
+}
