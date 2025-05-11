@@ -8,6 +8,8 @@ import Slider1 from "./exoGame/slider1/slider.jsx";
 import Production_box from "./exoGame/productions_shortcut_box/production_box.jsx";
 import SugestExo from "./exoGame/sugestExo/sugestExo.jsx";
 import Consloe_gm from "./exoGame/consoleGaming/console_gm.jsx";
+import Sug_Monitor from "./exoGame/suggestion_monitor/sug_monitor.jsx";
+import Best_Brand_laptop from "./exoGame/bestMonitorBrand/best-laptop-brand.jsx";
 
 let itmes1 = [1, 2, 3, 4, 5, 6, 7, 8];
 let itmes2 = [9, 10, 11, 12, 13, 14];
@@ -25,6 +27,8 @@ let rutes = [
         <SugestExo array={itmes2} titel="جدیدترین‌های اگزوگیم"></SugestExo>
         <SugestExo array={itmes3} titel="پرفروش‌ترین‌های اگزوگیم"></SugestExo>
         <Consloe_gm></Consloe_gm>
+        <Sug_Monitor></Sug_Monitor>
+        <Best_Brand_laptop></Best_Brand_laptop>
         <Navbar></Navbar>
       </div>
     ),
