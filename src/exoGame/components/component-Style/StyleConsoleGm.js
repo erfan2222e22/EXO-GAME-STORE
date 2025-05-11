@@ -7,11 +7,12 @@ const Box_console_Gm = styled(Box)({
   cursor: "pointer",
   position: "relative",
   left: "5px",
+  overflow: "hidden",
 });
-const Test = styled(Box)({
+const Main_div = styled(Box)({
   display: "flex",
   width: "100%",
   marginTop: "30px",
 });
 
-export default { Box_console_Gm, Test };
+export default { Box_console_Gm, Main_div };
