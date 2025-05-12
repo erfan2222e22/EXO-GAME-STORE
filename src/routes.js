@@ -10,6 +10,7 @@ import SugestExo from "./exoGame/sugestExo/sugestExo.jsx";
 import Consloe_gm from "./exoGame/consoleGaming/console_gm.jsx";
 import Sug_Monitor from "./exoGame/suggestion_monitor/sug_monitor.jsx";
 import Best_Brand_laptop from "./exoGame/bestMonitorBrand/best-laptop-brand.jsx";
+import Form_and_benchmark_slider from "./exoGame/form-and-benchmark-slide/form-and-benchmark-slider.jsx";
 
 let itmes1 = [1, 2, 3, 4, 5, 6, 7, 8];
 let itmes2 = [9, 10, 11, 12, 13, 14];
@@ -29,6 +30,7 @@ let rutes = [
         <Consloe_gm></Consloe_gm>
         <Sug_Monitor></Sug_Monitor>
         <Best_Brand_laptop></Best_Brand_laptop>
+        <Form_and_benchmark_slider></Form_and_benchmark_slider>
         <Navbar></Navbar>
       </div>
     ),
