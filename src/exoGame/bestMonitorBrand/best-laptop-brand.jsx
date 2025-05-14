@@ -6,48 +6,31 @@ import leno_img from "./best-mon-brand-img/leno.png";
 import asus_img from "./best-mon-brand-img/asus.png";
 import micro_img from "./best-mon-brand-img/microsoft.png";
 
-import { Link } from "react-router-dom";
-
 const Best_Brand_laptop = () => {
   const { Parent_Div, Text_Head, Box_img, Text_items, Link_style } = component;
+
+  const itmes = [
+    { imgs: acer_img, text: "Acer", path: "./slame", id: 1 },
+    { imgs: micro_img, text: "Microsoft", path: "./slame", id: 2 },
+    { imgs: leno_img, text: "Lenovo", path: "./slame", id: 3 },
+    { imgs: apple_img, text: "Apple", path: "./slame", id: 4 },
+    { imgs: asus_img, text: "Asus", path: "./slame", id: 5 },
+  ];
+
   return (
     <Box>
       <Text_Head>بهترین برندهای لپتاپ دنیا</Text_Head>
       <Parent_Div>
-        <Box>
-          <Link_style to="">
-            <Box_img component="img" src={acer_img} alt="img"></Box_img>
-            <Text_items> Acer</Text_items>
-          </Link_style>
-        </Box>
-
-        <Box>
-          <Link_style to="">
-            <Box_img component="img" src={micro_img} alt="img"></Box_img>
-            <Text_items>Microsoft</Text_items>
-          </Link_style>
-        </Box>
-
-        <Box>
-          <Link_style to="">
-            <Box_img component="img" src={leno_img} alt="img"></Box_img>
-            <Text_items> Lenovo</Text_items>
-          </Link_style>
-        </Box>
-
-        <Box>
-          <Link_style to="">
-            <Box_img component="img" src={apple_img} alt="img"></Box_img>
-            <Text_items>Apple</Text_items>
-          </Link_style>
-        </Box>
-
-        <Box>
-          <Link_style to="">
-            <Box_img component="img" src={asus_img} alt="img"></Box_img>
-            <Text_items>Asus</Text_items>
-          </Link_style>
-        </Box>
+        {itmes.map((item) => {
+          return (
+            <Box key={item.id}>
+              <Link_style to={item.path}>
+                <Box_img component="img" src={item.imgs} alt="img"></Box_img>
+                <Text_items>{item.text}</Text_items>
+              </Link_style>
+            </Box>
+          );
+        })}
       </Parent_Div>
     </Box>
   );
