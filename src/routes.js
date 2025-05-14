@@ -12,6 +12,7 @@ import Sug_Monitor from "./exoGame/suggestion_monitor/sug_monitor.jsx";
 import Best_Brand_laptop from "./exoGame/bestMonitorBrand/best-laptop-brand.jsx";
 import Form_and_benchmark_slider from "./exoGame/form-and-benchmark-slide/form-and-benchmark-slider.jsx";
 import CategoryPopularSlider from "./exoGame/TheMostPopularCategoriesSlider/catgory-popular-slider.jsx";
+import PlaystaionXboxConsoleSlider from "./exoGame/playstaion-xbox-console-slide/playstaion-xbox-console-slide.jsx";
 
 let itmes1 = [1, 2, 3, 4, 5, 6, 7, 8];
 let itmes2 = [9, 10, 11, 12, 13, 14];
@@ -33,6 +34,7 @@ let rutes = [
         <Best_Brand_laptop></Best_Brand_laptop>
         <Form_and_benchmark_slider></Form_and_benchmark_slider>
         <CategoryPopularSlider></CategoryPopularSlider>
+        <PlaystaionXboxConsoleSlider></PlaystaionXboxConsoleSlider>
         <Navbar></Navbar>
       </div>
     ),
