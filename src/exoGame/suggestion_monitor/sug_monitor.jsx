@@ -8,6 +8,12 @@ import { Link } from "react-router-dom";
 
 const Sug_Monitor = () => {
   const { Div_parent, Div_img, Text, Headr_text } = component;
+  let items = [
+    { img: img_2k, text: "ultrawide", id: 1, path: "./ultrawide" },
+    { img: img_4k, text: "ultrawide", id: 2, path: "./ultrawide" },
+    { img: img_full_hd, text: "ultrawide", id: 3, path: "./ultrawide" },
+    { img: img_ultera_wide, text: "ultrawide", id: 4, path: "./ultrawide" },
+  ];
 
   return (
     <Box>
@@ -15,30 +21,19 @@ const Sug_Monitor = () => {
         براساس نیازت بهترین مانیتور انتخاب کن
       </Headr_text>
       <Div_parent>
-        <Box>
-          <Link style={{ textDecoration: "none", color: "black" }} to="">
-            <Div_img component="img" src={img_ultera_wide}></Div_img>
-            <Text>ultrawide</Text>
-          </Link>
-        </Box>
-        <Box>
-          <Link to="" style={{ textDecoration: "none", color: "black" }}>
-            <Div_img component="img" src={img_full_hd}></Div_img>
-            <Text>FHD</Text>
-          </Link>
-        </Box>
-        <Box>
-          <Link to="" style={{ textDecoration: "none", color: "black" }}>
-            <Div_img component="img" src={img_2k}></Div_img>
-            <Text>2k</Text>
-          </Link>
-        </Box>
-        <Box>
-          <Link to="" style={{ textDecoration: "none", color: "black" }}>
-            <Div_img component="img" src={img_4k}></Div_img>
-            <Text>4k</Text>
-          </Link>
-        </Box>
+        {items.map((item) => {
+          return (
+            <Box key={item.id}>
+              <Link
+                style={{ textDecoration: "none", color: "black" }}
+                to={item.path}
+              >
+                <Div_img component="img" src={item.img}></Div_img>
+                <Text>{item.text}</Text>
+              </Link>
+            </Box>
+          );
+        })}
       </Div_parent>
     </Box>
   );
