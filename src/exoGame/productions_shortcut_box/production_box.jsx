@@ -6,8 +6,8 @@ import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import component from "../components/component-Style/StyleProduction";
 
-export default function Production_box() {
-  const { Production_items } = component;
+const Production_box = () => {
+  const { Production_items, Parnt_Div } = component;
   let items = [
     { img: img2, path: "/The-computers-are-ready.", id: 1 },
     { img: img3, path: "/laptops", id: 2 },
@@ -29,4 +29,6 @@ export default function Production_box() {
       })}
     </>
   );
-}
+};
+
+export default Production_box;

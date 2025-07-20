@@ -7,17 +7,17 @@ import img1 from "./console-gm-img/img1.jpg";
 import img2 from "./console-gm-img/img2.jpg";
 
 const Consloe_gm = () => {
-  const { Box_console_Gm, Test } = component;
+  const { Box_console_Gm, Parent_div } = component;
 
   return (
-    <Test>
+    <Parent_div>
       <Link to="/awd">
         <Box_console_Gm component="img" src={img1}></Box_console_Gm>
       </Link>
       <Link to="/awd">
         <Box_console_Gm component="img" src={img2}></Box_console_Gm>
       </Link>
-    </Test>
+    </Parent_div>
   );
 };
 

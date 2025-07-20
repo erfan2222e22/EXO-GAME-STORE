@@ -8,16 +8,13 @@ import img7 from "./sliderImg/img7.jpg";
 import component from "../components/component-Style/StyleSlider";
 import Slider from "react-slick";
 import { Box } from "@mui/material";
-import { Link, useFetcher } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./slide.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
 
-export default function Slider1() {
+const Slider1 = () => {
   const { Box_Img } = component;
-  const [imgsAdress, setImgsAdress] = useState([]);
   let imgs = [
     { img: img1, path: "/consol", id: 1 },
     { img: img2, path: "/catgory-pc", id: 2 },
@@ -28,51 +25,50 @@ export default function Slider1() {
     { img: img7, path: "/Accessories", id: 7 },
   ];
 
-  const fetchApi = async () => {
-    const response = await axios.get("http://localhost:5000/test");
-    const data = response.data.massage;
-    console.log(data);
-  };
-
-  useEffect(() => {
-    // fetchApi();
-  }, []);
-
-  var settings = {
-    //customis slider
+  let settings = {
     dots: true,
     infinite: true,
-    speed: 300,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
     arrows: false,
+    swipeToSlide: true,
+    touchThreshold: 10,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
+
   return (
     <Box_Img>
       <Slider {...settings}>
-        {imgs.map((img) => {
-          return (
-            <Link key={img.id} to={img.path}>
-              <Box>
-                <Box
-                  sx={{
-                    width: "100%",
-                    objectFit: "cover",
-                    borderRadius: "8px",
-                    overflowY: "hidden",
-                    cursor: "pointer",
-                  }}
-                  component="img"
-                  src={img.img}
-                ></Box>
-              </Box>
-            </Link>
-          );
-        })}
+        {imgs.map((img) => (
+          <Link key={img.id} to={img.path}>
+            <Box
+              component="img"
+              src={img.img}
+              sx={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: "8px",
+                cursor: "pointer",
+              }}
+            />
+          </Link>
+        ))}
       </Slider>
     </Box_Img>
   );
-}
+};
+
+export default Slider1;

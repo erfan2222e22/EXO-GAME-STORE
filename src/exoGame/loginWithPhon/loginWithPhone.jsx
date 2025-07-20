@@ -14,7 +14,7 @@ export default function LoginWithPhone() {
     Heder_box,
     CustomButton,
     CustomButton2,
-  } = component;
+  } = component; //style component
 
   const [phoneNumber, setPhoneNumber] = useState("");
   const [truePhoneNumber, settruePhoneNumber] = useState(false);
