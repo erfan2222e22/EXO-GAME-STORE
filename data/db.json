@@ -1,0 +1,322 @@
+{
+  "productSonyConsole": [
+    {
+      "id": "1",
+      "nameProduct": "Xbox 1",
+      "company": "Sony",
+      "genration": "هشتم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/Slim-Standard%20Edition-DualSense-Charging-Station/Sony_PlayStation5_Slim_Standard_Edition_Dual_Controller-Charging-300x300.jpg",
+      "price": "10099",
+      "filterValues": {
+        "manufacturers": ["Sony"],
+        "generation": ["نهم", "هشتم"]
+      },
+      "kindofFilter": [
+        {
+          "id": "1",
+          "label": "تولید کنندگان",
+          "kindOfFilter": "cheCheckbox",
+          "filterType": "manufacturers"
+        },
+        {
+          "id": "2",
+          "label": "محدوده قیمت",
+          "kindOfFilter": "Slider"
+        },
+        {
+          "id": "3",
+          "label": "نسل",
+          "kindOfFilter": "cheCheckbox",
+          "filterType": "generation"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nameProduct": "playstaion 5 pro",
+      "company": "Sony",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/Slim-Standard%20Edition-DualSense-Charging-Station/Sony_PlayStation5_Slim_Standard_Edition_Dual_Controller-Charging-300x300.jpg",
+      "price": "100"
+    },
+    {
+      "id": "3",
+      "nameProduct": "playstaion 5 pro",
+      "company": "Sony",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/Slim-Standard-Edition-DualSense-3D-Pulse/Sony_PlayStation5_Slim_Digital_Edition_Dual_Controller_Pulse_3D-300x300.jpg",
+      "price": "1500"
+    },
+    {
+      "id": "4",
+      "nameProduct": "playstaion 5 pro",
+      "company": "Sony",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/Digital-Edition/Sony-PlayStation5-Digital-Edition-1-300x300.jpg",
+      "price": "300"
+    },
+    {
+      "id": "5",
+      "nameProduct": "Xbox 1",
+      "company": "Sony",
+      "genration": "هشتم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/PS5-Slim/Digital-Edition/Sony-PlayStation5-Slim-30th-Anniversary-Edition-1-300x300.jpg",
+      "price": "1000"
+    },
+    {
+      "id": "6",
+      "nameProduct": "playstaion 5 pro",
+      "company": "Sony",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/Slim-Standard-Edition-DualSense-3D-Pulse/Sony_PlayStation5_Slim_Digital_Edition_Dual_Controller_Pulse_3D-300x300.jpg",
+      "price": "100"
+    },
+    {
+      "id": "7",
+      "nameProduct": "playstaion 5 pro",
+      "company": "Sony",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/PS5-Slim/Standard-Edition/Dual-Controller/Sony-PlayStation5-Slim-Standard-Edition-Dual-Controller-1-300x300.jpg",
+      "price": "15"
+    },
+    {
+      "id": "8",
+      "meProduct": "playstaion 5 pro",
+      "company": "Sony",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/PS5-Slim/Standard-Edition/Dual-Controller/Sony-PlayStation5-Slim-Standard-Edition-Dual-Controller-1-300x300.jpg",
+      "price": "300"
+    },
+    {
+      "id": "9",
+      "nameProduct": "Xbox 1",
+      "company": "Sony",
+      "genration": "هشتم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/PS5-Pro/PS5-PRO-DualSense-VR/Sony-PlayStation5-Pro-Dual-Controller-VR2-300x300.jpg",
+      "price": "1000"
+    },
+    {
+      "id": "10",
+      "nameProduct": "playstaion 5 pro",
+      "company": "Sony",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/PS5-Slim/Standard-Edition/Sony-PlayStation5-Slim-Standard-Edition-2TB-SSD-300x300.jpg",
+      "price": "100"
+    },
+    {
+      "id": "11",
+      "nameProduct": "playstaion 5 pro",
+      "company": "Sony",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/Standard-Edition/Sony-PlayStation5-Standard-Edition-2TB-SSD-Games-300x300.jpg",
+      "price": "1500"
+    },
+    {
+      "id": "12",
+      "nameProduct": "playstaion 5 pro",
+      "company": "Sony",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/Digital-Edition/Sony-PlayStation5-Digital-Edition-2TB-SSD-300x300.jpg",
+      "price": "300"
+    },
+    {
+      "id": "13",
+      "nameProduct": "Xbox 1",
+      "company": "Sony",
+      "genration": "هشتم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/playstation-5-bundle-c/playstation-5-standard-edition-bundle-c-1-300x300.jpg",
+      "price": "1000"
+    },
+    {
+      "id": "14",
+      "nameProduct": "playstaion 5 pro",
+      "company": "Sony",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/Digital-Edition-DualSense/Sony-PlayStation5-Digital-Edition-DualSense-2-300x300.jpg",
+      "price": "100"
+    },
+    {
+      "id": "15",
+      "nameProduct": "playstaion 5 pro",
+      "company": "Sony",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/Standard-Edition/Sony-PlayStation5-Standard-Edition-1-300x300.jpg",
+      "price": "ناموجود"
+    },
+    {
+      "id": "16",
+      "nameProduct": "playstaion 5 pro",
+      "company": "xbox",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/playstation-5-bundle-c/playstation-5-digital-edition-bundle-c-1-300x300.jpg",
+      "price": "بزودی"
+    }
+  ],
+  "productXboxConsole": [
+    {
+      "id": "1",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/Xbox/Series-X/Digital/Robot-White/Xbox-Series-X-Digital-Robot-White-1-300x300.jpg",
+      "price": "100",
+      "filterValues": {
+        "manufacturers": ["xbox"],
+        "generation": ["نهم", "هشتم"]
+      },
+      "kindofFilter": [
+        {
+          "id": "1",
+          "label": "تولید کنندگان",
+          "kindOfFilter": "cheCheckbox",
+          "filterType": "manufacturers"
+        },
+        {
+          "id": "2",
+          "label": "محدوده قیمت",
+          "kindOfFilter": "Slider"
+        },
+        {
+          "id": "3",
+          "label": "نسل",
+          "kindOfFilter": "cheCheckbox",
+          "filterType": "generation"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/Xbox/Series-X/Digital/Robot-White/Xbox-Series-X-Digital-Robot-White-1-300x300.jpg",
+      "price": "1000"
+    },
+
+    {
+      "id": "3",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/xbox-series-x-bundle-a/xbox-series-x-bundle-A-1-300x300.jpg",
+      "price": "1000"
+    },
+
+    {
+      "id": "4",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/xbox-series-s/xbox-series-s-n1-300x300.jpg",
+      "price": "1000"
+    },
+
+    {
+      "id": "5",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "هشتم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/xbox-series-s/Xbox-Series-S-Black-3-300x300.jpg",
+      "price": "1000"
+    },
+
+    {
+      "id": "6",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "هشتم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/Xbox/Series-S/White/Xbox-Series-S-Starter-Bundle-300x300.jpg",
+      "price": "1000"
+    },
+
+    {
+      "id": "7",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/Xbox/Series-X/Starter-Bundle/Xbox-Series-X-Starter-Bundle-300x300.jpg",
+      "price": "1000"
+    },
+
+    {
+      "id": "8",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/Xbox/Series-X/Diablo-IV-Bundle/Xbox-Series-X-Diablo-IV-Bundle-1-300x300.jpg",
+      "price": "1000"
+    },
+
+    {
+      "id": "9",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/Xbox/Series-S/Black/Xbox-Series-S-Black-4TB-HDD-Games-300x300.jpg",
+      "price": "100"
+    },
+
+    {
+      "id": "10",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/Xbox/Series-S/Black/Xbox-Series-S-Black-2TB-HDD-Games-300x300.jpg",
+      "price": "990"
+    },
+
+    {
+      "id": "11",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/Xbox/Series-S/Black/Xbox-Series-S-Black-1TB-HDD-Games-300x300.jpg",
+      "price": "1111"
+    },
+
+    {
+      "id": "12",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "هشتم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/Xbox/Series-S/Black/Xbox-Series-S-Black-Games-300x300.jpg",
+      "price": "300"
+    },
+
+    {
+      "id": "13",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/Xbox/Series-S/White/Xbox-Series-S-White-4TB-HDD-Games-300x300.jpg",
+      "price": "4000"
+    },
+
+    {
+      "id": "14",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/Xbox/Series-S/White/Xbox-Series-S-White-2TB-HDD-Games-300x300.jpg",
+      "price": "1300"
+    },
+
+    {
+      "id": "15",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "نهم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/Xbox/Series-S/White/Xbox-Series-S-White-1TB-HDD-Games-300x300.jpg",
+      "price": "1400"
+    },
+
+    {
+      "id": "16",
+      "nameProduct": "Xbox 1",
+      "company": "xbox",
+      "genration": "هشتم",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/consoles/xbox-series-sgilded-hunter-bundle/xbox-gilded-hunter-bundle-n1-300x300.jpg",
+      "price": "بزودی"
+    }
+  ]
+}

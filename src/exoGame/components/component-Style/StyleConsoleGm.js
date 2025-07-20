@@ -8,10 +8,10 @@ const Box_console_Gm = styled(Box)({
   position: "relative",
   left: "5px",
 });
-const Test = styled(Box)({
+const Parent_div = styled(Box)({
   display: "flex",
   width: "100%",
   marginTop: "30px",
 });
 
-export default { Box_console_Gm, Test };
+export default { Box_console_Gm, Parent_div };

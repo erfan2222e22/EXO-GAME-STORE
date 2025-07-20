@@ -1,15 +1,19 @@
 .slick-dots {
   position: absolute;
-  top: 220px;
+  top: 70%;
+  left: 0;
+  right: 0;
   font-size: 20px;
   z-index: 100;
   text-align: center;
+  margin: 0 auto;
+  height: 10%;
 }
-.slick-slider,
-.slick-list,
-.slick-track {
-  height: 100%;
-  overflow: hidden;
-  display: inline-block;
+
+.slick-list {
   position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }

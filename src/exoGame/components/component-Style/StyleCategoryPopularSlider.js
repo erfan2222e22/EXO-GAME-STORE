@@ -28,7 +28,6 @@ const TextHeadr = styled(Typography)({
 const TextImg = styled(Typography)({
   marginTop: "5px",
   textAlign: "center",
-  fontFamily: "vazir",
   overflow: "hidden",
   fontSize: "13px",
 });
@@ -36,6 +35,7 @@ const TextImg = styled(Typography)({
 const Link_path = styled(Link)({
   textDecoration: "none",
   color: "black",
+  fontFamily: "vazir",
   ":hover": {
     color: "#03c03c",
   },

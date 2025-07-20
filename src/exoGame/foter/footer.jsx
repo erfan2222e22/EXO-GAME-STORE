@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 import style from "./footer.module.css";
 import img from "./navbar-Img/logo.png";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { Button } from "@mui/material";
 import component from "../components/component-Style/StyleFooter";
+import { Box } from "@mui/system";
 function Navbar() {
   const { Box_footer } = component;
   return (
@@ -44,8 +44,8 @@ function Navbar() {
             تجاری، واحد ۸۰۲۸
           </span>
         </h6>
+        {/* <Box component=""></Box> */}
       </Box_footer>
-      {/* <Button>slame</Button> */}
     </div>
   );
 }
