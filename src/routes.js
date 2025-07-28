@@ -13,6 +13,7 @@ import Form_and_benchmark_slider from "./exoGame/form-and-benchmark-slide/form-a
 import CategoryPopularSlider from "./exoGame/TheMostPopularCategoriesSlider/catgory-popular-slider.jsx";
 import PlaystaionXboxConsoleSlider from "./exoGame/playstaion-xbox-console-slide/playstaion-xbox-console-slide.jsx";
 import Catgory from "./exoGame/catgory-items/mainCatgoryPage/catgory.jsx";
+import ProductDiscription from "./exoGame/catgory-items/productDiscription/ProductDiscription.jsx";
 
 let itmes1 = [1, 2, 3, 4, 5, 6, 7, 8];
 let itmes2 = [9, 10, 11, 12, 13, 14];
@@ -75,6 +76,16 @@ let rutes = [
       <div>
         <Herder></Herder>
         <Catgory></Catgory>
+        <Navbar></Navbar>
+      </div>
+    ),
+  },
+  {
+    path: "/catgory/:title/:id",
+    element: (
+      <div>
+        <Herder></Herder>
+        <ProductDiscription></ProductDiscription>
         <Navbar></Navbar>
       </div>
     ),

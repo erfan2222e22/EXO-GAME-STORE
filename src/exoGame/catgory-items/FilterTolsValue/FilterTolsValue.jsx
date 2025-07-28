@@ -11,7 +11,7 @@ const FilterTolsValue = ({
   const { InputLabelText, MainSelect } = component;
   return (
     <Box sx={{ margin: "10px" }}>
-      {kind_filters.map((item, key) => {
+      {kind_filters?.map((item, key) => {
         return (
           <Box key={key}>
             <InputLabelText sx={{ fontFamily: "vazir" }} variant="standard">

@@ -15,7 +15,7 @@ const PlaystaionXboxConsoleSlider = () => {
       title: "productSonyConsole",
       img: img_playstaion,
       path: `/catgory/:id`,
-      id: "10",
+      id: "1",
       jsonServer: "http://localhost:3300/productSonyConsole",
     },
     {
@@ -30,9 +30,8 @@ const PlaystaionXboxConsoleSlider = () => {
   const handelClickLink = (item) => {
     axios(item.jsonServer)
       .then((data) => {
-        console.log(data.data);
         navigate(`catgory/${item.title}`, {
-          state: { product: data.data },
+          state: { product: data.data, pathName: item.title },
         });
       })
       .catch((err) => console.log(err));
