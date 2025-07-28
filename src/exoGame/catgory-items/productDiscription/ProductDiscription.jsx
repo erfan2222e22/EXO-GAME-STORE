@@ -6,6 +6,7 @@ import ProductDiscriptionImg from "./productionImg/productionDiscriotionImg";
 import ProductionHeder from "./productionHeder/productionHeder";
 import ProductInformation from "./productInformation/productInformation";
 import ProductAddIncard from "./productAddIncard/productAddIncard";
+
 const ProductDiscription = () => {
   const location = useLocation();
   const { item } = location.state || {};
