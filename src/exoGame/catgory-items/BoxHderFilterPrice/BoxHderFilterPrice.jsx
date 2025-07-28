@@ -5,17 +5,21 @@ const BoxHederFilterPrice = ({
   filterItmes,
   setFilterValue,
   setFilteredItems,
+  kind_filters,
   setOriginalItems,
   initialItems,
+  product,
 }) => {
   const { BoxHderFilterPrice, SortFilterText } = component;
 
   const heightPriceFilterItems = () => {
     originalItems.sort((a, b) => b.price - a.price);
+    console.log(product);
     filterItmes();
   };
   const lowerPriceFilterItems = () => {
     originalItems.sort((a, b) => a.price - b.price);
+    console.log(product);
     filterItmes();
   };
 
