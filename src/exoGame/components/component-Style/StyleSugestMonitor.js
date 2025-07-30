@@ -1,14 +1,14 @@
 import { styled } from "@mui/material/styles";
 import { Box, Typography } from "@mui/material";
 
-const Div_parent = styled(Box)({
+const DivParent = styled(Box)({
   textAlign: "center",
   display: "flex",
   justifyContent: "center",
   marginTop: "10px",
 });
 
-const Div_img = styled(Box)({
+const DivImg = styled(Box)({
   width: "55%",
   margin: "5px",
 });
@@ -21,10 +21,17 @@ const Text = styled(Typography)({
   "&:hover": { color: "#03c03c" },
 });
 
-const Headr_text = styled(Typography)({
+const HeadrText = styled(Typography)({
   textAlign: "center",
   fontFamily: "vazir",
   overflow: "hidden",
 });
 
-export default { Div_parent, Div_img, Text, Headr_text };
+const styleComponent = {
+  DivParent,
+  DivImg,
+  Text,
+  HeadrText,
+};
+
+export default styleComponent;

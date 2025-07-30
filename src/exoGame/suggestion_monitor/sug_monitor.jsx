@@ -2,12 +2,12 @@ import img_2k from "./sug_monitor_img/2k_img.png";
 import img_4k from "./sug_monitor_img/4k_img.png";
 import img_full_hd from "./sug_monitor_img/full_hd.png";
 import img_ultera_wide from "./sug_monitor_img/ultera_wide.png";
-import component from "../components/component-Style/StyleSugestMonitor";
-import { Box, Typography } from "@mui/material";
+import stylecomponent from "../components/component-Style/StyleSugestMonitor";
+import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const Sug_Monitor = () => {
-  const { Div_parent, Div_img, Text, Headr_text } = component;
+const SugMonitor = () => {
+  const { DivParent, DivImg, Text, HeadrText } = stylecomponent;
   let items = [
     { img: img_2k, text: "ultrawide", id: 1, path: "./ultrawide" },
     { img: img_4k, text: "ultrawide", id: 2, path: "./ultrawide" },
@@ -17,10 +17,10 @@ const Sug_Monitor = () => {
 
   return (
     <Box>
-      <Headr_text sx={{ textAlign: "center", color: "black" }}>
+      <HeadrText sx={{ textAlign: "center", color: "black" }}>
         براساس نیازت بهترین مانیتور انتخاب کن
-      </Headr_text>
-      <Div_parent>
+      </HeadrText>
+      <DivParent>
         {items.map((item) => {
           return (
             <Box key={item.id}>
@@ -28,15 +28,15 @@ const Sug_Monitor = () => {
                 style={{ textDecoration: "none", color: "black" }}
                 to={item.path}
               >
-                <Div_img component="img" src={item.img}></Div_img>
+                <DivImg component="img" src={item.img}></DivImg>
                 <Text>{item.text}</Text>
               </Link>
             </Box>
           );
         })}
-      </Div_parent>
+      </DivParent>
     </Box>
   );
 };
 
-export default Sug_Monitor;
+export default SugMonitor;

@@ -1,7 +1,7 @@
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import component from "../../components/component-Style/StyleDiscriotionItems";
+import styleComponent from "../../components/component-Style/StyleDiscriotionItems";
 import ProductDiscriptionImg from "./productionImg/productionDiscriotionImg";
 import ProductionHeder from "./productionHeder/productionHeder";
 import ProductInformation from "./productInformation/productInformation";
@@ -23,7 +23,7 @@ const ProductDiscription = () => {
     Ramcapacity,
     Memorycapacity,
   } = item || {};
-  const { ParentBox } = component;
+  const { ParentBox } = styleComponent;
   const [test, SetTest] = useState(1);
 
   useEffect(() => {

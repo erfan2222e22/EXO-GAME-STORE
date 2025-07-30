@@ -1,10 +1,10 @@
 import React from "react";
-import component from "../../../components/component-Style/StyleDiscriotionItems";
+import styleComponents from "../../../components/component-Style/StyleDiscriotionItems";
 import { Box } from "@mui/material";
 import { Typography } from "@mui/material";
 const ProductAddIncard = ({ SetTest, price, test }) => {
   const { ParentBoxAddItems, BoxInputCounterItemsInBox, BoxAddItems } =
-    component;
+  styleComponents;
 
   const handelOnclickBtn = (e) => {
     if (price === "بزودی" || price === "ناموجود") {
@@ -15,7 +15,6 @@ const ProductAddIncard = ({ SetTest, price, test }) => {
   return (
     <ParentBoxAddItems>
       <span style={{ fontSize: "40px", overflow: "hidden" }}>{price} $</span>
-
       <Box>
         <span>Count</span>
         <span

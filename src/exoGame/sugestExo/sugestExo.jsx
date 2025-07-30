@@ -2,12 +2,11 @@ import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { Box } from "@mui/system";
 import "./sugest.css";
-import component from "../components/component-Style/StyleSugestExo";
+import styleComponent from "../components/component-Style/StyleSugestExo";
 import { Typography } from "@mui/material";
 
-function SugestExo({ titel, array }) {
+const SugestExo = ({ titel, array }) => {
   let settings = {
     arrows: true,
     infinite: true,
@@ -15,9 +14,9 @@ function SugestExo({ titel, array }) {
     slidesToShow: 5,
     slidesToScroll: 1,
   };
-  const { Box_Sugest, Box_Sugest_Itemstyled } = component;
+  const { BoxSugest, BoxSugestItemstyled } = styleComponent;
   return (
-    <Box_Sugest>
+    <BoxSugest>
       <Typography
         sx={{
           position: "relative",
@@ -31,13 +30,11 @@ function SugestExo({ titel, array }) {
       </Typography>
       <Slider {...settings}>
         {array.map((item, index) => {
-          return (
-            <Box_Sugest_Itemstyled key={index}>{item}</Box_Sugest_Itemstyled>
-          );
+          return <BoxSugestItemstyled key={index}>{item}</BoxSugestItemstyled>;
         })}
       </Slider>
-    </Box_Sugest>
+    </BoxSugest>
   );
-}
+};
 
 export default SugestExo;

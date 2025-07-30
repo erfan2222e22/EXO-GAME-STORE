@@ -1,8 +1,6 @@
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
 
-const BoxImg = styled(Box)({});
-
 const ParentBox = styled(Box)({
   width: "100%",
   height: "650px",
@@ -58,11 +56,11 @@ const BoxInputCounterItemsInBox = styled(Box)({
   height: "100%",
   overflow: "hidden",
 });
-
-export default {
-  BoxImg,
+const styleComponents = {
   ParentBox,
   BoxAddItems,
   ParentBoxAddItems,
   BoxInputCounterItemsInBox,
 };
+
+export default styleComponents;

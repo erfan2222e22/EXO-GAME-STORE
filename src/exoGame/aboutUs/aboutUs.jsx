@@ -1,14 +1,12 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import component from "../components/component-Style/StyleAboutUs";
+import styleComponents from "../components/component-Style/StyleAboutUs";
 import img from "./aboutUsImg/image_2023-06-10_12-39-02.png";
 export default function AboutUs() {
-  const { Box_AboutUs, Box_Img } = component;
-
+  const { BoxAboutUs, BoxImg } = styleComponents;
   return (
     <>
-      <Box_AboutUs>
+      <BoxAboutUs>
         <Typography sx={{ fontFamily: "vazir" }} variant="h6">
           درباره اگزو
         </Typography>
@@ -27,8 +25,8 @@ export default function AboutUs() {
           اینستاگرام، یوتیوب و آپارات از آخرین اخبار دنیای بازی، تخفیفات، کالاها
           اگاه شوید.
         </Typography>
-        <Box_Img component="img" src={img} alt="img"></Box_Img>
-      </Box_AboutUs>
+        <BoxImg component="img" src={img} alt="img"></BoxImg>
+      </BoxAboutUs>
     </>
   );
 }

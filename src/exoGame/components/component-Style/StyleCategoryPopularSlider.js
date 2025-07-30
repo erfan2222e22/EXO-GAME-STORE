@@ -32,7 +32,7 @@ const TextImg = styled(Typography)({
   fontSize: "13px",
 });
 
-const Link_path = styled(Link)({
+const LinkPath = styled(Link)({
   textDecoration: "none",
   color: "black",
   fontFamily: "vazir",
@@ -41,4 +41,11 @@ const Link_path = styled(Link)({
   },
 });
 
-export default { ParentDiv, BoxImg, TextHeadr, TextImg, Link_path };
+const styleComponent = {
+  ParentDiv,
+  BoxImg,
+  TextHeadr,
+  TextImg,
+  LinkPath,
+};
+export default styleComponent;

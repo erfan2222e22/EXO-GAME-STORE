@@ -1,6 +1,5 @@
 import { styled } from "@mui/material/styles";
 import { Box, Typography, Select, Button } from "@mui/material";
-import { border, borderColor } from "@mui/system";
 
 const MainBox = styled(Box)({
   direction: "rtl",
@@ -125,7 +124,7 @@ const BoxHderFilterPrice = styled(Box)({
   left: "5%",
 });
 
-export default {
+const styleComponents = {
   MainBox,
   MainSelect,
   InsideBox,
@@ -141,3 +140,5 @@ export default {
   ImgProduction,
   BoxHderFilterPrice,
 };
+
+export default styleComponents;

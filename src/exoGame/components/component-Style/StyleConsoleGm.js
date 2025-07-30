@@ -1,6 +1,6 @@
-import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-const Box_console_Gm = styled(Box)({
+import { Box } from "@mui/material";
+const BoxConsoleGm = styled(Box)({
   width: "95%",
   height: "80%",
   margin: "10px",
@@ -8,10 +8,13 @@ const Box_console_Gm = styled(Box)({
   position: "relative",
   left: "5px",
 });
-const Parent_div = styled(Box)({
+const ParentDiv = styled(Box)({
   display: "flex",
   width: "100%",
   marginTop: "30px",
 });
-
-export default { Box_console_Gm, Parent_div };
+const styleComponents = {
+  BoxConsoleGm,
+  ParentDiv,
+};
+export default styleComponents;
