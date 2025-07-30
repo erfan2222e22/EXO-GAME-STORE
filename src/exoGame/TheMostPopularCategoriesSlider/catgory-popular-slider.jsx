@@ -12,11 +12,11 @@ import imgMousepad from "./img-pupolar-catgory/mouspad-img.png";
 import imgRam from "./img-pupolar-catgory/ram-img.png";
 import imgSsd from "./img-pupolar-catgory/ssd-img.png";
 import imgWebcome from "./img-pupolar-catgory/webcome-img.png";
-import component from "../components/component-Style/StyleCategoryPopularSlider";
+import styleComponent from "../components/component-Style/StyleCategoryPopularSlider";
 import "./style.css";
 
 const CategoryPopularSlider = () => {
-  const { ParentDiv, BoxImg, TextHeadr, TextImg, Link_path } = component;
+  const { ParentDiv, BoxImg, TextHeadr, TextImg, LinkPath } = styleComponent;
 
   let imgs = [
     { src: imgCpu, text: "cpu", path: "./awd", id: 1 },
@@ -46,10 +46,10 @@ const CategoryPopularSlider = () => {
         {imgs.map((items) => {
           return (
             <Box key={items.id}>
-              <Link_path to={items.path}>
+              <LinkPath to={items.path}>
                 <BoxImg component="img" src={items.src}></BoxImg>
                 <TextImg>{items.text}</TextImg>
-              </Link_path>
+              </LinkPath>
             </Box>
           );
         })}

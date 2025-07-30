@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/material";
 
-const Box_AboutUs = styled(Box)({
+const BoxAboutUs = styled(Box)({
   width: "90%",
   height: "500px",
   textAlign: "right",
@@ -13,13 +13,15 @@ const Box_AboutUs = styled(Box)({
   overflowY: "hidden",
 });
 
-const Box_Img = styled(Box)({
+const BoxImg = styled(Box)({
   width: "300px",
   height: "300px",
   margin: "0 auto",
 });
 
-export default {
-  Box_AboutUs,
-  Box_Img,
+const styleComponents = {
+  BoxAboutUs,
+  BoxImg,
 };
+
+export default styleComponents;

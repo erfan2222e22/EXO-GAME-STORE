@@ -1,4 +1,4 @@
-import component from "../../components/component-Style/StyleCatgory";
+import styleComponents from "../../components/component-Style/StyleCatgory";
 import FilterCheckbox from "../filterCheCheckbox";
 import FilterSlider from "../filterSlider";
 import { MenuItem, Box } from "@mui/material";
@@ -8,7 +8,7 @@ const FilterTolsValue = ({
   handeOnClick,
   itemsSetting,
 }) => {
-  const { InputLabelText, MainSelect } = component;
+  const { InputLabelText, MainSelect } = styleComponents;
   return (
     <Box sx={{ margin: "10px" }}>
       {kind_filters?.map((item, key) => {

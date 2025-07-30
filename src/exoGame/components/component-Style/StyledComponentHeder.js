@@ -1,10 +1,11 @@
-import { AppBar, TextField, Toolbar, Box, Tooltip } from "@mui/material";
+import { AppBar, TextField, Toolbar, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const StyledAppBar = styled(AppBar)({
   backgroundColor: "#",
   direction: "ltr",
 });
+
 const CoustomToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "space-between",
@@ -23,16 +24,19 @@ const SerchField = styled(TextField)({
   fontFamily: "vazir",
 });
 
-const Box_icons = styled(Box)({
+const BoxIcons = styled(Box)({
   color: "#858585",
   cursor: "pointer",
   display: "flex",
   gap: "20px",
   fontSize: "30",
 });
-export default {
+
+const styleComponents = {
   StyledAppBar,
   CoustomToolbar,
+  BoxIcons,
   SerchField,
-  Box_icons,
 };
+
+export default styleComponents;

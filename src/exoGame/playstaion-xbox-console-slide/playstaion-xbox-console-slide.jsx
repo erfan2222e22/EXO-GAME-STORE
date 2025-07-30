@@ -1,13 +1,13 @@
 import { Box } from "@mui/material";
 import img_playstaion from "./img-playstaion-xbox/playstaion.jpg";
 import img_xbox from "./img-playstaion-xbox/xbox.jpg";
-import component from "../components/component-Style/StylePlaystaionXboxSlider";
+import styleComponent from "../components/component-Style/StylePlaystaionXboxSlider";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 const PlaystaionXboxConsoleSlider = () => {
-  const { Parent_div } = component;
+  const { ParentDiv } = styleComponent;
   const navigate = useNavigate();
   let itmes = [
     //slider imgs and path
@@ -38,7 +38,7 @@ const PlaystaionXboxConsoleSlider = () => {
   };
 
   return (
-    <Parent_div>
+    <ParentDiv>
       {itmes.map((item) => {
         return (
           <Link
@@ -54,7 +54,7 @@ const PlaystaionXboxConsoleSlider = () => {
           </Link>
         );
       })}
-    </Parent_div>
+    </ParentDiv>
   );
 };
 

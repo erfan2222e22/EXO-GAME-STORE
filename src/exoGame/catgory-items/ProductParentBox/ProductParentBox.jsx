@@ -1,4 +1,4 @@
-import component from "../../components/component-Style/StyleCatgory";
+import styleComponents from "../../components/component-Style/StyleCatgory";
 import { Typography, Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -7,7 +7,7 @@ const ProductParentBoxComponent = ({
   originalItems,
   pathName,
 }) => {
-  const { ProductParentBox, BoxProduction, ImgProduction } = component;
+  const { ProductParentBox, BoxProduction, ImgProduction } = styleComponents;
 
   const navigate = useNavigate();
   const handelOnClikc = (item) => {

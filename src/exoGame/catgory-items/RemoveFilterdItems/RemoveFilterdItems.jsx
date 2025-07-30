@@ -1,11 +1,11 @@
 import React from "react";
-import component from "../../components/component-Style/StyleCatgory";
+import styleComponents from "../../components/component-Style/StyleCatgory";
 const RemoveFilterdItems = ({
   FilterValue,
   setFilterValue,
   setFilteredItems,
 }) => {
-  const { HeadrBox, HeadrText, DelteBtn } = component;
+  const { HeadrBox, HeadrText, DelteBtn } = styleComponents;
 
   const delteFilterItemsBtn = () => {
     setFilterValue((preve) => ({

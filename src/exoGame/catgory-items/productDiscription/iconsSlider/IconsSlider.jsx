@@ -1,36 +1,37 @@
 import styleComponent from "../../../components/component-Style/StyleIconsSloderProductDiscription";
 const IconsSlider = () => {
   const {
-    Box_Parent,
-    StyleIcon_PermIdentityIcon,
-    StyleIcon_CreditCardIcon,
-    StyleIcon_AutorenewIcon,
-    StyleIcon_ShieldOutlinedIcon,
-    StyleIcon_RocketLaunchOutlinedIcon,
+    BoxParent,
+    StyleIconPermIdentityIcon,
+    StyleIconCreditCardIcon,
+    StyleIconAutorenewIcon,
+    StyleIconShieldOutlinedIcon,
+    StyleIconRocketLaunchOutlinedIcon,
   } = styleComponent;
+
   return (
-    <Box_Parent>
+    <BoxParent>
       <span>
         return product
-        <StyleIcon_AutorenewIcon />
+        <StyleIconAutorenewIcon />
       </span>
       <span>
         send exo
-        <StyleIcon_RocketLaunchOutlinedIcon />
+        <StyleIconRocketLaunchOutlinedIcon />
       </span>
       <span>
         safe Payment
-        <StyleIcon_CreditCardIcon />
+        <StyleIconCreditCardIcon />
       </span>
       <span>
         online suport
-        <StyleIcon_PermIdentityIcon />
+        <StyleIconPermIdentityIcon />
       </span>
       <span>
         Product Warranty
-        <StyleIcon_ShieldOutlinedIcon />
+        <StyleIconShieldOutlinedIcon />
       </span>
-    </Box_Parent>
+    </BoxParent>
   );
 };
 export default IconsSlider;

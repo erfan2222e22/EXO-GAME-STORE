@@ -7,13 +7,12 @@ import { Link } from "react-router-dom";
 import style from "./footer.module.css";
 import img from "./navbar-Img/logo.png";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import component from "../components/component-Style/StyleFooter";
-import { Box } from "@mui/system";
-function Navbar() {
-  const { Box_footer } = component;
+import styleComponent from "../components/component-Style/StyleFooter";
+const Footer = () => {
+  const { BoxFooter } = styleComponent;
   return (
     <div>
-      <Box_footer>
+      <BoxFooter>
         <Tooltip title="instagram">
           <Link to="https://www.instagram.com/" className={style.icons}>
             <InstagramIcon sx={{ textAlign: "center" }}></InstagramIcon>
@@ -45,8 +44,8 @@ function Navbar() {
           </span>
         </h6>
         {/* <Box component=""></Box> */}
-      </Box_footer>
+      </BoxFooter>
     </div>
   );
-}
-export default Navbar;
+};
+export default Footer;

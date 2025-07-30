@@ -2,7 +2,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
-import components from "../components/component-Style/StyledComponentNavbar";
+import styleComponents from "../components/component-Style/StyledComponentHeder";
 import logoImg from "./hederLogoImg/logo.png";
 import Tooltip from "@mui/material/Tooltip";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
@@ -14,17 +14,18 @@ import { Link } from "react-router-dom";
 import style from "./heder.module.css";
 
 export default function Herder() {
-  const { StyledAppBar, CoustomToolbar, SerchField, Box_icons } = components;
+  const { StyledAppBar, CoustomToolbar, SerchField, BoxIcons } =
+    styleComponents;
   return (
     <div>
       <StyledAppBar>
         <CoustomToolbar>
-          <Box_icons>
+          <BoxIcons>
             <ShoppingCartIcon></ShoppingCartIcon>
             <Link to="/acount-login-Phone" style={{ color: "#858585" }}>
               <PersonIcon></PersonIcon>
             </Link>
-          </Box_icons>
+          </BoxIcons>
           <SerchField
             placeholder="جستجو..."
             variant="standard"

@@ -1,24 +1,21 @@
-// import img1 from "./img-console-gm/img1.jpg";
-// import img2 from "./img-console-gm/img2.jpg";
-import { Box } from "@mui/material";
-import component from "../components/component-Style/StyleConsoleGm";
 import { Link } from "react-router-dom";
+import styleComponents from "../components/component-Style/StyleConsoleGm.js";
 import img1 from "./console-gm-img/img1.jpg";
 import img2 from "./console-gm-img/img2.jpg";
 
-const Consloe_gm = () => {
-  const { Box_console_Gm, Parent_div } = component;
+const ConsoleGaming = () => {
+  const { ParentDiv, BoxConsoleGm } = styleComponents;
 
   return (
-    <Parent_div>
-      <Link to="/awd">
-        <Box_console_Gm component="img" src={img1}></Box_console_Gm>
+    <ParentDiv>
+      <Link to="/EMPTYFORNOW ">
+        <BoxConsoleGm component="img" src={img1}></BoxConsoleGm>
       </Link>
-      <Link to="/awd">
-        <Box_console_Gm component="img" src={img2}></Box_console_Gm>
+      <Link to="/EMPTYFORNOW ">
+        <BoxConsoleGm component="img" src={img2}></BoxConsoleGm>
       </Link>
-    </Parent_div>
+    </ParentDiv>
   );
 };
 
-export default Consloe_gm;
+export default ConsoleGaming;

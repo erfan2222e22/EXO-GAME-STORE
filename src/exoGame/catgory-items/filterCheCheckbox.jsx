@@ -19,7 +19,7 @@ const FilterCheckbox = ({
 
   useEffect(() => {
     setfilterValues(setingConsoleFilters[0]);
-  }, []);
+  }, [setingConsoleFilters]);
 
   const handeClickBox = (value) => {
     setFilter((prev) => {

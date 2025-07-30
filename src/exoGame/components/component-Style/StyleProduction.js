@@ -1,12 +1,12 @@
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-const Parnt_Div = styled(Box)({
+const ParntDiv = styled(Box)({
   display: "flex",
   backgroundColor: "red",
   justifyContent: "center",
   alignItems: "center",
 });
-const Production_items = styled(Box)({
+const ProductionItems = styled(Box)({
   width: "30%",
   height: "20%",
   margin: "10px",
@@ -15,7 +15,9 @@ const Production_items = styled(Box)({
   backgroundColor: "red",
 });
 
-export default {
-  Production_items,
-  Parnt_Div,
+const styleComponent = {
+  ParntDiv,
+  ProductionItems,
 };
+
+export default styleComponent;

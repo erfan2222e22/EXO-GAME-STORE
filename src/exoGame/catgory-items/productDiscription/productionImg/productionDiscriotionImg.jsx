@@ -1,9 +1,9 @@
-import componrnt from "../../../components/component-Style/StyleDiscriotionItems";
+import styleComponents from "../../../components/component-Style/StyleDiscriotionItems";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShareIcon from "@mui/icons-material/Share";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 const ProductDiscriptionImg = ({ imgSrc }) => {
-  const { BoxImg } = componrnt; //styled componets
+  const { BoxImg } = styleComponents; //styled componets
   return (
     <div
       style={{

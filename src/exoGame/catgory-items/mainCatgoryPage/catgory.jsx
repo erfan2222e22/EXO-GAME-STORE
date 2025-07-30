@@ -1,4 +1,4 @@
-import component from "../../components/component-Style/StyleCatgory";
+import styleComponents from "../../components/component-Style/StyleCatgory";
 import { useState, useEffect } from "react";
 import BoxHederFilterPrice from "../BoxHderFilterPrice/BoxHderFilterPrice";
 import ProductParentBoxComponent from "../ProductParentBox/ProductParentBox";
@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 import FilterBtnComponent from "../FilterBtn/FilterBtn";
 import axios from "axios";
 const Catgory = () => {
-  const { MainBox } = component; // styled component
+  const { MainBox } = styleComponents; // styled component
   const location = useLocation();
   const { product = [], pathName } = location.state || {};
   const filterValuesTols = product[0]?.productSetting;

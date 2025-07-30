@@ -1,20 +1,21 @@
-import { Router, Route, Link, Routes } from "react-router-dom";
 import Herder from "./exoGame/heder/herder.jsx";
 import LoginWithPhone from "./exoGame/loginWithPhon/loginWithPhone.jsx";
-import Navbar from "./exoGame/foter/footer.jsx";
+import Footer from "./exoGame/foter/footer.jsx";
 import AboutUs from "./exoGame/aboutUs/aboutUs.jsx";
 import Slider1 from "./exoGame/slider1/slider.jsx";
-import Production_box from "./exoGame/productions_shortcut_box/production_box.jsx";
+import ProductionBox from "./exoGame/productions_shortcut_box/production_box.jsx";
 import SugestExo from "./exoGame/sugestExo/sugestExo.jsx";
-import Consloe_gm from "./exoGame/consoleGaming/console_gm.jsx";
-import Sug_Monitor from "./exoGame/suggestion_monitor/sug_monitor.jsx";
-import Best_Brand_laptop from "./exoGame/bestMonitorBrand/best-laptop-brand.jsx";
-import Form_and_benchmark_slider from "./exoGame/form-and-benchmark-slide/form-and-benchmark-slider.jsx";
+import ConsoleGaming from "./exoGame/consoleGaming/console_gm.jsx";
+import SugMonitor from "./exoGame/suggestion_monitor/sug_monitor.jsx";
+import BestBrandLaptop from "./exoGame/bestMonitorBrand/best-laptop-brand.jsx";
+import FormAndBenchmarkSlider from "./exoGame/form-and-benchmark-slide/form-and-benchmark-slider.jsx";
 import CategoryPopularSlider from "./exoGame/TheMostPopularCategoriesSlider/catgory-popular-slider.jsx";
 import PlaystaionXboxConsoleSlider from "./exoGame/playstaion-xbox-console-slide/playstaion-xbox-console-slide.jsx";
 import Catgory from "./exoGame/catgory-items/mainCatgoryPage/catgory.jsx";
 import ProductDiscription from "./exoGame/catgory-items/productDiscription/ProductDiscription.jsx";
 import IconsSlider from "./exoGame/catgory-items/productDiscription/iconsSlider/IconsSlider.jsx";
+import Test from "./exoGame/catgory-items/test/test.jsx";
+
 let itmes1 = [1, 2, 3, 4, 5, 6, 7, 8];
 let itmes2 = [9, 10, 11, 12, 13, 14];
 let itmes3 = [15, 16, 17, 18, 19, 20];
@@ -26,17 +27,17 @@ let rutes = [
       <div>
         <Herder></Herder>
         <Slider1></Slider1>
-        <Production_box></Production_box>
+        <ProductionBox></ProductionBox>
         <SugestExo array={itmes1} titel="پیشنهاد اگزو"></SugestExo>
         <SugestExo array={itmes2} titel="جدیدترین‌های اگزوگیم"></SugestExo>
         <SugestExo array={itmes3} titel="پرفروش‌ترین‌های اگزوگیم"></SugestExo>
-        <Consloe_gm></Consloe_gm>
-        <Sug_Monitor></Sug_Monitor>
-        <Best_Brand_laptop></Best_Brand_laptop>
-        <Form_and_benchmark_slider></Form_and_benchmark_slider>
+        <ConsoleGaming></ConsoleGaming>
+        <SugMonitor></SugMonitor>
+        <BestBrandLaptop></BestBrandLaptop>
+        <FormAndBenchmarkSlider></FormAndBenchmarkSlider>
         <CategoryPopularSlider></CategoryPopularSlider>
         <PlaystaionXboxConsoleSlider></PlaystaionXboxConsoleSlider>
-        <Navbar></Navbar>
+        <Footer></Footer>
       </div>
     ),
   },
@@ -46,7 +47,7 @@ let rutes = [
       <div>
         <Herder></Herder>
         <LoginWithPhone></LoginWithPhone>
-        <Navbar></Navbar>
+        <Footer></Footer>
       </div>
     ),
   },
@@ -56,7 +57,7 @@ let rutes = [
       <div>
         <Herder></Herder>
         <AboutUs></AboutUs>
-        <Navbar></Navbar>
+        <Footer></Footer>
       </div>
     ),
   },
@@ -66,7 +67,7 @@ let rutes = [
       <div>
         <Herder></Herder>
         <Catgory></Catgory>
-        <Navbar></Navbar>
+        <Footer></Footer>
       </div>
     ),
   },
@@ -76,7 +77,7 @@ let rutes = [
       <div>
         <Herder></Herder>
         <Catgory></Catgory>
-        <Navbar></Navbar>
+        <Footer></Footer>
       </div>
     ),
   },
@@ -87,7 +88,8 @@ let rutes = [
         <Herder></Herder>
         <ProductDiscription></ProductDiscription>
         <IconsSlider></IconsSlider>
-        <Navbar></Navbar>
+        <Test></Test>
+        <Footer></Footer>
       </div>
     ),
   },

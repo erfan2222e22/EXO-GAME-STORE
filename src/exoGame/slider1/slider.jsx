@@ -5,7 +5,7 @@ import img4 from "./sliderImg/img4.jpg";
 import img5 from "./sliderImg/img5.jpg";
 import img6 from "./sliderImg/img6.jpg";
 import img7 from "./sliderImg/img7.jpg";
-import component from "../components/component-Style/StyleSlider";
+import styleComponent from "../components/component-Style/StyleSlider";
 import Slider from "react-slick";
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -14,7 +14,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Slider1 = () => {
-  const { Box_Img } = component;
+  const { BoxImg } = styleComponent;
   let imgs = [
     { img: img1, path: "/consol", id: 1 },
     { img: img2, path: "/catgory-pc", id: 2 },
@@ -49,7 +49,7 @@ const Slider1 = () => {
   };
 
   return (
-    <Box_Img>
+    <BoxImg>
       <Slider {...settings}>
         {imgs.map((img) => (
           <Link key={img.id} to={img.path}>
@@ -67,7 +67,7 @@ const Slider1 = () => {
           </Link>
         ))}
       </Slider>
-    </Box_Img>
+    </BoxImg>
   );
 };
 

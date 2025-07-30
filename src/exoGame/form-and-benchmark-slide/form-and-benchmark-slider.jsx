@@ -1,22 +1,21 @@
-import { Box } from "@mui/system";
 import img1 from "./img-form-benchmark/img1.jpg";
 import img2 from "./img-form-benchmark/img2.jpg";
-import component from "../components/component-Style/StyleBenchmarkFormSlide";
+import styleComponents from "../components/component-Style/StyleBenchmarkFormSlide";
 import { Link } from "react-router-dom";
 
-const Form_and_benchmark_slider = () => {
-  const { Parent_div, Div_img } = component;
+const FormAndBenchmarkSlider = () => {
+  const { ParentDiv, DivImg } = styleComponents;
 
   return (
-    <Parent_div>
+    <ParentDiv>
       <Link to="./awdawdaw">
-        <Div_img component="img" src={img1} alt="img"></Div_img>
+        <DivImg component="img" src={img1} alt="img"></DivImg>
       </Link>
       <Link to="./awdawdawd">
-        <Div_img component="img" src={img2} alt="img"></Div_img>
+        <DivImg component="img" src={img2} alt="img"></DivImg>
       </Link>
-    </Parent_div>
+    </ParentDiv>
   );
 };
 
-export default Form_and_benchmark_slider;
+export default FormAndBenchmarkSlider;

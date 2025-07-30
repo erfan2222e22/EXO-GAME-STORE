@@ -1,4 +1,4 @@
-import component from "../../components/component-Style/StyleCatgory";
+import styleComponents from "../../components/component-Style/StyleCatgory";
 import { Typography } from "@mui/material";
 const BoxHederFilterPrice = ({
   originalItems,
@@ -10,7 +10,7 @@ const BoxHederFilterPrice = ({
   initialItems,
   product,
 }) => {
-  const { BoxHderFilterPrice, SortFilterText } = component;
+  const { BoxHderFilterPrice, SortFilterText } = styleComponents;
 
   const heightPriceFilterItems = () => {
     originalItems.sort((a, b) => b.price - a.price);

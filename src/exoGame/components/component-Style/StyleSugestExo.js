@@ -2,7 +2,7 @@ import { styled } from "@mui/material/styles";
 import { Box } from "@mui/material";
 import { border, borderColor } from "@mui/system";
 
-const Box_Sugest = styled(Box)({
+const BoxSugest = styled(Box)({
   width: "90%",
   margin: "0 auto",
   padding: "0 50px",
@@ -10,7 +10,7 @@ const Box_Sugest = styled(Box)({
   marginTop: "30px",
 });
 
-const Box_Sugest_Itemstyled = styled(Box)({
+const BoxSugestItemstyled = styled(Box)({
   width: "95% !important",
   height: "250px",
   margin: "0 5px",
@@ -24,8 +24,9 @@ const Box_Sugest_Itemstyled = styled(Box)({
     border: "3px solid #03c03c",
   },
 });
-
-export default {
-  Box_Sugest,
-  Box_Sugest_Itemstyled,
+const styleComponent = {
+  BoxSugestItemstyled,
+  BoxSugest,
 };
+
+export default styleComponent;
