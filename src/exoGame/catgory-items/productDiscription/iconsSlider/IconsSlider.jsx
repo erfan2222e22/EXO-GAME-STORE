@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import styleComponent from "../../../components/component-Style/StyleIconsSloderProductDiscription";
 const IconsSlider = () => {
   const {
@@ -7,30 +8,31 @@ const IconsSlider = () => {
     StyleIconAutorenewIcon,
     StyleIconShieldOutlinedIcon,
     StyleIconRocketLaunchOutlinedIcon,
+    StyleParagraf,
   } = styleComponent;
 
   return (
     <BoxParent>
-      <span>
+      <StyleParagraf>
         return product
-        <StyleIconAutorenewIcon />
-      </span>
-      <span>
+        <StyleIconAutorenewIcon sx={{ color: "#818181bf" }} />
+      </StyleParagraf>
+      <StyleParagraf>
         send exo
         <StyleIconRocketLaunchOutlinedIcon />
-      </span>
-      <span>
+      </StyleParagraf>
+      <StyleParagraf>
         safe Payment
         <StyleIconCreditCardIcon />
-      </span>
-      <span>
+      </StyleParagraf>
+      <StyleParagraf>
         online suport
         <StyleIconPermIdentityIcon />
-      </span>
-      <span>
+      </StyleParagraf>
+      <StyleParagraf>
         Product Warranty
         <StyleIconShieldOutlinedIcon />
-      </span>
+      </StyleParagraf>
     </BoxParent>
   );
 };

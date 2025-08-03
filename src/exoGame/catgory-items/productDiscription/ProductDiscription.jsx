@@ -28,7 +28,6 @@ const ProductDiscription = () => {
 
   useEffect(() => {
     test < 0 && SetTest(0);
-    console.log(CentralProcessingUnit);
   }, [test, CentralProcessingUnit]);
 
   return (

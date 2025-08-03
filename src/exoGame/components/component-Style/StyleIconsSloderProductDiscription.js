@@ -4,7 +4,7 @@ import CreditCardIcon from "@mui/icons-material/CreditCard";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 import ShieldOutlinedIcon from "@mui/icons-material/ShieldOutlined";
 import RocketLaunchOutlinedIcon from "@mui/icons-material/RocketLaunchOutlined";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const BoxParent = styled(Box)({
   display: "flex",
@@ -44,6 +44,14 @@ const StyleIconRocketLaunchOutlinedIcon = styled(RocketLaunchOutlinedIcon)({
     color: "#03c03c",
   },
 });
+const StyleParagraf = styled(Typography)({
+  color: "#818181bf",
+  fontSize: "1rem",
+  animationDuration: "1s",
+  "&:hover": {
+    color: "#03c03c",
+  },
+});
 
 const styleComponents = {
   BoxParent,
@@ -52,6 +60,7 @@ const styleComponents = {
   StyleIconAutorenewIcon,
   StyleIconShieldOutlinedIcon,
   StyleIconRocketLaunchOutlinedIcon,
+  StyleParagraf,
 };
 
 export default styleComponents;
