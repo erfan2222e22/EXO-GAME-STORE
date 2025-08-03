@@ -1,9 +1,8 @@
-import styleComponents from "../../../components/component-Style/StyleDiscriotionItems";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShareIcon from "@mui/icons-material/Share";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
+import { Box } from "@mui/material";
 const ProductDiscriptionImg = ({ imgSrc }) => {
-  const { BoxImg } = styleComponents; //styled componets
   return (
     <div
       style={{
@@ -15,7 +14,7 @@ const ProductDiscriptionImg = ({ imgSrc }) => {
       }}
     >
       <div>
-        <BoxImg component="img" src={imgSrc} alt="none🎨" style={{}}></BoxImg>
+        <Box component="img" src={imgSrc} alt="💖"></Box>
       </div>
       <div
         style={{

@@ -14,8 +14,7 @@ import PlaystaionXboxConsoleSlider from "./exoGame/playstaion-xbox-console-slide
 import Catgory from "./exoGame/catgory-items/mainCatgoryPage/catgory.jsx";
 import ProductDiscription from "./exoGame/catgory-items/productDiscription/ProductDiscription.jsx";
 import IconsSlider from "./exoGame/catgory-items/productDiscription/iconsSlider/IconsSlider.jsx";
-import Test from "./exoGame/catgory-items/test/test.jsx";
-
+import BoxInfoProducts from "./exoGame/catgory-items/box-Information-Items/box-Information-products.jsx";
 let itmes1 = [1, 2, 3, 4, 5, 6, 7, 8];
 let itmes2 = [9, 10, 11, 12, 13, 14];
 let itmes3 = [15, 16, 17, 18, 19, 20];
@@ -88,7 +87,7 @@ let rutes = [
         <Herder></Herder>
         <ProductDiscription></ProductDiscription>
         <IconsSlider></IconsSlider>
-        <Test></Test>
+        <BoxInfoProducts></BoxInfoProducts>
         <Footer></Footer>
       </div>
     ),
