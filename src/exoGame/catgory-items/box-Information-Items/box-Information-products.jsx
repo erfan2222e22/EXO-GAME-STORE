@@ -6,36 +6,32 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Typography } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import BoxDiscriptionItems from "./box-discription-items/box-discription-items";
 function BoxInfoProducts() {
   const { PrentBox, HederText } = styleComponent;
   const location = useLocation();
   const [productsInformation, setProductsInformation] = useState([]);
-  const [to, setTo] = useState("box1");
   const { ...item } = productsInformation?.item || {};
 
   useEffect(() => {
     setProductsInformation(location.state);
   }, [location, productsInformation]);
 
-  const handelClick = () => {
-    alert("slame");
-  };
-
   return (
     <>
       <PrentBox>
         <HederText>
-          <Link onClick={() => setTo("box1")} to={"to"}>
+          <Link to={"box2"}>
             Product review <ArrowRightIcon></ArrowRightIcon>
           </Link>
         </HederText>
         <HederText>
-          <Link onClick={handelClick} to="box1">
+          <Link to="box1">
             Characteristics <ArrowRightIcon></ArrowRightIcon>
           </Link>
         </HederText>
         <HederText>
-          <Link onClick={handelClick} to="box1">
+          <Link to="box1">
             Comments <ArrowRightIcon></ArrowRightIcon>
           </Link>
         </HederText>
@@ -44,17 +40,9 @@ function BoxInfoProducts() {
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <Element name="box2">
+        <BoxDiscriptionItems {...item}></BoxDiscriptionItems>
+      </Element>
       <Element name="box1">
         <Typography
           sx={{
