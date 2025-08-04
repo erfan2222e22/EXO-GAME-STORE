@@ -13,7 +13,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "2",
@@ -28,7 +29,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "3",
@@ -43,7 +45,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "4",
@@ -58,7 +61,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "5",
@@ -73,7 +77,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "6",
@@ -88,7 +93,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "7",
@@ -103,7 +109,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "8",
@@ -112,7 +119,8 @@
       "genration": "نهم",
       "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/PS5-Slim/Standard-Edition/Dual-Controller/Sony-PlayStation5-Slim-Standard-Edition-Dual-Controller-1-300x300.jpg",
       "price": "300",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "9",
@@ -127,7 +135,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "10",
@@ -142,7 +151,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "11",
@@ -157,7 +167,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "12",
@@ -172,7 +183,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "13",
@@ -187,7 +199,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "14",
@@ -202,7 +215,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "15",
@@ -217,7 +231,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "16",
@@ -232,7 +247,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/sonyProducTSetting"
+      "productSetting": "http://localhost:3300/sonyProducTSetting",
+      "ProductReview": "true"
     }
   ],
   "productXboxConsole": [
@@ -249,7 +265,8 @@
       "Graphicsprocessingunit": "AMD RDNA2 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     },
     {
       "id": "2",
@@ -264,7 +281,8 @@
       "Graphicsprocessingunit": "AMD RDNA2 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     },
 
     {
@@ -280,7 +298,8 @@
       "Graphicsprocessingunit": "AMD RDNA2 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     },
 
     {
@@ -296,7 +315,8 @@
       "Graphicsprocessingunit": "AMD RDNA2 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     },
 
     {
@@ -312,7 +332,8 @@
       "Graphicsprocessingunit": "AMD RDNA2 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     },
 
     {
@@ -328,7 +349,8 @@
       "Graphicsprocessingunit": "AMD RDNA2 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     },
 
     {
@@ -344,7 +366,8 @@
       "Graphicsprocessingunit": "AMD RDNA2 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     },
 
     {
@@ -360,7 +383,8 @@
       "Graphicsprocessingunit": "AMD RDNA2 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     },
 
     {
@@ -376,7 +400,8 @@
       "Graphicsprocessingunit": "AMD RDNA2 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     },
 
     {
@@ -392,7 +417,8 @@
       "Graphicsprocessingunit": "AMD RDNA2 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     },
 
     {
@@ -408,7 +434,8 @@
       "Graphicsprocessingunit": "AMD RDNA2 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     },
 
     {
@@ -424,7 +451,8 @@
       "Graphicsprocessingunit": "AMD RDNA2 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     },
 
     {
@@ -440,7 +468,8 @@
       "Graphicsprocessingunit": "AMD RDNA3 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     },
 
     {
@@ -456,7 +485,8 @@
       "Graphicsprocessingunit": "AMD RDNA2 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     },
 
     {
@@ -472,7 +502,8 @@
       "Graphicsprocessingunit": "AMD RDNA2 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     },
 
     {
@@ -488,7 +519,8 @@
       "Graphicsprocessingunit": "AMD RDNA2 Custom",
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
-      "productSetting": "http://localhost:3300/xboxProducTSetting"
+      "productSetting": "http://localhost:3300/xboxProducTSetting",
+      "ProductReview": "true"
     }
   ],
   "xboxProducTSetting": {
@@ -544,5 +576,31 @@
         "filterType": "generation"
       }
     ]
-  }
+  },
+  "SonyDiscription": [
+    {
+      "id": "1",
+      "hederText": "Product review",
+      "discription": "In recent years, the PlayStation 5 console has managed to establish itself in the market, offering an unparalleled video game experience. Now, with the introduction of the PS5 Pro, gamers are eagerly looking to examine the differences between this new version and the standard PS5. In this article, we will first provide a comparison between the two models, and then discuss the specific features and capabilities of the PS5 Pro.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/1.jpg"
+    },
+    {
+      "id": "2",
+      "hederText": "Differences in graphics and processing power",
+      "discription": "The PS5 Pro comes to market with an upgraded graphics card that has approximately 67 percent more compute units compared to the regular PS5. This translates to a 45 percent increase in graphical processing power, as well as the ability to run games with higher visual fidelity. The PS5 Pro also utilizes a new technology called PlayStation Spectral Super Resolution, which uses artificial intelligence to display images with higher clarity and prevents frame rate drops.In terms of the processor, the PS5 Pro uses the same 8-core AMD Zen 2 processor as the standard version, but with an improved processing speed that can increase to 3.85 GHz when necessary, whereas the regular version is limited to 3.5 GHz. This helps the PS5 Pro in more demanding moments.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/2.jpg"
+    },
+    {
+      "id": "3",
+      "hederText": "Improved and customizable design",
+      "discription": "A new feature introduced in the PS5 Pro is Game Boost mode, specifically designed for PS4 games. This capability enhances the experience of older games with better resolution and speed, allowing gamers to enjoy over 8500 titles with higher quality.Improved and Customizable DesignIn terms of design, the PS5 Pro is very similar to the PS5 Slim model and comes in a size relatively smaller than the original model. This new version",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/3.jpg"
+    },
+    {
+      "id": "4",
+      "hederText": "Is the PS5 Pro worth buying?",
+      "discription": "Given all the advanced features of the PS5 Pro, including a more powerful GPU, more storage space, Wi-Fi 7, and Game Boost mode, this console is an excellent option for professional gamers looking for visual quality and a smoother experience. If you are a gamer who values higher quality and speed in games and intend to play new and old games with better quality",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/4.jpg"
+    }
+  ]
 }

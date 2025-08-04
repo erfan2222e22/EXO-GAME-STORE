@@ -6,7 +6,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Button } from "@mui/material";
 import { useState, useEffect } from "react";
-
+import axios from "axios";
 const createData = (itemKeys, itemData) => {
   return { itemKeys, itemData };
 };
@@ -25,6 +25,13 @@ const TableInformationProducts = ({ ...item }) => {
   const [rows, SetRows] = useState([]);
 
   useEffect(() => {
+    axios
+      .get("http://localhost:3300/SonyDiscription")
+      .then((item) => {})
+      .catch((err) => {
+        console.log(err);
+      });
+
     setTimeout(() => {
       SetTableValus(obj);
       if (tableValus.length > 0) {
@@ -58,6 +65,7 @@ const TableInformationProducts = ({ ...item }) => {
       ) : (
         <Button onClick={() => Settest(false)}>close</Button>
       )}
+      <button>slame iran </button>
     </TableContainer>
   );
 };
