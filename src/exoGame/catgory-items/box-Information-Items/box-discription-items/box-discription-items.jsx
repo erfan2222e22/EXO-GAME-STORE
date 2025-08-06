@@ -4,8 +4,8 @@ import styleComponent from "../../../components/component-Style/StyleInformation
 import { Box } from "@mui/material";
 const BoxDiscriptionItems = ({ ...item }) => {
   const { Paragraf, HederText, BoxParent } = styleComponent;
-  const [array, setArray] = useState([]);
-  const [test1, setTest1] = useState([]);
+  const [arrayProducts, setArrayProducts] = useState([]);
+  const [indexFristArrayProducts, setIndexFristArrayProducts] = useState([]);
   const [valid, setValid] = useState(false);
 
   useEffect(() => {
@@ -15,17 +15,17 @@ const BoxDiscriptionItems = ({ ...item }) => {
         .then((item) => {
           let afterIndexOne = item.data.slice(1);
           let index0Data = item.data[0];
-          setTest1([index0Data]);
-          setArray(afterIndexOne);
+          setIndexFristArrayProducts([index0Data]);
+          setArrayProducts(afterIndexOne);
         })
         .catch((err) => console.log(err));
     }
-  }, [array, test1, item]);
+  }, [arrayProducts, indexFristArrayProducts, item]);
 
   return (
     <>
       {item.ProductReview &&
-        test1.map((value) => {
+        indexFristArrayProducts.map((value) => {
           return (
             <BoxParent>
               <HederText>{value.hederText}</HederText>
@@ -53,7 +53,7 @@ const BoxDiscriptionItems = ({ ...item }) => {
 
       {item.ProductReview &&
         valid &&
-        array.map((value) => {
+        arrayProducts.map((value) => {
           return (
             <BoxParent>
               <HederText>{value.hederText}</HederText>
