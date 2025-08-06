@@ -7,7 +7,8 @@ import { useState } from "react";
 import { Typography } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import BoxDiscriptionItems from "./box-discription-items/box-discription-items";
-function BoxInfoProducts() {
+import ComentBoxProducts from "./ComentBoxProducts/comentBoxProducts";
+const BoxInfoProducts = () => {
   const { PrentBox, HederText } = styleComponent;
   const location = useLocation();
   const [productsInformation, setProductsInformation] = useState([]);
@@ -21,12 +22,12 @@ function BoxInfoProducts() {
     <>
       <PrentBox>
         <HederText>
-          <Link to={"box2"}>
+          <Link to={"BoxDiscription"}>
             Product review <ArrowRightIcon></ArrowRightIcon>
           </Link>
         </HederText>
         <HederText>
-          <Link to="box1">
+          <Link to="TableDiscription">
             Characteristics <ArrowRightIcon></ArrowRightIcon>
           </Link>
         </HederText>
@@ -40,10 +41,12 @@ function BoxInfoProducts() {
       <br />
       <br />
       <br />
-      <Element name="box2">
+
+      <Element name="BoxDiscription">
         <BoxDiscriptionItems {...item}></BoxDiscriptionItems>
       </Element>
-      <Element name="box1">
+
+      <Element name="TableDiscription">
         <Typography
           sx={{
             margin: "5%",
@@ -56,7 +59,11 @@ function BoxInfoProducts() {
         </Typography>
         <TableInformationProducts {...item}></TableInformationProducts>
       </Element>
+
+      <Element name="Coments">
+        <ComentBoxProducts></ComentBoxProducts>
+      </Element>
     </>
   );
-}
+};
 export default BoxInfoProducts;

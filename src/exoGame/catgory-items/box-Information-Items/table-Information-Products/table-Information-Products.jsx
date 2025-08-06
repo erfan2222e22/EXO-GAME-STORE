@@ -65,7 +65,6 @@ const TableInformationProducts = ({ ...item }) => {
       ) : (
         <Button onClick={() => Settest(false)}>close</Button>
       )}
-      <button>slame iran </button>
     </TableContainer>
   );
 };
