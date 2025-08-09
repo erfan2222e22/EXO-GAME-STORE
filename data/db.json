@@ -14,7 +14,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     },
     {
       "id": "2",
@@ -30,7 +31,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     },
     {
       "id": "3",
@@ -46,7 +48,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     },
     {
       "id": "4",
@@ -62,7 +65,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     },
     {
       "id": "5",
@@ -78,7 +82,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     },
     {
       "id": "6",
@@ -94,7 +99,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     },
     {
       "id": "7",
@@ -110,7 +116,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     },
     {
       "id": "8",
@@ -120,14 +127,20 @@
       "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/PS5-Slim/Standard-Edition/Dual-Controller/Sony-PlayStation5-Slim-Standard-Edition-Dual-Controller-1-300x300.jpg",
       "price": "300",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "ConsoleType": "Domestic",
+      "YearIntroduced": "2024",
+      "CentralProcessingUnit": "AMD Zen2 Custom",
+      "Graphicsprocessingunit": "AMD RDNA3 Custom",
+      "Ramcapacity": "16 Gigabyte",
+      "Memorycapacity": "2 Terabyte",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     },
     {
       "id": "9",
       "nameProduct": "Xbox 1",
       "company": "Sony",
       "genration": "هشتم",
-      "img": "https://exo.ir/image/cache/catalog/Products/Sony/Playstation/PS5-Pro/PS5-PRO-DualSense-VR/Sony-PlayStation5-Pro-Dual-Controller-VR2-300x300.jpg",
       "price": "1000",
       "ConsoleType": "Domestic",
       "YearIntroduced": "2024",
@@ -136,7 +149,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     },
     {
       "id": "10",
@@ -152,7 +166,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     },
     {
       "id": "11",
@@ -168,7 +183,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     },
     {
       "id": "12",
@@ -184,7 +200,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     },
     {
       "id": "13",
@@ -200,7 +217,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     },
     {
       "id": "14",
@@ -216,7 +234,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     },
     {
       "id": "15",
@@ -232,7 +251,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     },
     {
       "id": "16",
@@ -248,7 +268,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/sonyProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/SonyDiscription"
     }
   ],
   "productXboxConsole": [
@@ -266,7 +287,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     },
     {
       "id": "2",
@@ -282,7 +304,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     },
 
     {
@@ -299,7 +322,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     },
 
     {
@@ -316,7 +340,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     },
 
     {
@@ -333,7 +358,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     },
 
     {
@@ -350,7 +376,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     },
 
     {
@@ -367,7 +394,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     },
 
     {
@@ -384,7 +412,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     },
 
     {
@@ -401,7 +430,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     },
 
     {
@@ -418,7 +448,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     },
 
     {
@@ -435,7 +466,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     },
 
     {
@@ -452,7 +484,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     },
 
     {
@@ -469,7 +502,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "2 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     },
 
     {
@@ -486,7 +520,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     },
 
     {
@@ -503,7 +538,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     },
 
     {
@@ -520,7 +556,8 @@
       "Ramcapacity": "16 Gigabyte",
       "Memorycapacity": "1 Terabyte",
       "productSetting": "http://localhost:3300/xboxProducTSetting",
-      "ProductReview": "true"
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     }
   ],
   "xboxProducTSetting": {
@@ -601,6 +638,32 @@
       "hederText": "Is the PS5 Pro worth buying?",
       "discription": "Given all the advanced features of the PS5 Pro, including a more powerful GPU, more storage space, Wi-Fi 7, and Game Boost mode, this console is an excellent option for professional gamers looking for visual quality and a smoother experience. If you are a gamer who values higher quality and speed in games and intend to play new and old games with better quality",
       "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/4.jpg"
+    }
+  ],
+  "XboxDiscription": [
+    {
+      "id": "1",
+      "hederText": "Introduction – Xbox Series X",
+      "discription": "Without a doubt, the magic employed by the Xbox engineers and the game developers themselves should not be underestimated. With this in mind, the raw power of the Xbox Series X only reveals part of the story. We have a new API, new game development tools, as well as new graphics capabilities and other valuable improvements. Oh, and let's not forget its new and attractive dashboard!",
+      "img": ""
+    },
+    {
+      "id": "2",
+      "hederText": "Extraordinary power",
+      "discription": " Goodbye to traditional design! This console has been completely redesigned to meet the needs of users and also to upgrade the hardware. It uses ray tracing technology, NVMe hardware and AMD Zen2 processor.",
+      "img": "https://exo.ir/image/catalog/Products/Microsoft/Xbox%20Series%20X%20Content/x1.jpg"
+    },
+    {
+      "id": "3",
+      "hederText": "Fantastic user interface",
+      "discription": "Xbox has designed a new connected and integrated ecosystem. This new ecosystem allows you to play the way you want and in the place you prefer. This integrated system is designed to provide you with an amazing experience. Regardless of which device you use within this integrated system, this ecosystem is committed to providing you with an enjoyable experience.You can spend less time waiting and more time playing, because with this improved user interface, less of your time will be wasted. This new ecosystem will keep you connected and make content sharing easier for you.",
+      "img": ""
+    },
+    {
+      "id": "4",
+      "hederText": "Awssome games",
+      "discription": "Exclusives definitely play a significant role in a console's sales and popularity. With the added power of Xbox, as well as the development of new game-making tools, we are seeing an increase in the quality of games in this generation. Even if we set aside many of the console's games, this console has always had an ace up its sleeve. In the following, we will become more familiar with this ace and other games that we are going to experience on this console:",
+      "img": "https://exo.ir/image/catalog/Products/Microsoft/Xbox%20Series%20X%20Content/x2.jpg"
     }
   ]
 }

@@ -11,7 +11,7 @@ const BoxDiscriptionItems = ({ ...item }) => {
   useEffect(() => {
     if (item.ProductReview) {
       axios
-        .get("http://localhost:3300/SonyDiscription")
+        .get(item.LinkDiscriptionPrdouct)
         .then((item) => {
           let afterIndexOne = item.data.slice(1);
           let index0Data = item.data[0];

@@ -34,9 +34,7 @@ const ComentBoxProducts = () => {
   } = styleComponent;
 
   const [valid, setValid] = useState(false);
-  const [comentValue, setComentValue] = useState("");
   const [userName, setUserName] = useState("");
-
   const [stare, setStare] = useState(5);
   const [hover, setHover] = useState(-1);
 
