@@ -1,6 +1,5 @@
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
 import styleComponents from "../components/component-Style/StyledComponentHeder";
 import logoImg from "./hederLogoImg/logo.png";
@@ -10,24 +9,44 @@ import SpeedOutlinedIcon from "@mui/icons-material/SpeedOutlined";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
+import ShoppingCartIconBox from "../ShoppingCart/ShoppingCartIcon";
 import { Link } from "react-router-dom";
 import style from "./heder.module.css";
+import { useContext } from "react";
+import contextUse from "../useContext/useContext";
 
-export default function Herder() {
-  const { StyledAppBar, CoustomToolbar, SerchField, BoxIcons } =
-    styleComponents;
+const Herder = () => {
+  const {
+    StyledAppBar,
+    CoustomToolbar,
+    SerchField,
+    BoxIcons,
+    Spans,
+    Icons,
+    TooltipBox,
+    LogoImg,
+    LinkRoter,
+  } = styleComponents;
+
+  const { valid, setValid } = useContext(contextUse);
+
   return (
     <div>
       <StyledAppBar>
         <CoustomToolbar>
-          <BoxIcons>
-            <ShoppingCartIcon></ShoppingCartIcon>
-            <Link to="/acount-login-Phone" style={{ color: "#858585" }}>
+          <div>
+            <BoxIcons>
+              <ShoppingCartIconBox
+                valid={valid}
+                setValid={setValid}
+              ></ShoppingCartIconBox>
+              {/* <Link to="/acount-login-Phone" style={{ color: "#858585" }}> */}
               <PersonIcon></PersonIcon>
-            </Link>
-          </BoxIcons>
+              {/* </Link> */}
+            </BoxIcons>
+          </div>
           <SerchField
-            placeholder="جستجو..."
+            placeholder="search..."
             variant="standard"
             InputProps={{
               startAdornment: (
@@ -39,47 +58,40 @@ export default function Herder() {
             }}
           />
           <Link to="/">
-            <img src={logoImg} alt="none_img" className={style.logo_img} />
+            <LogoImg src={logoImg} alt="😑" component="img"></LogoImg>
           </Link>
         </CoustomToolbar>
-        <Tooltip className={style.toolTip}>
-          <span className={style.spans}>
-            دسته بندی ها
-            <span className={style.spans}>
-              <Inventory2OutlinedIcon
-                className={style.icon_tool_Tip}
-              ></Inventory2OutlinedIcon>
-              جعبه باز
-            </span>
-            <span className={style.spans}>
-              <DashboardOutlinedIcon
-                className={style.icon_tool_Tip}
-              ></DashboardOutlinedIcon>
-              اسمبل هوشمند
-            </span>
-            <span className={style.spans}>
-              <SpeedOutlinedIcon
-                className={style.icon_tool_Tip}
-              ></SpeedOutlinedIcon>
-              اگزومارک
-            </span>
-          </span>
-          <span className={style.spans}>
-            <ArticleOutlinedIcon
-              className={style.icon_tool_Tip}
-            ></ArticleOutlinedIcon>
-            مگ
-          </span>
-          <span className={style.spans}>
-            <Link className={style.link} to="/about-us">
-              درباره ما
-            </Link>
-            <DensityMediumIcon
-              className={style.icon_tool_Tip}
-            ></DensityMediumIcon>
-          </span>
-        </Tooltip>
+        <TooltipBox>
+          <Spans component="span">
+            <LinkRoter component={Link}>Categories</LinkRoter>
+
+            <Icons component={Inventory2OutlinedIcon}></Icons>
+          </Spans>
+          <Spans component="span">
+            <LinkRoter component={Link}>Open box</LinkRoter>
+            <Icons component={Inventory2OutlinedIcon}></Icons>
+          </Spans>
+          <Spans component="span">
+            <LinkRoter component={Link}>Smart Assemble</LinkRoter>
+            <Icons component={DashboardOutlinedIcon}></Icons>
+          </Spans>
+          <Spans component="span">
+            <LinkRoter component={Link}>Exo mark</LinkRoter>
+            <Icons component={SpeedOutlinedIcon}></Icons>
+          </Spans>
+          <Spans component="span">
+            <LinkRoter component={Link}>Mag</LinkRoter>
+            <Icons component={ArticleOutlinedIcon}></Icons>
+          </Spans>
+          <Spans>
+            <LinkRoter component={Link} to="/about-us">
+              About Us
+            </LinkRoter>
+            <Icons component={DensityMediumIcon}></Icons>
+          </Spans>
+        </TooltipBox>
       </StyledAppBar>
     </div>
   );
-}
+};
+export default Herder;
