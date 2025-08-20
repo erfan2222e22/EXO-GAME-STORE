@@ -48,7 +48,12 @@ const ComentBoxProducts = () => {
     <ParentBpx>
       <HederText>comments</HederText>
 
-      <AddNewCommentBtn onClick={() => setValid(true)}>
+      <AddNewCommentBtn
+        onClick={(e) => {
+          e.stopPropagation();
+          setValid(true);
+        }}
+      >
         ADD NEW Coment +
       </AddNewCommentBtn>
 
@@ -58,7 +63,10 @@ const ComentBoxProducts = () => {
             <HederTextUserName>youname:</HederTextUserName>
             <InputUserName
               placeholder="Username:"
-              onChange={(e) => setUserName(e.target.value)}
+              onChange={(e) => {
+                e.stopPropagation();
+                setUserName(e.target.value);
+              }}
               value={userName}
             ></InputUserName>
           </ParentBoxUserName>
@@ -68,10 +76,12 @@ const ComentBoxProducts = () => {
               value={stare}
               precision={1}
               getLabelText={labelText}
-              onChange={(event, newValue) => {
+              onChange={(e, newValue) => {
+                e.stopPropagation();
                 setStare(newValue);
               }}
-              onChangeActive={(event, newHover) => {
+              onChangeActive={(e, newHover) => {
+                e.stopPropagation();
                 setHover(newHover);
               }}
               emptyIcon={
@@ -92,11 +102,20 @@ const ComentBoxProducts = () => {
             labels={labels}
             hover={hover}
             felingIcons={felingIcons}
+            setUserName={setUserName}
           />
-          <CloseBtn onClick={() => setValid(false)}>close</CloseBtn>
+          <CloseBtn
+            onClick={(e) => {
+              e.stopPropagation();
+              setValid(false);
+            }}
+          >
+            close
+          </CloseBtn>
         </Box>
       )}
     </ParentBpx>
   );
 };
+
 export default ComentBoxProducts;
