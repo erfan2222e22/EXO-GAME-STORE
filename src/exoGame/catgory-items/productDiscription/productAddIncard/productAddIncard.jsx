@@ -1,15 +1,34 @@
-import React from "react";
 import styleComponents from "../../../components/component-Style/StyleDiscriotionItems";
 import { Box } from "@mui/material";
 import { Typography } from "@mui/material";
-const ProductAddIncard = ({ SetTest, price, test }) => {
+import emmiter from "../../../../mitt/emmiter";
+
+const ProductAddIncard = ({
+  SetProductCounter,
+  price,
+  productCounter,
+  item,
+}) => {
   const { ParentBoxAddItems, BoxInputCounterItemsInBox, BoxAddItems } =
-  styleComponents;
+    styleComponents;
 
   const handelOnclickBtn = (e) => {
+    e.stopPropagation();
     if (price === "بزودی" || price === "ناموجود") {
       e.preventDefault();
+    } else {
+      emmiter.emit("massage", { cartList: item, counter: productCounter });
     }
+  };
+
+  const increseQty = (e) => {
+    e.stopPropagation();
+    SetProductCounter((preve) => preve + 1);
+  };
+
+  const decriseQty = (e) => {
+    e.stopPropagation();
+    SetProductCounter((preve) => (preve > 1 ? preve - 1 : 1));
   };
 
   return (
@@ -24,14 +43,14 @@ const ProductAddIncard = ({ SetTest, price, test }) => {
             left: "12px",
             fontSize: "15px",
           }}
-          onClick={() => SetTest((preve) => preve - 1)}
+          onClick={(e) => decriseQty(e)}
         >
           -
         </span>
         <BoxInputCounterItemsInBox
           component="input"
           placeholder="conter"
-          value={test}
+          value={productCounter}
         ></BoxInputCounterItemsInBox>
         <span
           role="button"
@@ -40,7 +59,7 @@ const ProductAddIncard = ({ SetTest, price, test }) => {
             right: "12px",
             fontSize: "15px",
           }}
-          onClick={() => SetTest((preve) => preve + 1)}
+          onClick={(e) => increseQty(e)}
         >
           +
         </span>

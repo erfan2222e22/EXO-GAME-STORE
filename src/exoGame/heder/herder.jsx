@@ -3,7 +3,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
 import styleComponents from "../components/component-Style/StyledComponentHeder";
 import logoImg from "./hederLogoImg/logo.png";
-import Tooltip from "@mui/material/Tooltip";
 import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
 import SpeedOutlinedIcon from "@mui/icons-material/SpeedOutlined";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
@@ -11,9 +10,9 @@ import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import ShoppingCartIconBox from "../ShoppingCart/ShoppingCartIcon";
 import { Link } from "react-router-dom";
-import style from "./heder.module.css";
 import { useContext } from "react";
 import contextUse from "../useContext/useContext";
+import { Box } from "@mui/system";
 
 const Herder = () => {
   const {
@@ -31,20 +30,20 @@ const Herder = () => {
   const { valid, setValid } = useContext(contextUse);
 
   return (
-    <div>
+    <Box>
       <StyledAppBar>
         <CoustomToolbar>
-          <div>
+          <Box>
             <BoxIcons>
               <ShoppingCartIconBox
                 valid={valid}
                 setValid={setValid}
               ></ShoppingCartIconBox>
-              {/* <Link to="/acount-login-Phone" style={{ color: "#858585" }}> */}
-              <PersonIcon></PersonIcon>
-              {/* </Link> */}
+              <Link to="/acount-login-Phone" style={{ color: "#858585" }}>
+                <PersonIcon></PersonIcon>
+              </Link>
             </BoxIcons>
-          </div>
+          </Box>
           <SerchField
             placeholder="search..."
             variant="standard"
@@ -64,7 +63,6 @@ const Herder = () => {
         <TooltipBox>
           <Spans component="span">
             <LinkRoter component={Link}>Categories</LinkRoter>
-
             <Icons component={Inventory2OutlinedIcon}></Icons>
           </Spans>
           <Spans component="span">
@@ -91,7 +89,7 @@ const Herder = () => {
           </Spans>
         </TooltipBox>
       </StyledAppBar>
-    </div>
+    </Box>
   );
 };
 export default Herder;

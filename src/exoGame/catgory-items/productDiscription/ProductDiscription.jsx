@@ -6,7 +6,7 @@ import ProductDiscriptionImg from "./productionImg/productionDiscriotionImg";
 import ProductionHeder from "./productionHeder/productionHeder";
 import ProductInformation from "./productInformation/productInformation";
 import ProductAddIncard from "./productAddIncard/productAddIncard";
-import { Rating } from "@mui/material";
+
 const ProductDiscription = () => {
   const location = useLocation();
   const { item } = location.state || {};
@@ -24,11 +24,11 @@ const ProductDiscription = () => {
     Memorycapacity,
   } = item || {};
   const { ParentBox } = styleComponent;
-  const [test, SetTest] = useState(1);
+  const [productCounter, SetProductCounter] = useState(1);
 
   useEffect(() => {
-    test < 0 && SetTest(0);
-  }, [test, CentralProcessingUnit]);
+    productCounter < 0 && SetProductCounter(0);
+  }, [productCounter, CentralProcessingUnit]);
 
   return (
     <div
@@ -73,7 +73,12 @@ const ProductDiscription = () => {
               genration={genration}
               ConsoleType={ConsoleType}
             />
-            <ProductAddIncard SetTest={SetTest} price={price} test={test} />
+            <ProductAddIncard
+              SetProductCounter={SetProductCounter}
+              price={price}
+              productCounter={productCounter}
+              item={item}
+            />
           </Box>
         </Box>
       </ParentBox>
