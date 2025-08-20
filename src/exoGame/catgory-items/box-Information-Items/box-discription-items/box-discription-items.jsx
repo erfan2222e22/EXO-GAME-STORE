@@ -74,7 +74,10 @@ const BoxDiscriptionItems = ({ ...item }) => {
             color: "#03c03c",
             margin: "15px",
           }}
-          onClick={() => setValid(false)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setValid(false);
+          }}
         >
           close
         </span>

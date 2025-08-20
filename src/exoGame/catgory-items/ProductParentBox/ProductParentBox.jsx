@@ -10,6 +10,7 @@ const ProductParentBoxComponent = ({
   const { ProductParentBox, BoxProduction, ImgProduction } = styleComponents;
 
   const navigate = useNavigate();
+
   const handelOnClikc = (item) => {
     axios(`http://localhost:3300/${pathName}/${item.id}`)
       .then(() => {

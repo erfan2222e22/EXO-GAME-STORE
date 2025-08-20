@@ -38,7 +38,6 @@ const Spans = styled(Box)({
   cursor: "pointer",
   fontSize: "13px",
   color: "#606060",
-  // padding: "5px",
 });
 
 const LogoImg = styled(Box)({
