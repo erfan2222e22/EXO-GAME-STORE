@@ -7,31 +7,45 @@ import FilterTolsValue from "../FilterTolsValue/FilterTolsValue";
 import { useLocation } from "react-router-dom";
 import FilterBtnComponent from "../FilterBtn/FilterBtn";
 import axios from "axios";
+
 const Catgory = () => {
   const { MainBox } = styleComponents; // styled component
   const location = useLocation();
   const { product = [], pathName } = location.state || {};
-  const filterValuesTols = product[0]?.productSetting;
-  const [FilterValue, setFilterValue] = useState({
-    //main state
-    company: "",
-    genration: "",
-    minPrice: 0,
-    maxPrice: 0,
-  });
+  const filterValuesTols = product[0].productSetting;
+  //main state
+  const [FilterValue, setFilterValue] = useState({});
+
   const initialItems = product;
   const [originalItems, setOriginalItems] = useState(product); // all items catch from json server
   const [filteredItems, setFilteredItems] = useState([]); //flterd items between slected filters
 
-  const [kind_filters, setKind_filters] = useState([]); //filterd valus
+  const [kind_filters, setKind_filters] = useState([]); //filterd valus box
   const [value_kind_filter, setKind_filters_value] = useState();
+  // const [test, setTest] = useState({});
+
+  const dynamicFilterVlause = (itemData) => {
+    const itemDataValue = itemData.data.filterValues[0];
+    let productData = Object.fromEntries(
+      Object.entries(itemDataValue).map(([item, value]) => {
+        if (typeof value === "number") {
+          return [item, 0];
+        } else {
+          return [item, ""];
+        }
+      })
+    );
+    setFilterValue(productData);
+    console.log(FilterValue);
+  };
 
   useEffect(() => {
     // catch data from server and set items on state items
     axios(filterValuesTols)
-      .then((item) => {
-        setKind_filters(item.data.kindofFilter);
-        setKind_filters_value(item.data.filterValues);
+      .then((itemData) => {
+        dynamicFilterVlause(itemData);
+        setKind_filters_value(itemData.data.filterValues);
+        setKind_filters(itemData.data.kindofFilter);
       })
       .catch((err) => {
         console.log(err);
@@ -49,20 +63,19 @@ const Catgory = () => {
 
   const filterItmes = () => {
     // check items and set filters on state
-    let FilterItems = originalItems.filter(
-      (item) =>
-        (FilterValue.company === "" || item.company === FilterValue.company) &&
-        (FilterValue.genration === "" ||
-          item.genration === FilterValue.genration) &&
-        (FilterValue.minPrice === 0 ||
-          parseInt(item.price) >= FilterValue.minPrice) &&
-        (FilterValue.maxPrice === 0 ||
-          parseInt(item.price) <= FilterValue.maxPrice)
+    const { company, name, genration, minPrice, maxPrice } = FilterValue || {};
+    const filterdProducts = originalItems.filter(
+      (fil) =>
+        (fil.company !== undefined && fil.company === company) ||
+        (fil.name !== undefined && fil.name === name) ||
+        (fil.genration !== undefined && fil.genration === genration) ||
+        parseInt(fil.price) >= minPrice ||
+        parseInt(fil.price) <= maxPrice
     );
-    setFilteredItems(FilterItems);
-    console.log(originalItems);
-  };
 
+    setFilteredItems(filterdProducts);
+    console.log(pathName);
+  };
   return (
     <>
       <BoxHederFilterPrice
@@ -96,5 +109,4 @@ const Catgory = () => {
     </>
   );
 };
-
 export default Catgory;
