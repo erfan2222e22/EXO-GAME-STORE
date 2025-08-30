@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styleComponents from "../../components/component-Style/StyleCatgory";
 const RemoveFilterdItems = ({
   FilterValue,
@@ -7,27 +7,35 @@ const RemoveFilterdItems = ({
 }) => {
   const { HeadrBox, HeadrText, DelteBtn } = styleComponents;
 
+  const counter = (function () {
+    const show = (arr) => {
+      const arry = Object.entries(arr)
+        .map(([_, value]) => value !== "" || value > 0)
+        .find((value) => {
+          return value === true;
+        });
+      return arry;
+    };
+    return {
+      doSomthing(arr) {
+        return show(arr);
+      },
+    };
+  })();
+  const result = counter.doSomthing(FilterValue);
+
   const delteFilterItemsBtn = () => {
-    setFilterValue((preve) => ({
-      ...preve,
-      company: "",
-      genration: "",
-      maxPrice: 0,
-      minPrice: 0,
-    }));
+    setFilterValue((FilterValue = ""));
     setFilteredItems([]);
   };
 
   return (
     <HeadrBox>
-      <HeadrText>فیلتر کالا </HeadrText>
-      {FilterValue.company.length > 0 ||
-      FilterValue.genration.length > 0 ||
-      FilterValue.maxPrice > 20000 ||
-      FilterValue.minPrice > 100 ? (
-        <DelteBtn onClick={delteFilterItemsBtn}>حذف فیلتر</DelteBtn>
+      <HeadrText>filter</HeadrText>
+      {result ? (
+        <DelteBtn onClick={delteFilterItemsBtn}>delteitems</DelteBtn>
       ) : (
-        console.log("")
+        <></>
       )}
     </HeadrBox>
   );
