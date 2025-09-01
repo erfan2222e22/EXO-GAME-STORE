@@ -1,26 +1,27 @@
 import styleComponents from "../../components/component-Style/StyleCatgory";
 import { Typography } from "@mui/material";
-const BoxHederFilterPrice = ({
-  originalItems,
-  filterItmes,
-  setFilterValue,
-  setFilteredItems,
-  kind_filters,
-  setOriginalItems,
-  initialItems,
-  product,
-}) => {
+import { useState } from "react";
+const BoxHederFilterPrice = ({ originalItems, setFilteredItems }) => {
   const { BoxHderFilterPrice, SortFilterText } = styleComponents;
-
+  const [valid, setValid] = useState(false);
+  const [valid2, setValid2] = useState(false);
   const heightPriceFilterItems = () => {
-    originalItems.sort((a, b) => b.price - a.price);
-    console.log(product);
-    filterItmes();
+    const highe = originalItems.sort((a, b) => b.price - a.price);
+    setFilteredItems((prev) => (prev = highe));
+    setValid(true);
+    if (valid2) {
+      setValid2(false);
+      setFilteredItems([]);
+    }
   };
   const lowerPriceFilterItems = () => {
-    originalItems.sort((a, b) => a.price - b.price);
-    console.log(product);
-    filterItmes();
+    const low = originalItems.sort((a, b) => a.price - b.price);
+    setFilteredItems((prev) => (prev = low));
+    setValid2(true);
+    if (valid) {
+      setValid(false);
+      setFilteredItems([]);
+    }
   };
 
   const defualtProductSorted = () => {
@@ -32,8 +33,8 @@ const BoxHederFilterPrice = ({
     //   minPrice: 0,
     // }));
     // setOriginalItems(initialItems);
-    // setFilteredItems(initialItems);
-    console.log(originalItems);
+    // setFilteredItems([]);
+    // console.log(originalItems);
   };
 
   return (
