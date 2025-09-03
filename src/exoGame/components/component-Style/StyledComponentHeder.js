@@ -29,8 +29,11 @@ const BoxIcons = styled(Box)({
   color: "#858585",
   cursor: "pointer",
   display: "flex",
-  gap: "20px",
-  fontSize: "30",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "10px",
+  height: "100px",
+  width: "150px",
 });
 
 const Spans = styled(Box)({
@@ -66,6 +69,7 @@ const TooltipBox = styled(Tooltip)({
 const LinkRoter = styled(Link)({
   textDecoration: "none",
   color: "#606060",
+  width: "30px",
 });
 
 const styleComponents = {
