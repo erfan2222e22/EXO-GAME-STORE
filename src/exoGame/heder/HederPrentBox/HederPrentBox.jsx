@@ -5,9 +5,14 @@ import { useState, useEffect } from "react";
 
 const HederPrentBox = () => {
   const [valid, setValid] = useState(false);
+  const [ProductLength, setProductLength] = useState(0);
 
   const globalFunction = () => {
     setValid(false);
+  };
+
+  const callback = (childeData) => {
+    setProductLength((prev) => (prev = childeData));
   };
 
   useEffect(() => {
@@ -15,8 +20,8 @@ const HederPrentBox = () => {
   }, []);
 
   return (
-    <contextUse.Provider value={{ valid, setValid }}>
-      {valid && <ShopCartBox></ShopCartBox>}
+    <contextUse.Provider value={{ valid, setValid, ProductLength }}>
+      {valid && <ShopCartBox sendmassage={callback}></ShopCartBox>}
       <Herder></Herder>
     </contextUse.Provider>
   );

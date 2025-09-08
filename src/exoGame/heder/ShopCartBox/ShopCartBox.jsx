@@ -3,15 +3,37 @@ import ControlShopingCart from "../ControlShopingCart/controlShopingCart";
 import emmiter from "../../../mitt/emmiter";
 import contextUse from "../../useContext/useContext";
 import styleComponent from "../../components/component-Style/StyleShopCartParentBox";
-const ShopCartBox = () => {
+
+const ShopCartBox = ({ sendmassage }) => {
   const [ProductsInShopCart, setProductsInShopCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
 
   const { ParentBox, HederText, Img } = styleComponent;
 
+  // Load cart data from localStorage on component mount
+  useEffect(() => {
+    try {
+      const savedCart = localStorage.getItem("shoppingCart");
+      if (savedCart) {
+        const parsedCart = JSON.parse(savedCart);
+        setProductsInShopCart(parsedCart);
+
+        // Calculate total price
+        const total = parsedCart.reduce(
+          (sum, item) => sum + item.price * item.qty,
+          0
+        );
+        setTotalPrice(total);
+      }
+    } catch (error) {
+      console.error("Error loading cart from localStorage:", error);
+    }
+  }, []);
+
   useEffect(() => {
     const handler = (data) => {
-      const { id, price, img, nameProduct } = data.cartList;
+      const productsData = data.cartList;
+      const { id, price, img, nameProduct } = productsData;
       const qtyToAdd = Number(data.counter) || 1;
 
       setProductsInShopCart((prev) => {
@@ -21,7 +43,6 @@ const ShopCartBox = () => {
             p.id === id ? { ...p, qty: (p.qty || 1) + qtyToAdd } : p
           );
         }
-
         return [
           ...prev,
           {
@@ -44,6 +65,24 @@ const ShopCartBox = () => {
       }
     };
   }, []);
+
+  // Save cart data to localStorage whenever ProductsInShopCart changes
+  useEffect(() => {
+    try {
+      localStorage.setItem("shoppingCart", JSON.stringify(ProductsInShopCart));
+
+      // Calculate and update total price
+      const total = ProductsInShopCart.reduce(
+        (sum, item) => sum + item.price * item.qty,
+        0
+      );
+      setTotalPrice(total);
+
+      sendmassage(ProductsInShopCart.length);
+    } catch (error) {
+      console.error("Error saving cart to localStorage:", error);
+    }
+  }, [ProductsInShopCart, sendmassage]);
 
   return (
     <ParentBox>

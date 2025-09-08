@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import styleComponents from "../../components/component-Style/StyleCatgory";
+import styleComponents from "../../components/component-Style/StyleRemoveFilterdItems";
 const RemoveFilterdItems = ({
   FilterValue,
   setFilterValue,
@@ -7,14 +6,14 @@ const RemoveFilterdItems = ({
 }) => {
   const { HeadrBox, HeadrText, DelteBtn } = styleComponents;
 
-  const counter = (function () {
+  const showDelteBtn = (function () {
     const show = (arr) => {
-      const arry = Object.entries(arr)
+      const itemsValue = Object.entries(arr)
         .map(([_, value]) => value !== "" || value > 0)
         .find((value) => {
           return value === true;
         });
-      return arry;
+      return itemsValue;
     };
     return {
       doSomthing(arr) {
@@ -22,21 +21,19 @@ const RemoveFilterdItems = ({
       },
     };
   })();
-  const result = counter.doSomthing(FilterValue);
+  const result = showDelteBtn.doSomthing(FilterValue);
 
   const delteFilterItemsBtn = () => {
-    setFilterValue((FilterValue = ""));
+    setFilterValue((prev) =>
+      Object.fromEntries(Object.keys(prev).map((key) => [key, ""]))
+    );
     setFilteredItems([]);
   };
 
   return (
     <HeadrBox>
       <HeadrText>filter</HeadrText>
-      {result ? (
-        <DelteBtn onClick={delteFilterItemsBtn}>delteitems</DelteBtn>
-      ) : (
-        <></>
-      )}
+      {result && <DelteBtn onClick={delteFilterItemsBtn}>delteitems</DelteBtn>}
     </HeadrBox>
   );
 };
