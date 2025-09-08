@@ -7,7 +7,6 @@ const BoxHederFilterPrice = ({ originalItems, setFilteredItems, setValid }) => {
     styleComponents;
   const [switchToMaxPrice, setSwitchToMaxPrice] = useState(false);
   const [switchToLowerPrice, setSwitchToLowerPrice] = useState(false);
-
   const heightPriceFilterItems = () => {
     const highe = originalItems.sort((a, b) => b.price - a.price);
     setFilteredItems((prev) => (prev = highe));
