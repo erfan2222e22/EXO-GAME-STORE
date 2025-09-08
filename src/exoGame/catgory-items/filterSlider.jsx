@@ -1,5 +1,5 @@
 import { Typography, Box, Slider } from "@mui/material";
-import component from "../components/component-Style/StyleCatgory";
+import component from "../components/component-Style/StyleFilterSlider";
 import { useEffect, useState } from "react";
 
 const FilterSlider = ({ onFilterChange }) => {

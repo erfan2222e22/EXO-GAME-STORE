@@ -560,11 +560,214 @@
       "LinkDiscriptionPrdouct": "http://localhost:3300/XboxDiscription"
     }
   ],
+
+  "cpu-product": [
+    {
+      "id": "1",
+      "nameProduct": "Processor-AMD Ryzen 9 9900X3D - Tray",
+      "company": "Amd",
+      "img": "https://exo.ir/image/cache/catalog/Products/AMD/CPU/Ryzen/9000-Series/Ryzen-9/AMD-Ryzen-9-Tray-1-1500x1500.jpg",
+      "price": "610",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "Athlon",
+      "IntegratedGraphics": "false",
+      "NumberofCores": "10",
+      "NumberOfAllStrings": "128"
+    },
+    {
+      "id": "2",
+      "nameProduct": "Processor-AMD Ryzen 9 9800X3D - Tray",
+      "company": "Amd",
+      "img": "https://exo.ir/image/cache/catalog/Products/AMD/CPU/Ryzen/9000-Series/Ryzen-9/AMD-Ryzen-9-BOX-1-300x300.jpg",
+      "price": "630",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "pention",
+      "IntegratedGraphics": "false",
+      "NumberofCores": "10",
+      "NumberOfAllStrings": "128"
+    },
+    {
+      "id": "3",
+      "nameProduct": "Processor intel Core 7 265k-tray",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/Intel/CPU/Desktop/Core-Ultra-Series/Intel-Core-Ultra-Tray-300x300.jpg",
+      "price": "1000",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "corei7",
+      "IntegratedGraphics": "false",
+      "NumberofCores": "9",
+      "NumberOfAllStrings": "13"
+    },
+    {
+      "id": "4",
+      "nameProduct": "Processor intel Core 5 245k-tray",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/Intel/CPU/Desktop/Core-Ultra-Series/Intel-Core-Ultra-Tray-300x300.jpg",
+      "price": "990",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "corei3",
+      "IntegratedGraphics": "true",
+      "NumberofCores": "9",
+      "NumberOfAllStrings": "18"
+    },
+    {
+      "id": "5",
+      "nameProduct": "Processor Amd 9 9900k",
+      "company": "Amd",
+      "img": "https://exo.ir/image/cache/catalog/Products/AMD/CPU/Ryzen/9000-Series/Ryzen-9/AMD-Ryzen-9-BOX-1-300x300.jpg",
+      "price": "2000",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "carleon",
+      "IntegratedGraphics": "true",
+      "NumberofCores": "8",
+      "NumberOfAllStrings": "13"
+    },
+    {
+      "id": "6",
+      "nameProduct": "Processor Amd 5 9600K",
+      "company": "Amd",
+      "img": "https://exo.ir/image/cache/catalog/Products/AMD/CPU/Ryzen/9000-Series/Ryzen-5/AMD-Ryzen-5-BOX-1-300x300.jpg",
+      "price": "666",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "carleon",
+      "IntegratedGraphics": "true",
+      "NumberofCores": "7",
+      "NumberOfAllStrings": "18"
+    },
+    {
+      "id": "7",
+      "nameProduct": "Processor Amd 9 966K",
+      "company": "Amd",
+      "img": "https://exo.ir/image/cache/catalog/Products/Intel/CPU/Desktop/Core-Ultra-Series/Intel-Core-Ultra-Tray-300x300.jpg",
+      "price": "10",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "pention",
+      "IntegratedGraphics": "true",
+      "NumberofCores": "8",
+      "NumberOfAllStrings": "13"
+    },
+    {
+      "id": "8",
+      "nameProduct": "Processor Amd 5 9690K",
+      "company": "Amd",
+      "img": "https://exo.ir/image/cache/catalog/Products/Intel/CPU/Desktop/Core-Ultra-Series/Intel-Core-Ultra-Tray-300x300.jpg",
+      "price": "333",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "Athlon",
+      "IntegratedGraphics": "true",
+      "NumberofCores": "6",
+      "NumberOfAllStrings": "18"
+    }
+  ],
+
+  "cpuSetting": {
+    "filterValues": [
+      {
+        "ProcessorSeries": [
+          "corei3",
+          "corei5",
+          "Athlon",
+          "carleon",
+          "pention",
+          "corei9"
+        ],
+        "IntegratedGraphics": ["true", "false"],
+        "company": ["Amd", "intel"],
+        "name": ["erfan", "ehsan"],
+        "NumberofCores": ["7", "6", "9", "10", "8"],
+        "NumberOfAllStrings": ["128", "13", "18"],
+        "minPrice": "0",
+        "maxPrice": "0"
+      }
+    ],
+    "kindofFilter": [
+      {
+        "id": "1",
+        "label": "Manufacturers",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "company"
+      },
+      {
+        "id": "2",
+        "label": "price Range",
+        "kindOfFilter": "Slider"
+      },
+
+      {
+        "id": "3",
+        "label": "Processor series",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "ProcessorSeries"
+      },
+      {
+        "id": "4",
+        "label": "Integrated Graphics",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "IntegratedGraphics"
+      },
+      {
+        "id": "5",
+        "label": "NumberofCores",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "NumberofCores"
+      },
+      {
+        "id": "6",
+        "label": "NumberOfAllStrings",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "NumberOfAllStrings"
+      }
+    ]
+  },
+  "cpuDiscription": [
+    {
+      "id": "1",
+      "hederText": "Product review",
+      "discription": "In recent years, the PlayStation 5 console has managed to establish itself in the market, offering an unparalleled video game experience. Now, with the introduction of the PS5 Pro, gamers are eagerly looking to examine the differences between this new version and the standard PS5. In this article, we will first provide a comparison between the two models, and then discuss the specific features and capabilities of the PS5 Pro.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/1.jpg"
+    },
+    {
+      "id": "2",
+      "hederText": "Differences in graphics and processing power",
+      "discription": "The PS5 Pro comes to market with an upgraded graphics card that has approximately 67 percent more compute units compared to the regular PS5. This translates to a 45 percent increase in graphical processing power, as well as the ability to run games with higher visual fidelity. The PS5 Pro also utilizes a new technology called PlayStation Spectral Super Resolution, which uses artificial intelligence to display images with higher clarity and prevents frame rate drops.In terms of the processor, the PS5 Pro uses the same 8-core AMD Zen 2 processor as the standard version, but with an improved processing speed that can increase to 3.85 GHz when necessary, whereas the regular version is limited to 3.5 GHz. This helps the PS5 Pro in more demanding moments.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/2.jpg"
+    },
+    {
+      "id": "3",
+      "hederText": "Improved and customizable design",
+      "discription": "A new feature introduced in the PS5 Pro is Game Boost mode, specifically designed for PS4 games. This capability enhances the experience of older games with better resolution and speed, allowing gamers to enjoy over 8500 titles with higher quality.Improved and Customizable DesignIn terms of design, the PS5 Pro is very similar to the PS5 Slim model and comes in a size relatively smaller than the original model. This new version",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/3.jpg"
+    },
+    {
+      "id": "4",
+      "hederText": "Is the PS5 Pro worth buying?",
+      "discription": "Given all the advanced features of the PS5 Pro, including a more powerful GPU, more storage space, Wi-Fi 7, and Game Boost mode, this console is an excellent option for professional gamers looking for visual quality and a smoother experience. If you are a gamer who values higher quality and speed in games and intend to play new and old games with better quality",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/4.jpg"
+    }
+  ],
+
   "xboxProducTSetting": {
     "filterValues": [
       {
-        "manufacturers": ["xbox"],
-        "generation": ["Ninth", "Eighth"]
+        "generation": ["Ninth", "Eighth"],
+        "minPirce": "0",
+        "maxPrice": "0"
       }
     ],
     "kindofFilter": [
@@ -580,7 +783,7 @@
         "kindOfFilter": "Slider"
       },
       {
-        "id": "4",
+        "id": "3",
         "label": "genration",
         "kindOfFilter": "cheCheckbox",
         "filterType": "generation"
@@ -590,27 +793,22 @@
   "sonyProducTSetting": {
     "filterValues": [
       {
-        "manufacturers": ["Sony"],
-        "generation": ["Ninth", "Eighth"]
+        "genration": ["Ninth", "Eighth"],
+        "minPirce": "0",
+        "maxPrice": "0"
       }
     ],
     "kindofFilter": [
       {
         "id": "1",
-        "label": "تولید کنندگان",
-        "kindOfFilter": "cheCheckbox",
-        "filterType": "manufacturers"
-      },
-      {
-        "id": "2",
-        "label": "محدوده قیمت",
+        "label": "price Range",
         "kindOfFilter": "Slider"
       },
       {
-        "id": "4",
-        "label": "نسل",
+        "id": "2",
+        "label": "genration",
         "kindOfFilter": "cheCheckbox",
-        "filterType": "generation"
+        "filterType": "genration"
       }
     ]
   },

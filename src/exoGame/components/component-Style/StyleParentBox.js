@@ -7,8 +7,8 @@ const ProductParentBox = styled(Box)(({ theme }) => ({
   marginTop: "130px",
   overflow: "hidden",
   display: "grid",
-  gap: "10px",
-  backgroundColor: "white",
+  gap: "20px",
+  backgroundColor: "#fff",
   gridTemplateColumns: "repeat(4, 1fr)",
   [theme.breakpoints.down("xs")]: {
     marginLeft: "1%",
@@ -46,6 +46,7 @@ const BoxProduction = styled(Box)(({ theme }) => ({
   "&:hover": {
     borderColor: "#03c03c",
   },
+  [theme.breakpoints.down("md")]: { width: "200px" },
   [theme.breakpoints.down("sm")]: { margin: "0 auto" },
 }));
 
