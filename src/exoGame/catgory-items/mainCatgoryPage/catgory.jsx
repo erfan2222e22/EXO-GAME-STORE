@@ -9,24 +9,24 @@ import FilterBtnComponent from "../FilterBtn/FilterBtn";
 import axios from "axios";
 
 const Catgory = () => {
-  const { MainBox } = styleComponents; // styled component
+  const { MainBox, SmallSizeMainBox } = styleComponents; // styled component
   const location = useLocation();
   const { product = [], pathName } = location.state || {};
   const filterValuesTols = product[0].productSetting;
   //main state
   const [FilterValue, setFilterValue] = useState({});
 
-  const initialItems = product;
+  // const initialItems = product;
   const [originalItems, setOriginalItems] = useState(product); // all items catch from json server
   const [filteredItems, setFilteredItems] = useState([]); //flterd items between slected filters
 
   const [kind_filters, setKind_filters] = useState([]); //filterd valus box
   const [value_kind_filter, setKind_filters_value] = useState();
-  // const [test, setTest] = useState({});
 
+  const [valid, setValid] = useState(false);
   const dynamicFilterVlause = (itemData) => {
     const itemDataValue = itemData.data.filterValues[0];
-    let productData = Object.fromEntries(
+    let productDataKyeAndValuse = Object.fromEntries(
       Object.entries(itemDataValue).map(([item, value]) => {
         if (typeof value === "number") {
           return [item, 0];
@@ -35,8 +35,7 @@ const Catgory = () => {
         }
       })
     );
-    setFilterValue(productData);
-    console.log(FilterValue);
+    setFilterValue(productDataKyeAndValuse);
   };
 
   useEffect(() => {
@@ -62,36 +61,66 @@ const Catgory = () => {
   };
 
   const filterItmes = () => {
-    // check items and set filters on state
-    const { company, name, genration, minPrice, maxPrice } = FilterValue || {};
-    const filterdProducts = originalItems.filter(
-      (fil) =>
-        (fil.company !== undefined && fil.company === company) ||
-        (fil.name !== undefined && fil.name === name) ||
-        (fil.genration !== undefined && fil.genration === genration) ||
-        parseInt(fil.price) >= minPrice ||
-        parseInt(fil.price) <= maxPrice
-    );
+    const { minPrice, maxPrice, ...restFilters } = FilterValue || {};
 
-    setFilteredItems(filterdProducts);
-    console.log(pathName);
+    const activeFilters = Object.entries(restFilters).filter(([_, value]) => {
+      return (
+        value !== "" && value !== 0 && value !== null && value !== undefined
+      );
+    });
+
+    const hasMin = typeof minPrice === "number" && minPrice > 0;
+    const hasMax = typeof maxPrice === "number" && maxPrice > 0;
+    if (activeFilters.length === 0 && !hasMin && !hasMax) {
+      setFilteredItems(originalItems);
+      return;
+    }
+
+    const filtered = originalItems.filter((item) => {
+      const price = parseInt(item.price, 10);
+      const priceOk =
+        (!hasMin || price >= minPrice) && (!hasMax || price <= maxPrice);
+      if (!priceOk) return false;
+      return activeFilters.every(([key, value]) => item[key] === value);
+    });
+
+    setFilteredItems(filtered);
   };
+
   return (
     <>
       <BoxHederFilterPrice
-        filterItmes={filterItmes}
         originalItems={originalItems}
-        setFilterValue={setFilterValue}
         setFilteredItems={setFilteredItems}
-        setOriginalItems={setOriginalItems}
-        initialItems={initialItems}
-        product={product}
+        setValid={setValid}
       />
       <ProductParentBoxComponent
         filteredItems={filteredItems}
         originalItems={originalItems}
         pathName={pathName}
       />
+      {valid && (
+        <SmallSizeMainBox>
+          <>
+            <button onClick={() => setValid((prev) => (prev = false))}>
+              ✖
+            </button>
+          </>
+          <RemoveFilterdItems
+            FilterValue={FilterValue}
+            setFilterValue={setFilterValue}
+            setFilteredItems={setFilteredItems}
+          />
+          <FilterTolsValue
+            FilterValue={FilterValue}
+            kind_filters={kind_filters}
+            setFilterValue={setFilterValue}
+            handeOnClick={handeOnClick}
+            itemsSetting={value_kind_filter}
+          />
+          <FilterBtnComponent filterItmes={filterItmes} />
+        </SmallSizeMainBox>
+      )}
       <MainBox>
         <RemoveFilterdItems
           FilterValue={FilterValue}
@@ -99,6 +128,7 @@ const Catgory = () => {
           setFilteredItems={setFilteredItems}
         />
         <FilterTolsValue
+          FilterValue={FilterValue}
           kind_filters={kind_filters}
           setFilterValue={setFilterValue}
           handeOnClick={handeOnClick}
