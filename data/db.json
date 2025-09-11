@@ -561,6 +561,1461 @@
     }
   ],
 
+  "gpu-product": [
+    {
+      "id": "1",
+      "nameProduct": "Asus-Dual-Radon-8gb",
+      "company": "Asus",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphic-Card/AMD/Dual-Series/9000-Series/Dual-Radeon-RX-9060-XT-8GB/Dual-Radeon-RX-9060-XT-8GB-8-300x300.webp",
+      "price": "1000",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "true",
+      "GPUManufacturer": "Amd",
+      "GPUName": "RX 6800 XT",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "8GB"
+    },
+    {
+      "id": "2",
+      "nameProduct": "Asus-Dual-Radon-12gb",
+      "company": "Asus",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphic-Card/AMD/Prime-Series/RX-9000-Series/Prime-RX-9060-XT-OC-8GB/Prime-RX-9060-XT-OC-8GB-9-300x300.webp",
+      "price": "1500",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Amd",
+      "GPUName": "RX 6800 XT",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "12GB"
+    },
+    {
+      "id": "3",
+      "nameProduct": "Asus-Rog-5090-32gb",
+      "company": "Asus",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphic-Card/NVIDIA/ROG-Astral-Series/RTX-5000-Series/RTX-5090-Dhahab-OC-32GB/Asus-ROG-Astral-RTX-5090-Dhahab-OC-32GB-1-300x300.webp",
+      "price": "3500",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Amd",
+      "GPUName": "RTX 5090",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "32GB"
+    },
+    {
+      "id": "4",
+      "nameProduct": "Asus-Rog-5060-8gb",
+      "company": "Asus",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphic-Card/NVIDIA/Dual-Series/RTX-5000-Series/dual-rtx-5060-8gb/asus-dual-rtx-5060-o8g-1-300x300.webp",
+      "price": "900",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Amd",
+      "GPUName": "RTX 5060",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "8GB"
+    },
+    {
+      "id": "5",
+      "nameProduct": "Zotac-Rog-5050-8gb",
+      "company": "Nvidia",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Graphic-Card/nVIDIA/Ventus-Series/RTX-5000-Series/RTX-5050-8G-Ventus-2X/msi-rtx-5050-ventus-2x-8gb-1-300x300.webp",
+      "price": "950",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 5050",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "8GB"
+    },
+    {
+      "id": "6",
+      "nameProduct": "mis-Rog-5060-ti-8gb",
+      "company": "Nvidia",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Graphic-Card/nVIDIA/Shadow-Series/RTX-5000-Series/RTX-5060-Ti-Shadow-2X-8G/msi-rtx-5060-ti-shadow-2x-oc-8g-1-300x300.webp",
+      "price": "1020",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 5060-ti",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "8GB"
+    },
+    {
+      "id": "7",
+      "nameProduct": "Asus-Rog-4070-12gb",
+      "company": "Nvidia",
+      "img": "https://exo.ir/image/cache/catalog/Products/Gigabyte/Graphic%20Cards/NVIDIA/RTX-4000-Series/RTX-4070-AERO-OC-12G/RTX-4070-AERO-OC-12G-1-300x300.webp",
+      "price": "1300",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 4070",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "12GB"
+    },
+    {
+      "id": "8",
+      "nameProduct": "Asus-Rog-3060-16gb",
+      "company": "Nvidia",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphics%20Cards/NVIDIA/RTX%203000%20Series/ASUS-DUAL-RTX-3060-O12G/asus-dual-rtx-3060-o12g-1-300x300.jpg",
+      "price": "900",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 3060",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "12GB"
+    },
+    {
+      "id": "9",
+      "nameProduct": "Asus-Rog-3070-16gb",
+      "company": "Asrock",
+      "img": "https://exo.ir/image/cache/catalog/Products/ZOTAC/Graphic-Cards/X-GAMING-Series/RTX-3000-Series/RTX-3070-OC-8GB/Zotac-RTX-3070-X-GAMING-OC-8GB-1-300x300.jpg",
+      "price": "800",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 3070",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "12GB"
+    },
+    {
+      "id": "9",
+      "nameProduct": "Asus-Rog-3070-8gb",
+      "company": "Nvidia",
+      "img": "https://exo.ir/image/cache/catalog/Products/ZOTAC/Graphic-Cards/NVIDIA-RTX-3000-Series/Zotac-RTX-3070-Twin-Edge-White-Edition-8GB-LHR/Zotac-RTX-3070-Twin-Edge-White-Edition-8GB-LHR-1-300x300.jpg",
+      "price": "990",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 3070",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "8GB"
+    },
+    {
+      "id": "10",
+      "nameProduct": "Asus-Rog-3080-16gb",
+      "company": "Asrock",
+      "img": "https://exo.ir/image/cache/catalog/Products/Inno3D/Graphic-Card/RTX-3000-Series/RTX-3070-iChill-X4-8GB/RTX-3070-iChill-X4-8GB-3-300x300.jpeg",
+      "price": "1300",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 3080",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "16GB"
+    },
+    {
+      "id": "11",
+      "nameProduct": "Asus-Rog-3080-16gb",
+      "company": "Nvidia",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Graphic%20Cards/NVIDIA/RTX%203000%20Series/RTX-3080-Suprim-SE-12GB-LHR/RTX-3080-Suprim-SE-12GB-LHR-1-300x300.jpg",
+      "price": "1222",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 3080",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "16GB"
+    },
+    {
+      "id": "12",
+      "nameProduct": "Asus-Rog-3090-24gb",
+      "company": "Asrock",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphics%20Cards/NVIDIA/RTX%203000%20Series/ASUS-ROG-STRIX-RTX-3080-EVA-Edition-O12G/ASUS-ROG-STRIX-RTX-3080-EVA-Edition-O12G-7-300x300.jpeg",
+      "price": "1222",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 3090",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "24GB"
+    },
+    {
+      "id": "13",
+      "nameProduct": "Asus-Rog-3090-24gb",
+      "company": "Nvidia",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphics%20Cards/NVIDIA/RTX%203000%20Series/ASUS-ROG-STRIX%20RTX-3090-GUNDAM-Edition/asus-rog-strix-rtx-3090-gundam-edition-1n-300x300.jpg",
+      "price": "1252",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 3090",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "24GB"
+    },
+    {
+      "id": "14",
+      "nameProduct": "Asus-Rog-3090-24gb",
+      "company": "Asrock",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Graphic%20Cards/NVIDIA/RTX%203000%20Series/MSI%20RTX%203080%20SUPRIM%20Series/GeForce%20RTX%E2%84%A2%203090%20SUPRIM%2024G-300x300.jpg",
+      "price": "1262",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 3090",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "24GB"
+    },
+    {
+      "id": "15",
+      "nameProduct": "Asus-Rog-3070-ti-8gb",
+      "company": "Asrock",
+      "img": "https://exo.ir/image/cache/catalog/Products/Inno3D/Graphic-Card/RTX-3000-Series/Inno3D-RTX-3070-Ti-X3-OC-8GB/inno3d-rtx-3070-ti-x3-8gb-box-300x300.jpg",
+      "price": "1257",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 3070-ti",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "8GB"
+    },
+    {
+      "id": "16",
+      "nameProduct": "Asus-Rog-3070-ti-8gb",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/Gigabyte/Graphic%20Cards/NVIDIA/RTX%203000%20Series/GIGABYTE-AORUS-RTX-3070-Ti-MASTER-8G/GIGABYTE-AORUS-RTX-3070-Ti-MASTER-8G-9-300x300.jpg",
+      "price": "1152",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 3070-ti",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "8GB"
+    },
+    {
+      "id": "17",
+      "nameProduct": "Asus-Rog-3070-ti-8gb",
+      "company": "Nvidia",
+      "img": "https://exo.ir/image/cache/catalog/Products/Gigabyte/Graphic%20Cards/NVIDIA/RTX%203000%20Series/GIGABYTE-AORUS-RTX-3070-Ti-MASTER-8G/GIGABYTE-AORUS-RTX-3070-Ti-MASTER-8G-9-300x300.jpg",
+      "price": "1152",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Asrock",
+      "GPUName": "RTX 3070-ti",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "8GB"
+    },
+    {
+      "id": "18",
+      "nameProduct": "Asus-Rog-3070-ti-8gb",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/Gigabyte/Graphic%20Cards/NVIDIA/RTX%203000%20Series/GIGABYTE-RTX-3070-Ti-EAGLE-8G/GIGABYTE-RTX-3070-Ti-EAGLE-8G-1-300x300.jpg",
+      "price": "1152",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 3070-ti",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "8GB"
+    },
+    {
+      "id": "19",
+      "nameProduct": "Asus-Rog-3060-ti-8gb",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/Inno3D/Graphic-Card/RTX-3000-Series/RTX-3060-Ti-GDDR6X-iChill-X4-8GB/RTX-3060-Ti-GDDR6X-iChill-X4-8GB-3-300x300.jpeg",
+      "price": "1052",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 3060-ti",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "8GB"
+    },
+    {
+      "id": "20",
+      "nameProduct": "Asus-Rog-3060-ti-8gb",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphics%20Cards/NVIDIA/RTX%203000%20Series/DUAL-RTX-3060-Ti-O8GD6X-White/DUAL-RTX-3060-Ti-O8GD6X-White-1-300x300.jpg",
+      "price": "1052",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 3060-ti",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "8GB"
+    },
+    {
+      "id": "21",
+      "nameProduct": "Asus-Rog-4060-8gb",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphics%20Cards/NVIDIA/RTX-4000-Series/ASUS-Dual-RTX-4060-O8G-White/ASUS-Dual-RTX-4060-O8G-White-11-300x300.jpg",
+      "price": "1452",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Nvidia",
+      "GPUName": "RTX 4060",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "8GB"
+    },
+    {
+      "id": "22",
+      "nameProduct": "Asus-Rog-4070-12gb",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/Gigabyte/Graphic%20Cards/NVIDIA/RTX-4000-Series/AORUS-RTX-4070-MASTER-12G/AORUS-RTX-4070-MASTER-12G-1-300x300.jpg",
+      "price": "1452",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Asrock",
+      "GPUName": "RTX 4070",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "12GB"
+    },
+    {
+      "id": "23",
+      "nameProduct": "Asus-Rog-4080-8gb",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphic-Card/NVIDIA/Dual-Series/RTX-4000-Series/RTX-4060-OC-8GB/Asus-Dual-RTX-4060-OC-8GB-1-300x300.jpg",
+      "price": "1150",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "intel",
+      "GPUName": "RTX 4080",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "12GB"
+    },
+    {
+      "id": "24",
+      "nameProduct": "Amd-Rx-6600-16gb",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/XFX/Graphic%20Cards/Speedster-SWFT-319-Radeon-RX-6800-XT-Core-Gaming-16GB/Speedster-SWFT-319-Radeon-RX-6800-XT-Core-Gaming-16GB-1-300x300.jpg",
+      "price": "1452",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Amd",
+      "GPUName": "RX 6600 XT",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "16GB"
+    },
+    {
+      "id": "25",
+      "nameProduct": "Amd-Rx-6800-16gb",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/XFX/Graphic%20Cards/Speedster-SWFT-319-Radeon-RX-6800-XT-Core-Gaming-16GB/Speedster-SWFT-319-Radeon-RX-6800-XT-Core-Gaming-16GB-1-300x300.jpg",
+      "price": "1452",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Amd",
+      "GPUName": "RX 6800 XT",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "24GB"
+    },
+    {
+      "id": "26",
+      "nameProduct": "Asus-Rog-6900-24gb",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/XFX/Graphic-Cards/AMD/Speedster-SWFT-319-Series/RX-6000-Series/RX-6900-XT-16GB/XFX-Speedster-SWFT-319-RX-6900-XT-16GB-1-300x300.jpg",
+      "price": "1452",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Amd",
+      "GPUName": "RX 6900 XT",
+      "RayTracing": "true",
+      "InternalMemoryCapacity": "24GB"
+    },
+    {
+      "id": "27",
+      "nameProduct": "Asus-Rog-4090-24gb",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphics%20Cards/NVIDIA/RTX-4000-Series/DUAL-RTX4060-O8G-EVO/DUAL-RTX4060-O8G-EVO-11-300x300.jpg",
+      "price": "1452",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Asrock",
+      "GPUName": "RTX 4090",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "24GB"
+    }
+  ],
+
+  "gpuSetting": {
+    "filterValues": [
+      {
+        "company": ["Asus", "intel", "Nvidia", "Asrock"],
+        "GPUManufacturer": ["Amd", "Intel", "Nvidia"],
+        "GPUName": [
+          "RTX 5070",
+          "RTX 5060",
+          "RTX 5050",
+          "RTX 5090",
+          "RTX 3060",
+          "RTX 3070",
+          "RTX 3080",
+          "RTX 3090",
+          "RTX 3070-ti",
+          "RTX 3060-ti",
+          "RTX 4060",
+          "RTX 4070",
+          "RTX 4080",
+          "RTX 4090",
+          "RX 6600 XT",
+          "RX 6800 XT",
+          "RX 6900 XT"
+        ],
+        "RayTracing": ["false", "true"],
+        "InternalMemoryCapacity": [
+          "8GB",
+          "16GB",
+          "32GB",
+          "6GB",
+          "4GB",
+          "12GB",
+          "24GB"
+        ],
+        "minPrice": "0",
+        "maxPrice": "0"
+      }
+    ],
+    "kindofFilter": [
+      {
+        "id": "1",
+        "label": "Manufacturers",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "company"
+      },
+      {
+        "id": "2",
+        "label": "price Range",
+        "kindOfFilter": "Slider"
+      },
+      {
+        "id": "3",
+        "label": "GPUManufacturer",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "GPUManufacturer"
+      },
+      {
+        "id": "4",
+        "label": "GPUName",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "GPUName"
+      },
+      {
+        "id": "5",
+        "label": "RayTracing",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "RayTracing"
+      },
+      {
+        "id": "5",
+        "label": "InternalMemoryCapacity",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "InternalMemoryCapacity"
+      }
+    ]
+  },
+
+  "laptopProduct": [
+    {
+      "id": "1",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphic-Card/AMD/TUF-Series/FA608UH/ASUS-TUF-Gaming-A16-2025-1-300x300.webp",
+      "price": "1375",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "nameProduct": "Asus-Tuf-Gaming(2025)",
+      "laptopSeries": "Alpha",
+      "Manufacturers": "Asus",
+      "Processor": "Core-i7",
+      "gpuModel": "Rtx-5080",
+      "monitorSize": "15.5",
+      "hdd": "2000GB",
+      "ssd": "500GB",
+      "ram": "12GB",
+      "informationIcons": "true",
+      "ProductReview": "false",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription"
+    },
+    {
+      "id": "2",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphic-Card/AMD/TUF-Series/FA608UH/ASUS-TUF-Gaming-A16-2025-1-300x300.webp",
+      "price": "1385",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "nameProduct": "Asus-Tuf-Gaming(2025)",
+      "laptopSeries": "Alpha",
+      "Manufacturers": "Asus",
+      "Processor": "Ryzen-7",
+      "gpuModel": "Rtx-5070",
+      "monitorSize": "16.3",
+      "hdd": "2000GB",
+      "ssd": "500GB",
+      "ram": "24GB",
+      "informationIcons": "true",
+      "ProductReview": "false",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription"
+    },
+    {
+      "id": "3",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphic-Card/AMD/TUF-Series/FA608UH/ASUS-TUF-Gaming-A16-2025-1-300x300.webp",
+      "price": "1400",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "nameProduct": "Asus-Tuf-Gaming(2025)",
+      "laptopSeries": "Alpha",
+      "Manufacturers": "Asus",
+      "Processor": "Ryzen-7",
+      "gpuModel": "Rtx-5050",
+      "monitorSize": "14.3",
+      "hdd": "1000GB",
+      "ssd": "false",
+      "ram": "16GB",
+      "informationIcons": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "false"
+    },
+    {
+      "id": "4",
+      "img": "https://exo.ir/image/cache/catalog/Products/Lenovo/Laptops/IdeaPad-3/15irh10/LENOVO-IdeaPad-Slim-3-15IRH10-2025-13-300x300.webp",
+      "price": "1900",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "nameProduct": "Lenovo-ideaPad-Slime(2025)",
+      "laptopSeries": "Xqc",
+      "Manufacturers": "Lenovo",
+      "Processor": "Ryzen-9",
+      "gpuModel": "Rtx-5050",
+      "monitorSize": "16.6",
+      "hdd": "1000GB",
+      "ssd": "1000GB",
+      "ram": "24GB",
+      "informationIcons": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "false"
+    },
+    {
+      "id": "5",
+      "img": "https://exo.ir/image/cache/catalog/Products/Lenovo/Laptops/IdeaPad-3/15irh10/LENOVO-IdeaPad-Slim-3-15IRH10-2025-13-300x300.webp",
+      "price": "2000",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "nameProduct": "Lenovo-ideaPad-Slime(2025)",
+      "laptopSeries": "Katana",
+      "Manufacturers": "Lenovo",
+      "Processor": "Ryzen-9",
+      "gpuModel": "Rtx-4060",
+      "monitorSize": "15.3",
+      "hdd": "2000GB",
+      "ssd": "500GB",
+      "ram": "8GB",
+      "informationIcons": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "false"
+    },
+    {
+      "id": "6",
+      "img": "https://exo.ir/image/cache/catalog/Products/Lenovo/Laptops/IdeaPad-3/15irh10/LENOVO-IdeaPad-Slim-3-15IRH10-2025-13-300x300.webp",
+      "price": "1333",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "nameProduct": "Lenovo-ideaPad-Slime(2025)",
+      "laptopSeries": "Nitro",
+      "Manufacturers": "Lenovo",
+      "Processor": "Core-i5",
+      "gpuModel": "Rtx-4070",
+      "monitorSize": "15.3",
+      "hdd": "1500GB",
+      "ssd": "1000GB",
+      "ram": "24GB",
+      "informationIcons": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    },
+    {
+      "id": "7",
+      "img": "https://exo.ir/image/cache/catalog/Products/Lenovo/Laptops/IdeaPad-3/15irh10/LENOVO-IdeaPad-Slim-3-15IRH10-2025-13-300x300.webp",
+      "price": "1400",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "nameProduct": "Lenovo-ideaPad-Slime(2025)",
+      "laptopSeries": "Nitro",
+      "Manufacturers": "Lenovo",
+      "Processor": "Core-i5",
+      "gpuModel": "Rtx-5090",
+      "monitorSize": "16.5",
+      "hdd": "1000GB",
+      "ssd": "1000GB",
+      "ram": "16GB",
+      "informationIcons": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    },
+    {
+      "id": "8",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Laptops/TUF-Gaming/FX608JH/FX608JH-1-300x300.webp",
+      "price": "1500",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "nameProduct": "Asus-TUF-GAMING-F16",
+      "laptopSeries": "Nitro",
+      "Manufacturers": "Asus",
+      "Processor": "Core-i7",
+      "gpuModel": "Rtx-5060",
+      "monitorSize": "16.5",
+      "hdd": "1000GB",
+      "ssd": "500GB",
+      "ram": "12GB",
+      "informationIcons": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    },
+    {
+      "id": "9",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Laptops/TUF-Gaming/FX608JH/FX608JH-1-300x300.webp",
+      "price": "1600",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "nameProduct": "Asus-TUF-GAMING-F16",
+      "laptopSeries": "Katana",
+      "Manufacturers": "Asus",
+      "Processor": "Core-i7",
+      "gpuModel": "Rtx-5070",
+      "monitorSize": "16.4",
+      "hdd": "1500GB",
+      "ssd": "1000GB",
+      "ram": "8GB",
+      "informationIcons": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    },
+    {
+      "id": "10",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Laptops/TUF-Gaming/FX608JH/FX608JH-1-300x300.webp",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "price": "1550",
+      "nameProduct": "Asus-TUF-GAMING-F16",
+      "laptopSeries": "Katana",
+      "Manufacturers": "Asus",
+      "Processor": "Core-i7",
+      "gpuModel": "Rtx-5080",
+      "monitorSize": "16.4",
+      "hdd": "1000GB",
+      "ssd": "500GB",
+      "ram": "12GB",
+      "informationIcons": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    },
+    {
+      "id": "11",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Laptops/TUF-Gaming/FX608JH/FX608JH-1-300x300.webp",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "price": "1700",
+      "nameProduct": "Asus-TUF-GAMING-F16",
+      "laptopSeries": "Nitro",
+      "Manufacturers": "Asus",
+      "Processor": "Core-i7",
+      "gpuModel": "Rtx-5070",
+      "monitorSize": "15.5",
+      "hdd": "2000GB",
+      "ssd": "false",
+      "ram": "24GB",
+      "informationIcons": "false",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    },
+    {
+      "id": "12",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Laptops/TUF-Gaming/FX608JH/FX608JH-1-300x300.webp",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "price": "1900",
+      "nameProduct": "Asus-TUF-GAMING-F16",
+      "laptopSeries": "Katana",
+      "Manufacturers": "Asus",
+      "Processor": "Ryzen-5",
+      "gpuModel": "Rtx-5050",
+      "monitorSize": "16.5",
+      "hdd": "1000GB",
+      "ssd": "false",
+      "ram": "16GB",
+      "informationIcons": "false",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    }
+  ],
+
+  "LaptopDiscription": [
+    {
+      "id": "1",
+      "hederText": "Product review",
+      "discription": "In recent years, the PlayStation 5 console has managed to establish itself in the market, offering an unparalleled video game experience. Now, with the introduction of the PS5 Pro, gamers are eagerly looking to examine the differences between this new version and the standard PS5. In this article, we will first provide a comparison between the two models, and then discuss the specific features and capabilities of the PS5 Pro.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/1.jpg"
+    },
+    {
+      "id": "2",
+      "hederText": "Differences in graphics and processing power",
+      "discription": "The PS5 Pro comes to market with an upgraded graphics card that has approximately 67 percent more compute units compared to the regular PS5. This translates to a 45 percent increase in graphical processing power, as well as the ability to run games with higher visual fidelity. The PS5 Pro also utilizes a new technology called PlayStation Spectral Super Resolution, which uses artificial intelligence to display images with higher clarity and prevents frame rate drops.In terms of the processor, the PS5 Pro uses the same 8-core AMD Zen 2 processor as the standard version, but with an improved processing speed that can increase to 3.85 GHz when necessary, whereas the regular version is limited to 3.5 GHz. This helps the PS5 Pro in more demanding moments.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/2.jpg"
+    },
+    {
+      "id": "3",
+      "hederText": "Improved and customizable design",
+      "discription": "A new feature introduced in the PS5 Pro is Game Boost mode, specifically designed for PS4 games. This capability enhances the experience of older games with better resolution and speed, allowing gamers to enjoy over 8500 titles with higher quality.Improved and Customizable DesignIn terms of design, the PS5 Pro is very similar to the PS5 Slim model and comes in a size relatively smaller than the original model. This new version",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/3.jpg"
+    },
+    {
+      "id": "4",
+      "hederText": "Is the PS5 Pro worth buying?",
+      "discription": "Given all the advanced features of the PS5 Pro, including a more powerful GPU, more storage space, Wi-Fi 7, and Game Boost mode, this console is an excellent option for professional gamers looking for visual quality and a smoother experience. If you are a gamer who values higher quality and speed in games and intend to play new and old games with better quality",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/4.jpg"
+    }
+  ],
+
+  "lapTopSetting": {
+    "filterValues": [
+      {
+        "Manufacturers": ["Asus", "Lenovo"],
+        "laptopSeries": ["Katana", "Nitro", "Xqc", "Alpha"],
+        "Processor": ["Core-i7", "Core-i5", "Ryzen-9", "Ryzen-7", "Ryzen-5"],
+        "gpuModel": [
+          "Rtx-5090",
+          "Rtx-5080",
+          "Rtx-5070",
+          "Rtx-5060",
+          "Rtx-5050",
+          "Rtx-4070",
+          "Rtx-4060"
+        ],
+        "monitorSize": ["16", "15.3", "15", "14"],
+        "ssd": ["1000GB", "500GB", "false"],
+        "hdd": ["2000GB", "1500GB", "1000GB"],
+        "ram": ["24GB", "16GB", "12GB", "8GB"],
+        "minPrice": "0",
+        "maxPrice": "0"
+      }
+    ],
+    "kindofFilter": [
+      {
+        "id": "1",
+        "label": "Manufacturers",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "Manufacturers"
+      },
+      {
+        "id": "2",
+        "label": "price Range",
+        "kindOfFilter": "Slider"
+      },
+      {
+        "id": "3",
+        "label": "lapTopSerise",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "lapTopSerise"
+      },
+      {
+        "id": "4",
+        "label": "Processor",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "Processor"
+      },
+      {
+        "id": "5",
+        "label": "GpuModel",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "gpuModel"
+      },
+      {
+        "id": "6",
+        "label": "monitorSize",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "monitorSize"
+      },
+      {
+        "id": "7",
+        "label": "CapacitySSD",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "ssd"
+      },
+      {
+        "id": "8",
+        "label": "CapacityHDD",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "hdd"
+      },
+      {
+        "id": "9",
+        "label": "CapacityRAM",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "ram"
+      }
+    ]
+  },
+
+  "ssdProduct": [
+    {
+      "id": "1",
+      "nameProduct": "WD-GREEN-SN3000",
+      "price": "1000",
+      "img": "https://exo.ir/image/cache/catalog/Products/Western-Digital/SSDs/Green-Series/SN3000/500GB/Green-SN3000-500GB-2-300x300.webp",
+      "manufacturers": "Asus",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/ssdSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ssdDiscription",
+      "Nvme": "false"
+    },
+    {
+      "id": "2",
+      "nameProduct": "WD-BLUE-SN5000",
+      "price": "2000",
+      "img": "https://exo.ir/image/cache/catalog/Products/Western-Digital/SSDs/Blue-Series/SN5000/4TB/Blue-SN5000-4TB-1-300x300.webp",
+      "manufacturers": "Acer",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/ssdSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ssdDiscription",
+      "Nvme": "false"
+    },
+    {
+      "id": "3",
+      "nameProduct": "WD-BLACK-SN850X",
+      "price": "1300",
+      "img": "https://exo.ir/image/cache/catalog/Products/Western%20Digital/SSD/WD-Black-SN850/No-Heatsink/Black-SN850X-1T-1-300x300.webp",
+      "manufacturers": "Asus",
+      "ProductReview": "true",
+      "productSetting": "http://localhost:3300/ssdSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ssdDiscription",
+      "Nvme": "false"
+    },
+    {
+      "id": "4",
+      "nameProduct": "OSCOO-ON11",
+      "price": "1038",
+      "img": "https://exo.ir/image/cache/catalog/Products/OSCOO/SSD/ON901/ON901-1-300x300.webp",
+      "manufacturers": "Acer",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/ssdSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ssdDiscription",
+      "Nvme": "false"
+    },
+    {
+      "id": "5",
+      "nameProduct": "SAMSUNG-9100-PRO",
+      "price": "4000",
+      "img": "https://exo.ir/image/cache/catalog/Products/SAMSUNG/SSD/9100-PRO-Heatsink/1TB/9100-PRO-Heatsink-1TB-1-300x300.webp",
+      "manufacturers": "SAMSUNG",
+      "ProductReview": "true",
+      "productSetting": "http://localhost:3300/ssdSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ssdDiscription",
+      "Nvme": "false"
+    },
+    {
+      "id": "6",
+      "nameProduct": "SAMSUNG-9100-PRO",
+      "price": "1000",
+      "img": "https://exo.ir/image/cache/catalog/Products/SAMSUNG/SSD/9100-PRO/2TB/9100-PRO-2TB-1-300x300.webp",
+      "manufacturers": "SAMSUNG",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/ssdSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ssdDiscription",
+      "Nvme": "false"
+    },
+    {
+      "id": "7",
+      "nameProduct": "EXACECED-GT3",
+      "price": "1000",
+      "img": "https://exo.ir/image/cache/catalog/Products/ExAscend/SSD/Essential-X/128GB/Essential-X-128GB-1-300x300.jpg",
+      "manufacturers": "Asus",
+      "ProductReview": "true",
+      "productSetting": "http://localhost:3300/ssdSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ssdDiscription",
+      "Nvme": "true"
+    },
+    {
+      "id": "8",
+      "nameProduct": "WD-BLACK-SN850X",
+      "price": "1000",
+      "img": "https://exo.ir/image/cache/catalog/Products/Western%20Digital/SSD/WD-Black-SN850/No-Heatsink/Black-SN850X-1T-1-300x300.webp",
+      "manufacturers": "Acer",
+      "ProductReview": "true",
+      "productSetting": "http://localhost:3300/ssdSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ssdDiscription",
+      "Nvme": "true"
+    }
+  ],
+
+  "ssdSetting": {
+    "filterValues": [
+      {
+        "manufacturers": ["Acer", "Asus", "SAMSUNG"],
+        "Nvme": ["true", "false"],
+        "minPrice": "0",
+        "maxPrice": "0"
+      }
+    ],
+    "kindofFilter": [
+      {
+        "id": "1",
+        "label": "Manufacturers",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "manufacturers"
+      },
+      {
+        "id": "2",
+        "label": "price Range",
+        "kindOfFilter": "Slider"
+      },
+
+      {
+        "id": "3",
+        "label": "Nvme",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "Nvme"
+      }
+    ]
+  },
+
+  "ssdDiscription": [
+    {
+      "id": "1",
+      "hederText": "Product review",
+      "discription": "In recent years, the PlayStation 5 console has managed to establish itself in the market, offering an unparalleled video game experience. Now, with the introduction of the PS5 Pro, gamers are eagerly looking to examine the differences between this new version and the standard PS5. In this article, we will first provide a comparison between the two models, and then discuss the specific features and capabilities of the PS5 Pro.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/1.jpg"
+    },
+    {
+      "id": "2",
+      "hederText": "Differences in graphics and processing power",
+      "discription": "The PS5 Pro comes to market with an upgraded graphics card that has approximately 67 percent more compute units compared to the regular PS5. This translates to a 45 percent increase in graphical processing power, as well as the ability to run games with higher visual fidelity. The PS5 Pro also utilizes a new technology called PlayStation Spectral Super Resolution, which uses artificial intelligence to display images with higher clarity and prevents frame rate drops.In terms of the processor, the PS5 Pro uses the same 8-core AMD Zen 2 processor as the standard version, but with an improved processing speed that can increase to 3.85 GHz when necessary, whereas the regular version is limited to 3.5 GHz. This helps the PS5 Pro in more demanding moments.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/2.jpg"
+    },
+    {
+      "id": "3",
+      "hederText": "Improved and customizable design",
+      "discription": "A new feature introduced in the PS5 Pro is Game Boost mode, specifically designed for PS4 games. This capability enhances the experience of older games with better resolution and speed, allowing gamers to enjoy over 8500 titles with higher quality.Improved and Customizable DesignIn terms of design, the PS5 Pro is very similar to the PS5 Slim model and comes in a size relatively smaller than the original model. This new version",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/3.jpg"
+    },
+    {
+      "id": "4",
+      "hederText": "Is the PS5 Pro worth buying?",
+      "discription": "Given all the advanced features of the PS5 Pro, including a more powerful GPU, more storage space, Wi-Fi 7, and Game Boost mode, this console is an excellent option for professional gamers looking for visual quality and a smoother experience. If you are a gamer who values higher quality and speed in games and intend to play new and old games with better quality",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/4.jpg"
+    }
+  ],
+
+  "ramProduct": [
+    {
+      "id": "1",
+      "price": "1400",
+      "img": "https://exo.ir/image/cache/catalog/Products/Neo-Forza/RAMs/Trinity-RGB-Series/Black/Neo-Forza-Trinity-RGB-Single-Black-1-300x300.jpg",
+      "nameProduct": "NEO-FORZA-(16GB)",
+      "manufacturers": "ASGARD",
+      "memoryType": "DDR4",
+      "platform": "PC",
+      "frequency": "5100-MGH",
+      "overallCapacity": "16GB",
+      "ProductReview": "true",
+      "productSetting": "http://localhost:3300/ramSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ramDiscription"
+    },
+    {
+      "id": "2",
+      "price": "1500",
+      "img": "https://exo.ir/image/cache/catalog/Products/Kingston/RAM/FURY-Beast-Series/DDR5/Fury-Beast-Single-2-300x300.webp",
+      "nameProduct": "KINGSTON-FURY-BEAST-(8GB)",
+      "manufacturers": "HP",
+      "memoryType": "DDR5",
+      "platform": "LAPTOP",
+      "frequency": "5100-MGH",
+      "overallCapacity": "8GB",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/ramSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ramDiscription"
+    },
+    {
+      "id": "3",
+      "price": "900",
+      "img": "https://exo.ir/image/cache/catalog/Products/G.Skill/RAM/DDR5/trident-z5-rgb/gskill-trident-z5-dual-black-1-300x300.jpg",
+      "nameProduct": "G.SKILL-TRIDENT-(128GB)",
+      "manufacturers": "G.SKILL",
+      "memoryType": "DDR4",
+      "platform": "LAPTOP",
+      "frequency": "4800-MGH",
+      "overallCapacity": "128GB",
+      "ProductReview": "true",
+      "productSetting": "http://localhost:3300/ramSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ramDiscription"
+    },
+    {
+      "id": "4",
+      "price": "999",
+      "img": "https://exo.ir/image/cache/catalog/Products/TeamGroup/RAM/T-FORCE/T-Force-Xtreem-CKD/DDR5/Black/T-Force-Xtreem-CKD-Black-1-300x300.webp",
+      "nameProduct": "G.SKILL-RIOJAWS-M5-(32GB)",
+      "manufacturers": "ASGARD",
+      "memoryType": "DDR5",
+      "platform": "PC",
+      "frequency": "4800-MGH",
+      "overallCapacity": "32GB",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/ramSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ramDiscription"
+    },
+    {
+      "id": "5",
+      "price": "1111",
+      "img": "https://exo.ir/image/cache/catalog/Products/TeamGroup/RAM/T-FORCE/T-Force-Xtreem-CKD/DDR5/Black/T-Force-Xtreem-CKD-Black-1-300x300.webp",
+      "nameProduct": "TEAM-GROUP-TFORCE-(48GB)",
+      "manufacturers": "G.SKILL",
+      "memoryType": "DDR4",
+      "platform": "LAPTOP",
+      "frequency": "4800-MGH",
+      "overallCapacity": "48GB",
+      "ProductReview": "true",
+      "productSetting": "http://localhost:3300/ramSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ramDiscription"
+    },
+    {
+      "id": "6",
+      "price": "1234",
+      "img": "https://exo.ir/image/cache/catalog/Products/G.Skill/RAM/DDR5/Ripjaws-M5-RGB/G.Skill-Ripjaws-M5-RGB-Dual-%20Black-/G.Skill-Ripjaws-M5-RGB-Dual-%20Black-2-300x300.jpg",
+      "nameProduct": "G.SKILL-RIOJAWS-M5-(32GB)",
+      "manufacturers": "G.SKILL",
+      "memoryType": "DDR5",
+      "platform": "LAPTOP",
+      "frequency": "4800-MGH",
+      "overallCapacity": "32GB",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/ramSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ramDiscription"
+    },
+    {
+      "id": "7",
+      "price": "1385",
+      "img": "https://exo.ir/image/cache/catalog/Products/G.Skill/RAM/DDR5/Ripjaws-M5-RGB/G.Skill-Ripjaws-M5-RGB-Dual-%20White/G.Skill-Ripjaws-M5-RGB-Dual-%20White-2-300x300.jpg",
+      "nameProduct": "G.SKILL-RIOJAWS-M3-(32GB)",
+      "manufacturers": "HP",
+      "memoryType": "DDR4",
+      "platform": "PC",
+      "frequency": "5100-MGH",
+      "overallCapacity": "32GB",
+      "ProductReview": "true",
+      "productSetting": "http://localhost:3300/ramSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ramDiscription"
+    },
+    {
+      "id": "8",
+      "price": "1384",
+      "img": "https://exo.ir/image/cache/catalog/Products/Corsair/RAM/Corsair-Vengeance-DDR5/Corsair-Vengeance-DDR5-3-300x300.jpeg",
+      "nameProduct": "CORSAIR-VENGARD-(32GB)",
+      "manufacturers": "HP",
+      "memoryType": "DDR5",
+      "platform": "LAPTOP",
+      "frequency": "4800-MGH",
+      "overallCapacity": "32GB",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/ramSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ramDiscription"
+    },
+    {
+      "id": "9",
+      "price": "1333",
+      "img": "https://exo.ir/image/cache/catalog/Products/Corsair/RAM/Dominator-Platinum-RGB-DDR5-Series/Cool-Grey/Corsair-Dominator-Platinum-RGB-DDR5-DUAL-Cool-Grey-1-300x300.jpg",
+      "nameProduct": "CORSAIR-Dominate-(32GB)",
+      "manufacturers": "G.SKILL",
+      "memoryType": "DDR5",
+      "platform": "LAPTOP",
+      "frequency": "4800-MGH",
+      "overallCapacity": "32GB",
+      "ProductReview": "true",
+      "productSetting": "http://localhost:3300/ramSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ramDiscription"
+    },
+    {
+      "id": "10",
+      "price": "1111",
+      "img": "https://exo.ir/image/cache/catalog/Products/Kingston/RAM/FURY-Beast-Series/DDR5/Fury-Beast-Single-2-300x300.webp",
+      "nameProduct": "KINGSINGELBLAC-(32GB)",
+      "manufacturers": "ASGARD",
+      "memoryType": "DDR4",
+      "platform": "PC",
+      "frequency": "4800-MGH",
+      "overallCapacity": "32GB",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/ramSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/ramDiscription"
+    }
+  ],
+
+  "ramSetting": {
+    "filterValues": [
+      {
+        "manufacturers": ["ASGARD", "HP", "G.SKILL"],
+        "platform": ["PC", "LAPTOP"],
+        "memoryType": ["DDR5", "DDR4"],
+        "frequency": ["5100-MGH", "4800-MGH"],
+        "overallCapacity": ["128GB", "48GB", "32GB", "16GB", "8GB"],
+        "minPrice": "0",
+        "maxPrice": "0"
+      }
+    ],
+    "kindofFilter": [
+      {
+        "id": "1",
+        "label": "Manufacturers",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "manufacturers"
+      },
+      {
+        "id": "2",
+        "label": "price Range",
+        "kindOfFilter": "Slider"
+      },
+      {
+        "id": "3",
+        "label": "platform",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "platform"
+      },
+      {
+        "id": "4",
+        "label": "memoryType",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "memoryType"
+      },
+      {
+        "id": "5",
+        "label": "frequency",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "frequency"
+      },
+      {
+        "id": "6",
+        "label": "frequency",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "frequency"
+      },
+      {
+        "id": "7",
+        "label": "overallCapacity",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "overallCapacity"
+      }
+    ]
+  },
+  "ramDiscription": [
+    {
+      "id": "1",
+      "hederText": "Product review",
+      "discription": "In recent years, the PlayStation 5 console has managed to establish itself in the market, offering an unparalleled video game experience. Now, with the introduction of the PS5 Pro, gamers are eagerly looking to examine the differences between this new version and the standard PS5. In this article, we will first provide a comparison between the two models, and then discuss the specific features and capabilities of the PS5 Pro.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/1.jpg"
+    },
+    {
+      "id": "2",
+      "hederText": "Differences in graphics and processing power",
+      "discription": "The PS5 Pro comes to market with an upgraded graphics card that has approximately 67 percent more compute units compared to the regular PS5. This translates to a 45 percent increase in graphical processing power, as well as the ability to run games with higher visual fidelity. The PS5 Pro also utilizes a new technology called PlayStation Spectral Super Resolution, which uses artificial intelligence to display images with higher clarity and prevents frame rate drops.In terms of the processor, the PS5 Pro uses the same 8-core AMD Zen 2 processor as the standard version, but with an improved processing speed that can increase to 3.85 GHz when necessary, whereas the regular version is limited to 3.5 GHz. This helps the PS5 Pro in more demanding moments.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/2.jpg"
+    },
+    {
+      "id": "3",
+      "hederText": "Improved and customizable design",
+      "discription": "A new feature introduced in the PS5 Pro is Game Boost mode, specifically designed for PS4 games. This capability enhances the experience of older games with better resolution and speed, allowing gamers to enjoy over 8500 titles with higher quality.Improved and Customizable DesignIn terms of design, the PS5 Pro is very similar to the PS5 Slim model and comes in a size relatively smaller than the original model. This new version",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/3.jpg"
+    },
+    {
+      "id": "4",
+      "hederText": "Is the PS5 Pro worth buying?",
+      "discription": "Given all the advanced features of the PS5 Pro, including a more powerful GPU, more storage space, Wi-Fi 7, and Game Boost mode, this console is an excellent option for professional gamers looking for visual quality and a smoother experience. If you are a gamer who values higher quality and speed in games and intend to play new and old games with better quality",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/4.jpg"
+    }
+  ],
+  "motherboardProduct": [
+    {
+      "id": "1",
+      "price": "4421",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASRock/MotherBoards/Intel/Series-800/Pro/Z890-Pro-RS-WIFI-White/Z890-Pro-RS-WIFI-White-1-300x300.webp",
+      "nameProduct": "AsRock-Z890-Pro",
+      "manufacturers": "MSI",
+      "wirelessConection": "true",
+      "kindOfRam": "DDR5",
+      "chipset": "AMD-AH12",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/motherBoardSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/MotherBordDiscription"
+    },
+    {
+      "id": "2",
+      "price": "1421",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASRock/MotherBoards/Intel/Series-800/Pro/Z890-Pro-RS-WIFI/Z890-Pro-RS-WIFI-6-300x300.webp",
+      "nameProduct": "AsRock-Z890-ProMax",
+      "manufacturers": "Asus",
+      "wirelessConection": "true",
+      "kindOfRam": "DDR4",
+      "chipset": "AMD-BG121",
+      "ProductReview": "true",
+      "productSetting": "http://localhost:3300/motherBoardSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/MotherBordDiscription"
+    },
+    {
+      "id": "3",
+      "price": "1231",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASRock/MotherBoards/Intel/600-Series/Basic-Series/H610M-H2-M2-D5/H610M-H2-M2-1-300x300.webp",
+      "nameProduct": "AsRock-H610m-Pro",
+      "manufacturers": "EVGA",
+      "wirelessConection": "true",
+      "kindOfRam": "DDR5",
+      "chipset": "AMD-BH12",
+      "ProductReview": "true",
+      "productSetting": "http://localhost:3300/motherBoardSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/MotherBordDiscription"
+    },
+    {
+      "id": "4",
+      "price": "999",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Motherboards/AMD/800-Series/MEG/MEG-X870E-GODLIKE/MEG-X870E-GODLIKE-1-300x300.webp",
+      "nameProduct": "MSI-MEG-X870E",
+      "manufacturers": "Asus",
+      "wirelessConection": "false",
+      "kindOfRam": "DDR5",
+      "chipset": "AMD-BG121",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/motherBoardSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/MotherBordDiscription"
+    },
+    {
+      "id": "5",
+      "price": "3333",
+      "img": "https://exo.ir/image/cache/catalog/Products/Gigabyte/Motherboards/Intel/Series-800/B860M/B860M-AORUS-ELITE/B860M-AORUS-ELITE-1-300x300.webp",
+      "nameProduct": "GIGABYTE-B9901",
+      "manufacturers": "MSI",
+      "wirelessConection": "false",
+      "kindOfRam": "DDR5",
+      "chipset": "AMD-AH12",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/motherBoardSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/MotherBordDiscription"
+    },
+    {
+      "id": "6",
+      "price": "2222",
+      "img": "https://exo.ir/image/cache/catalog/Products/Gigabyte/Motherboards/Intel/Series-800/B860/B860-AORUS-ELITE-WIFI7-ICE/B860-AORUS-ELITE-WIFI7-ICE-1-300x300.webp",
+      "nameProduct": "GIGABYTE-B860",
+      "manufacturers": "EVGA",
+      "wirelessConection": "true",
+      "kindOfRam": "DDR4",
+      "chipset": "AMD-BG121",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/motherBoardSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/MotherBordDiscription"
+    },
+    {
+      "id": "7",
+      "price": "1111",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Motherboards/Intel-800-Series/B860/PRO/PRO-B860-P-WIFI/PRO-B860-P-WIFI-1-300x300.webp",
+      "nameProduct": "MSI-MAG-2000",
+      "manufacturers": "EVGA",
+      "wirelessConection": "false",
+      "kindOfRam": "DDR5",
+      "chipset": "AMD-BH12",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/motherBoardSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/MotherBordDiscription"
+    },
+    {
+      "id": "8",
+      "price": "1389",
+      "img": "https://exo.ir/image/cache/catalog/Products/Gigabyte/Motherboards/Intel/Intel-700-Series/Z790-S-DDR4/Z790-S-DDR4-1-300x300.webp",
+      "nameProduct": "GIGABYTE-zx860",
+      "manufacturers": "EVGA",
+      "wirelessConection": "true",
+      "kindOfRam": "DDR4",
+      "chipset": "AMD-BH12",
+      "ProductReview": "true",
+      "productSetting": "http://localhost:3300/motherBoardSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/MotherBordDiscription"
+    },
+    {
+      "id": "9",
+      "price": "1385",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Motherboards/AMD-600-Series/X670E-GAMING-PLUS-WIFI/X670E-GAMING-PLUS-WIFI-1-300x300.jpg",
+      "nameProduct": "REDDRAGON-GAMING",
+      "manufacturers": "EVGA",
+      "wirelessConection": "true",
+      "kindOfRam": "DDR5",
+      "chipset": "AMD-BG121",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/motherBoardSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/MotherBordDiscription"
+    },
+    {
+      "id": "10",
+      "price": "1300",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Motherboards/Intel/700-Series/MPG-Series/Z790-CARBON-MAX-WIFI-II/MSI-MPG-Z790-CARBON-MAX-WIFI-II-1-300x300.jpg",
+      "nameProduct": "MSI-PG-Z790",
+      "manufacturers": "MSI",
+      "wirelessConection": "false",
+      "kindOfRam": "DDR4",
+      "chipset": "AMD-BG121",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/motherBoardSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/MotherBordDiscription"
+    },
+    {
+      "id": "11",
+      "price": "3000",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Motherboards/AMD-600-Series/MAG-X670E-TOMAHAWK-WIFI/MAG-X670E-TOMAHAWK-WIFI-6-300x300.jpg",
+      "nameProduct": "MSI-PRO-Z790",
+      "manufacturers": "MSI",
+      "wirelessConection": "false",
+      "kindOfRam": "DDR5",
+      "chipset": "AMD-AH12",
+      "ProductReview": "true",
+      "productSetting": "http://localhost:3300/motherBoardSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/MotherBordDiscription"
+    },
+    {
+      "id": "12",
+      "price": "2100",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Motherboards/AMD-600-Series/B650M-GAMING-WIFI/B650M-GAMING-WIFI-1-300x300.jpg",
+      "nameProduct": "MSI-TUROB-XQC",
+      "manufacturers": "Asus",
+      "wirelessConection": "true",
+      "kindOfRam": "DDR5",
+      "chipset": "AMD-AH12",
+      "ProductReview": "true",
+      "productSetting": "http://localhost:3300/motherBoardSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/MotherBordDiscription"
+    },
+    {
+      "id": "13",
+      "price": "2000",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Motherboards/Intel/700-Series/MAG-Series/MAG-Z790-TOMAHAWK-MAX-WIFI/MAG-Z790-TOMAHAWK-MAX-WIFI-3-300x300.jpg",
+      "nameProduct": "AsRock-H610m-ProMAX",
+      "manufacturers": "MSI",
+      "wirelessConection": "true",
+      "kindOfRam": "DDR5",
+      "chipset": "AMD-BH12",
+      "ProductReview": "true",
+      "productSetting": "http://localhost:3300/motherBoardSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/MotherBordDiscription"
+    },
+    {
+      "id": "14",
+      "price": "1500",
+      "img": "https://exo.ir/image/cache/catalog/Products/Gigabyte/Motherboards/AMD/AMD-600-Series/B650-EAGLE-AX/B650-EAGLE-AX-7-300x300.jpg",
+      "nameProduct": "GIGABYTE-PROMAX-12312",
+      "manufacturers": "MSI",
+      "wirelessConection": "false",
+      "kindOfRam": "DDR5",
+      "chipset": "AMD-BH12",
+      "ProductReview": "false",
+      "productSetting": "http://localhost:3300/motherBoardSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/MotherBordDiscription"
+    }
+  ],
+
+  "motherBoardSetting": {
+    "filterValues": [
+      {
+        "manufacturers": ["MSI", "Asus", "EVGA"],
+        "wirelessConection": ["true", "false"],
+        "kindOfRam": ["DDR5", "DDR4"],
+        "chipset": ["AMD-BH12", "AMD-AH12", "AMD-BG121"],
+        "minPrice": "0",
+        "maxPrice": "0"
+      }
+    ],
+    "kindofFilter": [
+      {
+        "id": "1",
+        "label": "Manufacturers",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "manufacturers"
+      },
+      {
+        "id": "2",
+        "label": "price Range",
+        "kindOfFilter": "Slider"
+      },
+      {
+        "id": "3",
+        "label": "wirelessConection",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "wirelessConection"
+      },
+      {
+        "id": "4",
+        "label": "kindOfRam",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "kindOfRam"
+      },
+      {
+        "id": "5",
+        "label": "chipset",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "chipset"
+      }
+    ]
+  },
+
+  "MotherBordDiscription": [
+    {
+      "id": "1",
+      "hederText": "Product review",
+      "discription": "In recent years, the PlayStation 5 console has managed to establish itself in the market, offering an unparalleled video game experience. Now, with the introduction of the PS5 Pro, gamers are eagerly looking to examine the differences between this new version and the standard PS5. In this article, we will first provide a comparison between the two models, and then discuss the specific features and capabilities of the PS5 Pro.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/1.jpg"
+    },
+    {
+      "id": "2",
+      "hederText": "Differences in graphics and processing power",
+      "discription": "The PS5 Pro comes to market with an upgraded graphics card that has approximately 67 percent more compute units compared to the regular PS5. This translates to a 45 percent increase in graphical processing power, as well as the ability to run games with higher visual fidelity. The PS5 Pro also utilizes a new technology called PlayStation Spectral Super Resolution, which uses artificial intelligence to display images with higher clarity and prevents frame rate drops.In terms of the processor, the PS5 Pro uses the same 8-core AMD Zen 2 processor as the standard version, but with an improved processing speed that can increase to 3.85 GHz when necessary, whereas the regular version is limited to 3.5 GHz. This helps the PS5 Pro in more demanding moments.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/2.jpg"
+    },
+    {
+      "id": "3",
+      "hederText": "Improved and customizable design",
+      "discription": "A new feature introduced in the PS5 Pro is Game Boost mode, specifically designed for PS4 games. This capability enhances the experience of older games with better resolution and speed, allowing gamers to enjoy over 8500 titles with higher quality.Improved and Customizable DesignIn terms of design, the PS5 Pro is very similar to the PS5 Slim model and comes in a size relatively smaller than the original model. This new version",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/3.jpg"
+    },
+    {
+      "id": "4",
+      "hederText": "Is the PS5 Pro worth buying?",
+      "discription": "Given all the advanced features of the PS5 Pro, including a more powerful GPU, more storage space, Wi-Fi 7, and Game Boost mode, this console is an excellent option for professional gamers looking for visual quality and a smoother experience. If you are a gamer who values higher quality and speed in games and intend to play new and old games with better quality",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/4.jpg"
+    }
+  ],
+
+  "gpuDiscription": [
+    {
+      "id": "1",
+      "hederText": "Product review",
+      "discription": "In recent years, the PlayStation 5 console has managed to establish itself in the market, offering an unparalleled video game experience. Now, with the introduction of the PS5 Pro, gamers are eagerly looking to examine the differences between this new version and the standard PS5. In this article, we will first provide a comparison between the two models, and then discuss the specific features and capabilities of the PS5 Pro.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/1.jpg"
+    },
+    {
+      "id": "2",
+      "hederText": "Differences in graphics and processing power",
+      "discription": "The PS5 Pro comes to market with an upgraded graphics card that has approximately 67 percent more compute units compared to the regular PS5. This translates to a 45 percent increase in graphical processing power, as well as the ability to run games with higher visual fidelity. The PS5 Pro also utilizes a new technology called PlayStation Spectral Super Resolution, which uses artificial intelligence to display images with higher clarity and prevents frame rate drops.In terms of the processor, the PS5 Pro uses the same 8-core AMD Zen 2 processor as the standard version, but with an improved processing speed that can increase to 3.85 GHz when necessary, whereas the regular version is limited to 3.5 GHz. This helps the PS5 Pro in more demanding moments.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/2.jpg"
+    },
+    {
+      "id": "3",
+      "hederText": "Improved and customizable design",
+      "discription": "A new feature introduced in the PS5 Pro is Game Boost mode, specifically designed for PS4 games. This capability enhances the experience of older games with better resolution and speed, allowing gamers to enjoy over 8500 titles with higher quality.Improved and Customizable DesignIn terms of design, the PS5 Pro is very similar to the PS5 Slim model and comes in a size relatively smaller than the original model. This new version",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/3.jpg"
+    },
+    {
+      "id": "4",
+      "hederText": "Is the PS5 Pro worth buying?",
+      "discription": "Given all the advanced features of the PS5 Pro, including a more powerful GPU, more storage space, Wi-Fi 7, and Game Boost mode, this console is an excellent option for professional gamers looking for visual quality and a smoother experience. If you are a gamer who values higher quality and speed in games and intend to play new and old games with better quality",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/4.jpg"
+    }
+  ],
+
   "cpu-product": [
     {
       "id": "1",
@@ -736,6 +2191,208 @@
     ]
   },
   "cpuDiscription": [
+    {
+      "id": "1",
+      "hederText": "Product review",
+      "discription": "In recent years, the PlayStation 5 console has managed to establish itself in the market, offering an unparalleled video game experience. Now, with the introduction of the PS5 Pro, gamers are eagerly looking to examine the differences between this new version and the standard PS5. In this article, we will first provide a comparison between the two models, and then discuss the specific features and capabilities of the PS5 Pro.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/1.jpg"
+    },
+    {
+      "id": "2",
+      "hederText": "Differences in graphics and processing power",
+      "discription": "The PS5 Pro comes to market with an upgraded graphics card that has approximately 67 percent more compute units compared to the regular PS5. This translates to a 45 percent increase in graphical processing power, as well as the ability to run games with higher visual fidelity. The PS5 Pro also utilizes a new technology called PlayStation Spectral Super Resolution, which uses artificial intelligence to display images with higher clarity and prevents frame rate drops.In terms of the processor, the PS5 Pro uses the same 8-core AMD Zen 2 processor as the standard version, but with an improved processing speed that can increase to 3.85 GHz when necessary, whereas the regular version is limited to 3.5 GHz. This helps the PS5 Pro in more demanding moments.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/2.jpg"
+    },
+    {
+      "id": "3",
+      "hederText": "Improved and customizable design",
+      "discription": "A new feature introduced in the PS5 Pro is Game Boost mode, specifically designed for PS4 games. This capability enhances the experience of older games with better resolution and speed, allowing gamers to enjoy over 8500 titles with higher quality.Improved and Customizable DesignIn terms of design, the PS5 Pro is very similar to the PS5 Slim model and comes in a size relatively smaller than the original model. This new version",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/3.jpg"
+    },
+    {
+      "id": "4",
+      "hederText": "Is the PS5 Pro worth buying?",
+      "discription": "Given all the advanced features of the PS5 Pro, including a more powerful GPU, more storage space, Wi-Fi 7, and Game Boost mode, this console is an excellent option for professional gamers looking for visual quality and a smoother experience. If you are a gamer who values higher quality and speed in games and intend to play new and old games with better quality",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/4.jpg"
+    }
+  ],
+
+  "mouseProduct": [
+    {
+      "id": "1",
+      "img": "https://exo.ir/image/cache/catalog/Products/REDRAGON/Mouses/M811-Aatrox/M811-Aatrox-1-300x300.jpg",
+      "price": "300",
+      "nameProduct": "REDDRAGON-M611",
+      "manufacturers": "Razer",
+      "productSetting": "http://localhost:3300/mouseSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/mouseDiscription",
+      "ProductReview": "true",
+      "Ergonomics": "rightHand",
+      "Programmable": "true",
+      "lighting": "true"
+    },
+    {
+      "id": "2",
+      "img": "https://exo.ir/image/cache/catalog/Products/Logitech/Mouse/G309-Lightspeed-Wireless/Genshin-Impact-Edition/G309-Lightspeed-Wireless-Genshin-Impact-Edition-6-300x300.webp",
+      "price": "399",
+      "nameProduct": "LogTech-G398",
+      "manufacturers": "Razer",
+      "productSetting": "http://localhost:3300/mouseSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/mouseDiscription",
+      "ProductReview": "true",
+      "Ergonomics": "symmetrical",
+      "Programmable": "true",
+      "lighting": "false"
+    },
+    {
+      "id": "3",
+      "img": "https://exo.ir/image/cache/catalog/Products/Razer/Mouses/Deathadder-V3-Pro-Fortnite-Edition/Deathadder-V3-Pro-Fortnite-Edition-1-300x300.webp",
+      "price": "500",
+      "nameProduct": "Razer-Deathadder-V3",
+      "manufacturers": "Asus",
+      "productSetting": "http://localhost:3300/mouseSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/mouseDiscription",
+      "ProductReview": "true",
+      "Ergonomics": "symmetrical",
+      "Programmable": "true",
+      "lighting": "false"
+    },
+    {
+      "id": "4",
+      "img": "https://exo.ir/image/cache/catalog/Products/Razer/Mouses/razer-cobra/razer-cobra-black-1-300x300.jpg",
+      "price": "600",
+      "productSetting": "http://localhost:3300/mouseSetting",
+      "manufacturers": "Asus",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/mouseDiscription",
+      "ProductReview": "true",
+      "Ergonomics": "rightHand",
+      "Programmable": "false",
+      "lighting": "true"
+    },
+    {
+      "id": "5",
+      "img": "https://exo.ir/image/cache/catalog/Products/REDRAGON/Mouses/M602P-KS-Griffin-Wireless/M602P-KS-Griffin-Wireless-1-300x300.webp",
+      "price": "187",
+      "nameProduct": "REDDRAGON-M611",
+      "manufacturers": "Asus",
+      "productSetting": "http://localhost:3300/mouseSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/mouseDiscription",
+      "ProductReview": "true",
+      "Ergonomics": "rightHand",
+      "Programmable": "false",
+      "lighting": "true"
+    },
+    {
+      "id": "7",
+      "img": "https://exo.ir/image/cache/catalog/Products/Logitech/Mouse/G-Pro-X-Superlight-2-DEX-Wireless/Black/G-Pro-X-Superlight-2-DEX-Wireless-Black-1-300x300.webp",
+      "price": "333",
+      "nameProduct": "REDDRAGON-M611",
+      "manufacturers": "Razer",
+      "productSetting": "http://localhost:3300/mouseSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/mouseDiscription",
+      "ProductReview": "true",
+      "Ergonomics": "symmetrical",
+      "Programmable": "false",
+      "lighting": "false"
+    },
+    {
+      "id": "8",
+      "img": "https://exo.ir/image/cache/catalog/Products/Razer/Mouses/razer-basilisk-v3/razer-basilisk-v3-1-300x300.jpg",
+      "price": "300",
+      "nameProduct": "REDDRAGON-M611",
+      "manufacturers": "Green",
+      "productSetting": "http://localhost:3300/mouseSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/mouseDiscription",
+      "ProductReview": "true",
+      "Ergonomics": "symmetrical",
+      "Programmable": "false",
+      "lighting": "true"
+    },
+    {
+      "id": "9",
+      "img": "https://exo.ir/image/cache/catalog/Products/Razer/Mouses/Razer-DeathAdder-Essential-White/Razer-DeathAdder-Essential-White-1-300x300.jpeg",
+      "price": "136",
+      "nameProduct": "REDDRAGON-M611",
+      "manufacturers": "Green",
+      "productSetting": "http://localhost:3300/mouseSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/mouseDiscription",
+      "ProductReview": "true",
+      "Ergonomics": "symmetrical",
+      "Programmable": "true",
+      "lighting": "true"
+    },
+    {
+      "id": "10",
+      "img": "https://exo.ir/image/cache/catalog/Products/T-Dagger/Mouses/Bettle-T-TGM305/t-dagger-bettle-t-tgm305-1-300x300.jpg",
+      "price": "180",
+      "nameProduct": "REDDRAGON-M611",
+      "manufacturers": "Green",
+      "productSetting": "http://localhost:3300/mouseSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/mouseDiscription",
+      "ProductReview": "true",
+      "Ergonomics": "rightHand",
+      "Programmable": "false",
+      "lighting": "false"
+    },
+    {
+      "id": "11",
+      "img": "https://exo.ir/image/cache/catalog/Products/REDRAGON/Mouses/M801-Sniper/redragon-m801-sniper-1-300x300.jpg",
+      "price": "299",
+      "nameProduct": "REDDRAGON-M611",
+      "manufacturers": "Asus",
+      "productSetting": "http://localhost:3300/mouseSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/mouseDiscription",
+      "ProductReview": "true",
+      "Ergonomics": "symmetrical",
+      "Programmable": "true",
+      "lighting": "true"
+    }
+  ],
+  "mouseSetting": {
+    "filterValues": [
+      {
+        "manufacturers": ["Razer", "Asus", "Green"],
+        "Ergonomics": ["symmetrical", "rightHand"],
+        "Programmable": ["true", "false"],
+        "lighting": ["true", "false"],
+        "minPirce": "0",
+        "maxPrice": "0"
+      }
+    ],
+    "kindofFilter": [
+      {
+        "id": "1",
+        "label": "manufacturers",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "manufacturers"
+      },
+      {
+        "id": "2",
+        "label": "price Range",
+        "kindOfFilter": "Slider"
+      },
+      {
+        "id": "3",
+        "label": "Ergonomics",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "Ergonomics"
+      },
+      {
+        "id": "4",
+        "label": "Programmable",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "Programmable"
+      },
+      {
+        "id": "5",
+        "label": "lighting",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "lighting"
+      }
+    ]
+  },
+
+  "mouseDiscription": [
     {
       "id": "1",
       "hederText": "Product review",
