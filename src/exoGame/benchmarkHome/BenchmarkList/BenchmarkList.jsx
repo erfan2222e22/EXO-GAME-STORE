@@ -8,48 +8,6 @@ const BenchmarkList = () => {
 
   const navigate = useNavigate();
 
-  const items = [
-    {
-      id: 1,
-      nameProduct: "9995WX",
-      price: "1212",
-      chartNumber: "50",
-      benchmarkNumber: "3123",
-      title: "cpu-product",
-    },
-    {
-      id: 2,
-      nameProduct: "7995WX",
-      price: "4121",
-      chartNumber: "70",
-      benchmarkNumber: "3123",
-      title: "cpu-product",
-    },
-    {
-      id: 3,
-      nameProduct: "7960X",
-      price: "4121",
-      chartNumber: "60",
-      benchmarkNumber: "3123",
-      title: "cpu-product",
-    },
-    {
-      id: 4,
-      nameProduct: "285K",
-      price: "12412",
-      chartNumber: "50",
-      benchmarkNumber: "3123",
-      title: "cpu-product",
-    },
-    {
-      id: 5,
-      nameProduct: "7950X",
-      price: "12124",
-      chartNumber: "22",
-      benchmarkNumber: "3123",
-      title: "cpu-product",
-    },
-  ];
 
   const BenchmarkList = [
     {
