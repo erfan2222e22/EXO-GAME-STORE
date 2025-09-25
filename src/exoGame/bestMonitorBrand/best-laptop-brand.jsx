@@ -1,33 +1,66 @@
 import { Box } from "@mui/material";
 import styleComponent from "../components/component-Style/StyleBestLaptopBrand";
-import acer_img from "./best-mon-brand-img/acer.png";
-import apple_img from "./best-mon-brand-img/apple.png";
-import leno_img from "./best-mon-brand-img/leno.png";
-import asus_img from "./best-mon-brand-img/asus.png";
-import micro_img from "./best-mon-brand-img/microsoft.png";
-
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const BestBrandLaptop = () => {
-  const { ParentDiv, TextHead, BoxImg, TextItems, LinkStyle } = styleComponent;
+  const { ParentDiv, TextHead, BoxImg, TextItems } = styleComponent;
+  const navigate = useNavigate();
 
   const itmes = [
-    { imgs: acer_img, text: "Acer", path: "./slame", id: 1 },
-    { imgs: micro_img, text: "Microsoft", path: "./slame", id: 2 },
-    { imgs: leno_img, text: "Lenovo", path: "./slame", id: 3 },
-    { imgs: apple_img, text: "Apple", path: "./slame", id: 4 },
-    { imgs: asus_img, text: "Asus", path: "./slame", id: 5 },
+    {
+      imgs: "https://exo.ir/image/cache/catalog/New_Template/Banners/carousel_banner/Icons%20Cat%20v1%20Acer-400x400.png",
+      text: "Acer",
+      id: 1,
+    },
+    {
+      imgs: "https://exo.ir/image/cache/catalog/New_Template/Banners/carousel_banner/Icons%20Cat%20v1%20Microsoft-400x400.png",
+      text: "Microsoft",
+      id: 2,
+    },
+    {
+      imgs: "https://exo.ir/image/cache/catalog/New_Template/Banners/carousel_banner/Icons%20Cat%20v1%20Leno-400x400.png",
+      text: "Lenovo",
+      id: 3,
+    },
+    {
+      imgs: "https://exo.ir/image/cache/catalog/New_Template/Banners/carousel_banner/Icons%20Cat%20v1%20Apple-400x400.png",
+      text: "Apple",
+      id: 4,
+    },
+    {
+      imgs: "https://exo.ir/image/cache/catalog/New_Template/Banners/carousel_banner/Icons%20Cat%20v1%20Asus-400x400.png",
+      text: "Asus",
+      id: 5,
+    },
   ];
+
+  const handeloOnclick = (item) => {
+    const ProductsJsonLink = `http://localhost:3300/laptopProduct?Manufacturers=${item.text}`;
+
+    axios
+      .get(ProductsJsonLink)
+      .then((data) => {
+        navigate(`catgory/${item.text}`, {
+          state: { product: data.data, pathName: "laptopProduct" },
+        });
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <Box>
-      <TextHead>بهترین برندهای لپتاپ دنیا</TextHead>
+      <TextHead>best laptop brands</TextHead>
       <ParentDiv>
         {itmes.map((item) => {
           return (
             <Box key={item.id}>
-              <LinkStyle to={item.path}>
-                <BoxImg component="img" src={item.imgs} alt="img"></BoxImg>
-                <TextItems>{item.text}</TextItems>
-              </LinkStyle>
+              <BoxImg
+                onClick={() => handeloOnclick(item)}
+                component="img"
+                src={item.imgs}
+                alt="☹"
+              ></BoxImg>
+              <TextItems>{item.text}</TextItems>
             </Box>
           );
         })}

@@ -574,7 +574,10 @@
       "GPUManufacturer": "Amd",
       "GPUName": "RX 6800 XT",
       "RayTracing": "false",
-      "InternalMemoryCapacity": "8GB"
+      "InternalMemoryCapacity": "8GB",
+      "chartNumber": "50",
+      "benchmarkNumber": "43623",
+      "title": "gpu-product"
     },
     {
       "id": "2",
@@ -588,7 +591,10 @@
       "GPUManufacturer": "Amd",
       "GPUName": "RX 6800 XT",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "12GB"
+      "InternalMemoryCapacity": "12GB",
+      "chartNumber": "55",
+      "benchmarkNumber": "",
+      "title": "gpu-product"
     },
     {
       "id": "3",
@@ -602,7 +608,10 @@
       "GPUManufacturer": "Amd",
       "GPUName": "RTX 5090",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "32GB"
+      "InternalMemoryCapacity": "32GB",
+      "chartNumber": "100",
+      "benchmarkNumber": "555512",
+      "title": "gpu-product"
     },
     {
       "id": "4",
@@ -616,7 +625,10 @@
       "GPUManufacturer": "Amd",
       "GPUName": "RTX 5060",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "8GB"
+      "InternalMemoryCapacity": "8GB",
+      "chartNumber": "60",
+      "benchmarkNumber": "66234",
+      "title": "gpu-product"
     },
     {
       "id": "5",
@@ -630,7 +642,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 5050",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "8GB"
+      "InternalMemoryCapacity": "8GB",
+      "chartNumber": "55",
+      "benchmarkNumber": "123314",
+      "title": "gpu-product"
     },
     {
       "id": "6",
@@ -644,7 +659,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 5060-ti",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "8GB"
+      "InternalMemoryCapacity": "8GB",
+      "chartNumber": "66",
+      "benchmarkNumber": "41412",
+      "title": "gpu-product"
     },
     {
       "id": "7",
@@ -658,7 +676,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 4070",
       "RayTracing": "false",
-      "InternalMemoryCapacity": "12GB"
+      "InternalMemoryCapacity": "12GB",
+      "chartNumber": "67",
+      "benchmarkNumber": "41241",
+      "title": "gpu-product"
     },
     {
       "id": "8",
@@ -672,7 +693,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 3060",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "12GB"
+      "InternalMemoryCapacity": "12GB",
+      "chartNumber": "46",
+      "benchmarkNumber": "123515",
+      "title": "gpu-product"
     },
     {
       "id": "9",
@@ -686,7 +710,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 3070",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "12GB"
+      "InternalMemoryCapacity": "12GB",
+      "chartNumber": "51",
+      "benchmarkNumber": "451251",
+      "title": "gpu-product"
     },
     {
       "id": "9",
@@ -700,7 +727,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 3070",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "8GB"
+      "InternalMemoryCapacity": "8GB",
+      "chartNumber": "51",
+      "benchmarkNumber": "123112",
+      "title": "gpu-product"
     },
     {
       "id": "10",
@@ -714,7 +744,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 3080",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "16GB"
+      "InternalMemoryCapacity": "16GB",
+      "chartNumber": "68",
+      "benchmarkNumber": "175727",
+      "title": "gpu-product"
     },
     {
       "id": "11",
@@ -728,7 +761,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 3080",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "16GB"
+      "InternalMemoryCapacity": "16GB",
+      "chartNumber": "70",
+      "benchmarkNumber": "155004",
+      "title": "gpu-product"
     },
     {
       "id": "12",
@@ -742,7 +778,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 3090",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "24GB"
+      "InternalMemoryCapacity": "24GB",
+      "chartNumber": "89",
+      "benchmarkNumber": "41412",
+      "title": "gpu-product"
     },
     {
       "id": "13",
@@ -756,7 +795,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 3090",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "24GB"
+      "InternalMemoryCapacity": "24GB",
+      "chartNumber": "90",
+      "benchmarkNumber": "66234",
+      "title": "gpu-product"
     },
     {
       "id": "14",
@@ -770,7 +812,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 3090",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "24GB"
+      "InternalMemoryCapacity": "24GB",
+      "chartNumber": "92",
+      "benchmarkNumber": "123314",
+      "title": "gpu-product"
     },
     {
       "id": "15",
@@ -784,7 +829,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 3070-ti",
       "RayTracing": "false",
-      "InternalMemoryCapacity": "8GB"
+      "InternalMemoryCapacity": "8GB",
+      "chartNumber": "77",
+      "benchmarkNumber": "123515",
+      "title": "gpu-product"
     },
     {
       "id": "16",
@@ -798,7 +846,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 3070-ti",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "8GB"
+      "InternalMemoryCapacity": "8GB",
+      "chartNumber": "64",
+      "benchmarkNumber": "79123",
+      "title": "gpu-product"
     },
     {
       "id": "17",
@@ -812,7 +863,10 @@
       "GPUManufacturer": "Asrock",
       "GPUName": "RTX 3070-ti",
       "RayTracing": "false",
-      "InternalMemoryCapacity": "8GB"
+      "InternalMemoryCapacity": "8GB",
+      "chartNumber": "80",
+      "benchmarkNumber": "12312",
+      "title": "gpu-product"
     },
     {
       "id": "18",
@@ -826,7 +880,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 3070-ti",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "8GB"
+      "InternalMemoryCapacity": "8GB",
+      "chartNumber": "89",
+      "benchmarkNumber": "155004",
+      "title": "gpu-product"
     },
     {
       "id": "19",
@@ -840,7 +897,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 3060-ti",
       "RayTracing": "false",
-      "InternalMemoryCapacity": "8GB"
+      "InternalMemoryCapacity": "8GB",
+      "chartNumber": "67",
+      "benchmarkNumber": "321542",
+      "title": "gpu-product"
     },
     {
       "id": "20",
@@ -854,7 +914,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 3060-ti",
       "RayTracing": "false",
-      "InternalMemoryCapacity": "8GB"
+      "InternalMemoryCapacity": "8GB",
+      "chartNumber": "64",
+      "benchmarkNumber": "200002",
+      "title": "gpu-product"
     },
     {
       "id": "21",
@@ -868,7 +931,10 @@
       "GPUManufacturer": "Nvidia",
       "GPUName": "RTX 4060",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "8GB"
+      "InternalMemoryCapacity": "8GB",
+      "chartNumber": "71",
+      "benchmarkNumber": "123515",
+      "title": "gpu-product"
     },
     {
       "id": "22",
@@ -882,7 +948,10 @@
       "GPUManufacturer": "Asrock",
       "GPUName": "RTX 4070",
       "RayTracing": "false",
-      "InternalMemoryCapacity": "12GB"
+      "InternalMemoryCapacity": "12GB",
+      "chartNumber": "75",
+      "benchmarkNumber": "123941",
+      "title": "gpu-product"
     },
     {
       "id": "23",
@@ -896,7 +965,10 @@
       "GPUManufacturer": "intel",
       "GPUName": "RTX 4080",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "12GB"
+      "InternalMemoryCapacity": "12GB",
+      "chartNumber": "86",
+      "benchmarkNumber": "142555",
+      "title": "gpu-product"
     },
     {
       "id": "24",
@@ -910,7 +982,10 @@
       "GPUManufacturer": "Amd",
       "GPUName": "RX 6600 XT",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "16GB"
+      "InternalMemoryCapacity": "16GB",
+      "chartNumber": "59",
+      "benchmarkNumber": "731234",
+      "title": "gpu-product"
     },
     {
       "id": "25",
@@ -924,7 +999,10 @@
       "GPUManufacturer": "Amd",
       "GPUName": "RX 6800 XT",
       "RayTracing": "false",
-      "InternalMemoryCapacity": "24GB"
+      "InternalMemoryCapacity": "24GB",
+      "chartNumber": "80",
+      "benchmarkNumber": "12312",
+      "title": "gpu-product"
     },
     {
       "id": "26",
@@ -938,7 +1016,10 @@
       "GPUManufacturer": "Amd",
       "GPUName": "RX 6900 XT",
       "RayTracing": "true",
-      "InternalMemoryCapacity": "24GB"
+      "InternalMemoryCapacity": "24GB",
+      "chartNumber": "97",
+      "benchmarkNumber": "155004",
+      "title": "gpu-product"
     },
     {
       "id": "27",
@@ -952,7 +1033,183 @@
       "GPUManufacturer": "Asrock",
       "GPUName": "RTX 4090",
       "RayTracing": "false",
-      "InternalMemoryCapacity": "24GB"
+      "InternalMemoryCapacity": "24GB",
+      "chartNumber": "98",
+      "benchmarkNumber": "14500",
+      "title": "gpu-product"
+    }
+  ],
+
+  "gpu2dProducs": [
+    {
+      "id": "1",
+      "nameProduct": " ASUS ROG Astral RTX 5090 O32G",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphic-Card/NVIDIA/ROG-Astral-Series/RTX-5000-Series/rog-astral-rtx-5090-32g/asus-rog-astral-rtx-5090-o32g-1-300x300.jpg",
+      "price": "3052",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Asrock",
+      "GPUName": "RTX 5090",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "32GB",
+      "chartNumber": "100",
+      "benchmarkNumber": "14500",
+      "title": "gpu-product"
+    },
+    {
+      "id": "2",
+      "nameProduct": "ASUS ROG Astral RTX 5090 Dhahab OC 32gb",
+      "company": "Asus",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphic-Card/NVIDIA/ROG-Astral-Series/RTX-5000-Series/RTX-5090-Dhahab-OC-32GB/Asus-ROG-Astral-RTX-5090-Dhahab-OC-32GB-1-300x300.webp",
+      "price": "2452",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Asrock",
+      "GPUName": "RTX 5090",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "24GB",
+      "chartNumber": "98",
+      "benchmarkNumber": "14500",
+      "title": "gpu-product"
+    },
+    {
+      "id": "3",
+      "nameProduct": "MSI RTX 5060 12G Shadow 2X OC",
+      "company": "Nvidia",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Graphic-Card/nVIDIA/Shadow-Series/RTX-5000-Series/RTX-5070-12G-Shadow-2X-OC/RTX-5070-12G-Shadow-2X-OC-1-300x300.webp",
+      "price": "1452",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Asrock",
+      "GPUName": "RTX 5060",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "12GB",
+      "chartNumber": "68",
+      "benchmarkNumber": "14500",
+      "title": "gpu-product"
+    },
+    {
+      "id": "4",
+      "nameProduct": "Asus-Dual-Radon-3060",
+      "company": "Asus",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphic-Card/NVIDIA/Dual-Series/RTX-3000-Series/RTX-3050-OC-6GB/Asus-Dual-RTX-3050-OC-6GB-1-300x300.jpg",
+      "price": "1452",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Asrock",
+      "GPUName": "RTX 3060",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "12GB",
+      "chartNumber": "58",
+      "benchmarkNumber": "145500",
+      "title": "gpu-product"
+    },
+    {
+      "id": "5",
+      "nameProduct": " Sapphire Pulse Radeon RX8GB ",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/Sapphire/Graphic%20Cards/AMD%20RX%207000%20Series/Pulse-Radeon-RX-7600-8GB/Pulse-Radeon-RX-7600-8GB-1-300x300.jpg",
+      "price": "1452",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Asrock",
+      "GPUName": "RX 6800 XT",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "8GB",
+      "chartNumber": "68",
+      "benchmarkNumber": "12312",
+      "title": "gpu-product"
+    },
+    {
+      "id": "6",
+      "nameProduct": " ASUS Dual RTX 5050 OC 8GB",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/ASUS/Graphic-Card/NVIDIA/Dual-Series/RTX-5000-Series/dual-rtx-5050-8gb/asus-dual-rtx-5050-oc-8gb-1-300x300.webp",
+      "price": "952",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Asrock",
+      "GPUName": "RTX 5050",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "8GB",
+      "chartNumber": "53",
+      "benchmarkNumber": "19500",
+      "title": "gpu-product"
+    },
+    {
+      "id": "7",
+      "nameProduct": "Galax RTX 3090 Ti Hall of Fame Limited Edition 24GB",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/Galax/Graphic-cards/RTX-3000-Series/galax-rtx-3090ti-hof-limited-edition/galax-rtx-3090-ti-half-of-fame-limited-edition-1-300x300.jpg",
+      "price": "ناموجود",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Asrock",
+      "GPUName": "RTX 3090",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "24GB",
+      "chartNumber": "95",
+      "benchmarkNumber": "799500",
+      "title": "gpu-product"
+    },
+    {
+      "id": "8",
+      "nameProduct": "MSI RTX 4080 Super GAMING X SLIM 16GB",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Graphic%20Cards/NVIDIA/RTX-4000-Series/RTX-4080-Super-GAMING-X-SLIM-16G/RTX-4080-Super-GAMING-X-SLIM-16G-1-300x300.jpg",
+      "price": "ناموجود",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Asrock",
+      "GPUName": "RTX 4080",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "16GB",
+      "chartNumber": "88",
+      "benchmarkNumber": "11500",
+      "title": "gpu-product"
+    },
+    {
+      "id": "9",
+      "nameProduct": "Zotac RTX 5060 Ti Solid SFF OC 16G",
+      "company": "Nvidia",
+      "img": "https://exo.ir/image/cache/catalog/Products/ZOTAC/Graphic-Cards/Solid-Series/RTX-5000-Series/RTX-5070-Ti-Solid-SFF-16GB/zotac-rtx-5070-ti-solid-sff-oc-16gb-1-300x300.webp",
+      "price": "752",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Asrock",
+      "GPUName": "RTX 5060",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "16GB",
+      "chartNumber": "78",
+      "benchmarkNumber": "16500",
+      "title": "gpu-product"
+    },
+    {
+      "id": "10",
+      "nameProduct": "Amd-Rx-6600-16gb",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Graphic%20Cards/AMD/AMD%206000%20Series/MSI-RX-6500-XT-MECH-2X-4G/MSI-RX-6500-XT-MECH-2X-4G-5-300x300.jpeg",
+      "price": "ناموجود",
+      "productSetting": "http://localhost:3300/gpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/gpuDiscription",
+      "ProductReview": "false",
+      "GPUManufacturer": "Asrock",
+      "GPUName": "RX 6600 XT",
+      "RayTracing": "false",
+      "InternalMemoryCapacity": "16GB",
+      "chartNumber": "48",
+      "benchmarkNumber": "14500",
+      "title": "gpu-product"
     }
   ],
 
@@ -1249,6 +1506,186 @@
       "informationIcons": "false",
       "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
       "ProductReview": "true"
+    },
+    {
+      "id": "13",
+      "img": "https://exo.ir/image/cache/catalog/Products/Apple/Laptops/MacBook-Air/15/2025/Midnight/MacBook-Air-15-2025-Midnight-1-300x300.webp",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "price": "ناموجود",
+      "nameProduct": "Apple-MaxBook-Air-15-2025",
+      "laptopSeries": "MacbookAir",
+      "Manufacturers": "Apple",
+      "Processor": "M4",
+      "gpuModel": "m4-10",
+      "monitorSize": "15.3",
+      "hdd": "2000GB",
+      "ssd": "true",
+      "ram": "24GB",
+      "informationIcons": "false",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    },
+    {
+      "id": "14",
+      "img": "https://exo.ir/image/cache/catalog/Products/Apple/Laptops/MacBook-Air/15/2025/Sky-Blue/MacBook-Air-15-2025-Sky-Blue-2-300x300.webp",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "price": "ناموجود",
+      "nameProduct": "Apple-MaxBook-Air-15-2025",
+      "laptopSeries": "MacbookAir",
+      "Manufacturers": "Apple",
+      "Processor": "Core-i7",
+      "gpuModel": "m4-10",
+      "monitorSize": "15.3",
+      "hdd": "2000GB",
+      "ssd": "true",
+      "ram": "16GB",
+      "informationIcons": "false",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    },
+    {
+      "id": "15",
+      "img": "https://exo.ir/image/cache/catalog/Products/Apple/Laptops/MacBook-Air/15/2025/Midnight/MacBook-Air-15-2025-Midnight-1-300x300.webp",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "price": "ناموجود",
+      "nameProduct": "Microsoft-surface-Laptop 4",
+      "laptopSeries": "Surface-Studio-2",
+      "Manufacturers": "Microsoft",
+      "Processor": "Core-i7",
+      "gpuModel": "Iris-Xe-Graphics",
+      "monitorSize": "15.3",
+      "hdd": "1500GB",
+      "ssd": "true",
+      "ram": "16GB",
+      "informationIcons": "false",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    },
+    {
+      "id": "16",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/Laptop/Surface-Laptop/4/13.5-Inch/Matte-Black/Microsoft-Surface-Laptop-4-13.5-Inch-Matte-Black-1-300x300.jpg",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "price": "ناموجود",
+      "nameProduct": "Microsoft-surface-Laptop 5",
+      "laptopSeries": "Surface-Studio-2",
+      "Manufacturers": "Microsoft",
+      "Processor": "Core-i7",
+      "gpuModel": "Iris-Xe-Graphics",
+      "monitorSize": "15.3",
+      "hdd": "2000GB",
+      "ssd": "true",
+      "ram": "24GB",
+      "informationIcons": "false",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    },
+    {
+      "id": "17",
+      "img": "https://exo.ir/image/cache/catalog/Products/Apple/Laptops/MacBook-Air/15/2025/Midnight/MacBook-Air-15-2025-Midnight-1-300x300.webp",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "price": "ناموجود",
+      "nameProduct": "Microsoft-surface-black",
+      "laptopSeries": "Surface-Laptop-5",
+      "Manufacturers": "Microsoft",
+      "Processor": "Core-i7",
+      "gpuModel": "Iris-Xe-Graphics",
+      "monitorSize": "15.3",
+      "hdd": "2000GB",
+      "ssd": "true",
+      "ram": "32GB",
+      "informationIcons": "false",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    },
+    {
+      "id": "18",
+      "img": "https://exo.ir/image/cache/catalog/Products/Microsoft/Laptop/Surface-Laptop/5/15-Inch/Black/Microsoft-Surface-Laptop-5-15-Inch-Black-1-300x300.jpg",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "price": "ناموجود",
+      "nameProduct": "Microsoft-surface-15",
+      "laptopSeries": "Surface-Laptop-5",
+      "Manufacturers": "Microsoft",
+      "Processor": "Core-i7",
+      "gpuModel": "Iris-Xe-Graphics-G7",
+      "monitorSize": "15.3",
+      "hdd": "2000GB",
+      "ssd": "true",
+      "ram": "32GB",
+      "informationIcons": "false",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    },
+    {
+      "id": "19",
+      "img": "https://exo.ir/image/cache/catalog/Products/ACER/Laptops/predator-series/NEO-16-AI-PHN16-73/ACER-Predator-Helios-Neo-16-PHN16-72-71VF-2024-1-300x300.webp",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "price": "ناموجود",
+      "nameProduct": "Acer-Prodator",
+      "laptopSeries": "Predator-Helios-Neo",
+      "Manufacturers": "Acer",
+      "Processor": "Core-i7",
+      "gpuModel": "Rtx-5060",
+      "monitorSize": "15.3",
+      "hdd": "2000GB",
+      "ssd": "true",
+      "ram": "64GB",
+      "informationIcons": "false",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    },
+    {
+      "id": "20",
+      "img": "https://exo.ir/image/cache/catalog/Products/ACER/Laptops/predator-series/Predator-Helios-Neo-16-PHN16-71/acer-predator-helios-neo-16-phn16-71-1-300x300.jpg",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "price": "ناموجود",
+      "nameProduct": "Acer-Prodator-headis",
+      "laptopSeries": "Predator-Helios-Neo",
+      "Manufacturers": "Acer",
+      "Processor": "Core-i7",
+      "gpuModel": "Rtx-5060",
+      "monitorSize": "15.3",
+      "hdd": "2000GB",
+      "ssd": "true",
+      "ram": "64GB",
+      "informationIcons": "false",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    },
+    {
+      "id": "21",
+      "img": "https://exo.ir/image/cache/catalog/Products/ACER/Laptops/nitro-series/acer-nitro-5-an515-intel-9/acer-nitro-5-an515-intel-9-1-300x300.jpg",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "price": "ناموجود",
+      "nameProduct": "Acer-nitro",
+      "laptopSeries": "Nitro",
+      "Manufacturers": "Acer",
+      "Processor": "Core-i7",
+      "gpuModel": "Rtx-4060",
+      "monitorSize": "15.3",
+      "hdd": "2000GB",
+      "ssd": "true",
+      "ram": "32GB",
+      "informationIcons": "false",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
+    },
+    {
+      "id": "22",
+      "img": "https://exo.ir/image/cache/catalog/Products/ACER/Laptops/nitro-series/nitro-v-15-anv15-intel-13/acer-nitro-v-anv15-black-1-300x300.jpg",
+      "productSetting": "http://localhost:3300/lapTopSetting",
+      "price": "ناموجود",
+      "nameProduct": "Acer-Nitro8",
+      "laptopSeries": "Predator-Helios-Nitro",
+      "Manufacturers": "Acer",
+      "Processor": "Core-i7",
+      "gpuModel": "Rtx-4070",
+      "monitorSize": "15.3",
+      "hdd": "2000GB",
+      "ssd": "true",
+      "ram": "24GB",
+      "informationIcons": "false",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/LaptopDiscription",
+      "ProductReview": "true"
     }
   ],
 
@@ -1282,9 +1719,26 @@
   "lapTopSetting": {
     "filterValues": [
       {
-        "Manufacturers": ["Asus", "Lenovo"],
-        "laptopSeries": ["Katana", "Nitro", "Xqc", "Alpha"],
-        "Processor": ["Core-i7", "Core-i5", "Ryzen-9", "Ryzen-7", "Ryzen-5"],
+        "Manufacturers": ["Asus", "Lenovo", "Apple", "Microsoft", "Acer"],
+        "laptopSeries": [
+          "Katana",
+          "Nitro",
+          "Xqc",
+          "Alpha",
+          "MacbookAir",
+          "Surface-Laptop-5",
+          "Surface-Studio-2",
+          "Predator-Helios-Nitro",
+          "Predator-Helios-Neo"
+        ],
+        "Processor": [
+          "Core-i7",
+          "Core-i5",
+          "Ryzen-9",
+          "Ryzen-7",
+          "Ryzen-5",
+          "M4"
+        ],
         "gpuModel": [
           "Rtx-5090",
           "Rtx-5080",
@@ -1292,12 +1746,15 @@
           "Rtx-5060",
           "Rtx-5050",
           "Rtx-4070",
-          "Rtx-4060"
+          "Rtx-4060",
+          "m4-10",
+          "Iris-Xe-Graphics",
+          "Iris-Xe-Graphics-G7"
         ],
         "monitorSize": ["16", "15.3", "15", "14"],
         "ssd": ["1000GB", "500GB", "false"],
         "hdd": ["2000GB", "1500GB", "1000GB"],
-        "ram": ["24GB", "16GB", "12GB", "8GB"],
+        "ram": ["64GB", "24GB", "16GB", "12GB", "8GB"],
         "minPrice": "0",
         "maxPrice": "0"
       }
@@ -3372,6 +3829,163 @@
       "lighting": "true"
     }
   ],
+
+  "SingleCorePassmarkCpu": [
+    {
+      "id": "1",
+      "nameProduct": "Intel Core Ultra 9 285K - Tray",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/Intel/CPU/Desktop/Core-Ultra-Series/Intel-Core-Ultra-Tray-300x300.jpg",
+      "price": "610",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "corei7",
+      "IntegratedGraphics": "false",
+      "NumberofCores": "10",
+      "NumberOfAllStrings": "128",
+      "chartNumber": "90",
+      "benchmarkNumber": "314241",
+      "title": "cpu-product"
+    },
+    {
+      "id": "2",
+      "nameProduct": "Intel Core Ultra 7 265K - Tray",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/Intel/CPU/Desktop/Core-Ultra-Series/Intel-Core-Ultra-Tray-300x300.jpg",
+      "price": "1000",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "corei7",
+      "IntegratedGraphics": "false",
+      "NumberofCores": "9",
+      "NumberOfAllStrings": "128",
+      "chartNumber": "90",
+      "benchmarkNumber": "123515",
+      "title": "cpu-product"
+    },
+    {
+      "id": "3",
+      "nameProduct": " Intel Core i9 14900KS - Tray",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/Intel/CPU/Desktop/14th-Gen/Core-i9/Intel-14th-Gen-Core-Tray-1-300x300.jpg",
+      "price": "400",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "pention",
+      "IntegratedGraphics": "false",
+      "NumberofCores": "7",
+      "NumberOfAllStrings": "128",
+      "chartNumber": "71",
+      "benchmarkNumber": "123515",
+      "title": "cpu-product"
+    },
+    {
+      "id": "4",
+      "nameProduct": "AMD Ryzen 9 9950X",
+      "company": "Amd",
+      "img": "https://exo.ir/image/cache/catalog/Products/AMD/CPU/Ryzen/9000-Series/Ryzen-9/AMD-Ryzen-9-BOX-1-300x300.jpg",
+      "price": "610",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "Athlon",
+      "IntegratedGraphics": "false",
+      "NumberofCores": "9",
+      "NumberOfAllStrings": "128",
+      "chartNumber": "66",
+      "benchmarkNumber": "142000",
+      "title": "cpu-product"
+    },
+    {
+      "id": "5",
+      "nameProduct": "AMD Ryzen 9 9900X - Tra",
+      "company": "Amd",
+      "img": "https://exo.ir/image/cache/catalog/Products/Intel/CPU/Desktop/14th-Gen/Core-i9/Intel-14th-Gen-Core-i9-K-Box-1-300x300.jpg",
+      "price": "980",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "pention",
+      "IntegratedGraphics": "false",
+      "NumberofCores": "10",
+      "NumberOfAllStrings": "128",
+      "chartNumber": "80",
+      "benchmarkNumber": "200002",
+      "title": "cpu-product"
+    },
+    {
+      "id": "6",
+      "nameProduct": "AMD Ryzen 7 9700X - Tra",
+      "company": "Amd",
+      "img": "https://exo.ir/image/cache/catalog/Products/AMD/CPU/Ryzen/9000-Series/Ryzen-7/AMD-Ryzen-7-BOX-1-300x300.jpg",
+      "price": "1200",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "Athlon",
+      "IntegratedGraphics": "false",
+      "NumberofCores": "8",
+      "NumberOfAllStrings": "128",
+      "chartNumber": "80",
+      "benchmarkNumber": "175727",
+      "title": "cpu-product"
+    },
+    {
+      "id": "7",
+      "nameProduct": "intel-Core-I3-12100",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/Intel/intel-12th-gen/intel-core-i3-series/intel-core-i3-12th-gen-wg-1-300x300.jpg",
+      "price": "ناموجود",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "corei3",
+      "IntegratedGraphics": "false",
+      "NumberofCores": "6",
+      "NumberOfAllStrings": "128",
+      "chartNumber": "30",
+      "benchmarkNumber": "2131",
+      "title": "cpu-product"
+    },
+    {
+      "id": "8",
+      "nameProduct": "intel-Core-I3-9100",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/Intel/Intel-13th-Gen/intel-core-i3-series/intel-core-i3-wog-13th-gen-box-3-300x300.jpg",
+      "price": "ناموجود",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "corei3",
+      "IntegratedGraphics": "false",
+      "NumberofCores": "6",
+      "NumberOfAllStrings": "128",
+      "chartNumber": "55",
+      "benchmarkNumber": "175727",
+      "title": "cpu-product"
+    },
+    {
+      "id": "9",
+      "nameProduct": "intel-Core-I3-8100",
+      "company": "intel",
+      "img": "https://exo.ir/image/cache/catalog/Products/Intel/intel-12th-gen/intel-core-i3-series/intel-12th-gen-tray-new-300x300.jpg",
+      "price": "ناموجود",
+      "productSetting": "http://localhost:3300/cpuSetting",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/cpuDiscription",
+      "ProductReview": "true",
+      "ProcessorSeries": "corei3",
+      "IntegratedGraphics": "false",
+      "NumberofCores": "6",
+      "NumberOfAllStrings": "128",
+      "chartNumber": "40",
+      "benchmarkNumber": "111111",
+      "title": "cpu-product"
+    }
+  ],
+
   "headSetDiscription": [
     {
       "id": "1",

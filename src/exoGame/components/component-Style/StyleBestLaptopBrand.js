@@ -29,17 +29,12 @@ const TextItems = styled(Typography)({
   colro: "#3c3c3c",
   fontSize: "15px",
 });
-const LinkStyle = styled(Link)({
-  textDecoration: "none",
-  color: "black",
-});
 
 const styleComponent = {
   ParentDiv,
   TextHead,
   BoxImg,
   TextItems,
-  LinkStyle,
 };
 
 export default styleComponent;
