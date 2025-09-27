@@ -4,33 +4,46 @@ import img_full_hd from "./sug_monitor_img/full_hd.png";
 import img_ultera_wide from "./sug_monitor_img/ultera_wide.png";
 import stylecomponent from "../components/component-Style/StyleSugestMonitor";
 import { Box } from "@mui/material";
-import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 const SugMonitor = () => {
   const { DivParent, DivImg, Text, HeadrText } = stylecomponent;
   let items = [
-    { img: img_2k, text: "ultrawide", id: 1, path: "./ultrawide" },
-    { img: img_4k, text: "ultrawide", id: 2, path: "./ultrawide" },
-    { img: img_full_hd, text: "ultrawide", id: 3, path: "./ultrawide" },
-    { img: img_ultera_wide, text: "ultrawide", id: 4, path: "./ultrawide" },
+    { img: img_2k, text: "2K", id: 1, path: "./ultrawide" },
+    { img: img_4k, text: "4K", id: 2, path: "./ultrawide" },
+    { img: img_full_hd, text: "FHD", id: 3, path: "./ultrawide" },
+    { img: img_ultera_wide, text: "Ultra-Wide", id: 4, path: "./ultrawide" },
   ];
+  const navigate = useNavigate();
+
+  const handelOnclick = (item) => {
+    const itemsJsonLinks = `http://localhost:3300/monitorProduct?ImageResolutionSpecification=${item.text}`;
+    axios
+      .get(itemsJsonLinks)
+      .then((data) => {
+        navigate(`catgory/${item.text}`, {
+          state: { product: data.data, pathName: "monitorProduct" },
+        });
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <Box>
       <HeadrText sx={{ textAlign: "center", color: "black" }}>
-        براساس نیازت بهترین مانیتور انتخاب کن
+        Choose the best monitor for your needs.
       </HeadrText>
       <DivParent>
         {items.map((item) => {
           return (
             <Box key={item.id}>
-              <Link
-                style={{ textDecoration: "none", color: "black" }}
-                to={item.path}
+              <Box
+                onClick={() => handelOnclick(item)}
+                sx={{ cursor: "pointer" }}
               >
                 <DivImg component="img" src={item.img}></DivImg>
                 <Text>{item.text}</Text>
-              </Link>
+              </Box>
             </Box>
           );
         })}
