@@ -3411,6 +3411,217 @@
     ]
   },
 
+  "PortableConsolesProduct": [
+    {
+      "id": "1",
+      "nameProduct": "Nintentod Switch2",
+      "img": "https://exo.ir/image/cache/catalog/Products/Nintendo/Console/Nintendo-Switch-2/Bundles/Nintendo-Switch-2-Carrying-Case-300x300.webp",
+      "genration": "Ninth",
+      "manufacturers": "Nintentod",
+      "touchscreenCapability": "true",
+      "price": "500",
+      "productSetting": "http://localhost:3300/PortableConsolesProductSetting",
+      "ProductReview": "true",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/PortableConsolesDiscription"
+    },
+    {
+      "id": "2",
+      "nameProduct": "Lenovo-Legion-Go-1",
+      "img": "https://exo.ir/image/cache/catalog/Products/Lenovo/Handheld-console/Legion-Go/Lenovo-Legion-Go-1-300x300.jpg",
+      "genration": "Ninth",
+      "touchscreenCapability": "false",
+      "price": "500",
+      "productSetting": "http://localhost:3300/PortableConsolesProductSetting",
+      "ProductReview": "true",
+      "manufacturers": "Lenovo",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/PortableConsolesDiscription"
+    },
+    {
+      "id": "3",
+      "nameProduct": "Legion-Go-S-Glacier-White-1",
+      "img": "https://exo.ir/image/cache/catalog/Products/Lenovo/Handheld-console/Legion-Go-S/Glacier-White/Legion-Go-S-Glacier-White-1-300x300.webp",
+      "genration": "Ninth",
+      "touchscreenCapability": "true",
+      "price": "800",
+      "productSetting": "http://localhost:3300/PortableConsolesProductSetting",
+      "ProductReview": "true",
+      "manufacturers": "Lenovo",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/PortableConsolesDiscription"
+    },
+    {
+      "id": "4",
+      "nameProduct": "Nintendo-Switch-OLED-The-Legend",
+      "img": "https://exo.ir/image/cache/catalog/Products/Nintendo/Console/Nintendo-Switch-OLED-The-Legend-of-Zelda-TotK/Nintendo-Switch-OLED-The-Legend-of-Zelda-TotK-3-300x300.webp",
+      "genration": "Ninth",
+      "touchscreenCapability": "true",
+      "price": "500",
+      "productSetting": "http://localhost:3300/PortableConsolesProductSetting",
+      "ProductReview": "true",
+      "manufacturers": "LogiTech",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/PortableConsolesDiscription"
+    },
+    {
+      "id": "5",
+      "nameProduct": "nintendo-switch-lite",
+      "img": "https://exo.ir/image/cache/catalog/Products/Nintendo/Console/nintendo-switch-lite/nintendo-switch-lite-coral-1-300x300.jpg",
+      "genration": "Ninth",
+      "touchscreenCapability": "false",
+      "price": "400",
+      "productSetting": "http://localhost:3300/PortableConsolesProductSetting",
+      "ProductReview": "true",
+      "manufacturers": "Nintentod",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/PortableConsolesDiscription"
+    },
+    {
+      "id": "6",
+      "nameProduct": "MSI-Claw-A8-BZ2EM-",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Console/Claw-Series/A8-BZ2EM/Polar-Tempest/MSI-Claw-A8-BZ2EM-Polar-Tempest-1-300x300.webp",
+      "genration": "Eighth",
+      "touchscreenCapability": "true",
+      "price": "1000",
+      "productSetting": "http://localhost:3300/PortableConsolesProductSetting",
+      "ProductReview": "true",
+      "manufacturers": "MSI",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/PortableConsolesDiscription"
+    },
+    {
+      "id": "7",
+      "nameProduct": "game-watch-super-mario-bros",
+      "img": "https://exo.ir/image/cache/catalog/cache/catalog/Article/2020-6/Nintendo/game-watch-super-mario-bros/game-watch-super-mario-bros-300x300.webp",
+      "genration": "Eighth",
+      "touchscreenCapability": "false",
+      "price": "300",
+      "productSetting": "http://localhost:3300/PortableConsolesProductSetting",
+      "ProductReview": "true",
+      "manufacturers": "Nintentod",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/PortableConsolesDiscription"
+    },
+    {
+      "id": "8",
+      "nameProduct": "MSI-Claw-A8-BZ2EM-Neon-green-1",
+      "img": "https://exo.ir/image/cache/catalog/Products/MSI/Console/Claw-Series/A8-BZ2EM/Neon-Green/MSI-Claw-A8-BZ2EM-Neon-green-1-300x300.webp",
+      "genration": "Ninth",
+      "touchscreenCapability": "true",
+      "price": "1220",
+      "productSetting": "http://localhost:3300/PortableConsolesProductSetting",
+      "ProductReview": "true",
+      "manufacturers": "MSI",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/PortableConsolesDiscription"
+    },
+    {
+      "id": "9",
+      "nameProduct": "nintendo-switch-lite",
+      "img": "https://exo.ir/image/cache/catalog/Products/Nintendo/Console/nintendo-switch-lite/nintendo-switch-lite-blue-1-300x300.jpg",
+      "genration": "Eighth",
+      "touchscreenCapability": "true",
+      "price": "350",
+      "productSetting": "http://localhost:3300/PortableConsolesProductSetting",
+      "ProductReview": "true",
+      "manufacturers": "Nintentod",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/PortableConsolesDiscription"
+    },
+    {
+      "id": "10",
+      "nameProduct": "nintendo-switch-oled-pokemon-scarlet-violet-edition",
+      "img": "https://exo.ir/image/cache/catalog/Products/Nintendo/Console/nintendo-Switch-OLED-Model-Pok%C3%A9mon-Scarlet-and-Violet-Edition/nintendo-switch-oled-pokemon-scarlet-violet-edition-1-300x300.jpg",
+      "genration": "Eighth",
+      "touchscreenCapability": "false",
+      "price": "760",
+      "productSetting": "http://localhost:3300/PortableConsolesProductSetting",
+      "ProductReview": "true",
+      "manufacturers": "Nintentod",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/PortableConsolesDiscription"
+    },
+    {
+      "id": "11",
+      "nameProduct": "Nintendo-Switch-OLED",
+      "img": "https://exo.ir/image/cache/catalog/Products/Nintendo/Console/Nintendo-Switch-OLED/nintendo-switch-oled-neon-blue-red-2-300x300.jpg",
+      "genration": "Eighth",
+      "touchscreenCapability": "false",
+      "price": "500",
+      "productSetting": "http://localhost:3300/PortableConsolesProductSetting",
+      "ProductReview": "true",
+      "manufacturers": "LogiTech",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/PortableConsolesDiscription"
+    },
+    {
+      "id": "12",
+      "nameProduct": "nintendo-switch-oled-white",
+      "img": "https://exo.ir/image/cache/catalog/Products/Nintendo/Console/Nintendo-Switch-OLED/nintendo-switch-oled-white-2-300x300.jpg",
+      "genration": "Eighth",
+      "touchscreenCapability": "false",
+      "price": "404",
+      "productSetting": "http://localhost:3300/PortableConsolesProductSetting",
+      "ProductReview": "true",
+      "manufacturers": "LogiTech",
+      "LinkDiscriptionPrdouct": "http://localhost:3300/PortableConsolesDiscription"
+    }
+  ],
+
+  "PortableConsolesDiscription": [
+    {
+      "id": "1",
+      "hederText": "Product review",
+      "discription": "In recent years, the PlayStation 5 console has managed to establish itself in the market, offering an unparalleled video game experience. Now, with the introduction of the PS5 Pro, gamers are eagerly looking to examine the differences between this new version and the standard PS5. In this article, we will first provide a comparison between the two models, and then discuss the specific features and capabilities of the PS5 Pro.",
+      "img": "https://ex//o.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/1.jpg"
+    },
+    {
+      "id": "2",
+      "hederText": "Differences in graphics and processing power",
+      "discription": "The PS5 Pro comes to market with an upgraded graphics card that has approximately 67 percent more compute units compared to the regular PS5. This translates to a 45 percent increase in graphical processing power, as well as the ability to run games with higher visual fidelity. The PS5 Pro also utilizes a new technology called PlayStation Spectral Super Resolution, which uses artificial intelligence to display images with higher clarity and prevents frame rate drops.In terms of the processor, the PS5 Pro uses the same 8-core AMD Zen 2 processor as the standard version, but with an improved processing speed that can increase to 3.85 GHz when necessary, whereas the regular version is limited to 3.5 GHz. This helps the PS5 Pro in more demanding moments.",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/2.jpg"
+    },
+    {
+      "id": "3",
+      "hederText": "Improved and customizable design",
+      "discription": "A new feature introduced in the PS5 Pro is Game Boost mode, specifically designed for PS4 games. This capability enhances the experience of older games with better resolution and speed, allowing gamers to enjoy over 8500 titles with higher quality.Improved and Customizable DesignIn terms of design, the PS5 Pro is very similar to the PS5 Slim model and comes in a size relatively smaller than the original model. This new version",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/3.jpg"
+    },
+    {
+      "id": "4",
+      "hederText": "Is the PS5 Pro worth buying?",
+      "discription": "Given all the advanced features of the PS5 Pro, including a more powerful GPU, more storage space, Wi-Fi 7, and Game Boost mode, this console is an excellent option for professional gamers looking for visual quality and a smoother experience. If you are a gamer who values higher quality and speed in games and intend to play new and old games with better quality",
+      "img": "https://exo.ir/image//catalog/Gaming%20Consoles/PlayStation%205%20Content/4.jpg"
+    }
+  ],
+
+  "PortableConsolesProductSetting": {
+    "filterValues": [
+      {
+        "manufacturers": ["MSI", "Nintentod", "Lenovo", "LogiTech"],
+        "generation": ["Eighth", "Ninth"],
+        "touchscreenCapability": ["true", "false"],
+        "minPirce": "0",
+        "maxPrice": "0"
+      }
+    ],
+    "kindofFilter": [
+      {
+        "id": "1",
+        "label": "Manufacturers",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "manufacturers"
+      },
+      {
+        "id": "2",
+        "label": "price Range",
+        "kindOfFilter": "Slider"
+      },
+      {
+        "id": "3",
+        "label": "generation",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "generation"
+      },
+      {
+        "id": "4",
+        "label": "touchscreenCapability",
+        "kindOfFilter": "cheCheckbox",
+        "filterType": "touchscreenCapability"
+      }
+    ]
+  },
+
   "mousePadProduct": [
     {
       "id": "1",
