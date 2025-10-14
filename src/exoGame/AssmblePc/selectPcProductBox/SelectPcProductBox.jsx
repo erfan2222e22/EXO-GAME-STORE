@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import contextUse from "../../useContext/useContext";
-import { Typography, Box } from "@mui/material";
+import { Typography } from "@mui/material";
 import styleComponents from "../../components/component-Style/StyleSelectPcProductBox";
 import { useState } from "react";
 import axios from "axios";
 import CatgoryPcBox from "./CatgoryBox/CatgoryPcBox";
+import SelectedItemEdited from "../SelectedItemEdited/SelectedItemEdited";
 
 const SelectPcProductBox = () => {
   const useItems = useContext(contextUse);
@@ -16,16 +17,11 @@ const SelectPcProductBox = () => {
     SelctedParentBox,
     SelectBoxContiner,
     AddPcPartsButton,
-    SelctedPcPatBox,
-    IconsDelete,
-    IconsEdit,
-    IconsContiner,
+
     ImgBox,
     SelectBoxSecendContiner,
     TextHederBox,
   } = styleComponents;
-
-  const awd = [{ name: "erfan" }];
 
   const [DisplayCatgory, setDisplayCatgory] = useState(false);
   const [categoryData, setCategoryData] = useState(null);
@@ -45,22 +41,21 @@ const SelectPcProductBox = () => {
   const switchtoChooseProducts = (item) => {
     setSelectPCPartBox((prev) =>
       prev.map((fill) =>
-        fill.text === item.text ? { ...fill, toChoose: false } : fill
+        fill.text === item.text ? { ...fill, toChoose: true } : fill
       )
     );
-    console.log(selectPCPartBox);
   };
 
-  const findFalsetoChooseItems = () => {
-    const filt = selectPCPartBox.filter((fill) => fill.toChoose === false);
+  const findTruetoChooseItems = () => {
+    const filt = selectPCPartBox.filter((fill) => fill.toChoose === true);
     return filt;
   };
 
-  const closeCatgory = () => {
+  const closeCatgoryPcShape = () => {
     setDisplayCatgory(false);
     setSelectPCPartBox((prev) =>
       prev.map((fill) =>
-        fill.toChoose === false ? { ...fill, toChoose: true } : fill
+        fill.toChoose === true ? { ...fill, toChoose: false } : fill
       )
     );
   };
@@ -69,9 +64,11 @@ const SelectPcProductBox = () => {
     <ParentBox>
       <CatgoryPcBox
         DisplayCatgory={DisplayCatgory}
-        closeCatgory={closeCatgory}
-        findFalsetoChooseItems={findFalsetoChooseItems}
+        closeCatgoryPcShape={closeCatgoryPcShape}
+        findTruetoChooseItems={findTruetoChooseItems}
         categoryData={categoryData}
+        selectPCPartBox={selectPCPartBox}
+        setSelectPCPartBox={setSelectPCPartBox}
       ></CatgoryPcBox>
 
       <TextHederBox>Details</TextHederBox>
@@ -91,27 +88,13 @@ const SelectPcProductBox = () => {
             </AddPcPartsButton>
           </SelectBoxContiner>
 
-          <Box style={{ display: "flex" }}>
-            {awd.map((item) => {
-              return (
-                <SelctedPcPatBox>
-                  <Box sx={{ display: "flex", gap: "15px" }}>
-                    <ImgBox
-                      component="img"
-                      src="https://exo.ir/image/cache/catalog/Products/AMD/CPU/Threadripper-Pro/Series-9000/Ryzen-Threadripper-PRO-9000-1-1500x1500.webp"
-                    ></ImgBox>
-                    <Typography>AMD Ryzen Threadripper PRO 9995WX</Typography>
-                    <Typography>3000$</Typography>
-                    <Typography>*1</Typography>
-                  </Box>
-                  <IconsContiner>
-                    <IconsEdit></IconsEdit>
-                    <IconsDelete></IconsDelete>
-                  </IconsContiner>
-                </SelctedPcPatBox>
-              );
-            })}
-          </Box>
+          <SelectedItemEdited //Aded Pc Parts Box ✔
+            handelAddPcClick={(e) => handelAddPcClick(e, item)}
+            item={item}
+            setSelectPCPartBox={setSelectPCPartBox}
+            setDisplayCatgory={setDisplayCatgory}
+            selectPCPartBox={selectPCPartBox}
+          />
         </SelctedParentBox>
       ))}
     </ParentBox>

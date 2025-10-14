@@ -2,6 +2,9 @@ import React from "react";
 import { Box } from "@mui/material";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import styleComponent from "../../components/component-Style/StyleInformationPcPart";
+import { string } from "prop-types";
+// import { useEffect, useState } from "react";
+
 const InformationPcPart = ({
   setDisplayBoxes,
   displayBoxes,
@@ -9,6 +12,9 @@ const InformationPcPart = ({
   itemsInformation,
   handelOnClick,
   setDisplayFilterBox,
+  setSelectPCPartBox,
+  selectPCPartBox,
+  closeCatgoryPcShape,
 }) => {
   const {
     MainBox,
@@ -24,13 +30,52 @@ const InformationPcPart = ({
     BtnBoxParent,
   } = styleComponent;
 
-  const returnToSelectBox = () => {
+  const returnToSelectBox = (e, items, ItemId, ItemTitle) => {
     setDisplayFilterBox(true);
     setDisplayBoxes(false);
+
+    // let str = "erfan";
+    // const test1 = [...str];
+    // const fristWord = test1[0].toUpperCase();
+    // const conter = test1.slice(1);
+    // const awd = string(conter);
+    // console.log(awd);
   };
 
-  const selectPcPart = () => {
-    console.log(selectedItems);
+  const selectPcPartHandel = (e, items, ItemId, ItemTitle) => {
+    const filterArray = selectPCPartBox.filter((fill) => {
+      return fill.title === ItemTitle && fill.SeveralChoices;
+    });
+
+    setSelectPCPartBox((prev) => {
+      const selectSolo = prev.map((fill) =>
+        fill.title === ItemTitle ? { ...fill, ProductArray: [items] } : fill
+      );
+
+      const selectAll = prev.map((fill) =>
+        fill.title === ItemTitle
+          ? {
+              ...fill,
+              ProductArray: Array.from(
+                new Map(
+                  [...fill.ProductArray, items].map((product) => [
+                    product.id,
+                    product,
+                  ])
+                ).values()
+              ),
+            }
+          : fill
+      );
+
+      if (filterArray.length > 0) {
+        return selectAll;
+      } else {
+        return selectSolo;
+      }
+    });
+
+    closeCatgoryPcShape();
   };
 
   return (
@@ -69,14 +114,25 @@ const InformationPcPart = ({
                     color: "#03c03c",
                     cursor: "pointer",
                   }}
-                  onClick={(e) => handelOnClick(e, item)}
                 ></OpenInNewIcon>
                 <HederItemText>{item.title}</HederItemText>
               </HederMainBox>
               <BtnBoxContiner>
                 <BtnBoxParent>
-                  <SelectBtn onClick={selectPcPart}>Selection</SelectBtn>
-                  <ReturnBtn onClick={returnToSelectBox}>return</ReturnBtn>
+                  <SelectBtn
+                    onClick={(e) =>
+                      selectPcPartHandel(e, item, item.id, item.title)
+                    }
+                  >
+                    Selection
+                  </SelectBtn>
+                  <ReturnBtn
+                    onClick={(e) =>
+                      returnToSelectBox(e, item, item.id, item.title)
+                    }
+                  >
+                    return
+                  </ReturnBtn>
                 </BtnBoxParent>
               </BtnBoxContiner>
             </MainBox>
