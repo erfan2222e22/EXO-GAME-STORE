@@ -44,21 +44,24 @@ const SelectPcProductBox = () => {
         fill.text === item.text ? { ...fill, toChoose: true } : fill
       )
     );
+    console.log(item);
   };
 
   const findTruetoChooseItems = () => {
     const filt = selectPCPartBox.filter((fill) => fill.toChoose === true);
-    return filt;
+    return filt || false;
   };
 
   const closeCatgoryPcShape = () => {
     setDisplayCatgory(false);
     setSelectPCPartBox((prev) =>
       prev.map((fill) =>
-        fill.toChoose === true ? { ...fill, toChoose: false } : fill
+        fill.toChoose === true ? { ...fill, toChoose: [] } : fill
       )
     );
   };
+
+  // const test = () => {};
 
   return (
     <ParentBox>
@@ -74,18 +77,27 @@ const SelectPcProductBox = () => {
       <TextHederBox>Details</TextHederBox>
       {selectPCPartBox?.map((item) => (
         <SelctedParentBox>
-          <SelectBoxContiner>
+          <SelectBoxContiner
+            sx={{
+              backgroundColor: item.MandatoryPcPart ? "#f4f4f4" : "#c0f5d0",
+            }}
+          >
             <SelectBoxSecendContiner>
               <ImgBox component="img" src={item.iconSrc}></ImgBox>
-              <Typography>{item.text}</Typography>
+              <Typography onClick={() => console.log(selectPCPartBox)}>
+                {item.text}
+              </Typography>
             </SelectBoxSecendContiner>
-
-            <AddPcPartsButton
-              onClick={(e) => handelAddPcClick(e, item)}
-              component="button"
-            >
-              <TextHederBox>+</TextHederBox>
-            </AddPcPartsButton>
+            {item.MandatoryPcPart ? (
+              <></>
+            ) : (
+              <AddPcPartsButton
+                onClick={(e) => handelAddPcClick(e, item)}
+                component="button"
+              >
+                <TextHederBox>+</TextHederBox>
+              </AddPcPartsButton>
+            )}
           </SelectBoxContiner>
 
           <SelectedItemEdited //Aded Pc Parts Box ✔
@@ -93,7 +105,6 @@ const SelectPcProductBox = () => {
             item={item}
             setSelectPCPartBox={setSelectPCPartBox}
             setDisplayCatgory={setDisplayCatgory}
-            selectPCPartBox={selectPCPartBox}
           />
         </SelctedParentBox>
       ))}

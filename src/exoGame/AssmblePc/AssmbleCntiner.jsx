@@ -3,6 +3,7 @@ import contextUse from "../useContext/useContext";
 import SelectPcProductBox from "./selectPcProductBox/SelectPcProductBox";
 import ShoppingCart from "./shopping Cart Pc Parts/ShoppingCartPcParts";
 import { Box } from "@mui/material";
+
 const AssmbleContiner = () => {
   const [selectPCPartBox, setSelectPCPartBox] = useState([
     {
@@ -14,6 +15,7 @@ const AssmbleContiner = () => {
       jsonServer: "http://localhost:3300/cpu-product",
       title: "cpu-product",
       SeveralChoices: true,
+      MandatoryPcPart: false,
       ProductArray: [],
     },
     {
@@ -25,6 +27,7 @@ const AssmbleContiner = () => {
       jsonServer: "http://localhost:3300/motherboardProduct",
       title: "motherboardProduct",
       SeveralChoices: false,
+      MandatoryPcPart: true,
       ProductArray: [],
     },
     {
@@ -36,6 +39,7 @@ const AssmbleContiner = () => {
       jsonServer: "http://localhost:3300/ramProduct",
       title: "ramProduct",
       SeveralChoices: true,
+      MandatoryPcPart: true,
       ProductArray: [],
     },
     {
@@ -47,6 +51,7 @@ const AssmbleContiner = () => {
       jsonServer: "http://localhost:3300/gpu-product",
       title: "gpu-product",
       SeveralChoices: true,
+      MandatoryPcPart: false,
       ProductArray: [],
     },
     {
@@ -58,6 +63,7 @@ const AssmbleContiner = () => {
       jsonServer: "http://localhost:3300/cpuAirConditionerProduct",
       title: "cpuAirConditioner",
       SeveralChoices: true,
+      MandatoryPcPart: true,
       ProductArray: [],
     },
     {
@@ -69,6 +75,7 @@ const AssmbleContiner = () => {
       jsonServer: "http://localhost:3300/hardDiskProduct",
       title: "hardDisc",
       SeveralChoices: false,
+      MandatoryPcPart: false,
       ProductArray: [],
     },
     {
@@ -80,6 +87,7 @@ const AssmbleContiner = () => {
       jsonServer: "http://localhost:3300/ssdProduct",
       title: "ssdProduct",
       SeveralChoices: true,
+      MandatoryPcPart: false,
       ProductArray: [],
     },
     {
@@ -91,6 +99,7 @@ const AssmbleContiner = () => {
       jsonServer: "http://localhost:3300/opticalDriveProduct",
       title: "optical drive",
       SeveralChoices: false,
+      MandatoryPcPart: false,
       ProductArray: [],
     },
     {
@@ -102,6 +111,7 @@ const AssmbleContiner = () => {
       jsonServer: "http://localhost:3300/caseProduct",
       title: "CASE",
       SeveralChoices: false,
+      MandatoryPcPart: false,
       ProductArray: [],
     },
     {
@@ -113,6 +123,7 @@ const AssmbleContiner = () => {
       jsonServer: "http://localhost:3300/fanCaseProduct",
       title: "FanCase",
       SeveralChoices: true,
+      MandatoryPcPart: false,
       ProductArray: [],
     },
     {
@@ -124,6 +135,7 @@ const AssmbleContiner = () => {
       jsonServer: "http://localhost:3300/PcPwoerProduct",
       title: "Power",
       SeveralChoices: false,
+      MandatoryPcPart: false,
       ProductArray: [],
     },
     {
@@ -135,6 +147,7 @@ const AssmbleContiner = () => {
       jsonServer: "http://localhost:3300/monitorProduct",
       title: "monitorProduct",
       SeveralChoices: false,
+      MandatoryPcPart: false,
       ProductArray: [],
     },
     {
@@ -146,6 +159,7 @@ const AssmbleContiner = () => {
       jsonServer: "http://localhost:3300/PcGameData",
       title: "GameData",
       SeveralChoices: true,
+      MandatoryPcPart: false,
       ProductArray: [],
     },
     {
@@ -157,12 +171,53 @@ const AssmbleContiner = () => {
       jsonServer: "http://localhost:3300/PcsoftwareData",
       title: "softwareData",
       SeveralChoices: true,
+      MandatoryPcPart: false,
       ProductArray: [],
     },
   ]);
 
+  // Normalize MandatoryPcPart flags based on current selections
   useEffect(() => {
-    console.log(selectPCPartBox);
+    setSelectPCPartBox((prev) => {
+      let changed = false;
+
+      const findProductCpu = prev.find(
+        (i) => i.title === "cpu-product" && i.ProductArray.length > 0
+      );
+      const findProductMotherBord = prev.find(
+        (i) => i.title === "motherboardProduct" && i.ProductArray.length > 0
+      );
+      const findProductRam = prev.find(
+        (i) => i.title === "ramProduct" && i.ProductArray.length > 0
+      );
+
+      const next = prev.map((value) => {
+        if (value.title === "motherboardProduct") {
+          const testing = !findProductCpu;
+          if (value.MandatoryPcPart !== testing) {
+            changed = true;
+            return { ...value, MandatoryPcPart: testing };
+          }
+        }
+        if (value.title === "ramProduct") {
+          const testing = !findProductMotherBord;
+          if (value.MandatoryPcPart !== testing) {
+            changed = true;
+            return { ...value, MandatoryPcPart: testing };
+          }
+        }
+        if (value.title === "cpuAirConditioner") {
+          const testing = !findProductRam;
+          if (value.MandatoryPcPart !== testing) {
+            changed = true;
+            return { ...value, MandatoryPcPart: testing };
+          }
+        }
+        return value;
+      });
+
+      return changed ? next : prev;
+    });
   }, [selectPCPartBox]);
 
   return (
