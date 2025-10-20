@@ -6,6 +6,8 @@ import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { useEffect } from "react";
 import { useContext } from "react";
 import contextUse from "../../useContext/useContext";
+import { useNavigate } from "react-router-dom";
+
 const ControlShopingCart = () => {
   const {
     DiscriptionItems,
@@ -14,7 +16,7 @@ const ControlShopingCart = () => {
     ButtonClearBasket,
     DelteIcons,
   } = styleComponents;
-
+  const navigate = useNavigate();
   const {
     ProductsInShopCart,
     setProductsInShopCart,
@@ -59,6 +61,13 @@ const ControlShopingCart = () => {
   const delteShopCart = (e, id) => {
     e.stopPropagation();
     setProductsInShopCart((preve) => preve.filter((index) => index.id !== id));
+  };
+
+  const handelViewCart = (e) => {
+    e.stopPropagation();
+    navigate("/ShopingCartCheckout", {
+      state: { product: ProductsInShopCart },
+    });
   };
 
   return (
@@ -121,7 +130,7 @@ const ControlShopingCart = () => {
 
         <Box>
           <p>{totalPrice}$</p>
-          <ButtonAddBasket>
+          <ButtonAddBasket onClick={(e) => handelViewCart(e)}>
             <span>View Cart</span>
             <ChevronRightIcon></ChevronRightIcon>
           </ButtonAddBasket>

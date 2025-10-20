@@ -123,6 +123,37 @@ const InputBox = styled(Box)({
   display: "flex",
   gap: "4px",
 });
+const EmptyContainerBox = styled(Box)({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  margin: "0 auto",
+  marginTop: "20px",
+});
+
+const EmptyContainerText = styled(Box)({
+  overflow: "hidden",
+  color: "#3c3838ff",
+});
+
+const EmptyContainerImg = styled(Box)({
+  width: "200px",
+  height: "200px",
+  textAlign: "center",
+  boxShadow: " rgba(0, 0, 0, 0.05) 0px 0px 0px 1px",
+});
+
+const MainContainerEmpty = styled(Box)({
+  padding: "20px",
+  width: "350px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  boxShadow:
+    " rgba(130, 128, 128, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+  flexDirection: "column",
+  gap: "20px",
+});
 
 const styleComponents = {
   MainBox,
@@ -135,6 +166,10 @@ const styleComponents = {
   Input,
   PriceBox,
   InputBox,
+  EmptyContainerBox,
+  EmptyContainerText,
+  EmptyContainerImg,
+  MainContainerEmpty,
 };
 
 export default styleComponents;

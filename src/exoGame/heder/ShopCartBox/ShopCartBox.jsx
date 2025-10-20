@@ -3,7 +3,6 @@ import ControlShopingCart from "../ControlShopingCart/controlShopingCart";
 import emmiter from "../../../mitt/emmiter";
 import contextUse from "../../useContext/useContext";
 import styleComponent from "../../components/component-Style/StyleShopCartParentBox";
-
 const ShopCartBox = ({ sendmassage }) => {
   const [ProductsInShopCart, setProductsInShopCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);

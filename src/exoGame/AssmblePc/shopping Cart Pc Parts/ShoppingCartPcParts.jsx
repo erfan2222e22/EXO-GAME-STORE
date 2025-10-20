@@ -3,7 +3,9 @@ import styleComponent from "../../components/component-Style/StyleShopCartPcPart
 import { useContext } from "react";
 import contextUse from "../../useContext/useContext";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 const ShoppingCartPcParts = () => {
+  const navigate = useNavigate();
   const {
     ParentBox,
     BtnBox,
@@ -34,8 +36,15 @@ const ShoppingCartPcParts = () => {
   };
 
   const handelOnclick = () => {
-    CalculateTotalPriceFunc();
-    console.log(selectPCPartBox);
+    const selectedProducts = selectPCPartBox
+      .map((fill) => fill.ProductArray)
+      .filter((fill) => fill.length > 0)
+      .flatMap((fill) => fill);
+
+    navigate("/ShopingCartCheckout", {
+      state: { product: selectedProducts },
+    });
+    console.log(selectedProducts);
   };
 
   useEffect(() => {
