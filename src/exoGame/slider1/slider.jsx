@@ -8,21 +8,72 @@ import img7 from "./sliderImg/img7.jpg";
 import styleComponent from "../components/component-Style/StyleSlider";
 import Slider from "react-slick";
 import { Box } from "@mui/material";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./slide.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Slider1 = () => {
   const { BoxImg } = styleComponent;
-  let imgs = [
-    { img: img1, path: "/consol", id: 1 },
-    { img: img2, path: "/catgory-pc", id: 2 },
-    { img: img3, path: "/manitor", id: 3 },
-    { img: img4, path: "/sell-Computer-parts", id: 4 },
-    { img: img5, path: "/rendering", id: 5 },
-    { img: img6, path: "/amd-gpu", id: 6 },
-    { img: img7, path: "/Accessories", id: 7 },
+  const navigate = useNavigate();
+  let imgsList = [
+    {
+      img: img1,
+      jsoneServer: "http://localhost:3300/allConsoleProductsLinks",
+      id: 1,
+      solorItems: false,
+      jsonSetting: "http://localhost:3300/allConsoleSetting",
+      title: "allConsoleProducts",
+    },
+    {
+      img: img2,
+      jsoneServer: "http://localhost:3300/pcProduct",
+      id: 2,
+      solorItems: true,
+      jsonSetting: null,
+      title: "pcProduct",
+    },
+    {
+      img: img3,
+      jsoneServer: "http://localhost:3300/monitorProduct",
+      id: 3,
+      solorItems: true,
+      jsonSetting: null,
+      title: "monitorProduct",
+    },
+    {
+      img: img4,
+      jsoneServer: "http://localhost:3300/allMsiProductsLinks",
+      jsonSetting: "http://localhost:3300/allMsiProductsSetting",
+      id: 4,
+      solorItems: false,
+      title: "allMsiProducts",
+    },
+    {
+      img: img5,
+      jsoneServer: "http://localhost:3300/rendringPcProducts",
+      id: 5,
+      solorItems: true,
+      jsonSetting: null,
+      title: "rendringPcProducts",
+    },
+    {
+      img: img6,
+      jsoneServer: "http://localhost:3300/allAmdProductsLink",
+      id: 6,
+      solorItems: false,
+      jsonSetting: "http://localhost:3300/allAmdProductsSetting",
+      title: "allAmdProductsLink",
+    },
+    {
+      img: img7,
+      jsoneServer: "http://localhost:3300/AccessoriesGaming",
+      id: 7,
+      solorItems: false,
+      jsonSetting: "http://localhost:3300/AccessoriesGamingSetting",
+      title: "AccessoriesGaming",
+    },
   ];
 
   let settings = {
@@ -31,8 +82,8 @@ const Slider1 = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    autoplay: false,
+    autoplaySpeed: 2000,
     pauseOnHover: true,
     arrows: false,
     swipeToSlide: true,
@@ -48,14 +99,49 @@ const Slider1 = () => {
     ],
   };
 
+  const sendSoloItem = async (e, JsoneServer, ItemTitle) => {
+    try {
+      const GetItems = axios.get(JsoneServer);
+      const ReciveItems = (await GetItems).data;
+      navigate(`/catgory/${ItemTitle}`, {
+        state: { product: ReciveItems, pathName: ItemTitle },
+      });
+    } catch (err) {
+      throw new Error(err);
+    }
+  };
+
+  const sendAfewItems = async (e, JsoneServer, ItemTitle, JsoneStting) => {
+    try {
+      const { data: urls } = await axios.get(JsoneServer);
+      const response = await Promise.all(
+        urls.map((data) => axios.get(data).then((values) => values.data))
+      );
+
+      const flatedItems = response.flat();
+      flatedItems.forEach((value) => {
+        value.productSetting = JsoneStting;
+      });
+      NaviUse(flatedItems, ItemTitle);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const NaviUse = (ItemsProducts, ItemTitle) => {
+    navigate(`/catgory/${ItemTitle}`, {
+      state: { product: ItemsProducts, pathName: ItemTitle },
+    });
+  };
+
   return (
     <BoxImg>
       <Slider {...settings}>
-        {imgs.map((img) => (
-          <Link key={img.id} to={img.path}>
+        {imgsList.map((value) => (
+          <Box>
             <Box
               component="img"
-              src={img.img}
+              src={value.img}
               sx={{
                 width: "100%",
                 height: "100%",
@@ -63,8 +149,18 @@ const Slider1 = () => {
                 borderRadius: "8px",
                 cursor: "pointer",
               }}
+              onClick={(e) =>
+                value.solorItems
+                  ? sendSoloItem(e, value.jsoneServer, value.title)
+                  : sendAfewItems(
+                      e,
+                      value.jsoneServer,
+                      value.title,
+                      value.jsonSetting
+                    )
+              }
             />
-          </Link>
+          </Box>
         ))}
       </Slider>
     </BoxImg>
