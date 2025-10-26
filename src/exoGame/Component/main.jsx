@@ -1,3 +1,4 @@
+import React from "react";
 import rutes from "../../../routes";
 import { useRoutes } from "react-router-dom";
 const Main = () => {
