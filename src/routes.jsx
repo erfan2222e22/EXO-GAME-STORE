@@ -3,8 +3,8 @@ import Footer from "./exoGame/foter/footer.jsx";
 import AboutUs from "./exoGame/aboutUs/aboutUs.jsx";
 import Slider1 from "./exoGame/slider1/slider.jsx";
 import ProductionBox from "./exoGame/productions_shortcut_box/production_box.jsx";
-import SugestExo from "./exoGame/sugestExo/sugestExo.jsx";
-import ConsoleGaming from "./exoGame/consoleGaming/console_gm.jsx";
+import SliderContainer from "./exoGame/sliderContiner/sliderContainer.jsx";
+import ConsoleGamingSlider from "./exoGame/consoleGaming/console_gm_slider.jsx";
 import SugMonitor from "./exoGame/suggestion_monitor/sug_monitor.jsx";
 import BestBrandLaptop from "./exoGame/bestMonitorBrand/best-laptop-brand.jsx";
 import FormAndBenchmarkSlider from "./exoGame/form-and-benchmark-slide/form-and-benchmark-slider.jsx";
@@ -17,9 +17,11 @@ import IconsSlider from "./exoGame/catgory-items/productDiscription/iconsSlider/
 import BoxInfoProducts from "./exoGame/catgory-items/box-Information-Items/box-Information-products.jsx";
 import HederPrentBox from "./exoGame/heder/HederPrentBox/HederPrentBox.jsx";
 import BenchmarkTabel from "./exoGame/benchmarkHome/benchmarkTabel/benchmarkTabel.jsx";
-let itmes1 = [1, 2, 3, 4, 5, 6, 7, 8];
-let itmes2 = [9, 10, 11, 12, 13, 14];
-let itmes3 = [15, 16, 17, 18, 19, 20];
+import InformationEnquiry from "./exoGame/information_enquiry/information_enquiry.jsx";
+import AssmbleContiner from "./exoGame/AssmblePc/AssmbleCntiner.jsx";
+import ShoppingCartCheckout from "./exoGame/ShoppingCartCheckout/ShoppingCartCheckout.jsx";
+import ShoppingStepBox from "./exoGame/ShoppingCartCheckout/Shopping Steps Box/Shopping Steps Box.jsx";
+import ScrollBtn from "./exoGame/ScrollBtn/ScrollBtn.jsx";
 
 let rutes = [
   {
@@ -28,11 +30,10 @@ let rutes = [
       <div>
         <HederPrentBox></HederPrentBox>
         <Slider1></Slider1>
+        <ScrollBtn></ScrollBtn>
         <ProductionBox></ProductionBox>
-        <SugestExo array={itmes1} titel="پیشنهاد اگزو"></SugestExo>
-        <SugestExo array={itmes2} titel="جدیدترین‌های اگزوگیم"></SugestExo>
-        <SugestExo array={itmes3} titel="پرفروش‌ترین‌های اگزوگیم"></SugestExo>
-        <ConsoleGaming></ConsoleGaming>
+        <SliderContainer></SliderContainer>
+        <ConsoleGamingSlider></ConsoleGamingSlider>
         <SugMonitor></SugMonitor>
         <BestBrandLaptop></BestBrandLaptop>
         <FormAndBenchmarkSlider></FormAndBenchmarkSlider>
@@ -52,6 +53,28 @@ let rutes = [
       </div>
     ),
   },
+  {
+    path: "/ShopingCartCheckout",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <ShoppingStepBox></ShoppingStepBox>
+        <ShoppingCartCheckout></ShoppingCartCheckout>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/pc_assemble",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <AssmbleContiner></AssmbleContiner>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+
   {
     path: "/about-us",
     element: (
@@ -110,6 +133,56 @@ let rutes = [
       <div>
         <HederPrentBox></HederPrentBox>
         <BenchmarkTabel></BenchmarkTabel>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/benchmark_Home/SingleCorePassmarkCpu",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <BenchmarkTabel></BenchmarkTabel>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/benchmark_Home/3d-mark-dx12",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <BenchmarkTabel></BenchmarkTabel>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/benchmark_Home/2d-mark",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <BenchmarkTabel></BenchmarkTabel>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/benchmark_Home/gpu-compute",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <BenchmarkTabel></BenchmarkTabel>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/information_enquiry",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <InformationEnquiry></InformationEnquiry>
         <Footer></Footer>
       </div>
     ),
