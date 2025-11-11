@@ -5,18 +5,36 @@ import img4 from "./sliderImg/img4.jpg";
 import img5 from "./sliderImg/img5.jpg";
 import img6 from "./sliderImg/img6.jpg";
 import img7 from "./sliderImg/img7.jpg";
-import styleComponent from "../components/component-Style/StyleSlider";
+import styleComponent from "./Style-Component/StyleSlider";
 import Slider from "react-slick";
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./slide.css";
+import "./Style-Component/slide.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { useRef, useEffect, useState } from "react";
+import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
+import emmiter from "../../mitt/emmiter";
 const Slider1 = () => {
   const { BoxImg } = styleComponent;
+  const useref = useRef(null);
   const navigate = useNavigate();
+
+  const handelEvent = () => {
+    const element = useref.current;
+    if (!element || !element.getBoundingClientRect) return;
+    const getPosition = element.getBoundingClientRect();
+    emmiter.emit("yPosition", { item: getPosition.y });
+  };
+
+  useEffect(() => {
+    const onScroll = () => handelEvent();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    handelEvent();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   let imgsList = [
     {
       img: img1,
@@ -82,7 +100,7 @@ const Slider1 = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
     arrows: false,
@@ -107,7 +125,7 @@ const Slider1 = () => {
         state: { product: ReciveItems, pathName: ItemTitle },
       });
     } catch (err) {
-      throw new Error(err);
+      FailToFetchDataPage(navigate);
     }
   };
 
@@ -124,7 +142,7 @@ const Slider1 = () => {
       });
       NaviUse(flatedItems, ItemTitle);
     } catch (err) {
-      console.log(err);
+      FailToFetchDataPage(navigate);
     }
   };
 
@@ -135,10 +153,10 @@ const Slider1 = () => {
   };
 
   return (
-    <BoxImg>
+    <BoxImg sx={{}}>
       <Slider {...settings}>
         {imgsList.map((value) => (
-          <Box>
+          <Box ref={useref}>
             <Box
               component="img"
               src={value.img}
@@ -149,7 +167,7 @@ const Slider1 = () => {
                 borderRadius: "8px",
                 cursor: "pointer",
               }}
-              onClick={(e) =>
+              onClick={(e) => {
                 value.solorItems
                   ? sendSoloItem(e, value.jsoneServer, value.title)
                   : sendAfewItems(
@@ -157,8 +175,8 @@ const Slider1 = () => {
                       value.jsoneServer,
                       value.title,
                       value.jsonSetting
-                    )
-              }
+                    );
+              }}
             />
           </Box>
         ))}
