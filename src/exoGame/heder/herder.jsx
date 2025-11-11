@@ -1,18 +1,18 @@
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
-import styleComponents from "../components/component-Style/StyledComponentHeder";
+import styleComponents from "./Style-Component/StyledComponentHeder";
 import logoImg from "./hederLogoImg/logo.png";
-import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
-import SpeedOutlinedIcon from "@mui/icons-material/SpeedOutlined";
-import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
-import DensityMediumIcon from "@mui/icons-material/DensityMedium";
-import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import ShoppingCartIconBox from "../ShoppingCart/ShoppingCartIcon";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import contextUse from "../useContext/useContext";
 import { Box } from "@mui/system";
+import { Drawer } from "@mui/material";
+import HederNavigationLink from "./HederNavigationLinks/HederNavigationLinks";
+import DensityMediumIcon from "@mui/icons-material/DensityMedium";
+import HederCatgory from "./herderCatgory/CatgoryHeder";
+import emmiter from "../../mitt/emmiter";
 
 const Herder = () => {
   const {
@@ -20,75 +20,122 @@ const Herder = () => {
     CoustomToolbar,
     SerchField,
     BoxIcons,
-    Spans,
-    Icons,
     TooltipBox,
     LogoImg,
-    LinkRoter,
+    DrawerDisplay,
+    Icons,
+    SmallSizeBoxLogoAndInput,
+    MediumeAndLargeBoxLogoAndInput,
   } = styleComponents;
 
-  const { valid, setValid } = useContext(contextUse);
+  const { valid, setValid, ProductLength } = useContext(contextUse);
+  const [catgoryDisplay, setCatgoryDisplay] = useState(false);
+  const [drawerDisplay, setDrawerDisplay] = useState(false);
+  const [elmentYPosition, setElmentYPosition] = useState(0);
+
+  const scroled = () => {
+    emmiter.on("yPosition", (data) => {
+      setElmentYPosition(data.item);
+    });
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", scroled);
+    return () => window.removeEventListener("scroll", scroled);
+  }, []);
 
   return (
     <Box>
-      <StyledAppBar>
+      <StyledAppBar sx={{ height: elmentYPosition < 129 ? "80px" : "125px" }}>
         <CoustomToolbar>
           <Box>
             <BoxIcons>
               <ShoppingCartIconBox
                 valid={valid}
                 setValid={setValid}
+                ProductLength={ProductLength}
               ></ShoppingCartIconBox>
               <Link to="/acount-login-Phone" style={{ color: "#858585" }}>
                 <PersonIcon></PersonIcon>
               </Link>
+              <DrawerDisplay>
+                <button
+                  style={{ border: "none", backgroundColor: "#fff" }}
+                  onClick={() => setDrawerDisplay(true)}
+                >
+                  <Icons
+                    sx={{ color: "#858585" }}
+                    component={DensityMediumIcon}
+                  ></Icons>
+                </button>
+                <Drawer
+                  open={drawerDisplay}
+                  onClick={() => setDrawerDisplay(false)}
+                >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "5px",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <HederNavigationLink
+                      catgoryDisplay={catgoryDisplay}
+                      setCatgoryDisplay={setCatgoryDisplay}
+                    />
+                  </Box>
+                </Drawer>
+              </DrawerDisplay>
             </BoxIcons>
           </Box>
-          <SerchField
-            placeholder="search..."
-            variant="standard"
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon sx={{ marginLeft: "13px" }} />
-                </InputAdornment>
-              ),
-              disableUnderline: true,
-            }}
-          />
-          <Link to="/">
-            <LogoImg src={logoImg} alt="😑" component="img"></LogoImg>
-          </Link>
+          <SmallSizeBoxLogoAndInput>
+            <Link to="/">
+              <LogoImg src={logoImg} alt="😑" component="img"></LogoImg>
+            </Link>
+            <SerchField
+              placeholder="search..."
+              variant="standard"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon sx={{ marginLeft: "13px" }} />
+                  </InputAdornment>
+                ),
+                disableUnderline: true,
+              }}
+            />
+          </SmallSizeBoxLogoAndInput>
+          <MediumeAndLargeBoxLogoAndInput>
+            <SerchField
+              placeholder="search..."
+              variant="standard"
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <SearchIcon sx={{ marginLeft: "13px" }} />
+                  </InputAdornment>
+                ),
+                disableUnderline: true,
+              }}
+            />
+            <Link to="/">
+              <LogoImg src={logoImg} alt="😑" component="img"></LogoImg>
+            </Link>
+          </MediumeAndLargeBoxLogoAndInput>
         </CoustomToolbar>
         <TooltipBox>
-          <Spans component="span">
-            <LinkRoter component={Link}>Categories</LinkRoter>
-            <Icons component={Inventory2OutlinedIcon}></Icons>
-          </Spans>
-          <Spans component="span">
-            <LinkRoter component={Link}>Open box</LinkRoter>
-            <Icons component={Inventory2OutlinedIcon}></Icons>
-          </Spans>
-          <Spans component="span">
-            <LinkRoter component={Link}>Smart Assemble</LinkRoter>
-            <Icons component={DashboardOutlinedIcon}></Icons>
-          </Spans>
-          <Spans component="span">
-            <LinkRoter component={Link}>Exo mark</LinkRoter>
-            <Icons component={SpeedOutlinedIcon}></Icons>
-          </Spans>
-          <Spans component="span">
-            <LinkRoter component={Link}>Mag</LinkRoter>
-            <Icons component={ArticleOutlinedIcon}></Icons>
-          </Spans>
-          <Spans>
-            <LinkRoter component={Link} to="/about-us">
-              About Us
-            </LinkRoter>
-            <Icons component={DensityMediumIcon}></Icons>
-          </Spans>
+          {elmentYPosition < 129 ? (
+            <></>
+          ) : (
+            <HederNavigationLink
+              catgoryDisplay={catgoryDisplay}
+              setCatgoryDisplay={setCatgoryDisplay}
+            />
+          )}
         </TooltipBox>
       </StyledAppBar>
+
+      {catgoryDisplay && <HederCatgory setCatgoryDisplay={setCatgoryDisplay} />}
     </Box>
   );
 };
