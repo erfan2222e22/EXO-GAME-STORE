@@ -1,10 +1,11 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./Style-Component/sugest.css";
 import Slider from "react-slick";
-import "./sugest.css";
-import styleComponent from "../components/component-Style/StyleSugestExo";
 import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import styleComponent from "./Style-Component/StyleSugestExoSlider";
+
 const SugestExoSlider = ({ titeltext, arrayItems }) => {
   let settings = {
     arrows: true,

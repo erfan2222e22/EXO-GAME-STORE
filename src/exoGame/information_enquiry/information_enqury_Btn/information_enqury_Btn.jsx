@@ -1,6 +1,6 @@
 import contextUse from "../../useContext/useContext";
 import { useContext } from "react";
-import styleComponent from "../../components/component-Style/StyleInformationEnqury";
+import styleComponent from "./Style-Component/StyleInformationEnqury";
 const InformationEnquryBtn = () => {
   const { BtnSend } = styleComponent;
   const {

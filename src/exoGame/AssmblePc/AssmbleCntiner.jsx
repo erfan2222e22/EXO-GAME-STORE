@@ -221,16 +221,16 @@ const AssmbleContiner = () => {
   }, [selectPCPartBox]);
 
   return (
-    <contextUse.Provider value={{ selectPCPartBox, setSelectPCPartBox }}>
-      <Box
-        sx={{
-          display: "flex",
-        }}
-      >
+    <Box
+      sx={{
+        display: "flex",
+      }}
+    >
+      <contextUse.Provider value={{ selectPCPartBox, setSelectPCPartBox }}>
         <SelectPcProductBox></SelectPcProductBox>
         <ShoppingCart></ShoppingCart>
-      </Box>
-    </contextUse.Provider>
+      </contextUse.Provider>
+    </Box>
   );
 };
 export default AssmbleContiner;

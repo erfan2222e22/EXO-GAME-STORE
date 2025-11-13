@@ -1,16 +1,13 @@
 import React from "react";
 import { Box } from "@mui/material";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import styleComponent from "../../components/component-Style/StyleInformationPcPart";
-import { string } from "prop-types";
-// import { useEffect, useState } from "react";
-
+import styleComponent from "./Style-Component/StyleInformationPcPart";
+import { scroller } from "react-scroll";
 const InformationPcPart = ({
   setDisplayBoxes,
   displayBoxes,
   selectedItems,
   itemsInformation,
-  handelOnClick,
   setDisplayFilterBox,
   setSelectPCPartBox,
   selectPCPartBox,
@@ -30,16 +27,9 @@ const InformationPcPart = ({
     BtnBoxParent,
   } = styleComponent;
 
-  const returnToSelectBox = (e, items, ItemId, ItemTitle) => {
+  const returnToSelectBox = (e) => {
     setDisplayFilterBox(true);
     setDisplayBoxes(false);
-
-    // let str = "erfan";
-    // const test1 = [...str];
-    // const fristWord = test1[0].toUpperCase();
-    // const conter = test1.slice(1);
-    // const awd = string(conter);
-    // console.log(awd);
   };
 
   const selectPcPartHandel = (e, items, ItemId, ItemTitle) => {
@@ -76,6 +66,13 @@ const InformationPcPart = ({
     });
 
     closeCatgoryPcShape();
+
+    scroller.scrollTo("catgoryBox", {
+      duration: 800,
+      delay: 100,
+      smooth: true,
+      offset: -50,
+    });
   };
 
   return (
@@ -126,11 +123,7 @@ const InformationPcPart = ({
                   >
                     Selection
                   </SelectBtn>
-                  <ReturnBtn
-                    onClick={(e) =>
-                      returnToSelectBox(e, item, item.id, item.title)
-                    }
-                  >
+                  <ReturnBtn onClick={(e) => returnToSelectBox(e)}>
                     return
                   </ReturnBtn>
                 </BtnBoxParent>

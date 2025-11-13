@@ -1,4 +1,3 @@
-import React from "react";
 import Tooltip from "@mui/material/Tooltip";
 import { Box } from "@mui/material";
 const LaptopInformation = ({ originalItems }) => {

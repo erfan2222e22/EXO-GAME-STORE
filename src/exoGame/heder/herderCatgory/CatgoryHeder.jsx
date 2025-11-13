@@ -2,6 +2,8 @@ import styleComponent from "./Style-Component/StyleCatgoryHeder";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import HederCatgoryContent from "./hederCatgoryText/HederCatgoryContent";
+import { useNavigate } from "react-router-dom";
+import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage";
 const HederCatgory = ({ setCatgoryDisplay }) => {
   const {
     HederCatgoryBox,
@@ -11,6 +13,7 @@ const HederCatgory = ({ setCatgoryDisplay }) => {
     Img,
     ImgBox,
   } = styleComponent;
+  const navigate = useNavigate();
 
   const [reciveData, setReciveData] = useState({});
 
@@ -26,9 +29,9 @@ const HederCatgory = ({ setCatgoryDisplay }) => {
       const { data: Dataitems } = await axios.get(
         "http://localhost:3300/CatgoryHederData"
       );
-      setReciveData(Dataitems);
+      setReciveData(await Dataitems);
     } catch (err) {
-      console.log(err);
+      FailToFetchDataPage(navigate)
     }
   };
 
@@ -36,13 +39,9 @@ const HederCatgory = ({ setCatgoryDisplay }) => {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    console.log(ReciveDataValue);
-  }, [ReciveDataValue]);
-
   const onMouseHandel = (e, ItemKeys, ItemValuse) => {
     const { img, productList } = ItemValuse;
-    const { title, items } = productList;
+    const { items } = productList;
     let conter = 2;
 
     const calculatorHalfLength = items.length / conter;
@@ -59,62 +58,71 @@ const HederCatgory = ({ setCatgoryDisplay }) => {
       { secendHalfArray: secendHalfArray },
       { imgAddrs: img },
     ]);
-    console.log(reciveData)
   };
 
+  useEffect(() => {}, [ReciveDataValue, imgAddrs]);
+
   return (
-    <>
-      <HederCatgoryBox
-        onMouseEnter={() => setCatgoryDisplay((prev) => (prev = true))}
-        onMouseLeave={() => setCatgoryDisplay((prev) => (prev = false))}
-      >
-        <KeyItemsBox>
-          {Object.entries(reciveData).map(([_, item]) => {
+    <HederCatgoryBox
+      onMouseEnter={() => setCatgoryDisplay((prev) => (prev = true))}
+      onMouseLeave={() => setCatgoryDisplay((prev) => (prev = false))}
+    >
+      <KeyItemsBox>
+        {Object.entries(reciveData).map(([_, item]) => {
+          return (
+            <div>
+              <KeyTexts
+                component="p"
+                onMouseEnter={(e) => onMouseHandel(e, _, item)}
+              >
+                {_}
+              </KeyTexts>
+            </div>
+          );
+        })}
+      </KeyItemsBox>
+      <CatgoryContiner>
+        <div
+          style={{
+            marginTop:
+              fristHalfArray?.length + secendHalfArray?.length > 30
+                ? "250px"
+                : "0px",
+          }}
+        >
+          {fristHalfArray.fristHalfArray?.map((item, key) => {
             return (
-              <div>
-                <KeyTexts
-                  component="p"
-                  onMouseEnter={(e) => onMouseHandel(e, _, item)}
-                >
-                  {_}
-                </KeyTexts>
-              </div>
+              <HederCatgoryContent
+                item={item}
+                key={key}
+                setCatgoryDisplay={setCatgoryDisplay}
+              />
             );
           })}
-        </KeyItemsBox>
-
-        <CatgoryContiner>
-          <div
-            style={{
-              marginTop:
-                fristHalfArray?.length + secendHalfArray?.length > 30
-                  ? "250px"
-                  : "0px",
-            }}
-          >
-            {fristHalfArray.fristHalfArray?.map((item, key) => {
-              return <HederCatgoryContent item={item} key={key} />;
-            })}
-          </div>
-          <div
-            style={{
-              marginTop:
-                fristHalfArray?.length + secendHalfArray?.length > 30
-                  ? "305px"
-                  : "0px",
-            }}
-          >
-            {secendHalfArray.secendHalfArray?.map((item, key) => {
-              return <HederCatgoryContent item={item} key={key} />;
-            })}
-          </div>
-        </CatgoryContiner>
-        <ImgBox>
-          <Img src={imgAddrs.imgAddrs} alt="🖤" component="img"></Img>
-        </ImgBox>
-
-      </HederCatgoryBox>
-    </>
+        </div>
+        <div
+          style={{
+            marginTop:
+              fristHalfArray?.length + secendHalfArray?.length > 30
+                ? "305px"
+                : "0px",
+          }}
+        >
+          {secendHalfArray.secendHalfArray?.map((item, key) => {
+            return (
+              <HederCatgoryContent
+                item={item}
+                key={key}
+                setCatgoryDisplay={setCatgoryDisplay}
+              />
+            );
+          })}
+        </div>
+      </CatgoryContiner>
+      <ImgBox>
+        <Img src={imgAddrs?.imgAddrs} alt="🖤" component="img"></Img>
+      </ImgBox>
+    </HederCatgoryBox>
   );
 };
 

@@ -1,14 +1,18 @@
 import { useContext } from "react";
 import contextUse from "../../useContext/useContext";
 import { Typography } from "@mui/material";
-import styleComponents from "../../components/component-Style/StyleSelectPcProductBox";
+import styleComponents from "./Style-Component/StyleSelectPcProductBox";
 import { useState } from "react";
 import axios from "axios";
 import CatgoryPcBox from "./CatgoryBox/CatgoryPcBox";
 import SelectedItemEdited from "../SelectedItemEdited/SelectedItemEdited";
-
+import { Element } from "react-scroll";
+import { scroller } from "react-scroll";
+import { useNavigate } from "react-router-dom";
+import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage";
 const SelectPcProductBox = () => {
   const useItems = useContext(contextUse);
+  const navigate = useNavigate();
 
   const { selectPCPartBox, setSelectPCPartBox } = useItems;
 
@@ -21,6 +25,8 @@ const SelectPcProductBox = () => {
     ImgBox,
     SelectBoxSecendContiner,
     TextHederBox,
+    AnimationBox,
+    AnimationBoxContainer,
   } = styleComponents;
 
   const [DisplayCatgory, setDisplayCatgory] = useState(false);
@@ -28,17 +34,20 @@ const SelectPcProductBox = () => {
 
   const handelAddPcClick = async (e, item) => {
     try {
+      // recive  data from server when click on btn
       const fetchData = axios.get(item.jsonServer);
       const result = (await fetchData).data;
       setCategoryData({ product: result, pathName: item.title });
       setDisplayCatgory(true);
       switchtoChooseProducts(item);
+      scroller.scrollTo("catgoryBox"); // scroll on catgoryProducts
     } catch (err) {
-      console.log(err);
+      FailToFetchDataPage(navigate);
     }
   };
 
   const switchtoChooseProducts = (item) => {
+    // switch
     setSelectPCPartBox((prev) =>
       prev.map((fill) =>
         fill.text === item.text ? { ...fill, toChoose: true } : fill
@@ -53,6 +62,7 @@ const SelectPcProductBox = () => {
   };
 
   const closeCatgoryPcShape = () => {
+    // close catgoryBox on UI
     setDisplayCatgory(false);
     setSelectPCPartBox((prev) =>
       prev.map((fill) =>
@@ -61,44 +71,56 @@ const SelectPcProductBox = () => {
     );
   };
 
-  // const test = () => {};
-
   return (
     <ParentBox>
-      <CatgoryPcBox
-        DisplayCatgory={DisplayCatgory}
-        closeCatgoryPcShape={closeCatgoryPcShape}
-        findTruetoChooseItems={findTruetoChooseItems}
-        categoryData={categoryData}
-        selectPCPartBox={selectPCPartBox}
-        setSelectPCPartBox={setSelectPCPartBox}
-      ></CatgoryPcBox>
+      <Element name="catgoryBox">
+        <CatgoryPcBox
+          DisplayCatgory={DisplayCatgory}
+          closeCatgoryPcShape={closeCatgoryPcShape}
+          findTruetoChooseItems={findTruetoChooseItems}
+          categoryData={categoryData}
+          selectPCPartBox={selectPCPartBox}
+          setSelectPCPartBox={setSelectPCPartBox}
+        ></CatgoryPcBox>
+      </Element>
 
       <TextHederBox>Details</TextHederBox>
       {selectPCPartBox?.map((item) => (
         <SelctedParentBox>
-          <SelectBoxContiner
-            sx={{
-              backgroundColor: item.MandatoryPcPart ? "#f4f4f4" : "#c0f5d0",
-            }}
-          >
-            <SelectBoxSecendContiner>
-              <ImgBox component="img" src={item.iconSrc}></ImgBox>
-              <Typography onClick={() => console.log(selectPCPartBox)}>
-                {item.text}
-              </Typography>
-            </SelectBoxSecendContiner>
-            {item.MandatoryPcPart ? (
-              <></>
-            ) : (
-              <AddPcPartsButton
-                onClick={(e) => handelAddPcClick(e, item)}
-                component="button"
+          <AnimationBoxContainer>
+            <AnimationBox
+              sx={{
+                "&::before": {
+                  backgroundImage:
+                    item.MandatoryPcPart &&
+                    "linear-gradient(140deg, rgba(253, 0, 0, 1), rgba(255, 0, 0, 1))",
+                },
+              }}
+            >
+              <SelectBoxContiner
+                sx={{
+                  backgroundColor: item.MandatoryPcPart
+                    ? "#f8f2f2ff"
+                    : "#c0f5d0",
+                }}
               >
-                <TextHederBox>+</TextHederBox>
-              </AddPcPartsButton>
-            )}
-          </SelectBoxContiner>
+                <SelectBoxSecendContiner>
+                  <ImgBox component="img" src={item.iconSrc}></ImgBox>
+                  <Typography>{item.text}</Typography>
+                </SelectBoxSecendContiner>
+                {item.MandatoryPcPart ? (
+                  <></>
+                ) : (
+                  <AddPcPartsButton
+                    onClick={(e) => handelAddPcClick(e, item)}
+                    component="button"
+                  >
+                    <TextHederBox>+</TextHederBox>
+                  </AddPcPartsButton>
+                )}
+              </SelectBoxContiner>
+            </AnimationBox>
+          </AnimationBoxContainer>
 
           <SelectedItemEdited //Aded Pc Parts Box ✔
             handelAddPcClick={(e) => handelAddPcClick(e, item)}

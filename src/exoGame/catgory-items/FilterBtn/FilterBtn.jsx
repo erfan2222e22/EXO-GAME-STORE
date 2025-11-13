@@ -1,4 +1,4 @@
-import styleComponents from "../../components/component-Style/StyleCatgory";
+import styleComponents from "./Style-Component/StyleFilterBtn";
 const FilterBtnComponent = ({ filterItmes }) => {
   const { FilterBtn } = styleComponents;
   return <FilterBtn onClick={filterItmes}>فیلتر</FilterBtn>;

@@ -1,16 +1,17 @@
 import { Box } from "@mui/material";
 import img_playstaion from "./img-playstaion-xbox/playstaion.jpg";
 import img_xbox from "./img-playstaion-xbox/xbox.jpg";
-import styleComponent from "../components/component-Style/StylePlaystaionXboxSlider";
+import styleComponent from "./Style-Component/StylePlaystaionXboxSlider";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
 const PlaystaionXboxConsoleSlider = () => {
   const { ParentDiv } = styleComponent;
   const navigate = useNavigate();
   let itmes = [
     //slider imgs and path
+
     {
       title: "productSonyConsole",
       img: img_playstaion,
@@ -28,13 +29,14 @@ const PlaystaionXboxConsoleSlider = () => {
   ];
 
   const handelClickLink = (item) => {
+    console.log(item.jsonServer);
     axios(item.jsonServer)
       .then((data) => {
         navigate(`catgory/${item.title}`, {
           state: { product: data.data, pathName: item.title },
         });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => FailToFetchDataPage(navigate));
   };
 
   return (
@@ -43,8 +45,7 @@ const PlaystaionXboxConsoleSlider = () => {
         return (
           <Link
             to="#"
-            onClick={(e) => {
-              e.preventDefault();
+            onClick={() => {
               handelClickLink(item);
             }}
             style={{ display: "flex" }}

@@ -1,6 +1,7 @@
-import styleComponents from "../components/component-Style/StyleConsoleGm.js";
+import styleComponents from "./Style-Componet/StyleConsoleGm";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
 const ConsoleGamingSlider = () => {
   const { ParentDiv, BoxConsoleGm } = styleComponents;
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ const ConsoleGamingSlider = () => {
         })
       )
       .catch((err) => {
-        console.log(err);
+        FailToFetchDataPage(navigate);
       });
   };
   const PlayStaionFunction = () => {
@@ -26,7 +27,7 @@ const ConsoleGamingSlider = () => {
         })
       )
       .catch((err) => {
-        console.log(err);
+        FailToFetchDataPage(navigate);
       });
   };
 

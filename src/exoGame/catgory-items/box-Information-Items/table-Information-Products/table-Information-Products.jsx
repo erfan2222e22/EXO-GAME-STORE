@@ -6,7 +6,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Button } from "@mui/material";
 import { useState, useEffect } from "react";
-import axios from "axios";
+
 const createData = (itemKeys, itemData) => {
   return { itemKeys, itemData };
 };
@@ -19,19 +19,13 @@ const TableInformationProducts = ({ ...item }) => {
     company: "",
     Ramcapacity: "",
   };
-  const [test, Settest] = useState(false);
-  const obj = Object.keys(test ? item : object || {});
+  const [validation, SetValidation] = useState(false);
+  const obj = Object.keys(validation ? item : object || {});
   const [tableValus, SetTableValus] = useState([]);
   const [rows, SetRows] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3300/SonyDiscription")
-      .then((item) => {})
-      .catch((err) => {
-        console.log(err);
-      });
-
+    const timer = 10;
     setTimeout(() => {
       SetTableValus(obj);
       if (tableValus.length > 0) {
@@ -40,7 +34,7 @@ const TableInformationProducts = ({ ...item }) => {
             (preve = tableValus.map((key) => createData(key, item[key])))
         );
       }
-    }, 10);
+    }, timer);
   }, [tableValus]);
 
   return (
@@ -60,10 +54,10 @@ const TableInformationProducts = ({ ...item }) => {
           })}
         </TableBody>
       </Table>
-      {!test ? (
-        <Button onClick={() => Settest(true)}>more^^^</Button>
+      {!validation ? (
+        <Button onClick={() => SetValidation(true)}>more^^^</Button>
       ) : (
-        <Button onClick={() => Settest(false)}>close</Button>
+        <Button onClick={() => SetValidation(false)}>close</Button>
       )}
     </TableContainer>
   );

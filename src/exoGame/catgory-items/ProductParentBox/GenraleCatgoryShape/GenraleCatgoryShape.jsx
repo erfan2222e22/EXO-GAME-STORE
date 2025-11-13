@@ -1,4 +1,4 @@
-import styleComponent from "../../../components/component-Style/StyleParentBox";
+import styleComponent from "./style-Component/StyleParentBox";
 import { Typography, Box } from "@mui/material";
 
 import LaptopInformation from "../LaptopIconsInformation/LaptopInformation";

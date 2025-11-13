@@ -1,4 +1,4 @@
-import styleComponent from "../../components/component-Style/StyleBnechmarkFooter";
+import styleComponent from "./Style-Component/StyleBnechmarkFooter";
 const BenchMarkFoter = () => {
   const { ParentDiv, Text, BoxImg } = styleComponent;
   return (

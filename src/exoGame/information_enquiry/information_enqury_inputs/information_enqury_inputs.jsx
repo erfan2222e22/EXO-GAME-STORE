@@ -5,7 +5,7 @@ import { Typography } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
-import styleComponent from "../../components/component-Style/StyleInformationEnqury";
+import styleComponent from "./Style-Component/StyleInformationEnqury";
 const InformationEnquryInputs = () => {
   const { Inputs, ContinerInputs, HederBoxContiner } = styleComponent;
   const {

@@ -6,16 +6,11 @@ const FilterCheckbox = ({
   filterType,
   onFilterChange,
   setingConsoleFilters,
+  FilterValue,
 }) => {
-  const [filter, setFilter] = useState({
-    company: "",
-    genration: "",
-  });
+  const [filter, setFilter] = useState({});
 
-  const [filterValues, setfilterValues] = useState({
-    manufacturers: [],
-    generation: [],
-  });
+  const [filterValues, setfilterValues] = useState({});
 
   useEffect(() => {
     setfilterValues(setingConsoleFilters[0]);
@@ -23,20 +18,32 @@ const FilterCheckbox = ({
 
   const handeClickBox = (value) => {
     setFilter((prev) => {
-      if (filterType === "manufacturers") {
-        onFilterChange("company", value);
-      }
-      if (filterType === "generation") {
-        onFilterChange("genration", value);
-      }
+      Object.keys(FilterValue).forEach((item) => {
+        if (filterType === item) {
+          onFilterChange(item, value);
+        }
+      });
       return prev;
     });
   };
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 1,
+      }}
+    >
       {filterValues[filterType]?.map((value, index) => (
-        <Box key={index} sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        <Box
+          key={index}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 1,
+          }}
+        >
           <Checkbox onClick={() => handeClickBox(value)} />
           <Typography>{value}</Typography>
         </Box>

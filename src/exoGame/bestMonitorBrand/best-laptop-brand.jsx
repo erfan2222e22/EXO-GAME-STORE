@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
-import styleComponent from "../components/component-Style/StyleBestLaptopBrand";
+import styleComponent from "./Style-Component/StyleBestLaptopBrand";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
 const BestBrandLaptop = () => {
   const { ParentDiv, TextHead, BoxImg, TextItems } = styleComponent;
   const navigate = useNavigate();
-
   const itmes = [
     {
       imgs: "https://exo.ir/image/cache/catalog/New_Template/Banners/carousel_banner/Icons%20Cat%20v1%20Acer-400x400.png",
@@ -44,7 +44,7 @@ const BestBrandLaptop = () => {
           state: { product: data.data, pathName: "laptopProduct" },
         });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => FailToFetchDataPage(navigate));
   };
 
   return (

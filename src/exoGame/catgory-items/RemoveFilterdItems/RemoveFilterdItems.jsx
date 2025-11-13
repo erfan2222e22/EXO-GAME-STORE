@@ -1,4 +1,4 @@
-import styleComponents from "../../components/component-Style/StyleRemoveFilterdItems";
+import styleComponents from "./Style-Component/StyleRemoveFilterdItems";
 const RemoveFilterdItems = ({
   FilterValue,
   setFilterValue,

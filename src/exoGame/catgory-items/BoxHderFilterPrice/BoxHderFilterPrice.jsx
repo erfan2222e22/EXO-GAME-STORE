@@ -1,33 +1,56 @@
-import styleComponents from "../../components/component-Style/StyleHederFilterPrice";
+import styleComponents from "./Style-Component/StyleHederFilterPrice";
 import { Typography } from "@mui/material";
 import { useState } from "react";
 import AddchartIcon from "@mui/icons-material/Addchart";
-const BoxHederFilterPrice = ({ originalItems, setFilteredItems, setValid }) => {
+const BoxHederFilterPrice = ({
+  originalItems,
+  setFilteredItems,
+  setValid,
+  setOriginalItems,
+  initialItems,
+  setFilterValue,
+}) => {
   const { BoxHderFilterPrice, SortFilterText, BtnDisplayCatgory } =
     styleComponents;
   const [switchToMaxPrice, setSwitchToMaxPrice] = useState(false);
   const [switchToLowerPrice, setSwitchToLowerPrice] = useState(false);
+
   const heightPriceFilterItems = () => {
-    const highe = originalItems.sort((a, b) => b.price - a.price);
-    setFilteredItems((prev) => (prev = highe));
+    const highePrice = originalItems.sort((a, b) => b.price - a.price);
     setSwitchToMaxPrice(true);
+    setFilteredItems(highePrice);
     if (switchToLowerPrice) {
-      setSwitchToLowerPrice(false);
       setFilteredItems([]);
+      setSwitchToLowerPrice(false);
     }
   };
 
   const lowerPriceFilterItems = () => {
-    const low = originalItems.sort((a, b) => a.price - b.price);
-    setFilteredItems((prev) => (prev = low));
+    const lowPrice = originalItems.sort((a, b) => a.price - b.price);
     setSwitchToLowerPrice(true);
+    setFilteredItems(lowPrice);
+
     if (switchToMaxPrice) {
-      setSwitchToMaxPrice(false);
       setFilteredItems([]);
+      setSwitchToMaxPrice(false);
     }
   };
 
-  const defualtProductSorted = () => {};
+  const defualtProductSorted = () => {
+    // Reset filter values to default
+    setFilterValue((prev) =>
+      Object.fromEntries(Object.keys(prev).map((key) => [key, ""]))
+    );
+
+    // Reset to original items
+    setOriginalItems(initialItems);
+    setFilteredItems(initialItems);
+
+    // Reset sort switches
+    setSwitchToMaxPrice(false);
+    setSwitchToLowerPrice(false);
+  };
+
 
   return (
     <BoxHderFilterPrice>

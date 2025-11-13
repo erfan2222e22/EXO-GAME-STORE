@@ -1,4 +1,4 @@
-import styleComponent from "../../components/component-Style/StyleShopCartPcParts";
+import styleComponent from "./Style-Component/StyleShopCartPcParts";
 import { useContext } from "react";
 import contextUse from "../../useContext/useContext";
 import { useState, useEffect } from "react";
@@ -18,7 +18,7 @@ const ShoppingCartPcParts = () => {
   const context = useContext(contextUse);
   const { selectPCPartBox } = context;
   const [totalPrice, setTotalPrice] = useState(0);
-  const [errorText, setErrorText] = useState("pls enter the ... input 😒");
+  const [errorText, setErrorText] = useState("");
   const [BoleanError, setBoleanError] = useState(false);
 
   const CalculateTotalPriceFunc = () => {

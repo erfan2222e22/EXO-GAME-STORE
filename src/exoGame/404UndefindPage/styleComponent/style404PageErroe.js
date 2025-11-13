@@ -11,7 +11,6 @@ const ParentBox = styled(Box)({
   justifyContent: "center",
   alignItems: "center",
   height: window.innerHeight,
-  width: window.innerWidth,
   overflowY: "hidden",
   background: "linear-gradient(44deg, #5a5959ff, #040404ff)",
   backgroundSize: "400% 400%",

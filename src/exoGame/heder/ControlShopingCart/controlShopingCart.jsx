@@ -1,6 +1,6 @@
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Typography, Box } from "@mui/material";
-import styleComponents from "../../components/component-Style/StyleControlShpingCart";
+import styleComponents from "./Style-Component/StyleControlShpingCart";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { useEffect } from "react";
@@ -16,6 +16,7 @@ const ControlShopingCart = () => {
     ButtonClearBasket,
     DelteIcons,
   } = styleComponents;
+
   const navigate = useNavigate();
   const {
     ProductsInShopCart,

@@ -1,16 +1,11 @@
-import TelegramIcon from "@mui/icons-material/Telegram";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Tooltip from "@mui/material/Tooltip";
 import { Link } from "react-router-dom";
-import style from "./footer.module.css";
 import img from "./navbar-Img/logo.png";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import styleComponent from "../components/component-Style/StyleFooter";
+import styleComponent from "./Style-Component/StyleFooter";
 import { Box } from "@mui/material";
 const Footer = () => {
-  const { BoxFooter } = styleComponent;
+  const { BoxFooter, Img } = styleComponent;
 
   const elmentsArray = [
     {
@@ -60,7 +55,7 @@ const Footer = () => {
             </Tooltip>
           );
         })}
-        <img src={img} alt="img" className={style.img}></img>
+        <Img src={img} alt="img" component="img"></Img>
         <br></br>
         <span> Made with ❤ </span>
         <h6>

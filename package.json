@@ -21,6 +21,7 @@
     "bootstrap": "^5.3.3",
     "events": "^3.3.0",
     "express": "^5.1.0",
+    "gsap": "^3.13.0",
     "json-server": "^1.0.0-beta.3",
     "kavenegar": "^1.1.4",
     "mitt": "^3.0.1",
@@ -34,6 +35,7 @@
     "react-scroll": "^1.9.3",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.19",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -1,7 +1,7 @@
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import styleComponent from "../../components/component-Style/StyleDiscriotionItems";
+import styleComponent from "./Style-Component/StyleProductDiscription";
 import ProductDiscriptionImg from "./productionImg/productionDiscriotionImg";
 import ProductionHeder from "./productionHeder/productionHeder";
 import ProductInformation from "./productInformation/productInformation";

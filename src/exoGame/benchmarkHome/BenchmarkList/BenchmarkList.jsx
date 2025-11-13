@@ -1,13 +1,13 @@
 import { Box } from "@mui/material";
-import styleComponents from "../../components/component-Style/StyleBenchMarklLst";
+import styleComponents from "./Style-Component/StyleBenchMarklLst";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage";
 const BenchmarkList = () => {
   const { ParentDiv, ParentListDiv, DivItems, ItemsText, HederText } =
     styleComponents;
 
   const navigate = useNavigate();
-
 
   const BenchmarkList = [
     {
@@ -21,29 +21,29 @@ const BenchmarkList = () => {
       id: 2,
       img: "https://exo.ir/image/cache/catalog/New_Template/Benchmark/cpubenchpng-150x150.png",
       text: "Processor performance in single-core processing",
-      route: "...",
-      jsoneServer: "",
+      route: "SingleCorePassmarkCpu",
+      jsoneServer: "http://localhost:3300/SingleCorePassmarkCpu",
     },
     {
       id: 3,
-      img: "https://exo.ir/image/cache/catalog/New_Template/Benchmark/cpu_mark3-150x150.png",
+      img: "https://exo.ir/image/cache/catalog/New_Template/Benchmark/3dmarkt3-150x150.png",
       text: "Graphics performance in 3D processing",
-      route: "...",
-      jsoneServer: "",
+      route: "3d-mark-dx12",
+      jsoneServer: "http://localhost:3300/gpu-product",
     },
     {
       id: 4,
       img: "https://exo.ir/image/cache/catalog/New_Template/Benchmark/2dmarkt2-150x150.png",
       text: "Graphics performance in 2D processing",
-      route: "...",
-      jsoneServer: "",
+      route: "2d-mark",
+      jsoneServer: "http://localhost:3300/gpu2dProducs",
     },
     {
       id: 5,
       img: "https://exo.ir/image/cache/catalog/New_Template/Benchmark/gpuc-150x150.png",
       text: "Graphic computing power",
-      route: "...",
-      jsoneServer: "",
+      route: "gpu-compute",
+      jsoneServer: "http://localhost:3300/gpu2dProducs",
     },
   ];
 
@@ -56,7 +56,7 @@ const BenchmarkList = () => {
         });
       })
       .catch((err) => {
-        console.log(err);
+        FailToFetchDataPage(navigate);
       });
   };
 
@@ -76,4 +76,5 @@ const BenchmarkList = () => {
     </ParentDiv>
   );
 };
+
 export default BenchmarkList;

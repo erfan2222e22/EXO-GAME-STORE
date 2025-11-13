@@ -1,12 +1,11 @@
 import { AppBar, TextField, Toolbar, Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { margin, width } from "@mui/system";
 import { Link } from "react-router-dom";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   direction: "rtl",
   height: "125px",
-  backgroundColor: "#ffff",
+  backgroundColor: "#ffffffff",
 }));
 const CoustomToolbar = styled(Toolbar)({
   display: "flex",
@@ -61,12 +60,15 @@ const Icons = styled(Box)({
 });
 
 const TooltipBox = styled(Box)(({ theme }) => ({
+  // display: "none",
   display: "flex",
   textAlign: "left",
   justifyContent: "space-around",
   width: "100%",
   height: "125%",
+  opacity: "1",
   [theme.breakpoints.down("sm")]: { display: "none" },
+  animation: "3s ease-in-out",
 }));
 
 const LinkRoter = styled(Link)({

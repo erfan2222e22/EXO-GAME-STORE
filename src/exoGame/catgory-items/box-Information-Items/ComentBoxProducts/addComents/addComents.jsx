@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Rating } from "@mui/material";
-import styleComponent from "../../../../components/component-Style/StyleCommentProducts";
+import styleComponent from "./Style-Component/StyleCommentProducts";
 
 const AddCommentComponent = ({
   userName,

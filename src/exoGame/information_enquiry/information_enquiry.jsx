@@ -3,7 +3,7 @@ import { useState } from "react";
 import contextUse from "../useContext/useContext";
 import InformationEnquryBtn from "./information_enqury_Btn/information_enqury_Btn";
 import InformationEnquryInputs from "./information_enqury_inputs/information_enqury_inputs";
-import styleComponent from "../components/component-Style/StyleInformationEnqury";
+import styleComponent from "./Style-Component/StyleInformationEnqury";
 const InformationEnquiry = () => {
   const { ContinerBox, ContinerBoxMain } = styleComponent;
   const [request, setRequest] = useState({
@@ -90,6 +90,7 @@ const InformationEnquiry = () => {
             setCorrectRequest,
             setFailRequest,
             setElmentInArray,
+
             phoneNumberEroreText,
             phoneNumberEroreBolean,
             request,
