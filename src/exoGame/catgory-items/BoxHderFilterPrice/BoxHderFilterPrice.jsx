@@ -51,6 +51,7 @@ const BoxHederFilterPrice = ({
     setSwitchToLowerPrice(false);
   };
 
+
   return (
     <BoxHderFilterPrice>
       <BtnDisplayCatgory onClick={() => setValid((prev) => (prev = true))}>
@@ -72,3 +73,4 @@ const BoxHederFilterPrice = ({
 };
 
 export default BoxHederFilterPrice;
+
