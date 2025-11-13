@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import styleComponent from "../../../components/component-Style/StyleInformationBoxDiscription";
+import styleComponent from "./Style-Component/StyleInformationBoxDiscription";
 import { Box } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import FailToFetchDataPage from "../../../failToFetchDataPage/failToFetchDataPage";
+
 const BoxDiscriptionItems = ({ ...item }) => {
   const { Paragraf, HederText, BoxParent } = styleComponent;
+  const navigate = useNavigate;
   const [arrayProducts, setArrayProducts] = useState([]);
   const [indexFristArrayProducts, setIndexFristArrayProducts] = useState([]);
   const [valid, setValid] = useState(false);
@@ -18,7 +22,7 @@ const BoxDiscriptionItems = ({ ...item }) => {
           setIndexFristArrayProducts([index0Data]);
           setArrayProducts(afterIndexOne);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => FailToFetchDataPage(navigate));
     }
   }, [arrayProducts, indexFristArrayProducts, item]);
 

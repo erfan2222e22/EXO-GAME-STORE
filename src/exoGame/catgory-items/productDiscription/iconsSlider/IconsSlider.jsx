@@ -1,5 +1,4 @@
-import { Typography } from "@mui/material";
-import styleComponent from "../../../components/component-Style/StyleIconsSloderProductDiscription";
+import styleComponent from "./Style-Component/StyleIconsSloderProductDiscription";
 const IconsSlider = () => {
   const {
     BoxParent,

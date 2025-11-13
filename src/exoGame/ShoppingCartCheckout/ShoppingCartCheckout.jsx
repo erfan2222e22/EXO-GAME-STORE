@@ -1,5 +1,5 @@
 import React from "react";
-import styleComponent from "../components/component-Style/StyleShoppingCartCheckout";
+import styleComponent from "./Style-Component/StyleShoppingCartCheckout";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -17,6 +17,8 @@ const ShoppingCartCheckout = () => {
     EmptyContainerText,
     EmptyContainerImg,
     MainContainerEmpty,
+    SpanText,
+    BoxImg,
   } = styleComponent;
   const location = useLocation();
   const { product } = location.state;
@@ -76,29 +78,19 @@ const ShoppingCartCheckout = () => {
                       }}
                     >
                       <div style={{ display: "flex", gap: "10px" }}>
-                        <div style={{ backgroundColor: "red", width: "40px" }}>
-                          <img
-                            style={{
-                              width: "25%",
-                              height: "auto",
-                              objectFit: "contain",
-                            }}
-                            src={value.img}
-                            alt="🥺"
-                          />
+                        <div
+                          style={{
+                            width: "100px",
+                            height: "100%",
+                          }}
+                        >
+                          <BoxImg component="img" src={value.img} alt="🥺" />
                         </div>
-                        <div>
+                        <div style={{ width: "300px" }}>
                           <p>{value.nameProduct}</p>
-                          <span
-                            style={{
-                              fontSize: "12px",
-                              position: "relative",
-                              bottom: "17px",
-                              fontWeight: "400",
-                            }}
-                          >
-                            WIFI Pro-WS-TRX50-SAGE-WIFI
-                          </span>
+                          <SpanText component="span">
+                            {value.nameProduct}
+                          </SpanText>
                         </div>
                       </div>
                       <div style={{ padding: "10px" }}>

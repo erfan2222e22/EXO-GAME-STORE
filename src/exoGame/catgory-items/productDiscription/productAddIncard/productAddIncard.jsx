@@ -1,4 +1,4 @@
-import styleComponents from "../../../components/component-Style/StyleDiscriotionItems";
+import styleComponents from "./Style-Component/StyleDiscriotionItems";
 import { Box } from "@mui/material";
 import { Typography } from "@mui/material";
 import emmiter from "../../../../mitt/emmiter";

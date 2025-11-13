@@ -9,6 +9,8 @@ const Spans = styled(Box)(({ theme }) => ({
   width: "100px",
   flex: "1",
   textAlign: "center",
+  height: "100%",
+  overflow: "hidden",
 }));
 
 const Icons = styled(Box)({

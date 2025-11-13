@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import SugestExoSlider from "../sugestExo/sugestExo";
 import axios from "axios";
-
+import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
+import { useNavigate } from "react-router-dom";
 const SliderContainer = () => {
   const [offerItems, setOfferItems] = useState([]);
   const [lastFronExiItems, setLastFronExiItems] = useState([]);
   const [BestsellersExoItems, setBestsellersExoItems] = useState([]);
+  const navigate = useNavigate();
 
   const fetchDataFromServer = async () => {
     const arrayAddres = [
@@ -27,7 +29,7 @@ const SliderContainer = () => {
         setLastFronExiItems(allData[1].data);
         setBestsellersExoItems(allData[2].data);
       } catch (err) {
-        console.log(err);
+        FailToFetchDataPage(navigate);
       }
     }
   };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styleComponent from "../../components/component-Style/StyleShoppingCartCheckout";
+import styleComponent from "./Style-Component/StyleShoppingCartCheckout";
 const ShopCardPriceCalcolate = ({ ProductsValue }) => {
   const { ContinerShopCard, SettlementOfAccount, ContinueShoppingBtn } =
     styleComponent;

@@ -1,4 +1,4 @@
-import styleComponents from "../../components/component-Style/StyleCatgory";
+import StyleComponent from "./Style-Component/StyleToolsValuse";
 import FilterCheckbox from "../filterCheCheckbox";
 import FilterSlider from "../filterSlider";
 import { MenuItem, Box } from "@mui/material";
@@ -7,8 +7,9 @@ const FilterTolsValue = ({
   setFilterValue,
   handeOnClick,
   itemsSetting,
+  FilterValue,
 }) => {
-  const { InputLabelText, MainSelect } = styleComponents;
+  const { InputLabelText, MainSelect } = StyleComponent;
   return (
     <Box sx={{ margin: "10px" }}>
       {kind_filters?.map((item, key) => {
@@ -18,7 +19,7 @@ const FilterTolsValue = ({
               {item.label}
             </InputLabelText>
             <MainSelect labelId="demo-simple-select-label">
-              <MenuItem>
+              <MenuItem sx={{ backgroundColor: "blue" }}>
                 {item.kindOfFilter === "cheCheckbox" && (
                   <FilterCheckbox
                     onFilterChange={(field, value) =>
@@ -29,6 +30,7 @@ const FilterTolsValue = ({
                     }
                     filterType={item.filterType}
                     setingConsoleFilters={itemsSetting}
+                    FilterValue={FilterValue}
                   />
                 )}
                 {item.kindOfFilter === "Slider" && (

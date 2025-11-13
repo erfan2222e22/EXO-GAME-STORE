@@ -1,22 +1,36 @@
-import styleComponents from "../../components/component-Style/StyleCatgory";
 import { useState, useEffect } from "react";
-import BoxHederFilterPrice from "../BoxHderFilterPrice/BoxHderFilterPrice";
-import ProductParentBoxComponent from "../ProductParentBox/ProductParentBox";
-import RemoveFilterdItems from "../RemoveFilterdItems/RemoveFilterdItems";
-import FilterTolsValue from "../FilterTolsValue/FilterTolsValue";
 import { useLocation } from "react-router-dom";
-import FilterBtnComponent from "../FilterBtn/FilterBtn";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import styleComponents from "./Style-Component/StyleCatgory";
+import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage";
+import CatgoryJsx from "./catgoryJsx";
 
-const Catgory = () => {
+const Catgory = ({
+  product: propProduct,
+  pathName: propPathName,
+  selectPCPartBox,
+  setSelectPCPartBox,
+  closeCatgoryPcShape,
+  findTruetoChooseItems,
+}) => {
   const { MainBox, SmallSizeMainBox } = styleComponents; // styled component
   const location = useLocation();
-  const { product = [], pathName } = location.state || {};
+  const navigate = useNavigate();
+
+  const { product: stateProduct, pathName: statePathName } =
+    location.state || {};
+
+  // استفاده از props اگر موجود باشد، در غیر این صورت از location.state
+  const product = propProduct || stateProduct;
+  const pathName = propPathName || statePathName;
+
   const filterValuesTols = product[0].productSetting;
   //main state
   const [FilterValue, setFilterValue] = useState({});
 
   // const initialItems = product;
+
   const [originalItems, setOriginalItems] = useState(product); // all items catch from json server
   const [filteredItems, setFilteredItems] = useState([]); //flterd items between slected filters
 
@@ -24,6 +38,8 @@ const Catgory = () => {
   const [value_kind_filter, setKind_filters_value] = useState();
 
   const [valid, setValid] = useState(false);
+  const [displayFilterBox, setDisplayFilterBox] = useState(true);
+
   const dynamicFilterVlause = (itemData) => {
     const itemDataValue = itemData.data.filterValues[0];
     let productDataKyeAndValuse = Object.fromEntries(
@@ -47,7 +63,7 @@ const Catgory = () => {
         setKind_filters(itemData.data.kindofFilter);
       })
       .catch((err) => {
-        console.log(err);
+        FailToFetchDataPage(navigate);
       });
   }, [product, filterValuesTols]);
 
@@ -87,56 +103,32 @@ const Catgory = () => {
     setFilteredItems(filtered);
   };
 
-  return (
-    <>
-      <BoxHederFilterPrice
-        originalItems={originalItems}
-        setFilteredItems={setFilteredItems}
-        setValid={setValid}
-      />
-      <ProductParentBoxComponent
-        filteredItems={filteredItems}
-        originalItems={originalItems}
-        pathName={pathName}
-      />
-      {valid && (
-        <SmallSizeMainBox>
-          <>
-            <button onClick={() => setValid((prev) => (prev = false))}>
-              ✖
-            </button>
-          </>
-          <RemoveFilterdItems
-            FilterValue={FilterValue}
-            setFilterValue={setFilterValue}
-            setFilteredItems={setFilteredItems}
-          />
-          <FilterTolsValue
-            FilterValue={FilterValue}
-            kind_filters={kind_filters}
-            setFilterValue={setFilterValue}
-            handeOnClick={handeOnClick}
-            itemsSetting={value_kind_filter}
-          />
-          <FilterBtnComponent filterItmes={filterItmes} />
-        </SmallSizeMainBox>
-      )}
-      <MainBox>
-        <RemoveFilterdItems
-          FilterValue={FilterValue}
-          setFilterValue={setFilterValue}
-          setFilteredItems={setFilteredItems}
-        />
-        <FilterTolsValue
-          FilterValue={FilterValue}
-          kind_filters={kind_filters}
-          setFilterValue={setFilterValue}
-          handeOnClick={handeOnClick}
-          itemsSetting={value_kind_filter}
-        />
-        <FilterBtnComponent filterItmes={filterItmes} />
-      </MainBox>
-    </>
-  );
+  const props = {
+    originalItems: originalItems,
+    setFilteredItems: setFilteredItems,
+    setValid: setValid,
+    setOriginalItems: setOriginalItems,
+    initialItems: product,
+    setFilterValue: setFilterValue,
+    filteredItems: filteredItems,
+    pathName: pathName,
+    stateProduct: stateProduct,
+    setDisplayFilterBox: setDisplayFilterBox,
+    selectPCPartBox: selectPCPartBox,
+    setSelectPCPartBox: setSelectPCPartBox,
+    closeCatgoryPcShape: closeCatgoryPcShape,
+    findTruetoChooseItems: findTruetoChooseItems,
+    FilterValue: FilterValue,
+    kind_filters: kind_filters,
+    handeOnClick: handeOnClick,
+    itemsSetting: value_kind_filter,
+    filterItmes: filterItmes,
+    valid: valid,
+    displayFilterBox: displayFilterBox,
+    SmallSizeMainBox: SmallSizeMainBox,
+    MainBox: MainBox,
+  };
+
+  return <CatgoryJsx props={props} />;
 };
 export default Catgory;

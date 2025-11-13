@@ -5,12 +5,13 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Tooltip from "@mui/material/Tooltip";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import styleComponent from "../../components/component-Style/StyleBenchmarkTabel";
+import styleComponent from "./Style-Component/StyleBenchmarkTabel";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/system";
 import { useState } from "react";
+import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage";
 const BenchmarkTabel = () => {
   const {
     ContiberBoxDiv,
@@ -45,7 +46,7 @@ const BenchmarkTabel = () => {
         });
       })
       .catch((err) => {
-        console.log(err);
+        FailToFetchDataPage(navigate);
       });
   };
 

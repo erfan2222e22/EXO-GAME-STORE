@@ -1,7 +1,7 @@
 import LocalGroceryStoreOutlinedIcon from "@mui/icons-material/LocalGroceryStoreOutlined";
 import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 import CreditCardOutlinedIcon from "@mui/icons-material/CreditCardOutlined";
-import styleComponent from "../../components/component-Style/StyleShoppingStepsBox";
+import styleComponent from "./Style-Component/StyleShoppingStepsBox";
 
 const ShoppingStepBox = () => {
   const {

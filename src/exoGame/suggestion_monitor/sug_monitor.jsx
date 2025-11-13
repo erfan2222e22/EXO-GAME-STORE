@@ -1,18 +1,35 @@
-import img_2k from "./sug_monitor_img/2k_img.png";
-import img_4k from "./sug_monitor_img/4k_img.png";
-import img_full_hd from "./sug_monitor_img/full_hd.png";
-import img_ultera_wide from "./sug_monitor_img/ultera_wide.png";
-import stylecomponent from "../components/component-Style/StyleSugestMonitor";
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import styleComponent from "./Style-Component/StyleSugestMonitor";
+import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
 const SugMonitor = () => {
-  const { DivParent, DivImg, Text, HeadrText } = stylecomponent;
-  let items = [
-    { img: img_2k, text: "2K", id: 1, path: "./ultrawide" },
-    { img: img_4k, text: "4K", id: 2, path: "./ultrawide" },
-    { img: img_full_hd, text: "FHD", id: 3, path: "./ultrawide" },
-    { img: img_ultera_wide, text: "Ultra-Wide", id: 4, path: "./ultrawide" },
+  const { DivParent, DivImg, Text, HeadrText } = styleComponent;
+  const items = [
+    {
+      img: "https://exo.ir/image/cache/catalog/New_Template/Banners/carousel_banner/Icons%20Cat%20v1%202K-200x200.png",
+      text: "2K",
+      id: 1,
+      path: "./ultrawide",
+    },
+    {
+      img: "https://exo.ir/image/cache/catalog/New_Template/Banners/carousel_banner/Icons%20Cat%20v1%204k-200x200.png",
+      text: "4K",
+      id: 2,
+      path: "./ultrawide",
+    },
+    {
+      img: "https://exo.ir/image/cache/catalog/New_Template/Banners/carousel_banner/Icons%20Cat%20v1%20FHD-200x200.png",
+      text: "FHD",
+      id: 3,
+      path: "./ultrawide",
+    },
+    {
+      img: "https://exo.ir/image/cache/catalog/New_Template/Banners/carousel_banner/Icons%20Cat%20v1%20UW-200x200.png",
+      text: "Ultra-Wide",
+      id: 4,
+      path: "./ultrawide",
+    },
   ];
   const navigate = useNavigate();
 
@@ -25,7 +42,7 @@ const SugMonitor = () => {
           state: { product: data.data, pathName: "monitorProduct" },
         });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => FailToFetchDataPage(navigate));
   };
 
   return (

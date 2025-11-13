@@ -1,35 +1,21 @@
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShareIcon from "@mui/icons-material/Share";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
+import styleComponents from "./Style-Component/StyleProductionDiscriptionImg";
 import { Box } from "@mui/material";
 const ProductDiscriptionImg = ({ imgSrc }) => {
+  const { ParentBox, ParentBoxImg } = styleComponents;
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        width: "50%",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <ParentBox>
       <div>
         <Box component="img" src={imgSrc} alt="💖"></Box>
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          gap: "10px",
-          marginTop: "10px",
-        }}
-      >
+      <ParentBoxImg>
         <FavoriteBorderIcon></FavoriteBorderIcon>
         <ShareIcon></ShareIcon>
         <BookmarkIcon></BookmarkIcon>
-      </div>
-    </div>
+      </ParentBoxImg>
+    </ParentBox>
   );
 };
 export default ProductDiscriptionImg;

@@ -22,7 +22,11 @@ import AssmbleContiner from "./exoGame/AssmblePc/AssmbleCntiner.jsx";
 import ShoppingCartCheckout from "./exoGame/ShoppingCartCheckout/ShoppingCartCheckout.jsx";
 import ShoppingStepBox from "./exoGame/ShoppingCartCheckout/Shopping Steps Box/Shopping Steps Box.jsx";
 import ScrollBtn from "./exoGame/ScrollBtn/ScrollBtn.jsx";
-
+import Test from "./test.jsx";
+import Test2 from "./test2.jsx";
+import Page404Erroe from "./exoGame/404UndefindPage/404PageErroe.jsx";
+import FailToFetchDataPage from "./exoGame/failToFetchDataPage/failToFetchDataPage.jsx";
+import FuqReact from "./fuqReact.jsx";
 let rutes = [
   {
     path: "/",
@@ -40,6 +44,18 @@ let rutes = [
         <CategoryPopularSlider></CategoryPopularSlider>
         <PlaystaionXboxConsoleSlider></PlaystaionXboxConsoleSlider>
         <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "*",
+    element: <Page404Erroe></Page404Erroe>,
+  },
+  {
+    path: "failedToFetch",
+    element: (
+      <div>
+        <FailToFetchDataPage></FailToFetchDataPage>
       </div>
     ),
   },
@@ -184,6 +200,22 @@ let rutes = [
         <HederPrentBox></HederPrentBox>
         <InformationEnquiry></InformationEnquiry>
         <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/test",
+    element: (
+      <div>
+        <Test></Test>
+      </div>
+    ),
+  },
+  {
+    path: "/test2",
+    element: (
+      <div>
+        <FuqReact></FuqReact>
       </div>
     ),
   },

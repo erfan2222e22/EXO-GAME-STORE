@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, Element } from "react-scroll";
-import styleComponent from "../../components/component-Style/StyleBoxInformationProduction";
+import styleComponent from "./Style-Component/StyleBoxInformationProduction";
 import TableInformationProducts from "./table-Information-Products/table-Information-Products";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
@@ -8,6 +8,7 @@ import { Typography } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import BoxDiscriptionItems from "./box-discription-items/box-discription-items";
 import ComentBoxProducts from "./ComentBoxProducts/comentBoxProducts";
+
 const BoxInfoProducts = () => {
   const { PrentBox, HederText } = styleComponent;
   const location = useLocation();
@@ -32,11 +33,12 @@ const BoxInfoProducts = () => {
           </Link>
         </HederText>
         <HederText>
-          <Link to="box1">
+          <Link to="Coments">
             Comments <ArrowRightIcon></ArrowRightIcon>
           </Link>
         </HederText>
       </PrentBox>
+
       <br />
       <br />
       <br />

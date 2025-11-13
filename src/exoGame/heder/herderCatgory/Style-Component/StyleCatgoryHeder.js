@@ -11,14 +11,14 @@ const HederCatgoryBox = styled(Box)({
   justifyContent: "space-around",
   width: "90%",
   left: "50px",
-  height: "400px",
+  height: "450px",
   borderRadius: "10px",
-  position: "absolute",
+  position: "fixed",
   margin: "0 auto",
   marginTop: "125px",
   padding: "3px",
   paddingTop: "3px",
-  backgroundColor: "#ffff",
+  backgroundColor: "#f6f6f6ff",
   animation: `${anime} 1s ease-in-out `,
   boxShadow:
     "rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(14, 14, 15, 0.05) 0px 0.25em 1em",
@@ -42,6 +42,7 @@ const KeyItemsBox = styled(Box)({
   borderRight: "1px solid #bfbcbcff",
   padding: "5px",
   boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+  marginTop: "0px",
 });
 
 const Img = styled(Box)({

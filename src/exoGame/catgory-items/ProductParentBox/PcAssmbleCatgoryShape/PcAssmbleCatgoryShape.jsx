@@ -1,15 +1,20 @@
 import React from "react";
 import { Typography, Box } from "@mui/material";
-import styleComponent from "../../../components/component-Style/StyleAssmblePcShapeCatgory";
+import styleComponent from "./Style-Component/StyleAssmblePcShapeCatgory";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import InformationPcPart from "../../../AssmblePc/informationPcPart/InformationPcPart";
 import { useState } from "react";
+import Checkbox from "@mui/material/Checkbox";
 
 const PcAssmbleCatgoryShape = ({
   filteredItems,
   originalItems,
   handelOnClick,
   setDisplayFilterBox,
+  selectPCPartBox,
+  setSelectPCPartBox,
+  closeCatgoryPcShape,
+  findTruetoChooseItems,
 }) => {
   const { MainBox, ContinerBoxDiscrib, Button, ImgBox, ContinerBox } =
     styleComponent;
@@ -39,6 +44,27 @@ const PcAssmbleCatgoryShape = ({
     setItemsInformation([restItems]);
   };
 
+  const checkBoxOnclick = (e, item) => {
+    setSelectPCPartBox((prev) => {
+      return prev.map((items) =>
+        items.title === item.title
+          ? {
+              ...items,
+              ProductArray: Array.from(
+                new Map(
+                  [...items.ProductArray, item].map((product) => [
+                    product.id,
+                    product,
+                  ])
+                ).values()
+              ),
+            }
+          : items
+      );
+    });
+    console.log(item);
+  };
+
   return (
     <>
       <Box sx={{ marginTop: "15%", display: displayBoxes ? "none" : "block" }}>
@@ -47,6 +73,13 @@ const PcAssmbleCatgoryShape = ({
             <Box key={item.id}>
               <MainBox>
                 <ContinerBoxDiscrib>
+                  {findTruetoChooseItems()[0].SeveralChoices && (
+                    <>
+                      <Checkbox
+                        onClick={(e) => checkBoxOnclick(e, item)}
+                      ></Checkbox>
+                    </>
+                  )}
                   <ImgBox src={item.img} component="img" />
                   <Typography>{item.nameProduct}</Typography>
                   <OpenInNewIcon
@@ -90,14 +123,18 @@ const PcAssmbleCatgoryShape = ({
         )}
       </Box>
       <InformationPcPart
+        setSelectPCPartBox={setSelectPCPartBox}
+        selectPCPartBox={selectPCPartBox}
         setDisplayBoxes={setDisplayBoxes}
         selectedItems={selectedItems}
         itemsInformation={itemsInformation}
         handelOnClick={handelOnClick}
         setDisplayFilterBox={setDisplayFilterBox}
         displayBoxes={displayBoxes}
+        closeCatgoryPcShape={closeCatgoryPcShape}
       />
     </>
   );
 };
+
 export default PcAssmbleCatgoryShape;

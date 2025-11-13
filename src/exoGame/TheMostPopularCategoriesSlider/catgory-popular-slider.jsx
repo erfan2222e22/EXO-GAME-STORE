@@ -2,33 +2,94 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Box } from "@mui/system";
-import imgCpu from "./img-pupolar-catgory/cpu-img.png";
-import imgGpu from "./img-pupolar-catgory/gpu-img.png";
-import imgHeadset from "./img-pupolar-catgory/headset-img.png";
-import imgKeybord from "./img-pupolar-catgory/keybord-img.png";
-import imgMotherbord from "./img-pupolar-catgory/motherbord-img.png";
-import imgMouse from "./img-pupolar-catgory/mouse-img.png";
-import imgMousepad from "./img-pupolar-catgory/mouspad-img.png";
-import imgRam from "./img-pupolar-catgory/ram-img.png";
-import imgSsd from "./img-pupolar-catgory/ssd-img.png";
-import imgWebcome from "./img-pupolar-catgory/webcome-img.png";
-import styleComponent from "../components/component-Style/StyleCategoryPopularSlider";
-import "./style.css";
+import styleComponent from "./Style-Component/StyleCategoryPopularSlider";
+import "./Style-Component/style.css";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
 
 const CategoryPopularSlider = () => {
   const { ParentDiv, BoxImg, TextHeadr, TextImg, LinkPath } = styleComponent;
+  const navigate = useNavigate();
 
-  let imgs = [
-    { src: imgCpu, text: "cpu", path: "./awd", id: 1 },
-    { src: imgGpu, text: "کارت گرافیک ", path: "./awd", id: 2 },
-    { src: imgHeadset, text: "هدست", path: "./awd", id: 3 },
-    { src: imgKeybord, text: "کیبورد ", path: "./awd", id: 4 },
-    { src: imgMotherbord, text: "مادربرد ", path: "./awd", id: 5 },
-    { src: imgMouse, text: "موس", path: "./awd", id: 6 },
-    { src: imgMousepad, text: "موس  پد ", path: "./awd", id: 7 },
-    { src: imgRam, text: "رام", path: "./awd", id: 8 },
-    { src: imgSsd, text: "ssd", path: "./awd", id: 9 },
-    { src: imgWebcome, text: "وب کم", path: "./awd", id: 10 },
+  let ProductList = [
+    {
+      src: "https://exo.ir/image/cache/catalog/New_Template/Categories-images/cat-button-cpu-200x200.png",
+      text: "cpu",
+      title: "cpu-product",
+      id: 1,
+      jsonServer: "http://localhost:3300/cpu-product",
+    },
+    {
+      src: "https://exo.ir/image/cache/catalog/New_Template/Categories-images/cat-button-graphic-card-200x200.png",
+      text: "gpu",
+      title: "gpu-product",
+      id: 2,
+      jsonServer: "http://localhost:3300/gpu-product",
+    },
+    {
+      src: "https://exo.ir/image/cache/catalog/New_Template/Categories-images/cat-button-headset-200x200.png",
+      text: "headSet",
+      title: "HeadsetProduct",
+      jsonServer: "http://localhost:3300/HeadsetProduct",
+      id: 3,
+    },
+    {
+      src: "https://exo.ir/image/cache/catalog/New_Template/Categories-images/cat-button-keyboard-200x200.png",
+      text: "keyBord",
+      title: "keyBordProduct",
+      id: 4,
+      jsonServer: "http://localhost:3300/keyBordProduct",
+    },
+    {
+      src: "https://exo.ir/image/cache/catalog/New_Template/Categories-images/cat-button-motherboard-200x200.png",
+      text: "motherBord",
+      title: "motherboardProduct",
+      id: 5,
+      jsonServer: "http://localhost:3300/motherboardProduct",
+    },
+    {
+      src: "https://exo.ir/image/cache/catalog/New_Template/Categories-images/cat-button-mouse-200x200.png",
+      text: "mouse",
+      title: "mouseProduct",
+      jsonServer: "http://localhost:3300/mouseProduct",
+      id: 6,
+    },
+    {
+      src: "https://exo.ir/image/cache/catalog/New_Template/Categories-images/cat-button-mousepad-200x200.png",
+      text: " mousePad",
+      title: "mousePadProduct",
+      jsonServer: "http://localhost:3300/mousePadProduct",
+      id: 7,
+    },
+    {
+      src: "https://exo.ir/image/cache/catalog/New_Template/Categories-images/cat-button-ram-200x200.png",
+      text: "ram",
+      title: "ramProduct",
+      jsonServer: "http://localhost:3300/ramProduct",
+      id: 8,
+    },
+    {
+      src: "https://exo.ir/image/cache/catalog/New_Template/Categories-images/cat-button-ssd-200x200.png",
+      text: "ssd",
+      title: "ssdProduct",
+      jsonServer: "http://localhost:3300/ssdProduct",
+      id: 9,
+    },
+    {
+      src: "https://exo.ir/image/cache/catalog/New_Template/Categories-images/cat-button-webcam-200x200.png",
+      text: "webCam",
+      title: "WebCamProduct",
+      jsonServer: "http://localhost:3300/WebcamProduct",
+      id: 10,
+    },
+    {
+      id: 11,
+      src: "https://exo.ir/image/cache/catalog/New_Template/Categories-images/cat-button-gaming-laptop-200x200.png",
+      text: "lapTop",
+      title: "laptopProduct",
+      jsonServer: "http://localhost:3300/laptopProduct",
+    },
   ];
 
   let setting = {
@@ -39,15 +100,32 @@ const CategoryPopularSlider = () => {
     arrows: true,
   };
 
+  const handelOnClick = (items) => {
+    const json = items?.jsonServer || {};
+    axios
+      .get(json)
+      .then((data) => {
+        navigate(`catgory/${items.title}`, {
+          state: { product: data.data, pathName: items.title },
+        });
+      })
+      .catch((eror) => FailToFetchDataPage(navigate));
+  };
+
   return (
     <ParentDiv>
-      <TextHeadr>محبوب‌ترین دسته‌بندی‌ها </TextHeadr>
+      <TextHeadr>pupolar catgory </TextHeadr>
       <Slider {...setting}>
-        {imgs.map((items) => {
+        {ProductList.map((items, index) => {
           return (
             <Box key={items.id}>
-              <LinkPath to={items.path}>
-                <BoxImg component="img" src={items.src}></BoxImg>
+              <LinkPath>
+                <BoxImg
+                  onClick={() => handelOnClick(items)}
+                  component="img"
+                  src={items?.src}
+                  alt="😥"
+                ></BoxImg>
                 <TextImg>{items.text}</TextImg>
               </LinkPath>
             </Box>

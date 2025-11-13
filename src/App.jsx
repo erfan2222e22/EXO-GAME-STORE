@@ -1,4 +1,5 @@
-import Main from "./exoGame/components/main-component/main";
+import Main from "./exoGame/Main-Component/main";
+
 const App = () => {
   return <Main></Main>;
 };

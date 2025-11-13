@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Box, Rating } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import AddCommentComponent from "./addComents/addComents";
-import styleComponent from "../../../components/component-Style/StyleCommentProducts";
+import styleComponent from "./Style-Component/StyleCommentProducts";
 const labels = {
   //imogi for all rate
   1: "useLess+☹",

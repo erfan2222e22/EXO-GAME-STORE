@@ -1,7 +1,7 @@
 import BenchmarkHederImg from "./benchmarkHederImg/benchmakHederImg";
 import BenchmarkList from "./BenchmarkList/BenchmarkList";
 import BenchMarkFoter from "./benchmarkFoter/benchmarkFoter";
-import styleComponents from "../components/component-Style/StyleBenchmarkHome";
+import styleComponents from "./Style-Component/StyleBenchmarkHome";
 const BenchmarkHome = () => {
   const { ParentDiv } = styleComponents;
 

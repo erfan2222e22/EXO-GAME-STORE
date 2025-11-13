@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
-import component from "../components/component-Style/StyledComponentLoginPhone";
+import styleComponent from "./Style-Component/StyledComponentLoginPhone";
 import img from "./loginPhoneImg/logo.png";
 import { Link } from "react-router-dom";
-import styled from "./loginWithPhone.module.css";
 import { Typography } from "@mui/material";
-import { Box } from "@mui/material";
 import Alert from "@mui/material/Alert";
 
-export default function LoginWithPhone() {
+const LoginWithPhone = () => {
   const {
-    Login_Box,
-    Input_login_phone,
-    Heder_box,
+    LoginBox,
+    InputLoginPhone,
+    HederBox,
     CustomButton,
     CustomButton2,
-  } = component; //style component
+    Img,
+    BtnContiner,
+  } = styleComponent; //style component
 
   const [phoneNumber, setPhoneNumber] = useState("");
   const [truePhoneNumber, settruePhoneNumber] = useState(false);
@@ -28,13 +28,14 @@ export default function LoginWithPhone() {
       return true;
     }
   };
+
   useEffect(() => {
     const validPhoneNumber = checkNumber(phoneNumber, patern);
     if (validPhoneNumber) {
       settruePhoneNumber(true);
       console.log(validPhoneNumber);
     }
-  });
+  }, [phoneNumber, settruePhoneNumber]);
 
   const onChangHandelInput = (e) => {
     let inputValue = e.target.value;
@@ -50,41 +51,48 @@ export default function LoginWithPhone() {
 
   return (
     <div>
-      <Login_Box>
-        <Heder_box>
-          <img src={img} alt="img" className={styled.img} />
+      <LoginBox>
+        <HederBox>
+          <Img src={img} alt="☹" component="img" />
           <br />
           <Typography variant="body3">Exo game</Typography>
           <br />
-          <Typography variant="body3">اگزو گیم</Typography>
-        </Heder_box>
-        :شماره تلفن خود را وارد نمایید
-        <Input_login_phone
+          <Typography variant="body3">Exo game </Typography>
+        </HederBox>
+        Enter your phone number :
+        <InputLoginPhone
           type="number"
           inputProps={{ pattern: "[0-9]*", maxLength: maxLength }}
           onChange={onChangHandelInput}
           value={phoneNumber}
-        ></Input_login_phone>
-        <CustomButton
-          onClick={onClickButton}
-          variant="contained"
-          component={Link}
-          to="https://www.google.com/search?q=translate&rlz=1C1AVFC_enIR955IR955&oq=transla&gs_lcrp=EgZjaHJvbWUqCAgAEEUYJxg7MggIABBFGCcYOzIGCAEQRRg5MgYIAhBFGDsyBggDECMYJzIMCAQQABhDGIAEGIoFMgwIBRAAGEMYgAQYigUyCggGEAAYsQMYgAQyDAgHEAAYQxiABBiKBTIMCAgQABhDGIAEGIoFMgwICRAAGEMYgAQYigXSAQkzMjY2ajBqMTWoAgiwAgHxBTX6pBbV1NVe&sourceid=chrome&ie=UTF-8"
-        >
-          ادامه
-        </CustomButton>
-        <CustomButton2 variant="contained" component={Link} to="">
-          ورود با نام کاربری و رمز عبور
-        </CustomButton2>
-        <CustomButton2 variant="contained" component={Link} to="">
-          ورود با شماره و رمز عبور
-        </CustomButton2>
-      </Login_Box>
+        ></InputLoginPhone>
+        <BtnContiner>
+          <CustomButton
+            onClick={onClickButton}
+            variant="contained"
+            component={Link}
+            to="https://www.google.com/search?q=translate&rlz=1C1AVFC_enIR955IR955&oq=transla&gs_lcrp=EgZjaHJvbWUqCAgAEEUYJxg7MggIABBFGCcYOzIGCAEQRRg5MgYIAhBFGDsyBggDECMYJzIMCAQQABhDGIAEGIoFMgwIBRAAGEMYgAQYigUyCggGEAAYsQMYgAQyDAgHEAAYQxiABBiKBTIMCAgQABhDGIAEGIoFMgwICRAAGEMYgAQYigXSAQkzMjY2ajBqMTWoAgiwAgHxBTX6pBbV1NVe&sourceid=chrome&ie=UTF-8"
+          >
+            Continue
+          </CustomButton>
+        </BtnContiner>
+        <BtnContiner>
+          <CustomButton2 variant="contained" component={Link} to="">
+            Login with username and password
+          </CustomButton2>
+        </BtnContiner>
+        <BtnContiner>
+          <CustomButton2 variant="contained" component={Link} to="">
+            Login with phone number and password
+          </CustomButton2>
+        </BtnContiner>
+      </LoginBox>
       {patern.test(phoneNumber) && (
         <Alert severity="success" sx={{ textAlign: "center" }}>
-          valid phone number
+          Login with phone number and password
         </Alert>
       )}
     </div>
   );
-}
+};
+export default LoginWithPhone;

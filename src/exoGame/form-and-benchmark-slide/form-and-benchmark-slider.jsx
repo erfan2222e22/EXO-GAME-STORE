@@ -1,6 +1,4 @@
-import img1 from "./img-form-benchmark/img1.jpg";
-import img2 from "./img-form-benchmark/img2.jpg";
-import styleComponents from "../components/component-Style/StyleBenchmarkFormSlide";
+import styleComponents from "./Style-Component/StyleBenchmarkFormSlide";
 import { Link } from "react-router-dom";
 
 const FormAndBenchmarkSlider = () => {
@@ -8,11 +6,19 @@ const FormAndBenchmarkSlider = () => {
 
   return (
     <ParentDiv>
-      <Link to="./awdawdaw">
-        <DivImg component="img" src={img1} alt="img"></DivImg>
+      <Link to="./benchmark_Home">
+        <DivImg
+          component="img"
+          src="https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Main%20banner/Exo%20tbnl%20cats%20403%20v1%201%20(2)-2-760x380.jpg"
+          alt="img"
+        ></DivImg>
       </Link>
-      <Link to="./awdawdawd">
-        <DivImg component="img" src={img2} alt="img"></DivImg>
+      <Link to="./information_enquiry">
+        <DivImg
+          component="img"
+          src="https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Main%20banner/Exo%20tbnl%20cats%20403%20v1%202%20(2)-1-760x380.jpg"
+          alt="img"
+        ></DivImg>
       </Link>
     </ParentDiv>
   );

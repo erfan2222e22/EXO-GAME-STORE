@@ -1,13 +1,7 @@
 import React from "react";
 import { Typography, Box } from "@mui/material";
-import styleComponents from "../../components/component-Style/StyleSelectPcProductBox";
-const SelectedItemEdited = ({
-  item,
-  setSelectPCPartBox,
-  selectPCPartBox,
-  handelAddPcClick,
-  setDisplayCatgory,
-}) => {
+import styleComponents from "./Style-Component/StyleSelectPcProductBox";
+const SelectedItemEdited = ({ item, setSelectPCPartBox, handelAddPcClick }) => {
   const { SelctedPcPatBox, IconsDelete, IconsEdit, IconsContiner, ImgBox } =
     styleComponents;
 

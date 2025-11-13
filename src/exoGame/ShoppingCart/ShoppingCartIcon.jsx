@@ -1,39 +1,10 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-
+import styleComponents from "./Style-Component/ShopIcon";
 const ShoppingCartIconBox = ({ valid, setValid, ProductLength }) => {
+  const { BoxContiner, SpanText } = styleComponents;
   return (
-    <div
-      style={{
-        width: "40%",
-        height: "55%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      {ProductLength > 0 && (
-        <span
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            color: "#fff",
-            backgroundColor: "#3c3",
-            fontSize: "1.1rem",
-            padding: "5px",
-            position: "relative",
-            textAlign: "center",
-            left: "12px",
-            bottom: "13px",
-            height: "25px",
-            width: "25px",
-            borderRadius: "50%",
-            overflow: "hidden",
-          }}
-        >
-          {ProductLength}
-        </span>
-      )}
+    <BoxContiner>
+      {ProductLength > 0 && <SpanText>{ProductLength}</SpanText>}
       <ShoppingCartIcon
         sx={{ position: "fixed" }}
         onClick={(e) => {
@@ -41,7 +12,7 @@ const ShoppingCartIconBox = ({ valid, setValid, ProductLength }) => {
           setValid(true);
         }}
       ></ShoppingCartIcon>
-    </div>
+    </BoxContiner>
   );
 };
 
