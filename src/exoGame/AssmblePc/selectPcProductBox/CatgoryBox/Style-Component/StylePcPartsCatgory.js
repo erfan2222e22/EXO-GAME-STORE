@@ -1,5 +1,6 @@
 import { styled } from "@mui/material/styles";
-import { Box } from "@mui/material";
+import { Box, Avatar } from "@mui/material";
+import { Button } from "react-bootstrap";
 
 const BoxParent = styled(Box)({
   border: "1px solid #a4a3a3",
@@ -21,7 +22,7 @@ const BoxContainer = styled(Box)({
   justifyContent: "space-between",
   padding: "5px",
 });
-const IconBox = styled(Box)({
+const IconBox = styled(Avatar)({
   width: "35px",
   height: "35px",
 });
@@ -32,7 +33,7 @@ const TitleBox = styled(Box)({
   alignItems: "center",
 });
 
-const ContinuBtnTrue = styled(Box)({
+const ContinuBtnTrue = styled(Button)({
   padding: "5px",
   borderRadius: "5px",
   width: "100%",
@@ -40,7 +41,7 @@ const ContinuBtnTrue = styled(Box)({
   color: "#03c03c",
   backgroundColor: "#ffff",
 });
-const ContinuBtnFalse = styled(Box)({
+const ContinuBtnFalse = styled(Button)({
   textAlign: "center",
   padding: "5px",
   borderRadius: "5px",

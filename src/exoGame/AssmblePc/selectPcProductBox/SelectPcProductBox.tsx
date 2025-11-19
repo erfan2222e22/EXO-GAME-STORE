@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import contextUse from "../../useContext/useContext";
 import { Typography } from "@mui/material";
 import styleComponents from "./Style-Component/StyleSelectPcProductBox";
@@ -6,14 +6,24 @@ import { useState } from "react";
 import axios from "axios";
 import CatgoryPcBox from "./CatgoryBox/CatgoryPcBox";
 import SelectedItemEdited from "../SelectedItemEdited/SelectedItemEdited";
-import { Element } from "react-scroll";
-import { scroller } from "react-scroll";
-import { useNavigate } from "react-router-dom";
 import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage";
+import * as Scroll from "react-scroll";
+
+import {
+  Type_SelectPCPartBox,
+  EventClick_Types,
+  SwitchCatgoryData,
+  Type_handelAddPcClick,
+  Type_switchtoChooseProducts,
+} from "./types/types-SelectPcProductBox";
+
+const ScrollElement = Scroll.Element as React.ComponentType<{
+  name: string;
+  children?: React.ReactNode;
+}>;
+
 const SelectPcProductBox = () => {
   const useItems = useContext(contextUse);
-  const navigate = useNavigate();
-
   const { selectPCPartBox, setSelectPCPartBox } = useItems;
 
   const {
@@ -21,18 +31,21 @@ const SelectPcProductBox = () => {
     SelctedParentBox,
     SelectBoxContiner,
     AddPcPartsButton,
-
-    ImgBox,
     SelectBoxSecendContiner,
     TextHederBox,
     AnimationBox,
     AnimationBoxContainer,
+    ImgBox,
   } = styleComponents;
 
-  const [DisplayCatgory, setDisplayCatgory] = useState(false);
-  const [categoryData, setCategoryData] = useState(null);
+  const [DisplayCatgory, setDisplayCatgory] = useState<boolean>(false);
+  const [categoryData, setCategoryData] = useState<SwitchCatgoryData>(null);
 
-  const handelAddPcClick = async (e, item) => {
+  useEffect(() => {
+    console.log(selectPCPartBox.map((item: any) => item.ProductArray));
+  }, [selectPCPartBox]);
+
+  const handelAddPcClick: Type_handelAddPcClick = async (e, item) => {
     try {
       // recive  data from server when click on btn
       const fetchData = axios.get(item.jsonServer);
@@ -40,40 +53,42 @@ const SelectPcProductBox = () => {
       setCategoryData({ product: result, pathName: item.title });
       setDisplayCatgory(true);
       switchtoChooseProducts(item);
-      scroller.scrollTo("catgoryBox"); // scroll on catgoryProducts
+      Scroll.scroller.scrollTo("catgoryBox"); // scroll on catgoryProducts
+      console.log(result);
     } catch (err) {
-      FailToFetchDataPage(navigate);
+      FailToFetchDataPage();
     }
   };
 
-  const switchtoChooseProducts = (item) => {
+  const switchtoChooseProducts: Type_switchtoChooseProducts = (item) => {
     // switch
-    setSelectPCPartBox((prev) =>
+    setSelectPCPartBox((prev: Type_SelectPCPartBox[]) =>
       prev.map((fill) =>
         fill.text === item.text ? { ...fill, toChoose: true } : fill
       )
     );
-    console.log(item);
   };
 
   const findTruetoChooseItems = () => {
-    const filt = selectPCPartBox.filter((fill) => fill.toChoose === true);
+    const filt = selectPCPartBox.filter(
+      (fill: Type_SelectPCPartBox) => fill.toChoose === true
+    );
     return filt || false;
   };
 
   const closeCatgoryPcShape = () => {
     // close catgoryBox on UI
     setDisplayCatgory(false);
-    setSelectPCPartBox((prev) =>
+    setSelectPCPartBox((prev: Type_SelectPCPartBox[]) =>
       prev.map((fill) =>
-        fill.toChoose === true ? { ...fill, toChoose: [] } : fill
+        fill.toChoose === true ? { ...fill, toChoose: false } : fill
       )
     );
   };
 
   return (
     <ParentBox>
-      <Element name="catgoryBox">
+      <ScrollElement name="catgoryBox">
         <CatgoryPcBox
           DisplayCatgory={DisplayCatgory}
           closeCatgoryPcShape={closeCatgoryPcShape}
@@ -82,10 +97,10 @@ const SelectPcProductBox = () => {
           selectPCPartBox={selectPCPartBox}
           setSelectPCPartBox={setSelectPCPartBox}
         ></CatgoryPcBox>
-      </Element>
+      </ScrollElement>
 
       <TextHederBox>Details</TextHederBox>
-      {selectPCPartBox?.map((item) => (
+      {selectPCPartBox?.map((item: Type_SelectPCPartBox) => (
         <SelctedParentBox>
           <AnimationBoxContainer>
             <AnimationBox
@@ -105,15 +120,14 @@ const SelectPcProductBox = () => {
                 }}
               >
                 <SelectBoxSecendContiner>
-                  <ImgBox component="img" src={item.iconSrc}></ImgBox>
+                  <ImgBox src={item.iconSrc} alt={item.text}></ImgBox>
                   <Typography>{item.text}</Typography>
                 </SelectBoxSecendContiner>
                 {item.MandatoryPcPart ? (
                   <></>
                 ) : (
                   <AddPcPartsButton
-                    onClick={(e) => handelAddPcClick(e, item)}
-                    component="button"
+                    onClick={(e: EventClick_Types) => handelAddPcClick(e, item)}
                   >
                     <TextHederBox>+</TextHederBox>
                   </AddPcPartsButton>
@@ -123,10 +137,11 @@ const SelectPcProductBox = () => {
           </AnimationBoxContainer>
 
           <SelectedItemEdited //Aded Pc Parts Box ✔
-            handelAddPcClick={(e) => handelAddPcClick(e, item)}
+            handelAddPcClick={(e: EventClick_Types) =>
+              handelAddPcClick(e, item)
+            }
             item={item}
             setSelectPCPartBox={setSelectPCPartBox}
-            setDisplayCatgory={setDisplayCatgory}
           />
         </SelctedParentBox>
       ))}

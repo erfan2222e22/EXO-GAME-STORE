@@ -1,5 +1,5 @@
 import { styled, keyframes } from "@mui/material/styles";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Avatar } from "@mui/material";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 const ParentBox = styled(Box)({
@@ -121,7 +121,7 @@ const IconsContiner = styled(Box)({
   display: "flex",
   gap: "10px",
 });
-const ImgBox = styled(Box)({
+const ImgBox = styled(Avatar)({
   width: "50px",
   height: "50px",
 });

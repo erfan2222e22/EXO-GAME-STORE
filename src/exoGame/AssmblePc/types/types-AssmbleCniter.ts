@@ -1,8 +1,8 @@
 export interface Type_AsslbleContiner_ProductArray {
-  id?: number | string;
+  id: number | string;
   nameProduct?: string;
   price?: number | string;
-  img?: string;
+  img: string;
   company?: string;
   manufacturers?: string;
   productSetting?: string;

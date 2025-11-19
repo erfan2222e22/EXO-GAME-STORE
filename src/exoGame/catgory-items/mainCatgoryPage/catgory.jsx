@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import styleComponents from "./Style-Component/StyleCatgory";
-import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage";
-import CatgoryJsx from "./catgoryJsx";
+import styleComponents from "./Style-Component/StyleCatgory.js";
+import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage.jsx";
+import CatgoryJsx from "./catgoryJsx.jsx";
 
 const Catgory = ({
   product: propProduct,
