@@ -18,7 +18,7 @@ import BoxInfoProducts from "./exoGame/catgory-items/box-Information-Items/box-I
 import HederPrentBox from "./exoGame/heder/HederPrentBox/HederPrentBox.jsx";
 import BenchmarkTabel from "./exoGame/benchmarkHome/benchmarkTabel/benchmarkTabel.jsx";
 import InformationEnquiry from "./exoGame/information_enquiry/information_enquiry.jsx";
-import AssmbleContiner from "./exoGame/AssmblePc/AssmbleCntiner.jsx";
+import AssmbleContiner from "./exoGame/AssmblePc/AssmbleCntiner.tsx";
 import ShoppingCartCheckout from "./exoGame/ShoppingCartCheckout/ShoppingCartCheckout.jsx";
 import ShoppingStepBox from "./exoGame/ShoppingCartCheckout/Shopping Steps Box/Shopping Steps Box.jsx";
 import ScrollBtn from "./exoGame/ScrollBtn/ScrollBtn.jsx";
@@ -26,7 +26,7 @@ import Test from "./test.jsx";
 import Test2 from "./test2.jsx";
 import Page404Erroe from "./exoGame/404UndefindPage/404PageErroe.jsx";
 import FailToFetchDataPage from "./exoGame/failToFetchDataPage/failToFetchDataPage.jsx";
-import FuqReact from "./fuqReact.jsx";
+import FuqReact from "./fuqReact.tsx";
 let rutes = [
   {
     path: "/",
