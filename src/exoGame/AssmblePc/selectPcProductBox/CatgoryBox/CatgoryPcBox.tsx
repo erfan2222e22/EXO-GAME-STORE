@@ -2,6 +2,7 @@ import Catgory from "../../../catgory-items/mainCatgoryPage/catgory";
 import { Typography, Box } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import styleComponent from "./Style-Component/StylePcPartsCatgory";
+import { Props_Types } from "./types/types-CatgoryPcBox";
 
 const CatgoryPcBox = ({
   DisplayCatgory,
@@ -10,7 +11,7 @@ const CatgoryPcBox = ({
   categoryData,
   selectPCPartBox,
   setSelectPCPartBox,
-}) => {
+}: Props_Types) => {
   const {
     BoxContainer,
     BoxParent,
@@ -33,14 +34,11 @@ const CatgoryPcBox = ({
               {findTruetoChooseItems()[0].SeveralChoices && (
                 <>
                   {findTruetoChooseItems()[0].ProductArray.length > 0 ? (
-                    <ContinuBtnTrue
-                      component="btn"
-                      onClick={closeCatgoryPcShape}
-                    >
+                    <ContinuBtnTrue onClick={closeCatgoryPcShape}>
                       continu
                     </ContinuBtnTrue>
                   ) : (
-                    <ContinuBtnFalse component="btn">continu</ContinuBtnFalse>
+                    <ContinuBtnFalse>continu</ContinuBtnFalse>
                   )}
                 </>
               )}
@@ -48,11 +46,11 @@ const CatgoryPcBox = ({
             </Box>
 
             <Box>
-              {findTruetoChooseItems().map((item) => {
+              {findTruetoChooseItems().map((item: any) => {
                 return (
                   <TitleBox>
                     <Typography>{item.text}</Typography>
-                    <IconBox component="img" src={item.iconSrc}></IconBox>
+                    <IconBox src={item.iconSrc}></IconBox>
                   </TitleBox>
                 );
               })}

@@ -46,7 +46,6 @@ const BoxHederFilterPrice = ({
     setOriginalItems(initialItems);
     setFilteredItems(initialItems);
 
-    // Reset sort switches
     setSwitchToMaxPrice(false);
     setSwitchToLowerPrice(false);
   };

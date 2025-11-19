@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import styleComponent from "./Style-Component/StyleInformationPcPart";
 import { scroller } from "react-scroll";
+import { useEffect } from "react";
 const InformationPcPart = ({
   setDisplayBoxes,
   displayBoxes,
@@ -58,11 +59,8 @@ const InformationPcPart = ({
           : fill
       );
 
-      if (filterArray.length > 0) {
-        return selectAll;
-      } else {
-        return selectSolo;
-      }
+      console.log(selectPCPartBox);
+      return filterArray.length > 0 ? selectAll : selectSolo;
     });
 
     closeCatgoryPcShape();
@@ -74,6 +72,10 @@ const InformationPcPart = ({
       offset: -50,
     });
   };
+
+  useEffect(() => {
+    console.log(selectPCPartBox);
+  }, [selectPCPartBox]);
 
   return (
     <>

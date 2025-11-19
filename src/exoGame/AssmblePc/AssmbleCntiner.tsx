@@ -3,9 +3,12 @@ import contextUse from "../useContext/useContext";
 import SelectPcProductBox from "./selectPcProductBox/SelectPcProductBox";
 import ShoppingCart from "./shopping Cart Pc Parts/ShoppingCartPcParts";
 import { Box } from "@mui/material";
+import { Type_AsslbleContiner } from "./types/types-AssmbleCniter";
 
 const AssmbleContiner = () => {
-  const [selectPCPartBox, setSelectPCPartBox] = useState([
+  const [selectPCPartBox, setSelectPCPartBox] = useState<
+    Type_AsslbleContiner[]
+  >([
     {
       id: 1,
       text: "CPU",

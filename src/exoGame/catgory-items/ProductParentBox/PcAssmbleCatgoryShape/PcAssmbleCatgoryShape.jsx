@@ -62,6 +62,7 @@ const PcAssmbleCatgoryShape = ({
           : items
       );
     });
+    console.log(selectPCPartBox);
     console.log(item);
   };
 
