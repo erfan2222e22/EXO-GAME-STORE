@@ -1,61 +1,82 @@
-import React from "react";
 import { Typography, Box } from "@mui/material";
 import styleComponents from "./Style-Component/StyleSelectPcProductBox";
-import {} from "./types/types-SelectedItemEdited";
-const SelectedItemEdited = ({ item, setSelectPCPartBox, handelAddPcClick }) => {
+import {
+  click_Event_Type,
+  Types_DelteItems,
+  Type_AsslbleContiner_ProductArray_Filter,
+  Types_setSelectPCPartBox,
+  SelectedItemEditedProps,
+} from "./types/types-SelectedItemEdited";
+
+const SelectedItemEdited = ({
+  item,
+  handelAddPcClick,
+  setSelectPCPartBox,
+}: SelectedItemEditedProps) => {
   const { SelctedPcPatBox, IconsDelete, IconsEdit, IconsContiner, ImgBox } =
     styleComponents;
 
-  const DelteItems = (e, ItemId, ItemTitle) => {
+  const ProductArray = item.ProductArray || [];
+
+  const DelteItems: Types_DelteItems = (e, ItemId, ItemTitle) => {
+    e.stopPropagation();
     setSelectPCPartBox((prev) =>
-      prev.map((item) =>
-        item.title === ItemTitle
+      prev.map((selectItem: Types_setSelectPCPartBox) =>
+        selectItem.title === ItemTitle
           ? {
-              ...item,
-              ProductArray: item.ProductArray?.filter(
-                (fill) => fill.id !== ItemId
+              ...selectItem,
+              ProductArray: selectItem.ProductArray?.filter(
+                (fill: Type_AsslbleContiner_ProductArray_Filter) =>
+                  fill.id !== ItemId
               ),
             }
-          : item
+          : selectItem
       )
     );
   };
 
-  const editeItem = (e) => {
-    handelAddPcClick();
+  const editeItem = (e: click_Event_Type) => {
+    e.stopPropagation();
+    handelAddPcClick(e);
   };
 
   return (
     <div>
-      {item.ProductArray.length > 0 && (
+      {ProductArray.length > 0 && (
         <>
-          {item.ProductArray.map((fill) => {
-            return (
-              <SelctedPcPatBox
-                key={fill.id}
-                sx={{
-                  borderBottom:
-                    item.ProductArray.length > 1 && "1px dotted black",
-                }}
-              >
-                <Box sx={{ display: "flex", gap: "15px", overflow: "hidden" }}>
-                  <ImgBox component="img" src={fill.img}></ImgBox>
-                  <Typography>{fill.nameProduct}</Typography>
-                  <Typography>{fill.price}$</Typography>
-                  <Typography>*1</Typography>
-                </Box>
-                <IconsContiner>
-                  <IconsEdit onClick={(e) => editeItem(e)}></IconsEdit>
-                  <IconsDelete
-                    onClick={(e) => DelteItems(e, fill.id, fill.title)}
-                  ></IconsDelete>
-                </IconsContiner>
-              </SelctedPcPatBox>
-            );
-          })}
+          {ProductArray.map(
+            (fill: Type_AsslbleContiner_ProductArray_Filter) => {
+              return (
+                <SelctedPcPatBox
+                  key={fill.id}
+                  sx={{
+                    borderBottom: ProductArray.length > 1 && "1px dotted black",
+                  }}
+                >
+                  <Box
+                    sx={{ display: "flex", gap: "15px", overflow: "hidden" }}
+                  >
+                    <ImgBox src={fill.img}></ImgBox>
+                    <Typography>{fill.nameProduct}</Typography>
+                    <Typography>{fill.price}$</Typography>
+                    <Typography>*1</Typography>
+                  </Box>
+                  <IconsContiner>
+                    <IconsEdit
+                      onClick={(e: click_Event_Type) => editeItem(e)}
+                    ></IconsEdit>
+                    <IconsDelete
+                      onClick={(e) => DelteItems(e, fill.id, fill.title)}
+                    ></IconsDelete>
+                  </IconsContiner>
+                </SelctedPcPatBox>
+              );
+            }
+          )}
         </>
       )}
     </div>
   );
 };
+
 export default SelectedItemEdited;
