@@ -1,22 +1,22 @@
 export interface Type_AsslbleContiner_ProductArray {
-  id: number | string;
-  nameProduct?: string;
+  id: Readonly<number | string>;
+  nameProduct?: Readonly<string>;
   price?: number | string;
-  img: string;
-  company?: string;
-  manufacturers?: string;
-  productSetting?: string;
-  title?: string;
-  [key: string | number]: string | number | null;
+  img: Readonly<string>;
+  company?: Readonly<string>;
+  manufacturers?: Readonly<string>;
+  productSetting?: Readonly<string>;
+  title?: Readonly<string>;
+  [key: Readonly<string | number>]: string | number | null | boolean | [] | {};
 }
 
 export interface Type_AsslbleContiner {
-  id: number;
-  text: string;
-  iconSrc: string;
+  id: Readonly<number>;
+  text: Readonly<string>;
+  iconSrc: Readonly<string>;
   toChoose: boolean;
-  jsonServer: string;
-  title: string;
+  jsonServer: Readonly<string>;
+  title: Readonly<string>;
   SeveralChoices: boolean;
   MandatoryPcPart: boolean;
   ProductArray: Type_AsslbleContiner_ProductArray[];
