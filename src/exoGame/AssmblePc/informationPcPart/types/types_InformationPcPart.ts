@@ -2,14 +2,14 @@ import React from "react";
 import { Type_AsslbleContiner } from "../../types/types-AssmbleCniter";
 
 export interface Type_Products {
-  id: Readonly<number | string>;
+  id: number | string;
   price: number | string;
-  img: Readonly<string>;
-  nameProduct?: Readonly<string>;
-  manufacturers?: Readonly<string>;
-  company?: Readonly<string>;
-  title?: Readonly<string>;
-  [key: string | number]: string | boolean | number;
+  img: string;
+  nameProduct?: string;
+  manufacturers?: string;
+  company?: string;
+  title?: string;
+  [key: string]: string | number;
 }
 
 export interface Props_Type {
@@ -17,7 +17,7 @@ export interface Props_Type {
   displayBoxes: boolean;
   selectedItems: [Type_Products];
   itemsInformation: [Type_Products];
-  setDisplayFilterBox: React.Dispatch<React.SetStateAction<true | false>>;
+  setDisplayFilterBox: React.Dispatch<React.SetStateAction<boolean>>;
   setSelectPCPartBox: React.Dispatch<
     React.SetStateAction<Type_AsslbleContiner[]>
   >;

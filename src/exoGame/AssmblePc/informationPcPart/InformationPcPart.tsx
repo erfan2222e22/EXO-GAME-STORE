@@ -66,6 +66,7 @@ const InformationPcPart = ({
           : fill
       );
 
+      console.log(items);
       return filterArray.length > 0 ? selectAll : selectSolo;
     });
 
@@ -86,7 +87,7 @@ const InformationPcPart = ({
   return (
     <>
       {displayBoxes &&
-        selectedItems.map((item: Readonly<Type_Products>) => {
+        selectedItems.map((item: Type_Products) => {
           return (
             <MainBox key={item.id}>
               <ImgBox
@@ -104,6 +105,7 @@ const InformationPcPart = ({
                   width: "100%",
                   backgroundColor: "red",
                 }}
+                onClick={() => console.log(item)}
               >
                 <TableMainBox>
                   <TableParentBox>

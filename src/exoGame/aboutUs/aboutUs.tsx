@@ -1,8 +1,6 @@
-import React from "react";
 import Typography from "@mui/material/Typography";
 import styleComponents from "./Style-Component/StyleAboutUs";
-import img from "./aboutUsImg/image_2023-06-10_12-39-02.png";
-export default function AboutUs() {
+const AboutUs = () => {
   const { BoxAboutUs, BoxImg } = styleComponents;
   return (
     <>
@@ -10,7 +8,7 @@ export default function AboutUs() {
         <Typography sx={{ fontFamily: "vazir" }} variant="h6">
           about Exo Game
         </Typography>
-        <Typography variant="body3">
+        <Typography>
           Exo Online Store is a specialized retailer in the field of gaming
           equipment and goods. It started its work in 2016 with the aim of
           providing services, including sales and expert advice on hardware,
@@ -26,8 +24,14 @@ export default function AboutUs() {
           Store's social networks such as Telegram channel, Instagram page,
           YouTube, and Aparat.
         </Typography>
-        <BoxImg component="img" src={img} alt="img"></BoxImg>
+        <BoxImg
+          src={
+            "https://exo.ir/image//catalog/New_Template/Information/image_2023-06-10_12-39-02.png"
+          }
+          alt="img"
+        ></BoxImg>
       </BoxAboutUs>
     </>
   );
-}
+};
+export default AboutUs;

@@ -66,7 +66,7 @@ const SelectedItemEdited = ({
                       onClick={(e: click_Event_Type) => editeItem(e)}
                     ></IconsEdit>
                     <IconsDelete
-                      onClick={(e) => DelteItems(e, fill.id, fill.title)}
+                      onClick={(e:click_Event_Type) => DelteItems(e, fill.id, fill.title)}
                     ></IconsDelete>
                   </IconsContiner>
                 </SelctedPcPatBox>
