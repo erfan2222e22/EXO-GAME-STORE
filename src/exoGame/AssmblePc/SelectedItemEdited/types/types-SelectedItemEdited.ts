@@ -14,8 +14,8 @@ export interface Types_setSelectPCPartBox extends Type_AsslbleContiner {}
 
 export type Types_DelteItems = (
   e: click_Event_Type,
-  ItemId: string | number,
-  ItemTitle: string
+  ItemId: Readonly<string | number>,
+  ItemTitle: Readonly<string | number>
 ) => void;
 
 export interface SelectedItemEditedProps {

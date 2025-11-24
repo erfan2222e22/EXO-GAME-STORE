@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import contextUse from "../../useContext/useContext";
 import { Typography } from "@mui/material";
 import styleComponents from "./Style-Component/StyleSelectPcProductBox";
@@ -41,10 +41,6 @@ const SelectPcProductBox = () => {
   const [DisplayCatgory, setDisplayCatgory] = useState<boolean>(false);
   const [categoryData, setCategoryData] = useState<SwitchCatgoryData>(null);
 
-  useEffect(() => {
-    console.log(selectPCPartBox.map((item: any) => item.ProductArray));
-  }, [selectPCPartBox]);
-
   const handelAddPcClick: Type_handelAddPcClick = async (e, item) => {
     try {
       // recive  data from server when click on btn
@@ -54,7 +50,6 @@ const SelectPcProductBox = () => {
       setDisplayCatgory(true);
       switchtoChooseProducts(item);
       Scroll.scroller.scrollTo("catgoryBox"); // scroll on catgoryProducts
-      console.log(result);
     } catch (err) {
       FailToFetchDataPage();
     }
@@ -136,7 +131,8 @@ const SelectPcProductBox = () => {
             </AnimationBox>
           </AnimationBoxContainer>
 
-          <SelectedItemEdited //Aded Pc Parts Box ✔
+          <SelectedItemEdited
+            //Aded Pc Parts Box ✔
             handelAddPcClick={(e: EventClick_Types) =>
               handelAddPcClick(e, item)
             }
