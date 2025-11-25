@@ -21,7 +21,7 @@ const ProductParentBoxComponent = ({
     axios(`http://localhost:3300/${pathName}/${item.id}`)
       .then(() => {
         navigate(`/catgory/${pathName}/${item.id}`, {
-          state: { item: item },
+          state: { itemProduct: item },
         });
       })
       .catch((err) => {
