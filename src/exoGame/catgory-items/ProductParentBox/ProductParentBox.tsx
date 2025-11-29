@@ -3,7 +3,11 @@ import axios from "axios";
 import GenraleCatgoryShape from "./GenraleCatgoryShape/GenraleCatgoryShape";
 import PcAssmbleCatgoryShape from "./PcAssmbleCatgoryShape/PcAssmbleCatgoryShape";
 import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage";
-const ProductParentBoxComponent = ({
+import {
+  Type_ComponentProps,
+  Type_handelOnClick,
+} from "./types/Type-ProductParentBox";
+const ProductParentBoxComponent: Type_ComponentProps = ({
   filteredItems,
   originalItems,
   pathName,
@@ -16,17 +20,18 @@ const ProductParentBoxComponent = ({
 }) => {
   const navigate = useNavigate();
 
-  const handelOnClick = (e, item) => {
+  const handelOnClick: Type_handelOnClick = (e, item) => {
     e.stopPropagation();
-    axios(`http://localhost:3300/${pathName}/${item.id}`)
-      .then(() => {
-        navigate(`/catgory/${pathName}/${item.id}`, {
-          state: { itemProduct: item },
-        });
-      })
-      .catch((err) => {
-        FailToFetchDataPage(navigate);
-      });
+    // axios(`http://localhost:3300/${pathName}/${item.id}`)
+    //   .then(() => {
+    //   })
+    //   .catch((err) => {
+    //     FailToFetchDataPage();
+    //   });
+    // navigate(`/catgory/${pathName}/${item.id}`, {
+    //   state: { itemProduct: item },
+    // });
+    // console.log(item);
   };
 
   return (

@@ -3,13 +3,16 @@ import { Box } from "@mui/material";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import styleComponent from "./Style-Component/StyleInformationPcPart";
 import { scroller } from "react-scroll";
-import { useEffect } from "react";
+
 import {
   Props_Type,
   Type_selectPcPartHandel,
-  Type_Products,
 } from "./types/types_InformationPcPart";
-import { Type_AsslbleContiner } from "../types/types-AssmbleCniter";
+
+import {
+  Type_AsslbleContiner,
+  Type_AsslbleContiner_ProductArray,
+} from "../types/types-AssmbleCniter";
 
 const InformationPcPart = ({
   setDisplayBoxes,
@@ -45,9 +48,18 @@ const InformationPcPart = ({
       return fill.title === ItemTitle && fill.SeveralChoices;
     });
 
-    setSelectPCPartBox((prev) => {
+    const productItem: Type_AsslbleContiner_ProductArray = {
+      id: items.id ?? "",
+      price: items.price ?? 0,
+      img: items.img ?? "",
+      ...(items.nameProduct && { nameProduct: items.nameProduct }),
+    } as Type_AsslbleContiner_ProductArray;
+
+    setSelectPCPartBox((prev: Type_AsslbleContiner[]) => {
       const selectSolo = prev.map((fill: Type_AsslbleContiner) =>
-        fill.title === ItemTitle ? { ...fill, ProductArray: [items] } : fill
+        fill.title === ItemTitle
+          ? { ...fill, ProductArray: [productItem] }
+          : fill
       );
 
       const selectAll = prev.map((fill: Type_AsslbleContiner) =>
@@ -56,7 +68,7 @@ const InformationPcPart = ({
               ...fill,
               ProductArray: Array.from(
                 new Map(
-                  [...fill.ProductArray, items].map((product) => [
+                  [...fill.ProductArray, productItem].map((product) => [
                     product.id,
                     product,
                   ])
@@ -65,8 +77,6 @@ const InformationPcPart = ({
             }
           : fill
       );
-
-      console.log(items);
       return filterArray.length > 0 ? selectAll : selectSolo;
     });
 
@@ -80,14 +90,10 @@ const InformationPcPart = ({
     });
   };
 
-  useEffect(() => {
-    console.log(selectPCPartBox);
-  }, [selectPCPartBox]);
-
   return (
     <>
       {displayBoxes &&
-        selectedItems.map((item: Type_Products) => {
+        selectedItems.map((item) => {
           return (
             <MainBox key={item.id}>
               <ImgBox
@@ -103,9 +109,7 @@ const InformationPcPart = ({
                   marginTop: "15%",
                   gridArea: "1/3/6/6",
                   width: "100%",
-                  backgroundColor: "red",
                 }}
-                onClick={() => console.log(item)}
               >
                 <TableMainBox>
                   <TableParentBox>

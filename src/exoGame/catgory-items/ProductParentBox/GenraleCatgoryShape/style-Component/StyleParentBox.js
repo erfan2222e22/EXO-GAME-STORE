@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Box } from "@mui/material";
+import { Box, Avatar } from "@mui/material";
 
 const ProductParentBox = styled(Box)(({ theme }) => ({
   width: "55%",
@@ -52,7 +52,7 @@ const BoxProduction = styled(Box)(({ theme }) => ({
   },
 }));
 
-const ImgProduction = styled(Box)(({ theme }) => ({
+const ImgProduction = styled(Avatar)(({ theme }) => ({
   margin: "0 auto",
   width: "250px",
   height: "250px",

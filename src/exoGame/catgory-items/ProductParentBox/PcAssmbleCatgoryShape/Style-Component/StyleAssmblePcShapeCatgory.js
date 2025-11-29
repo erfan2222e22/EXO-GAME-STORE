@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Box } from "@mui/material";
+import { Box, Avatar } from "@mui/material";
 const MainBox = styled(Box)({
   display: "flex",
   alignItems: "center",
@@ -30,7 +30,7 @@ const Button = styled(Box)({
     " rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px",
 });
 
-const ImgBox = styled(Box)({
+const ImgBox = styled(Avatar)({
   width: "25%",
   height: "25%",
 });

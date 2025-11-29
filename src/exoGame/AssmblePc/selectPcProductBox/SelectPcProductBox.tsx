@@ -79,6 +79,7 @@ const SelectPcProductBox = () => {
         fill.toChoose === true ? { ...fill, toChoose: false } : fill
       )
     );
+    console.log(findTruetoChooseItems()[0]);
   };
 
   return (

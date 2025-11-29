@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const ParentBox = styled(Box)({
@@ -15,7 +15,7 @@ const ParentBox = styled(Box)({
   borderRadius: "5px",
 });
 
-const BtnBox = styled(Box)({
+const BtnBox = styled(Button)({
   padding: "4px",
   border: "none",
   backgroundColor: "#03c03c",

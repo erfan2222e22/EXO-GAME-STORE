@@ -1,7 +1,12 @@
 import Tooltip from "@mui/material/Tooltip";
 import { Box } from "@mui/material";
-const LaptopInformation = ({ originalItems }) => {
-  const items = [
+import {
+  Type_LaptopProduct,
+  Type_function,
+} from "./types/types-LaptopInformation";
+
+const LaptopInformation: Type_function = ({ originalItems }) => {
+  const Laptopitems: Type_LaptopProduct[] = [
     {
       id: 1,
       srcIcon: "https://cdn-icons-png.flaticon.com/128/4617/4617745.png",
@@ -37,17 +42,20 @@ const LaptopInformation = ({ originalItems }) => {
         alignItems: "center",
       }}
     >
-      {items.map((item) => {
+      {Laptopitems.map((item) => {
         return (
           <Tooltip title={item.title} key={item.id}>
-            <img
-              alt=""
-              src={item.srcIcon}
-              style={{ width: "60%", height: "60%" }}
-            ></img>
-            <span style={{ fontSize: "13px", color: "#6c757d" }}>
-              {item.text}
-            </span>
+            <>
+              <img
+                alt=""
+                src={item.srcIcon}
+                style={{ width: "60%", height: "60%" }}
+                // onClick={test}
+              ></img>
+              <span style={{ fontSize: "13px", color: "#6c757d" }}>
+                {item.text}
+              </span>
+            </>
           </Tooltip>
         );
       })}
