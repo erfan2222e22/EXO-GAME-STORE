@@ -7,8 +7,6 @@ import { useNavigate } from "react-router-dom";
 import {
   Type_AsslbleContiner_for_shop,
   Type_AsslbleContiner_ProductArray_shop,
-  Type_Plus_reduce,
-  Type_Concat_reduce,
   Type_sendItems,
   Type_sendError,
 } from "./types/types_ShoppingCart";
@@ -27,24 +25,27 @@ const ShoppingCartPcParts = () => {
 
   const context = useContext(contextUse);
   const { selectPCPartBox } = context;
-  const [totalPrice, setTotalPrice] = useState<number>(0);
+  const [totalPrice, setTotalPrice] = useState(0);
   const [errorText, setErrorText] = useState<string | string[]>("");
-  const [BoleanError, setBoleanError] = useState<boolean>(false);
+  const [BoleanError, setBoleanError] = useState(false);
 
   const CalculateTotalPriceFunc = () => {
     const Validation = selectPCPartBox.filter(
       (fill: Type_AsslbleContiner_for_shop) => fill.ProductArray.length > 0
     );
 
+    let counterPrice = 0;
     const CalculateTotalPrice =
       Validation.length > 0 &&
       Validation.map((items: Type_AsslbleContiner_for_shop) =>
-        items.ProductArray.map((item) => Number(item.price))
-      )
-        .reduce(({ a, b }: Type_Concat_reduce) => a.concat(b))
-        .reduce(({ a, b }: Type_Plus_reduce) => a + b);
+        items.ProductArray.map((item) => +item.price)
+      ).flatMap((items: number[]) => items);
 
-    setTotalPrice(CalculateTotalPrice);
+    for (let i in CalculateTotalPrice) {
+      counterPrice += CalculateTotalPrice[i];
+    }
+
+    setTotalPrice(counterPrice);
   };
 
   const handelOnclick = () => {

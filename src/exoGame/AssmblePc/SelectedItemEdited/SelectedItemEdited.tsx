@@ -7,6 +7,9 @@ import {
   Types_setSelectPCPartBox,
   SelectedItemEditedProps,
 } from "./types/types-SelectedItemEdited";
+import React from "react";
+import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 
 const SelectedItemEdited = ({
   item,
@@ -63,10 +66,14 @@ const SelectedItemEdited = ({
                   </Box>
                   <IconsContiner>
                     <IconsEdit
+                      as={EditOutlinedIcon}
                       onClick={(e: click_Event_Type) => editeItem(e)}
                     ></IconsEdit>
                     <IconsDelete
-                      onClick={(e:click_Event_Type) => DelteItems(e, fill.id, fill.title)}
+                      as={DeleteOutlinedIcon}
+                      onClick={(e: click_Event_Type) =>
+                        DelteItems(e, fill.id, fill.title)
+                      }
                     ></IconsDelete>
                   </IconsContiner>
                 </SelctedPcPatBox>

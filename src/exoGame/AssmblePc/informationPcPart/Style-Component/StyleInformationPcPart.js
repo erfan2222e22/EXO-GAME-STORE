@@ -43,7 +43,7 @@ const TableContainerBox = styled(Box)({
 });
 
 const ImgBox = styled(Box)({
-  maxWidth: "50%",
+  maxWidth: "100%",
   maxHeight: "100%",
   gridArea: "1/1/5/4",
 });
