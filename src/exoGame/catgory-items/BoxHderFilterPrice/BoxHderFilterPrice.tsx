@@ -2,7 +2,8 @@ import styleComponents from "./Style-Component/StyleHederFilterPrice";
 import { Typography } from "@mui/material";
 import { useState } from "react";
 import AddchartIcon from "@mui/icons-material/Addchart";
-const BoxHederFilterPrice = ({
+import { Component_Props } from "./types/BoxHderFilterPrice";
+const BoxHederFilterPrice: Component_Props = ({
   originalItems,
   setFilteredItems,
   setValid,
@@ -16,7 +17,9 @@ const BoxHederFilterPrice = ({
   const [switchToLowerPrice, setSwitchToLowerPrice] = useState(false);
 
   const heightPriceFilterItems = () => {
-    const highePrice = originalItems.sort((a, b) => b.price - a.price);
+    const highePrice = originalItems?.sort(
+      (a, b) => Number(b.price) - Number(a.price)
+    );
     setSwitchToMaxPrice(true);
     setFilteredItems(highePrice);
     if (switchToLowerPrice) {
@@ -26,7 +29,10 @@ const BoxHederFilterPrice = ({
   };
 
   const lowerPriceFilterItems = () => {
-    const lowPrice = originalItems.sort((a, b) => a.price - b.price);
+    const lowPrice = originalItems.sort(
+      (a: { price: string | number }, b: { price: string | number }) =>
+        Number(a.price) - Number(b.price)
+    );
     setSwitchToLowerPrice(true);
     setFilteredItems(lowPrice);
 
@@ -50,7 +56,6 @@ const BoxHederFilterPrice = ({
     setSwitchToLowerPrice(false);
   };
 
-
   return (
     <BoxHderFilterPrice>
       <BtnDisplayCatgory onClick={() => setValid((prev) => (prev = true))}>
@@ -72,4 +77,3 @@ const BoxHederFilterPrice = ({
 };
 
 export default BoxHederFilterPrice;
-

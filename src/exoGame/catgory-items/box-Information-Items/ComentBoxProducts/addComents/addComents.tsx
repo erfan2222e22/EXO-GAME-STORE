@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Rating } from "@mui/material";
 import styleComponent from "./Style-Component/StyleCommentProducts";
-
+import { Component_Props } from "./types/Type_AddComent";
 const AddCommentComponent = ({
   userName,
   stare,
@@ -9,12 +9,12 @@ const AddCommentComponent = ({
   hover,
   felingIcons,
   setUserName,
-}) => {
+}: Component_Props) => {
   const { CommentBox, AddNewCommentBtn } = styleComponent;
   const [array, setArray] = useState([]);
   const [comentValue, setComentValue] = useState("");
 
-  const addComennts = (e) => {
+  const addComennts = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation();
     // add coments in dom
     if (comentValue.trim() !== "" && userName.trim() !== "") {

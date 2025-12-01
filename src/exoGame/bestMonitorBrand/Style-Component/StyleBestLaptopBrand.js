@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Avatar } from "@mui/material";
 
 const ParentDiv = styled(Box)({
   width: "100%",
@@ -15,7 +15,7 @@ const TextHead = styled(Typography)({
   top: "30px",
   color: "#3c3c3c",
 });
-const BoxImg = styled(Box)({
+const BoxImg = styled(Avatar)({
   width: "100px",
   height: "100px",
   cursor: "pointer",

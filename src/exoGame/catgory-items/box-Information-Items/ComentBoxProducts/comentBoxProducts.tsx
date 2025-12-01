@@ -3,7 +3,9 @@ import { Box, Rating } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
 import AddCommentComponent from "./addComents/addComents";
 import styleComponent from "./Style-Component/StyleCommentProducts";
-const labels = {
+import { RatingLabels } from "./types/Type_comentBoxProducts";
+
+const labels: RatingLabels = {
   //imogi for all rate
   1: "useLess+☹",
 
@@ -16,7 +18,7 @@ const labels = {
   5: "master💖",
 };
 
-const labelText = (value) => {
+const labelText = (value: number) => {
   //concat function
   return `${value} Stare ${value !== 1 ? "s" : ""},${labels[value]}`;
 };
@@ -38,10 +40,12 @@ const ComentBoxProducts = () => {
   const [stare, setStare] = useState(5);
   const [hover, setHover] = useState(-1);
 
-  const felingIcons = (stare, labels, hover) => {
-    if (stare !== null) {
-      return [labels[hover !== -1 ? hover : stare]];
-    }
+  const felingIcons = (
+    stare: number | null,
+    labels: RatingLabels,
+    hover: number
+  ) => {
+    return stare && [labels[hover !== -1 ? hover : stare]];
   };
 
   return (
@@ -93,8 +97,6 @@ const ComentBoxProducts = () => {
             ></Rating>
             {<Box>{felingIcons(stare, labels, hover)}</Box>}
           </RatingDivBox>
-
-          {/* {comentValue.trim() === "" && <h1>enter items frist</h1>} */}
 
           <AddCommentComponent
             userName={userName}

@@ -1,23 +1,30 @@
-import React, { useEffect } from "react";
-import { Link, Element } from "react-scroll";
+import { Link } from "react-scroll";
 import styleComponent from "./Style-Component/StyleBoxInformationProduction";
 import TableInformationProducts from "./table-Information-Products/table-Information-Products";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Typography } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import BoxDiscriptionItems from "./box-discription-items/box-discription-items";
 import ComentBoxProducts from "./ComentBoxProducts/comentBoxProducts";
+import { productsInformation } from "./Type_table_Information_Product";
+import * as Scroll from "react-scroll";
+
+const ScrollElement = Scroll.Element as React.ComponentType<{
+  name: string;
+  children?: React.ReactNode;
+}>;
 
 const BoxInfoProducts = () => {
   const { PrentBox, HederText } = styleComponent;
   const location = useLocation();
-  const [productsInformation, setProductsInformation] = useState([]);
-  const { ...item } = productsInformation?.item || {};
+  const [productsInformation, setProductsInformation] =
+    useState<productsInformation>();
+  const { ...item } = productsInformation?.itemProduct || {};
 
   useEffect(() => {
     setProductsInformation(location.state);
-  }, [location, productsInformation]);
+  }, []);
 
   return (
     <>
@@ -44,11 +51,11 @@ const BoxInfoProducts = () => {
       <br />
       <br />
 
-      <Element name="BoxDiscription">
+      <ScrollElement name="BoxDiscription">
         <BoxDiscriptionItems {...item}></BoxDiscriptionItems>
-      </Element>
+      </ScrollElement>
 
-      <Element name="TableDiscription">
+      <ScrollElement name="TableDiscription">
         <Typography
           sx={{
             margin: "5%",
@@ -60,11 +67,11 @@ const BoxInfoProducts = () => {
           Characteristics
         </Typography>
         <TableInformationProducts {...item}></TableInformationProducts>
-      </Element>
+      </ScrollElement>
 
-      <Element name="Coments">
+      <ScrollElement name="Coments">
         <ComentBoxProducts></ComentBoxProducts>
-      </Element>
+      </ScrollElement>
     </>
   );
 };

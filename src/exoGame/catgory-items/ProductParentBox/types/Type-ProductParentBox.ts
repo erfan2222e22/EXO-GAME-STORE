@@ -2,11 +2,21 @@ import { Type_AsslbleContiner } from "../../../AssmblePc/types/types-AssmbleCnit
 import { JSX } from "react";
 
 export interface Type_FilterValuse {
-  minPirce: number | string;
-  maxPrice: number | string;
+  minPrice?: number | string;
+  maxPrice?: number | string;
   company?: string[];
-  Manufacturers: string[];
-  [key: string]: string | number | boolean | string[] | number[] | boolean[];
+  Manufacturers?: string[];
+  [key: string]:
+    | undefined
+    | string
+    | number
+    | boolean
+    | string[]
+    | number[]
+    | boolean[]
+    | [string]
+    | [number]
+    | [boolean];
 }
 
 interface Type_originalItems_ReadOnly {
@@ -23,7 +33,7 @@ interface Type_originalItems_ReadOnly {
 type readOnlyTypes = Readonly<Partial<Type_originalItems_ReadOnly>>;
 
 export interface Type_originalItems_extends extends readOnlyTypes {
-  price?: number | string;
+  price: number | string;
   [key: string]: string | number | boolean | undefined | [] | object[];
 }
 

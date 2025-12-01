@@ -7,17 +7,15 @@ import Paper from "@mui/material/Paper";
 import { Button } from "@mui/material";
 import { useState, useEffect } from "react";
 
-const createData = (itemKeys, itemData) => {
+const createData = (itemKeys: string[], itemData: string[]) => {
   return { itemKeys, itemData };
 };
 
 const TableInformationProducts = ({ ...item }) => {
+  const { price, nameProduct } = item;
   const object = {
-    //defualt items
-    price: "",
-    nameProduct: "",
-    company: "",
-    Ramcapacity: "",
+    price: price,
+    nameProduct: nameProduct,
   };
   const [validation, SetValidation] = useState(false);
   const obj = Object.keys(validation ? item : object || {});

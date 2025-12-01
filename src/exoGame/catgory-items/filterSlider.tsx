@@ -1,8 +1,8 @@
 import { Typography, Box, Slider } from "@mui/material";
 import component from "./Style-Component/StyleFilterSlider";
 import { useEffect, useState } from "react";
-
-const FilterSlider = ({ onFilterChange }) => {
+import { Props_Component, Type_handelOnchange } from "./Types_FilterSlider";
+const FilterSlider = ({ onFilterChange }: Props_Component) => {
   const { InsideBox, TextItems } = component;
   const [maxValue] = useState(20000);
   const [minValue] = useState(100);
@@ -21,7 +21,7 @@ const FilterSlider = ({ onFilterChange }) => {
     },
   ];
 
-  const handelOnchange = (event, newitem) => {
+  const handelOnchange: Type_handelOnchange = (event, newitem) => {
     setValueSlider(newitem);
     onFilterChange({
       minPrice: valueSlider[0],
@@ -50,7 +50,7 @@ const FilterSlider = ({ onFilterChange }) => {
               >
                 <Box>
                   <Typography>{valueSlider[0]}</Typography>
-                  <TextItems>تومان</TextItems>
+                  <TextItems>$</TextItems>
                 </Box>
                 <Box
                   sx={{
@@ -60,7 +60,7 @@ const FilterSlider = ({ onFilterChange }) => {
                   }}
                 >
                   <Typography>{valueSlider[1]}</Typography>
-                  <TextItems>تومان</TextItems>
+                  <TextItems>$</TextItems>
                 </Box>
               </Box>
             </InsideBox>
