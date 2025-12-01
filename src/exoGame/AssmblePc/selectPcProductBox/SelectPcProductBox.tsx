@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import contextUse from "../../useContext/useContext";
-import { Typography } from "@mui/material";
+import { Avatar, Typography } from "@mui/material";
 import styleComponents from "./Style-Component/StyleSelectPcProductBox";
 import { useState } from "react";
 import axios from "axios";
@@ -116,7 +116,11 @@ const SelectPcProductBox = () => {
                 }}
               >
                 <SelectBoxSecendContiner>
-                  <ImgBox src={item.iconSrc} alt={item.text}></ImgBox>
+                  <ImgBox
+                    // as={Avatar}
+                    src={item.iconSrc}
+                    alt={item.text}
+                  ></ImgBox>
                   <Typography>{item.text}</Typography>
                 </SelectBoxSecendContiner>
                 {item.MandatoryPcPart ? (

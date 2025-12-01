@@ -117,7 +117,7 @@ const IconsEdit = styled(EditOutlinedIcon)({
   fontSize: "200%",
   cursor: "pointer",
 });
-const IconsContiner = styled(Box)({
+const IconsContiner = styled(Avatar)({
   display: "flex",
   gap: "10px",
 });

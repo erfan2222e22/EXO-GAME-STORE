@@ -1,22 +1,26 @@
 import styleComponents from "./Style-Component/StyleRemoveFilterdItems";
+import { Type_FilterValuse } from "../ProductParentBox/types/Type-ProductParentBox";
+import { Props_Component } from "./types/Types_RemoveFilterdItems";
+import { number } from "prop-types";
+
 const RemoveFilterdItems = ({
   FilterValue,
   setFilterValue,
   setFilteredItems,
-}) => {
+}: Props_Component) => {
   const { HeadrBox, HeadrText, DelteBtn } = styleComponents;
 
   const showDelteBtn = (function () {
-    const show = (arr) => {
+    const show = (arr: Type_FilterValuse[]) => {
       const itemsValue = Object.entries(arr)
-        .map(([_, value]) => value !== "" || value > 0)
+        .map(([key, value]) => value.toString().length > 0)
         .find((value) => {
-          return value === true;
+          return value;
         });
       return itemsValue;
     };
     return {
-      doSomthing(arr) {
+      doSomthing(arr: Type_FilterValuse[]) {
         return show(arr);
       },
     };
@@ -24,8 +28,9 @@ const RemoveFilterdItems = ({
   const result = showDelteBtn.doSomthing(FilterValue);
 
   const delteFilterItemsBtn = () => {
-    setFilterValue((prev) =>
-      Object.fromEntries(Object.keys(prev).map((key) => [key, ""]))
+    setFilterValue(
+      //delete all FiterValuse
+      (prev) => Object.fromEntries(Object.keys(prev).map((key) => [key, ""]))
     );
     setFilteredItems([]);
   };
