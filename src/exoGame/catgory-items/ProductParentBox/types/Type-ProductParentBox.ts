@@ -1,5 +1,4 @@
 import { Type_AsslbleContiner } from "../../../AssmblePc/types/types-AssmbleCniter";
-import { JSX } from "react";
 
 export interface Type_FilterValuse {
   minPrice?: number | string;
@@ -56,4 +55,4 @@ export type Type_handelOnClick = (
   e: React.MouseEvent<HTMLElement> | React.MouseEvent<SVGSVGElement>,
   item: Type_originalItems_extends
 ) => void;
-export type Type_ComponentProps = ({ ...items }: Type_Props) => JSX.Element;
+export type Type_ComponentProps = ({ ...items }: Type_Props) => React.ReactNode;

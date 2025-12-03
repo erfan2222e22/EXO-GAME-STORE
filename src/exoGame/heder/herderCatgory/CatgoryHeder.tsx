@@ -2,25 +2,25 @@ import styleComponent from "./Style-Component/StyleCatgoryHeder";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import HederCatgoryContent from "./hederCatgoryText/HederCatgoryContent";
-import { useNavigate } from "react-router-dom";
 import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage";
-const HederCatgory = ({ setCatgoryDisplay }) => {
-  const {
-    HederCatgoryBox,
-    KeyTexts,
-    CatgoryContiner,
-    KeyItemsBox,
-    Img,
-    ImgBox,
-  } = styleComponent;
-  const navigate = useNavigate();
+import ParentEmptyImg from "./emptyiImgBox/ParentEmptyBoxImg";
+
+import {
+  Component_Props,
+  itemsType,
+  Type_ItemValue,
+} from "./types/Type_CatgoryHeder";
+
+const HederCatgory: Component_Props = ({ setCatgoryDisplay }) => {
+  const { HederCatgoryBox, KeyTexts, CatgoryContiner, KeyItemsBox, ImgBox } =
+    styleComponent;
 
   const [reciveData, setReciveData] = useState({});
 
   const [ReciveDataValue, setReciveDataValue] = useState([
     { fristHalfArray: [] },
     { secendHalfArray: [] },
-    { imgAddrs: {} },
+    { imgAddrs: "" },
   ]);
   const [fristHalfArray, secendHalfArray, imgAddrs] = ReciveDataValue;
 
@@ -31,7 +31,7 @@ const HederCatgory = ({ setCatgoryDisplay }) => {
       );
       setReciveData(await Dataitems);
     } catch (err) {
-      FailToFetchDataPage(navigate)
+      FailToFetchDataPage();
     }
   };
 
@@ -39,19 +39,24 @@ const HederCatgory = ({ setCatgoryDisplay }) => {
     fetchData();
   }, []);
 
-  const onMouseHandel = (e, ItemKeys, ItemValuse) => {
-    const { img, productList } = ItemValuse;
+  const onMouseHandel = (
+    e: React.MouseEvent<HTMLElement>,
+    ItemValus: Type_ItemValue
+  ) => {
+    const { img, productList } = ItemValus;
     const { items } = productList;
     let conter = 2;
 
     const calculatorHalfLength = items.length / conter;
 
     const fristHalfArray = items.filter(
-      (fiill) => +fiill.id <= calculatorHalfLength
+      (fiill: itemsType) => +fiill.id <= calculatorHalfLength
     );
     const secendHalfArray = items.filter(
-      (fiill) => +fiill.id > calculatorHalfLength
+      (fiill: itemsType) => +fiill.id > calculatorHalfLength
     );
+
+    console.log(fristHalfArray);
 
     setReciveDataValue([
       { fristHalfArray: fristHalfArray },
@@ -71,10 +76,7 @@ const HederCatgory = ({ setCatgoryDisplay }) => {
         {Object.entries(reciveData).map(([_, item]) => {
           return (
             <div>
-              <KeyTexts
-                component="p"
-                onMouseEnter={(e) => onMouseHandel(e, _, item)}
-              >
+              <KeyTexts as="p" onMouseEnter={(e) => onMouseHandel(e, item)}>
                 {_}
               </KeyTexts>
             </div>
@@ -85,7 +87,9 @@ const HederCatgory = ({ setCatgoryDisplay }) => {
         <div
           style={{
             marginTop:
-              fristHalfArray?.length + secendHalfArray?.length > 30
+              fristHalfArray.fristHalfArray?.length +
+                secendHalfArray.secendHalfArray?.length >
+              30
                 ? "250px"
                 : "0px",
           }}
@@ -103,7 +107,9 @@ const HederCatgory = ({ setCatgoryDisplay }) => {
         <div
           style={{
             marginTop:
-              fristHalfArray?.length + secendHalfArray?.length > 30
+              fristHalfArray?.fristHalfArray.length +
+                secendHalfArray?.secendHalfArray.length >
+              30
                 ? "305px"
                 : "0px",
           }}
@@ -119,11 +125,20 @@ const HederCatgory = ({ setCatgoryDisplay }) => {
           })}
         </div>
       </CatgoryContiner>
-      <ImgBox>
-        <Img src={imgAddrs?.imgAddrs} alt="🖤" component="img"></Img>
-      </ImgBox>
+      {imgAddrs.imgAddrs.length > 0 ? (
+        <ImgBox>
+          <img
+            src={ReciveDataValue[2].imgAddrs}
+            style={{ width: "100%", height: "100%" }}
+            alt="🖼"
+            onClick={() => console.log(imgAddrs.imgAddrs.length)}
+          ></img>
+        </ImgBox>
+      ) : (
+        // <ParentEmptyImg></ParentEmptyImg>
+        <h2>Hover on items </h2>
+      )}
     </HederCatgoryBox>
   );
 };
-
 export default HederCatgory;

@@ -5,8 +5,12 @@ import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import { Link } from "react-router-dom";
+import { Component_Props } from "./types/Type_HederNavigationLinks";
 
-const HederNavigationLink = ({ catgoryDisplay, setCatgoryDisplay }) => {
+const HederNavigationLink: Component_Props = ({
+  catgoryDisplay,
+  setCatgoryDisplay,
+}) => {
   const { Spans, LinkRoter, Icons } = styleComponent;
 
   const elmentItmes = [
@@ -49,11 +53,11 @@ const HederNavigationLink = ({ catgoryDisplay, setCatgoryDisplay }) => {
   ];
 
   const onMouseHandel = () => {
-    setCatgoryDisplay((prev) => (prev = true));
+    setCatgoryDisplay((prev: boolean) => (prev = true));
   };
 
   const onMouseLeaveHandel = () => {
-    setCatgoryDisplay((prev) => (prev = false));
+    setCatgoryDisplay((prev: boolean) => (prev = false));
   };
 
   return (
@@ -67,7 +71,7 @@ const HederNavigationLink = ({ catgoryDisplay, setCatgoryDisplay }) => {
             onMouseEnter={() => item.onMouseEnter && onMouseHandel()}
             onMouseLeave={() => item.onMouseEnter && onMouseLeaveHandel()}
           >
-            <LinkRoter component={Link} to={item.addresLink}>
+            <LinkRoter as={Link} to={item.addresLink}>
               {item.text}
             </LinkRoter>
             <Icons
@@ -75,7 +79,7 @@ const HederNavigationLink = ({ catgoryDisplay, setCatgoryDisplay }) => {
                 color:
                   item.onMouseEnter && catgoryDisplay ? "#03c13c" : "#606060",
               }}
-              component={item.component}
+              as={item.component}
             ></Icons>
           </Spans>
         );

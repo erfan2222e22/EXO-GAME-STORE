@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Box } from "@mui/material";
+import { Box, Avatar } from "@mui/material";
 
 const ParentDiv = styled(Box)({
   width: "95%",
@@ -9,7 +9,7 @@ const ParentDiv = styled(Box)({
   top: "30px",
 });
 
-const DivImg = styled(Box)({
+const DivImg = styled(Avatar)({
   margin: "10px",
   width: "100%",
   overflow: "hidden",
