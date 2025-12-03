@@ -3,11 +3,19 @@ import styleComponent from "./Style-Component/StyleContentHeder";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import FailToFetchDataPage from "../../../failToFetchDataPage/failToFetchDataPage";
-const HederCatgoryContent = ({ item, key, setCatgoryDisplay }) => {
+import {
+  Component_Props,
+  navigatingRoter,
+} from "./types/Type_HederCatgoryContext";
+const HederCatgoryContent: Component_Props = ({
+  item,
+  key,
+  setCatgoryDisplay,
+}) => {
   const { Ul, UlContiner } = styleComponent;
   const navigate = useNavigate();
 
-  const navigatingRoter = (values) => {
+  const navigatingRoter: navigatingRoter = (values) => {
     navigate(`catgory/${item.text}`, {
       state: { product: values, pathName: item.text },
     });
@@ -21,17 +29,18 @@ const HederCatgoryContent = ({ item, key, setCatgoryDisplay }) => {
       );
       valid_Status === 200 && navigatingRoter(values);
     } catch (err) {
-      FailToFetchDataPage(navigate);
+      FailToFetchDataPage();
     }
   };
 
   return (
     <UlContiner key={key}>
-      <Ul component="ul">
+      <Ul as="ul">
         <li
           style={{
             fontWeight: item.type === "text" ? "normal" : "bolder",
             cursor: "pointer",
+            color: "red",
           }}
           onClick={handelOnClick}
         >

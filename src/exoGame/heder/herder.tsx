@@ -2,7 +2,6 @@ import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
 import styleComponents from "./Style-Component/StyledComponentHeder";
-import logoImg from "./hederLogoImg/logo.png";
 import ShoppingCartIconBox from "../ShoppingCart/ShoppingCartIcon";
 import { Link } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
@@ -12,7 +11,7 @@ import { Drawer } from "@mui/material";
 import HederNavigationLink from "./HederNavigationLinks/HederNavigationLinks";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import HederCatgory from "./herderCatgory/CatgoryHeder";
-import emmiter from "../../mitt/emmiter";
+import emmiter, { EmmiterEvents } from "../../mitt/emmiter";
 
 const Herder = () => {
   const {
@@ -34,7 +33,7 @@ const Herder = () => {
   const [elmentYPosition, setElmentYPosition] = useState(0);
 
   const scroled = () => {
-    emmiter.on("yPosition", (data) => {
+    emmiter.on("yPosition", (data: EmmiterEvents["yPosition"]) => {
       setElmentYPosition(data.item);
     });
   };
@@ -45,6 +44,7 @@ const Herder = () => {
 
   return (
     <Box>
+      <Box>kiram kose amd awekdplawdawdpo</Box>
       <StyledAppBar sx={{ height: elmentYPosition < 129 ? "80px" : "125px" }}>
         <CoustomToolbar>
           <Box>
@@ -64,8 +64,9 @@ const Herder = () => {
                 >
                   <Icons
                     sx={{ color: "#858585" }}
-                    component={DensityMediumIcon}
+                    as={DensityMediumIcon}
                   ></Icons>
+                  a
                 </button>
                 <Drawer
                   open={drawerDisplay}
@@ -90,7 +91,11 @@ const Herder = () => {
           </Box>
           <SmallSizeBoxLogoAndInput>
             <Link to="/">
-              <LogoImg src={logoImg} alt="😑" component="img"></LogoImg>
+              <LogoImg
+                src="http://localhost:3000/static/media/logo.8a05ed6da936dc416c38.png"
+                alt="😑"
+                as="img"
+              ></LogoImg>
             </Link>
             <SerchField
               placeholder="search..."
@@ -119,7 +124,11 @@ const Herder = () => {
               }}
             />
             <Link to="/">
-              <LogoImg src={logoImg} alt="😑" component="img"></LogoImg>
+              <LogoImg
+                src="http://localhost:3000/static/media/logo.8a05ed6da936dc416c38.png"
+                alt="😑"
+                as="img"
+              ></LogoImg>
             </Link>
           </MediumeAndLargeBoxLogoAndInput>
         </CoustomToolbar>
@@ -134,7 +143,6 @@ const Herder = () => {
           )}
         </TooltipBox>
       </StyledAppBar>
-
       {catgoryDisplay && <HederCatgory setCatgoryDisplay={setCatgoryDisplay} />}
     </Box>
   );

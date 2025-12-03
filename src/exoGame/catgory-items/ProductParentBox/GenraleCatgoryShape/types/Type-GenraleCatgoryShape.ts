@@ -1,4 +1,3 @@
-import { JSX } from "react";
 import { Type_originalItems_extends } from "../../types/Type-ProductParentBox";
 
 export interface component_Type {
@@ -9,4 +8,4 @@ export interface component_Type {
 
 export type Types_ComponentProps = ({
   ...props
-}: component_Type) => JSX.Element;
+}: component_Type) => React.ReactNode;

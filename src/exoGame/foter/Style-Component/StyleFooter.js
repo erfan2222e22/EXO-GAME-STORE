@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Avatar } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const BoxFooter = styled(Box)({
@@ -8,7 +8,7 @@ const BoxFooter = styled(Box)({
   position: "relative",
 });
 
-const Img = styled(Box)({
+const Img = styled(Avatar)({
   width: "60px",
   height: "60px",
 });

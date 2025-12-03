@@ -1,5 +1,4 @@
 import { Types_itemProduct } from "../../types/Types_ProductDiscription";
-import { JSX } from "react";
 
 export type Type_Ecvent = React.MouseEvent<HTMLElement>;
 
@@ -10,4 +9,4 @@ interface PropsType {
   item: Types_itemProduct[];
 }
 
-export type PropsTypes = ({ ...itms }: PropsType) => JSX.Element;
+export type PropsTypes = ({ ...itms }: PropsType) => React.ReactNode;

@@ -2,7 +2,7 @@ import {
   Type_originalItems_extends,
   Type_FilterValuse,
 } from "../../ProductParentBox/types/Type-ProductParentBox";
-import React, { JSX } from "react";
+import React from "react";
 
 export interface Component_Props_Types {
   originalItems: Type_originalItems_extends[];
@@ -19,4 +19,4 @@ export interface Component_Props_Types {
 
 export type Component_Props = ({
   ...props
-}: Component_Props_Types) => JSX.Element;
+}: Component_Props_Types) => React.ReactNode;

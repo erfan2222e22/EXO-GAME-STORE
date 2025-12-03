@@ -6,8 +6,8 @@ const FailToFetchDataPage = () => {
     <ParentBox>
       <ContinerBox>
         <BugReportIcon sx={{ fontSize: "6rem" }} />
-        <Text component="h1">Error</Text>
-        <Text1 component="h2">Failed to fetch :-(</Text1>
+        <Text as="h1">Error</Text>
+        <Text1 as="h2">Failed to fetch :-(</Text1>
       </ContinerBox>
     </ParentBox>
   );

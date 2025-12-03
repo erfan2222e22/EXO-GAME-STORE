@@ -10,12 +10,12 @@ import { Types_itemProduct } from "./types/Types_ProductDiscription";
 const ProductDiscription = () => {
   const location = useLocation();
   const { itemProduct } = location.state || {};
-
   const { img, price, company, nameProduct, ...rest }: Types_itemProduct =
-    itemProduct;
+    itemProduct || [];
 
   const { ParentBox, ContinerBox, ParentContiner, SecendParentBox } =
     styleComponent;
+
   const [productCounter, SetProductCounter] = useState(1);
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import Tooltip from "@mui/material/Tooltip";
 import { Link } from "react-router-dom";
-import img from "./navbar-Img/logo.png";
+// import { img } from "./navbar-Img";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import styleComponent from "./Style-Component/StyleFooter";
 import { Box } from "@mui/material";
@@ -55,7 +55,11 @@ const Footer = () => {
             </Tooltip>
           );
         })}
-        <Img src={img} alt="img" component="img"></Img>
+        <Img
+          src="http://localhost:3000/static/media/logo.8a05ed6da936dc416c38.png"
+          alt="img"
+          as="img"
+        ></Img>
         <br></br>
         <span> Made with ❤ </span>
         <h6>

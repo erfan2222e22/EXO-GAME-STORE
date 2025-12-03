@@ -1,5 +1,4 @@
 import { Type_originalItems_extends } from "../../types/Type-ProductParentBox";
-import { JSX } from "react";
 
 interface Monitor_information extends Type_originalItems_extends {
   refreshRate: string;
@@ -16,7 +15,7 @@ interface MonitorIconsInformationProps {
 
 export type Type_function = (
   originalItems: MonitorIconsInformationProps
-) => JSX.Element;
+) => React.ReactNode;
 
 export interface MonitorIconItem {
   id: number;
