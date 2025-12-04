@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Avatar } from "@mui/material";
 import { styled, keyframes } from "@mui/system";
 
 const anime = keyframes`
@@ -15,10 +15,10 @@ const HederCatgoryBox = styled(Box)({
   borderRadius: "10px",
   position: "fixed",
   margin: "0 auto",
-  marginTop: "125px",
+  marginTop: "105px",
   padding: "3px",
   paddingTop: "3px",
-  backgroundColor: "#f6f6f6ff",
+  backgroundColor: "#ffffff",
   animation: `${anime} 1s ease-in-out `,
   boxShadow:
     "rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(14, 14, 15, 0.05) 0px 0.25em 1em",
@@ -45,10 +45,6 @@ const KeyItemsBox = styled(Box)({
   marginTop: "0px",
 });
 
-const Img = styled(Box)({
-  width: "100%",
-  height: "100%",
-});
 const ImgBox = styled(Box)({
   width: "300px",
   height: "300px",
@@ -57,13 +53,25 @@ const ImgBox = styled(Box)({
   alignItems: "center",
 });
 
+const EmptyBox = styled(Box)({
+  boxShadow:
+    "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
+  width: "600px",
+  height: "400px",
+  display: "flex",
+  justifyContent: "space-around",
+  alignItems: "center",
+  backgroundColor: "#ffff",
+  borderRadius: "20px",
+});
+
 const styleComponents = {
   HederCatgoryBox,
   KeyTexts,
   CatgoryContiner,
   KeyItemsBox,
   ImgBox,
-  Img,
+  EmptyBox,
 };
 
 export default styleComponents;

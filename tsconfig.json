@@ -11,9 +11,8 @@
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
     "isolatedModules": true,
-    "noImplicitAny": true, // نوع مفدار ورودی رو غیر فعال میکنه
+    "noImplicitAny": true, // نوع مفدار ورودی رو غیر فعال میکنه`
     "strictNullChecks": false, // میزاره نوع هل بربر با null and undefind بشن
     "noEmit": true,
     "jsx": "react-jsx"
