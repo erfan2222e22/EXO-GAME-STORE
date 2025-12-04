@@ -8,21 +8,25 @@ import ParentEmptyImg from "./emptyiImgBox/ParentEmptyBoxImg";
 import {
   Component_Props,
   itemsType,
-  Type_ItemValue,
+  Type_onMouseHandel,
 } from "./types/Type_CatgoryHeder";
 
 const HederCatgory: Component_Props = ({ setCatgoryDisplay }) => {
-  const { HederCatgoryBox, KeyTexts, CatgoryContiner, KeyItemsBox, ImgBox } =
-    styleComponent;
+  const {
+    HederCatgoryBox,
+    KeyTexts,
+    CatgoryContiner,
+    KeyItemsBox,
+    ImgBox,
+    EmptyBox,
+  } = styleComponent;
 
   const [reciveData, setReciveData] = useState({});
 
   const [ReciveDataValue, setReciveDataValue] = useState([
-    { fristHalfArray: [] },
-    { secendHalfArray: [] },
-    { imgAddrs: "" },
+    { fristHalfArray: [], secendHalfArray: [], imgAddrs: "" },
   ]);
-  const [fristHalfArray, secendHalfArray, imgAddrs] = ReciveDataValue;
+  const { fristHalfArray, secendHalfArray, imgAddrs } = ReciveDataValue[0];
 
   const fetchData = async () => {
     try {
@@ -39,15 +43,12 @@ const HederCatgory: Component_Props = ({ setCatgoryDisplay }) => {
     fetchData();
   }, []);
 
-  const onMouseHandel = (
-    e: React.MouseEvent<HTMLElement>,
-    ItemValus: Type_ItemValue
-  ) => {
+  const onMouseHandel: Type_onMouseHandel = (e, ItemValus) => {
     const { img, productList } = ItemValus;
     const { items } = productList;
-    let conter = 2;
+    let conterHalf = 2;
 
-    const calculatorHalfLength = items.length / conter;
+    const calculatorHalfLength = items.length / conterHalf;
 
     const fristHalfArray = items.filter(
       (fiill: itemsType) => +fiill.id <= calculatorHalfLength
@@ -56,12 +57,12 @@ const HederCatgory: Component_Props = ({ setCatgoryDisplay }) => {
       (fiill: itemsType) => +fiill.id > calculatorHalfLength
     );
 
-    console.log(fristHalfArray);
-
     setReciveDataValue([
-      { fristHalfArray: fristHalfArray },
-      { secendHalfArray: secendHalfArray },
-      { imgAddrs: img },
+      {
+        fristHalfArray: fristHalfArray,
+        imgAddrs: img,
+        secendHalfArray: secendHalfArray,
+      },
     ]);
   };
 
@@ -83,60 +84,59 @@ const HederCatgory: Component_Props = ({ setCatgoryDisplay }) => {
           );
         })}
       </KeyItemsBox>
-      <CatgoryContiner>
-        <div
-          style={{
-            marginTop:
-              fristHalfArray.fristHalfArray?.length +
-                secendHalfArray.secendHalfArray?.length >
-              30
-                ? "250px"
-                : "0px",
-          }}
-        >
-          {fristHalfArray.fristHalfArray?.map((item, key) => {
-            return (
-              <HederCatgoryContent
-                item={item}
-                key={key}
-                setCatgoryDisplay={setCatgoryDisplay}
-              />
-            );
-          })}
-        </div>
-        <div
-          style={{
-            marginTop:
-              fristHalfArray?.fristHalfArray.length +
-                secendHalfArray?.secendHalfArray.length >
-              30
-                ? "305px"
-                : "0px",
-          }}
-        >
-          {secendHalfArray.secendHalfArray?.map((item, key) => {
-            return (
-              <HederCatgoryContent
-                item={item}
-                key={key}
-                setCatgoryDisplay={setCatgoryDisplay}
-              />
-            );
-          })}
-        </div>
-      </CatgoryContiner>
-      {imgAddrs.imgAddrs.length > 0 ? (
-        <ImgBox>
-          <img
-            src={ReciveDataValue[2].imgAddrs}
-            style={{ width: "100%", height: "100%" }}
-            alt="🖼"
-            onClick={() => console.log(imgAddrs.imgAddrs.length)}
-          ></img>
-        </ImgBox>
+
+      {imgAddrs.length > 0 ? (
+        <>
+          <CatgoryContiner>
+            <div
+              style={{
+                marginTop:
+                  fristHalfArray?.length + secendHalfArray?.length > 30
+                    ? "250px"
+                    : "0px",
+              }}
+            >
+              {fristHalfArray?.map((item, key) => {
+                return (
+                  <HederCatgoryContent
+                    item={item}
+                    key={key}
+                    setCatgoryDisplay={setCatgoryDisplay}
+                  />
+                );
+              })}
+            </div>
+            <div
+              style={{
+                marginTop:
+                  fristHalfArray?.length + secendHalfArray?.length > 30
+                    ? "305px"
+                    : "0px",
+              }}
+            >
+              {secendHalfArray?.map((item, key) => {
+                return (
+                  <HederCatgoryContent
+                    item={item}
+                    key={key}
+                    setCatgoryDisplay={setCatgoryDisplay}
+                  />
+                );
+              })}
+            </div>
+          </CatgoryContiner>
+          <ImgBox>
+            <img
+              src={imgAddrs}
+              style={{ width: "100%", height: "100%" }}
+              alt="🖼"
+            ></img>
+          </ImgBox>
+        </>
       ) : (
-        // <ParentEmptyImg></ParentEmptyImg>
-        <h2>Hover on items </h2>
+        <EmptyBox>
+          <ParentEmptyImg></ParentEmptyImg>
+        </EmptyBox>
       )}
     </HederCatgoryBox>
   );
