@@ -69,7 +69,7 @@ const ShoppingCartCheckout = () => {
             {ProductsValue.map((value) => {
               return (
                 <>
-                  <ContainerBox>
+                  <ContainerBox key={value.id}>
                     <div
                       style={{
                         display: "flex",

@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import contextUse from "../../useContext/useContext";
 import { useNavigate } from "react-router-dom";
+import { Type_UseContext } from "./types/Types_ControlShopingCart";
 
 const ControlShopingCart = () => {
   const {
@@ -23,32 +24,38 @@ const ControlShopingCart = () => {
     setProductsInShopCart,
     totalPrice,
     setTotalPrice,
-  } = useContext(contextUse);
+  }: Type_UseContext = useContext(contextUse);
 
   useEffect(() => {
     setTotalPrice(
       ProductsInShopCart.reduce(
-        (total, item) => total + item.price * (item.qty ?? 1),
+        (total, item) => total + Number(item.price) * (item.qty ?? 1),
         0
       )
     );
   }, [ProductsInShopCart, setTotalPrice]);
 
-  const handelClearBasket = (e) => {
+  const handelClearBasket = (e: React.MouseEvent<HTMLSpanElement>) => {
     e.stopPropagation();
     setProductsInShopCart([]);
   };
 
-  const incrementQty = (e, id) => {
+  const incrementQty = (
+    e: React.MouseEvent<HTMLSpanElement>,
+    id: number | string
+  ) => {
     e.stopPropagation();
     setProductsInShopCart((prevProducts) =>
-      prevProducts.map((item) =>
+      prevProducts.map((item: any) =>
         item.id === id ? { ...item, qty: (item.qty || 1) + 1 } : item
       )
     );
   };
 
-  const decrementQty = (e, id) => {
+  const decrementQty = (
+    e: React.MouseEvent<HTMLSpanElement>,
+    id: number | string
+  ) => {
     e.stopPropagation();
     setProductsInShopCart((prevProducts) =>
       prevProducts.map((item) =>
@@ -59,12 +66,15 @@ const ControlShopingCart = () => {
     );
   };
 
-  const delteShopCart = (e, id) => {
+  const delteShopCart = (
+    e: React.MouseEvent<HTMLDivElement>,
+    id: number | string
+  ) => {
     e.stopPropagation();
     setProductsInShopCart((preve) => preve.filter((index) => index.id !== id));
   };
 
-  const handelViewCart = (e) => {
+  const handelViewCart = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
     navigate("/ShopingCartCheckout", {
       state: { product: ProductsInShopCart },
@@ -77,7 +87,7 @@ const ControlShopingCart = () => {
         return (
           <>
             <DiscriptionItems style={{ display: "flex", gap: "50px" }}>
-              <Typography component="p">{item.name}</Typography>
+              <Typography component="p">{item.nameProduct}</Typography>
               <Box
                 component="img"
                 src={item?.img}
@@ -93,12 +103,13 @@ const ControlShopingCart = () => {
                   onClick={(e) => incrementQty(e, item.id)}
                 >
                   <DelteIcons
-                    component={DeleteIcon}
+                    as={DeleteIcon}
                     onClick={(e) => delteShopCart(e, item.id)}
                   ></DelteIcons>
                   +
                 </Typography>
                 <input
+                  aria-label="."
                   value={item.qty}
                   style={{ width: "60px", textAlign: "center", height: "25px" }}
                 ></input>

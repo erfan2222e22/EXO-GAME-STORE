@@ -2,18 +2,16 @@ import ShopCartBox from "../ShopCartBox/ShopCartBox";
 import Herder from "../herder";
 import contextUse from "../../useContext/useContext";
 import { useState, useEffect } from "react";
+import { callback_Type } from "./types/Types_HederParentBox";
 
 const HederPrentBox = () => {
   const [valid, setValid] = useState(false);
   const [ProductLength, setProductLength] = useState(0);
 
-  const globalFunction = () => {
-    setValid(false);
-  };
+  const globalFunction = () => setValid(false);
 
-  const callback = (childeData) => {
+  const callback: callback_Type = (childeData) =>
     setProductLength((prev) => (prev = childeData));
-  };
 
   useEffect(() => {
     window.addEventListener("click", globalFunction);

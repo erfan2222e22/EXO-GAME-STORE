@@ -8,7 +8,7 @@ const PrentBox = styled(Box)({
   marginTop: "40px",
   padding: "1%",
 });
-const HederText = styled(Typography)({
+const HederText = styled("div")({
   fontWeight: "700",
   fontSize: "1rem",
   color: "#3c3c3c",

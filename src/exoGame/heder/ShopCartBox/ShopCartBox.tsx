@@ -3,7 +3,9 @@ import ControlShopingCart from "../ControlShopingCart/controlShopingCart";
 import emmiter from "../../../mitt/emmiter";
 import contextUse from "../../useContext/useContext";
 import styleComponent from "./Style-Component/StyleShopCartParentBox";
-const ShopCartBox = ({ sendmassage }) => {
+import { Component_Props, handlerType } from "./types/Types_ShopCartBox";
+
+const ShopCartBox: Component_Props = ({ sendmassage }) => {
   const [ProductsInShopCart, setProductsInShopCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
 
@@ -19,7 +21,8 @@ const ShopCartBox = ({ sendmassage }) => {
 
         // Calculate total price
         const total = parsedCart.reduce(
-          (sum, item) => sum + item.price * item.qty,
+          (sum: number, item: { [key: string]: number }) =>
+            sum + item.price * item.qty,
           0
         );
         setTotalPrice(total);
@@ -30,7 +33,7 @@ const ShopCartBox = ({ sendmassage }) => {
   }, []);
 
   useEffect(() => {
-    const handler = (data) => {
+    const handler: handlerType = (data) => {
       const productsData = data.cartList;
       const { id, price, img, nameProduct } = productsData;
       const qtyToAdd = Number(data.counter) || 1;
@@ -46,7 +49,7 @@ const ShopCartBox = ({ sendmassage }) => {
           ...prev,
           {
             id: id,
-            name: nameProduct,
+            nameProduct: nameProduct,
             price: Number(price),
             img: img,
             qty: qtyToAdd,
@@ -59,8 +62,6 @@ const ShopCartBox = ({ sendmassage }) => {
     return () => {
       if (typeof emmiter.off === "function") {
         emmiter.off("massage", handler);
-      } else if (typeof emmiter.removeListener === "function") {
-        emmiter.removeListener("massage", handler);
       }
     };
   }, []);
@@ -87,9 +88,9 @@ const ShopCartBox = ({ sendmassage }) => {
     <ParentBox>
       {ProductsInShopCart.length === 0 ? (
         <>
-          <HederText component="h4">Item not found!</HederText>
+          <HederText as="h4">Item not found!</HederText>
           <Img
-            component="img"
+            as="img"
             src="https://exo.ir/catalog/view/theme/exo/image/gray-basket.svg"
             alt="bad ass~"
           ></Img>
@@ -104,6 +105,9 @@ const ShopCartBox = ({ sendmassage }) => {
           }}
         >
           <ControlShopingCart></ControlShopingCart>
+          <button onClick={() => console.log(ProductsInShopCart)}>
+            click me{" "}
+          </button>
         </contextUse.Provider>
       )}
     </ParentBox>

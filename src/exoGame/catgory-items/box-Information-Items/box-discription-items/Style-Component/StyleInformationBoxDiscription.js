@@ -11,7 +11,7 @@ const HederText = styled(Typography)({
   padding: "5px",
   fontSize: "2rem",
 });
-const BoxParent = styled(Typography)({
+const BoxParent = styled(Box)({
   display: "flex",
   flexDirection: "column",
 });

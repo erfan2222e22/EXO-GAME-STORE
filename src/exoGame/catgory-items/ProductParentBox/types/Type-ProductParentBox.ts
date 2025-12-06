@@ -24,7 +24,7 @@ interface Type_originalItems_ReadOnly {
   img: string;
   ProductReview: boolean | string;
   productSetting: string;
-  manufacturers: string;
+  Manufacturers: string;
   company: string;
   title: string;
 }

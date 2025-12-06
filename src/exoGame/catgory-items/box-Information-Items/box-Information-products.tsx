@@ -24,24 +24,29 @@ const BoxInfoProducts = () => {
 
   useEffect(() => {
     setProductsInformation(location.state);
-  }, []);
+  }, [productsInformation]);
 
   return (
     <>
       <PrentBox>
         <HederText>
           <Link to={"BoxDiscription"}>
-            Product review <ArrowRightIcon></ArrowRightIcon>
+            <span>Product review</span>
+            <ArrowRightIcon></ArrowRightIcon>
           </Link>
         </HederText>
+
         <HederText>
           <Link to="TableDiscription">
-            Characteristics <ArrowRightIcon></ArrowRightIcon>
+            <span>Characteristics</span>
+            <ArrowRightIcon></ArrowRightIcon>
           </Link>
         </HederText>
+
         <HederText>
           <Link to="Coments">
-            Comments <ArrowRightIcon></ArrowRightIcon>
+            <span>Comments</span>
+            <ArrowRightIcon></ArrowRightIcon>
           </Link>
         </HederText>
       </PrentBox>
