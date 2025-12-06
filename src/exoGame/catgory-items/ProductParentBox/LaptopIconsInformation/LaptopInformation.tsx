@@ -50,7 +50,6 @@ const LaptopInformation: Type_function = ({ originalItems }) => {
                 alt=""
                 src={item.srcIcon}
                 style={{ width: "60%", height: "60%" }}
-                // onClick={test}
               ></img>
               <span style={{ fontSize: "13px", color: "#6c757d" }}>
                 {item.text}

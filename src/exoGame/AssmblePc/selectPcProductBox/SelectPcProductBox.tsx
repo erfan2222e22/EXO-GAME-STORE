@@ -96,8 +96,8 @@ const SelectPcProductBox = () => {
       </ScrollElement>
 
       <TextHederBox>Details</TextHederBox>
-      {selectPCPartBox?.map((item: Type_SelectPCPartBox) => (
-        <SelctedParentBox>
+      {selectPCPartBox?.map((item: Type_SelectPCPartBox, key: number) => (
+        <SelctedParentBox key={key}>
           <AnimationBoxContainer>
             <AnimationBox
               sx={{

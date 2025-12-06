@@ -116,7 +116,7 @@ const CategoryPopularSlider = () => {
     <ParentDiv>
       <TextHeadr>pupolar catgory </TextHeadr>
       <Slider {...setting}>
-        {ProductList.map((items, index) => {
+        {ProductList.map((items) => {
           return (
             <Box key={items.id}>
               <LinkPath>

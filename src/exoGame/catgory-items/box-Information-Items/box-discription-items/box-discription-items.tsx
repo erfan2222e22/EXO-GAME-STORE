@@ -22,15 +22,16 @@ const BoxDiscriptionItems = ({ ...item }) => {
         })
         .catch((err) => FailToFetchDataPage());
     }
-  }, [arrayProducts, indexFristArrayProducts, item]);
+    console.log(false);
+  }, [arrayProducts, indexFristArrayProducts]);
 
   return (
     <>
       {item.ProductReview &&
-        indexFristArrayProducts.map((value) => {
+        indexFristArrayProducts.map((value, key) => {
           return (
-            <BoxParent>
-              <HederText>{value.hederText}</HederText>
+            <BoxParent key={key}>
+              <HederText as="h2">{value.hederText}</HederText>
               {valid && (
                 <Box
                   component="img"
@@ -55,17 +56,17 @@ const BoxDiscriptionItems = ({ ...item }) => {
 
       {item.ProductReview &&
         valid &&
-        arrayProducts.map((value) => {
+        arrayProducts.map((value, key) => {
           return (
-            <BoxParent>
-              <HederText>{value.hederText}</HederText>
+            <BoxParent key={key}>
+              <HederText as="h2">{value.hederText}</HederText>
               <Box
                 component="img"
                 sx={{ margin: "0 auto" }}
                 src={value.img}
                 alt="bad"
               ></Box>
-              <Paragraf>{value.discription}</Paragraf>
+              <>{value.discription}</>
             </BoxParent>
           );
         })}

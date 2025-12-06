@@ -2,7 +2,7 @@ import styleComponents from "./Style-Component/StyleDiscriotionItems";
 import { Box } from "@mui/material";
 import { Typography } from "@mui/material";
 import emmiter from "../../../../mitt/emmiter";
-import { Type_Ecvent, PropsTypes } from "./types/Type-ProductAddinCard";
+import { Type_Event, PropsTypes } from "./types/Type-ProductAddinCard";
 
 const ProductAddIncard: PropsTypes = ({
   SetProductCounter,
@@ -13,7 +13,7 @@ const ProductAddIncard: PropsTypes = ({
   const { ParentBoxAddItems, BoxInputCounterItemsInBox, BoxAddItems } =
     styleComponents;
 
-  const handelOnclickBtn = (e: Type_Ecvent) => {
+  const handelOnclickBtn = (e: Type_Event) => {
     e.stopPropagation();
     if (price === "بزودی" || price === "ناموجود") {
       e.preventDefault();
@@ -22,12 +22,12 @@ const ProductAddIncard: PropsTypes = ({
     }
   };
 
-  const increseQty = (e: Type_Ecvent) => {
+  const increseQty = (e: Type_Event) => {
     e.stopPropagation();
     SetProductCounter((preve) => preve + 1);
   };
 
-  const decriseQty = (e: Type_Ecvent) => {
+  const decriseQty = (e: Type_Event) => {
     e.stopPropagation();
     SetProductCounter((preve) => (preve > 1 ? preve - 1 : 1));
   };
@@ -82,7 +82,6 @@ const ProductAddIncard: PropsTypes = ({
           padding: "4px",
           overflow: "hidden",
         }}
-        onClick={() => console.log(item)}
       >
         Authenticity: and integrity <br /> guarantee + 10-day return policy
       </Typography>
