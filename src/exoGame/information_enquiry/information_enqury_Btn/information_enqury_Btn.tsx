@@ -1,6 +1,7 @@
 import contextUse from "../../useContext/useContext";
 import { useContext } from "react";
 import styleComponent from "./Style-Component/StyleInformationEnqury";
+import { UseContext_Type } from "./types/Type_information_enqury_Btn";
 const InformationEnquryBtn = () => {
   const { BtnSend } = styleComponent;
   const {
@@ -11,7 +12,7 @@ const InformationEnquryBtn = () => {
     correctRequest,
     setElmentInArray,
     setRequest,
-  } = useContext(contextUse);
+  }: UseContext_Type = useContext(contextUse);
 
   const resetInputValue = () => {
     const timeOut = 1000;
@@ -31,14 +32,12 @@ const InformationEnquryBtn = () => {
     const importantFildes = elmentsInArray
       .filter((fill) => fill.importeData)
       .every((fill) => fill.value.length > 0);
-    if (importantFildes && phoneNumberEroreBolean === false) {
+    if (importantFildes && !phoneNumberEroreBolean) {
       setCorrectRequest(true);
       setFailRequest(false);
-      console.log(`true handel onclick returns`);
     } else {
       setFailRequest(true);
       setCorrectRequest(false);
-      console.log(`false handel onclick returns`);
     }
     correctRequest && resetInputValue();
     console.log(phoneNumberEroreBolean);

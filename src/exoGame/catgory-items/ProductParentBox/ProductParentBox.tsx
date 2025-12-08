@@ -20,7 +20,6 @@ const ProductParentBoxComponent: Type_ComponentProps = ({
   const navigate = useNavigate();
 
   const handelOnClick: Type_handelOnClick = (e, item) => {
-
     e.stopPropagation();
     navigate(`/catgory/${pathName}/${item.id}`, {
       state: { itemProduct: item },

@@ -1,8 +1,8 @@
 import { Type_AsslbleContiner } from "../../../AssmblePc/types/types-AssmbleCniter";
 
 export interface Type_FilterValuse {
-  minPrice?: number | string;
-  maxPrice?: number | string;
+  minPrice: number | string;
+  maxPrice: number | string;
   company?: string[];
   Manufacturers?: string[];
   [key: string]:
