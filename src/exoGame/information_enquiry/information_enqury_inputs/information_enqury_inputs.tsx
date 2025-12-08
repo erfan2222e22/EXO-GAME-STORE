@@ -6,6 +6,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import styleComponent from "./Style-Component/StyleInformationEnqury";
+import { Types_useContext } from "./types/Types_information_enqury_inputs";
 const InformationEnquryInputs = () => {
   const { Inputs, ContinerInputs, HederBoxContiner } = styleComponent;
   const {
@@ -15,11 +16,11 @@ const InformationEnquryInputs = () => {
     phoneNumberEroreText,
     setRequest,
     setElmentInArray,
-    setPhoneNumberEroreText,
     setPhoneNumberEroreBolean,
-  } = useContext(contextUse);
+    setPhoneNumberEroreText,
+  }: Types_useContext = useContext(contextUse);
 
-  const PhoneNumberHndelErroe = (ItemName, e) => {
+  const PhoneNumberHndelErroe = (ItemName: string, e: any) => {
     const valueNumber = e.replace(/\D/g, "");
 
     if (ItemName === "phoneNumber") {
@@ -39,7 +40,7 @@ const InformationEnquryInputs = () => {
     }
   };
 
-  const handelAutocomplete = (e, newValue) => {
+  const handelAutocomplete = (e: any, newValue: any) => {
     setElmentInArray((prev) =>
       prev.map((item) =>
         item.name === "howNotifYou"
@@ -49,8 +50,8 @@ const InformationEnquryInputs = () => {
     );
   };
 
-  const handelOnchange = (itemName, e) => {
-    let valueText = e;
+  const handelOnchange = (itemName: string, e: any) => {
+    let valueText = e.target.value;
 
     setRequest((prev) => ({
       ...prev,
@@ -90,7 +91,7 @@ const InformationEnquryInputs = () => {
       <ContinerInputs>
         {elmentsInArray.map((item) => {
           return (
-            <Box index={item.id}>
+            <Box zIndex={item.id}>
               <Box>
                 <Box
                   sx={{
@@ -111,11 +112,9 @@ const InformationEnquryInputs = () => {
                 >
                   {item.type === "input" && (
                     <Inputs
-                      component="input"
+                      as="input"
                       type={item.name === "phoneNumber" ? "tel" : "text"}
-                      onChange={(e) =>
-                        handelOnchange(item.name, e.target.value)
-                      }
+                      onChange={(e) => handelOnchange(item.name, e)}
                       value={item.value}
                       placeholder={
                         item.name === "phoneNumber"
@@ -129,7 +128,7 @@ const InformationEnquryInputs = () => {
                       disablePortal
                       options={AutocompleteOptions}
                       renderInput={(params) => <TextField {...params} />}
-                      onChange={handelAutocomplete}
+                      onChange={(e) => handelAutocomplete(e, item)}
                     ></Autocomplete>
                   )}
 
@@ -151,6 +150,7 @@ const InformationEnquryInputs = () => {
 
                   {item.type === "textarea" && (
                     <textarea
+                      aria-label="."
                       onChange={(e) =>
                         handelOnchange(item.name, e.target.value)
                       }
