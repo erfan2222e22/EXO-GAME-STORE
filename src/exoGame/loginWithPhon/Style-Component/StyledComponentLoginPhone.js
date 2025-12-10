@@ -1,8 +1,8 @@
 import { styled } from "@mui/material/styles";
-import { TextField, Box, Button } from "@mui/material";
+import { TextField, Box, Button, Avatar } from "@mui/material";
 const LoginBox = styled(Box)({
   width: "300px",
-  height: "450px",
+  height: "100%",
   margin: "0 auto",
   position: "relative",
   textAlign: "center",
@@ -56,7 +56,7 @@ const CustomButton2 = styled(Button)({
   },
 });
 
-const Img = styled(Box)({
+const Img = styled(Avatar)({
   width: "70px",
   height: "70px",
   overflow: "hidden",

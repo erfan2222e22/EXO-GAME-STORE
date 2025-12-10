@@ -1,4 +1,4 @@
-import { AppBar, TextField, Toolbar, Box } from "@mui/material";
+import { AppBar, TextField, Toolbar, Box, Avatar } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 
@@ -51,7 +51,7 @@ const Spans = styled(Box)(({ theme }) => ({
   textAlign: "center",
 }));
 
-const Icons = styled(Box)({
+const Icons = styled(Avatar)({
   transition: "all 0.3s ease-in-out",
   fontSize: "25px",
   "&:hover": {
@@ -75,7 +75,7 @@ const LinkRoter = styled(Link)({
   textDecoration: "none",
   color: "#606060",
 });
-const LogoImg = styled(Box)(({ theme }) => ({
+const LogoImg = styled(Avatar)(({ theme }) => ({
   width: "70px",
   height: "70px",
   cursor: "pointer",
