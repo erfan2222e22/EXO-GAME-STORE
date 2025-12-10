@@ -1,7 +1,7 @@
 import { styled } from "@mui/material/styles";
-import { Box } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 
-const Inputs = styled(Box)({
+const Inputs = styled(TextField)({
   width: "95%",
   borderRadius: "0.4rem",
   margin: "1px",

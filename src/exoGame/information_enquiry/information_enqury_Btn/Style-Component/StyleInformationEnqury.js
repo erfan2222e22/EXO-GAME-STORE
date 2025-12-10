@@ -19,6 +19,6 @@ const BtnSend = styled(Box)({
   },
 });
 
-const styleComponent = BtnSend;
+const styleComponent = { BtnSend };
 
 export default styleComponent;
