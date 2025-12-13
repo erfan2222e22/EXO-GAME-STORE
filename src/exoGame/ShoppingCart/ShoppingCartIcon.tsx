@@ -1,6 +1,8 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import styleComponents from "./Style-Component/ShopIcon";
-const ShoppingCartIconBox = ({ valid, setValid, ProductLength }) => {
+import { Component_Porps } from "./types/type-ShopingCartIcon";
+
+const ShoppingCartIconBox: Component_Porps = ({ setValid, ProductLength }) => {
   const { BoxContiner, SpanText } = styleComponents;
   return (
     <BoxContiner>
