@@ -1,6 +1,7 @@
 .slick-dots {
+  overflow: hidden;
   position: absolute;
-  top: 80%;
+  top: 87%;
   left: 0;
   right: 0;
   font-size: 20px;

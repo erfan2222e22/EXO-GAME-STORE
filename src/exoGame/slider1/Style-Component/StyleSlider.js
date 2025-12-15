@@ -1,12 +1,15 @@
 import { Box, styled } from "@mui/system";
+import { Avatar } from "@mui/material";
 
-const BoxImg = styled(Box)({
+const ParentBox = styled(Box)({
   width: "95%",
   borderRadius: "20px",
-  height: "300px",
+  height: "100%",
   margin: "0 auto",
   marginTop: "140px",
   position: "relative",
+  overflow: "hidden",
+
   "& .slick-slider": {
     height: "100%",
   },
@@ -23,7 +26,17 @@ const BoxImg = styled(Box)({
     height: "100%",
   },
 });
+
+const ImgBox = styled(Avatar)({
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  borderRadius: "8px",
+  cursor: "pointer",
+});
+
 const styleComponent = {
-  BoxImg,
+  ParentBox,
+  ImgBox,
 };
 export default styleComponent;
