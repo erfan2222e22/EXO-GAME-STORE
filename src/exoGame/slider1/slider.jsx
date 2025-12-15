@@ -1,3 +1,10 @@
+import img1 from "./sliderImg/img1.jpg";
+import img2 from "./sliderImg/img2.jpg";
+import img3 from "./sliderImg/img3.jpg";
+import img4 from "./sliderImg/img4.jpg";
+import img5 from "./sliderImg/img5.jpg";
+import img6 from "./sliderImg/img6.jpg";
+import img7 from "./sliderImg/img7.jpg";
 import styleComponent from "./Style-Component/StyleSlider";
 import Slider from "react-slick";
 import { Box } from "@mui/material";
@@ -6,17 +13,11 @@ import axios from "axios";
 import "./Style-Component/slide.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
 import emmiter from "../../mitt/emmiter";
-import {
-  Type_sendAfewItems,
-  Type_sendSoloItem,
-  Type_NaviUse,
-} from "./types/Type-FrilstSlider";
-
-const FristSliderPage = () => {
-  const { ParentBox, ImgBox } = styleComponent;
+const Slider1 = () => {
+  const { BoxImg } = styleComponent;
   const useref = useRef(null);
   const navigate = useNavigate();
 
@@ -34,9 +35,9 @@ const FristSliderPage = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const imgsList = [
+  let imgsList = [
     {
-      img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Slider/Gaming%20Consoles%20slider%20pc%20v1%20copy-1600x400.jpg",
+      img: img1,
       jsoneServer: "http://localhost:3300/allConsoleProductsLinks",
       id: 1,
       solorItems: false,
@@ -44,7 +45,7 @@ const FristSliderPage = () => {
       title: "allConsoleProducts",
     },
     {
-      img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Slider/Gaming%20System%20slider%20pc%20v1%20copy-1600x400.jpg",
+      img: img2,
       jsoneServer: "http://localhost:3300/pcProduct",
       id: 2,
       solorItems: true,
@@ -52,7 +53,7 @@ const FristSliderPage = () => {
       title: "pcProduct",
     },
     {
-      img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Slider/Gaming%20Monitors%20slider%20pc%20v1%20copy-1600x400.jpg",
+      img: img3,
       jsoneServer: "http://localhost:3300/monitorProduct",
       id: 3,
       solorItems: true,
@@ -60,7 +61,7 @@ const FristSliderPage = () => {
       title: "monitorProduct",
     },
     {
-      img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Slider/MSI%20C%20v1%20copy-1600x400.jpg",
+      img: img4,
       jsoneServer: "http://localhost:3300/allMsiProductsLinks",
       jsonSetting: "http://localhost:3300/allMsiProductsSetting",
       id: 4,
@@ -68,7 +69,7 @@ const FristSliderPage = () => {
       title: "allMsiProducts",
     },
     {
-      img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Slider/Rendering%20Systems%20slider%20pc%20v1%20copy-1600x400.jpg",
+      img: img5,
       jsoneServer: "http://localhost:3300/rendringPcProducts",
       id: 5,
       solorItems: true,
@@ -76,7 +77,15 @@ const FristSliderPage = () => {
       title: "rendringPcProducts",
     },
     {
-      img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Slider/Accessories%20pc%20v1%20copy-1600x400.jpg",
+      img: img6,
+      jsoneServer: "http://localhost:3300/allAmdProductsLink",
+      id: 6,
+      solorItems: false,
+      jsonSetting: "http://localhost:3300/allAmdProductsSetting",
+      title: "allAmdProductsLink",
+    },
+    {
+      img: img7,
       jsoneServer: "http://localhost:3300/AccessoriesGaming",
       id: 7,
       solorItems: false,
@@ -108,59 +117,61 @@ const FristSliderPage = () => {
     ],
   };
 
-  const sendSoloItem: Type_sendSoloItem = async (JsoneServer, ItemTitle) => {
+  const sendSoloItem = async (e, JsoneServer, ItemTitle) => {
     try {
       const GetItems = axios.get(JsoneServer);
       const ReciveItems = (await GetItems).data;
-      NaviUse(ReciveItems, ItemTitle);
+      navigate(`/catgory/${ItemTitle}`, {
+        state: { product: ReciveItems, pathName: ItemTitle },
+      });
     } catch (err) {
-      FailToFetchDataPage();
+      FailToFetchDataPage(navigate);
     }
   };
 
-  const sendAfewItems: Type_sendAfewItems = async (
-    JsoneServer,
-    ItemTitle,
-    JsoneStting
-  ) => {
+  const sendAfewItems = async (e, JsoneServer, ItemTitle, JsoneStting) => {
     try {
       const { data: urls } = await axios.get(JsoneServer);
       const response = await Promise.all(
-        urls.map((data: string) =>
-          axios.get(data).then((values) => values.data)
-        )
+        urls.map((data) => axios.get(data).then((values) => values.data))
       );
+
       const flatedItems = response.flat();
-      let counterId = 0;
       flatedItems.forEach((value) => {
-        counterId += 1;
         value.productSetting = JsoneStting;
-        value.id = counterId;
       });
       NaviUse(flatedItems, ItemTitle);
     } catch (err) {
-      console.log(err);
+      FailToFetchDataPage(navigate);
     }
   };
 
-  const NaviUse: Type_NaviUse = (ItemsProducts, ItemTitle) => {
+  const NaviUse = (ItemsProducts, ItemTitle) => {
     navigate(`/catgory/${ItemTitle}`, {
       state: { product: ItemsProducts, pathName: ItemTitle },
     });
   };
 
   return (
-    <ParentBox>
+    <BoxImg sx={{}}>
       <Slider {...settings}>
         {imgsList.map((value) => (
-          <Box ref={useref} key={value.id}>
-            <ImgBox
-              as="img"
+          <Box ref={useref}>
+            <Box
+              component="img"
               src={value.img}
-              onClick={() => {
+              sx={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: "8px",
+                cursor: "pointer",
+              }}
+              onClick={(e) => {
                 value.solorItems
-                  ? sendSoloItem(value.jsoneServer, value.title)
+                  ? sendSoloItem(e, value.jsoneServer, value.title)
                   : sendAfewItems(
+                      e,
                       value.jsoneServer,
                       value.title,
                       value.jsonSetting
@@ -170,8 +181,8 @@ const FristSliderPage = () => {
           </Box>
         ))}
       </Slider>
-    </ParentBox>
+    </BoxImg>
   );
 };
 
-export default FristSliderPage;
+export default Slider1;
