@@ -10,6 +10,7 @@ const ScrollButtonBox = styled(Box)({
   color: "#ffff",
   backgroundColor: "#03c03c",
   borderRadius: "10px",
+  width: "5%",
   height: "7%",
   opacity: "0.5",
   cursor: "pointer",
@@ -19,9 +20,8 @@ const ScrollButtonBox = styled(Box)({
 });
 
 const ScrollButton = styled(Box)({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
+  position: "relative",
+  right: "10%",
 });
 
 const styleComponent = { ScrollButtonBox, ScrollButton };
