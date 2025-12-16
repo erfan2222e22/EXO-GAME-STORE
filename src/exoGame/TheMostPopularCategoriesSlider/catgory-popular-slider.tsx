@@ -7,6 +7,7 @@ import "./Style-Component/style.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
+import { Type_handelOnClick } from "./types/Type-catgory-popular-slider";
 
 const CategoryPopularSlider = () => {
   const { ParentDiv, BoxImg, TextHeadr, TextImg, LinkPath } = styleComponent;
@@ -100,16 +101,16 @@ const CategoryPopularSlider = () => {
     arrows: true,
   };
 
-  const handelOnClick = (items) => {
-    const json = items?.jsonServer || {};
-    axios
-      .get(json)
-      .then((data) => {
-        navigate(`catgory/${items.title}`, {
-          state: { product: data.data, pathName: items.title },
-        });
-      })
-      .catch((eror) => FailToFetchDataPage(navigate));
+  const handelOnClick: Type_handelOnClick = async (items) => {
+    const { jsonServer } = items || {};
+    try {
+      const { data: items } = await axios.get(jsonServer);
+      navigate(`catgory/${items.title}`, {
+        state: { product: items, pathName: items.title },
+      });
+    } catch (err) {
+      FailToFetchDataPage();
+    }
   };
 
   return (
@@ -122,7 +123,7 @@ const CategoryPopularSlider = () => {
               <LinkPath>
                 <BoxImg
                   onClick={() => handelOnClick(items)}
-                  component="img"
+                  as="img"
                   src={items?.src}
                   alt="😥"
                 ></BoxImg>
