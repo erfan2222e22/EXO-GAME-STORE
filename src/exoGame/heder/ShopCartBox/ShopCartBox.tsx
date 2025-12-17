@@ -1,13 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ControlShopingCart from "../ControlShopingCart/controlShopingCart";
 import emmiter from "../../../mitt/emmiter";
-import contextUse from "../../useContext/useContext";
 import styleComponent from "./Style-Component/StyleShopCartParentBox";
-import { Component_Props, handlerType } from "./types/Types_ShopCartBox";
-
+import {
+  Component_Props,
+  handlerType,
+  Type_UseContext_Main,
+} from "./types/Types_ShopCartBox";
+import { useShopCardContext } from "../../shopCardStateContext/ShopCardStateContext";
 const ShopCartBox: Component_Props = ({ sendmassage }) => {
-  const [ProductsInShopCart, setProductsInShopCart] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
+  const {
+    ProductsInShopCart,
+    setProductsInShopCart,
+    setTotalPrice,
+  }: Type_UseContext_Main = useShopCardContext();
 
   const { ParentBox, HederText, Img } = styleComponent;
 
@@ -21,7 +27,7 @@ const ShopCartBox: Component_Props = ({ sendmassage }) => {
 
         // Calculate total price
         const total = parsedCart.reduce(
-          (sum: number, item: { [key: string]: number }) =>
+          (sum: number, item: { price: number; qty: number }) =>
             sum + item.price * item.qty,
           0
         );
@@ -73,14 +79,14 @@ const ShopCartBox: Component_Props = ({ sendmassage }) => {
 
       // Calculate and update total price
       const total = ProductsInShopCart.reduce(
-        (sum, item) => sum + item.price * item.qty,
+        (sum, item) => sum + +item.price * +item.qty,
         0
       );
       setTotalPrice(total);
 
       sendmassage(ProductsInShopCart.length);
     } catch (error) {
-      console.error("Error saving cart to localStorage:", error);
+      console.log("Error saving cart to localStorage:", error);
     }
   }, [ProductsInShopCart, sendmassage]);
 
@@ -92,23 +98,11 @@ const ShopCartBox: Component_Props = ({ sendmassage }) => {
           <Img
             as="img"
             src="https://exo.ir/catalog/view/theme/exo/image/gray-basket.svg"
-            alt="bad ass~"
+            alt="😑"
           ></Img>
         </>
       ) : (
-        <contextUse.Provider
-          value={{
-            ProductsInShopCart,
-            setProductsInShopCart,
-            totalPrice,
-            setTotalPrice,
-          }}
-        >
-          <ControlShopingCart></ControlShopingCart>
-          <button onClick={() => console.log(ProductsInShopCart)}>
-            click me{" "}
-          </button>
-        </contextUse.Provider>
+        <ControlShopingCart></ControlShopingCart>
       )}
     </ParentBox>
   );
