@@ -4,10 +4,16 @@ import styleComponents from "./Style-Component/StyleControlShpingCart";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import { useEffect } from "react";
-import { useContext } from "react";
-import contextUse from "../../useContext/useContext";
 import { useNavigate } from "react-router-dom";
-import { Type_UseContext } from "./types/Types_ControlShopingCart";
+import {
+  Type_UseContext,
+  Type_incrementQty,
+  Type_decrementQty,
+  Type_delteShopCart,
+  Type_handelViewCart,
+  Type_handelClearBasket,
+} from "./types/Types_ControlShopingCart";
+import { useShopCardContext } from "../../shopCardStateContext/ShopCardStateContext";
 
 const ControlShopingCart = () => {
   const {
@@ -19,12 +25,13 @@ const ControlShopingCart = () => {
   } = styleComponents;
 
   const navigate = useNavigate();
+
   const {
     ProductsInShopCart,
     setProductsInShopCart,
     totalPrice,
     setTotalPrice,
-  }: Type_UseContext = useContext(contextUse);
+  }: Type_UseContext = useShopCardContext();
 
   useEffect(() => {
     setTotalPrice(
@@ -35,15 +42,12 @@ const ControlShopingCart = () => {
     );
   }, [ProductsInShopCart, setTotalPrice]);
 
-  const handelClearBasket = (e: React.MouseEvent<HTMLSpanElement>) => {
+  const handelClearBasket: Type_handelClearBasket = (e) => {
     e.stopPropagation();
     setProductsInShopCart([]);
   };
 
-  const incrementQty = (
-    e: React.MouseEvent<HTMLSpanElement>,
-    id: number | string
-  ) => {
+  const incrementQty: Type_incrementQty = (e, id) => {
     e.stopPropagation();
     setProductsInShopCart((prevProducts) =>
       prevProducts.map((item: any) =>
@@ -52,10 +56,7 @@ const ControlShopingCart = () => {
     );
   };
 
-  const decrementQty = (
-    e: React.MouseEvent<HTMLSpanElement>,
-    id: number | string
-  ) => {
+  const decrementQty: Type_decrementQty = (e, id) => {
     e.stopPropagation();
     setProductsInShopCart((prevProducts) =>
       prevProducts.map((item) =>
@@ -65,20 +66,14 @@ const ControlShopingCart = () => {
       )
     );
   };
-
-  const delteShopCart = (
-    e: React.MouseEvent<HTMLDivElement>,
-    id: number | string
-  ) => {
+  const delteShopCart: Type_delteShopCart = (e, id) => {
     e.stopPropagation();
     setProductsInShopCart((preve) => preve.filter((index) => index.id !== id));
   };
 
-  const handelViewCart = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handelViewCart: Type_handelViewCart = (e) => {
     e.stopPropagation();
-    navigate("/ShopingCartCheckout", {
-      state: { product: ProductsInShopCart },
-    });
+    navigate("/ShopingCartCheckout");
   };
 
   return (
