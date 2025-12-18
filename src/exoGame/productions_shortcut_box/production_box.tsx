@@ -2,8 +2,10 @@ import styleComponent from "./Style-Componetn/StyleProduction";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
+import { Type_handelOnclick } from "./types/types_Production_Box";
+
 const ProductionBox = () => {
-  const { ProductionItems } = styleComponent;
+  const { ProductionItems, ContinerBox } = styleComponent;
   const navigate = useNavigate();
 
   let items = [
@@ -28,29 +30,27 @@ const ProductionBox = () => {
     },
   ];
 
-  const handelOnclick = async (e, item) => {
+  const handelOnclick: Type_handelOnclick = async (e, item) => {
     e.stopPropagation();
-    console.log(item);
     try {
-      const dataFetch = axios.get(item.jsonServer);
+      const { data: dataFetch } = await axios.get(item.jsonServer);
       navigate(`/catgory/${item.title}`, {
-        state: { product: (await dataFetch).data, pathName: item.title },
+        state: { product: dataFetch, pathName: item.title },
       });
     } catch (err) {
-      FailToFetchDataPage(navigate);
+      FailToFetchDataPage();
     }
   };
 
   const assemblePcRoting = () => navigate(`pc_assemble`);
 
   return (
-    <>
+    <ContinerBox>
       {items.map((item) => {
         return (
           <ProductionItems
             key={item.id}
-            sx={{ cursor: "pointer" }}
-            component="img"
+            as="img"
             src={item.img}
             onClick={
               item.valid ? (e) => handelOnclick(e, item) : assemblePcRoting
@@ -58,7 +58,7 @@ const ProductionBox = () => {
           ></ProductionItems>
         );
       })}
-    </>
+    </ContinerBox>
   );
 };
 
