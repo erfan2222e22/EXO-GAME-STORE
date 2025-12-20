@@ -3,8 +3,14 @@ import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import styleComponents from "./Style-Component/StyleCatgory.js";
-import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage.jsx";
-import CatgoryJsx from "./catgoryJsx.jsx";
+import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage";
+import CatgoryJsx from "./catgoryJsx";
+import {
+  Type_CatgoryProps,
+  Type_FilterValuse,
+  Type_originalItems_extends,
+  setPriceFunction,
+} from "./types/types-Catgory.js";
 
 const Catgory = ({
   product: propProduct,
@@ -13,7 +19,7 @@ const Catgory = ({
   setSelectPCPartBox,
   closeCatgoryPcShape,
   findTruetoChooseItems,
-}) => {
+}: Type_CatgoryProps) => {
   const { MainBox, SmallSizeMainBox } = styleComponents; // styled component
   const location = useLocation();
   const navigate = useNavigate();
@@ -27,24 +33,25 @@ const Catgory = ({
 
   const filterValuesTols = product[0].productSetting;
   //main state
-  const [FilterValue, setFilterValue] = useState({});
+  const [FilterValue, setFilterValue] = useState<Type_FilterValuse>({});
 
-  // const initialItems = product;
-
-  const [originalItems, setOriginalItems] = useState(product); // all items catch from json server
+  const [originalItems, setOriginalItems] =
+    useState<Type_originalItems_extends[]>(product); // all items catch from json server
   const [filteredItems, setFilteredItems] = useState([]); //flterd items between slected filters
 
   const [kind_filters, setKind_filters] = useState([]); //filterd valus box
   const [value_kind_filter, setKind_filters_value] = useState();
 
-  const [valid, setValid] = useState(false);
+  const [bolShowSmallBox, SetBolShowSmallBox] = useState(false);
+
   const [displayFilterBox, setDisplayFilterBox] = useState(true);
 
-  const dynamicFilterVlause = (itemData) => {
-    const itemDataValue = itemData.data.filterValues[0];
+  const SetEmptyDynamicFilterKeys = (itemData: Type_FilterValuse) => {
+    const itemDataValue = itemData[0];
     let productDataKyeAndValuse = Object.fromEntries(
       Object.entries(itemDataValue).map(([item, value]) => {
         if (typeof value === "number") {
+          //valuse are default 0 or empty string
           return [item, 0];
         } else {
           return [item, ""];
@@ -55,24 +62,27 @@ const Catgory = ({
   };
 
   useEffect(() => {
-    // catch data from server and set items on state items
-    axios(filterValuesTols)
-      .then((itemData) => {
-        dynamicFilterVlause(itemData);
-        setKind_filters_value(itemData.data.filterValues);
-        setKind_filters(itemData.data.kindofFilter);
-      })
-      .catch((err) => {
-        FailToFetchDataPage(navigate);
-      });
-  }, [product, filterValuesTols]);
+    // get data from productSetting
+    const fetchData = async () => {
+      try {
+        const { data: show } = await axios.get(filterValuesTols);
+        SetEmptyDynamicFilterKeys(show.filterValues);
+        setKind_filters_value(show.filterValues);
+        setKind_filters(show.kindofFilter);
+      } catch (err) {
+        FailToFetchDataPage();
+      }
+    };
+    fetchData();
+  }, [filterValuesTols]);
 
-  const handeOnClick = (selectedValue) => {
+  const setPriceFunction: setPriceFunction = (selectedValue) => {
     // for now set filters valuse in state
+    const { maxPrice, minPrice } = selectedValue;
     setFilterValue((prev) => ({
       ...prev,
-      minPrice: selectedValue.minPrice,
-      maxPrice: selectedValue.maxPrice,
+      minPrice: minPrice,
+      maxPrice: maxPrice,
     }));
   };
 
@@ -93,20 +103,19 @@ const Catgory = ({
     }
 
     const filtered = originalItems.filter((item) => {
-      const price = parseInt(item.price, 10);
+      const price = parseInt(String(item.price), 10);
       const priceOk =
         (!hasMin || price >= minPrice) && (!hasMax || price <= maxPrice);
       if (!priceOk) return false;
       return activeFilters.every(([key, value]) => item[key] === value);
     });
-
     setFilteredItems(filtered);
   };
 
   const props = {
     originalItems: originalItems,
     setFilteredItems: setFilteredItems,
-    setValid: setValid,
+    SetBolShowSmallBox: SetBolShowSmallBox,
     setOriginalItems: setOriginalItems,
     initialItems: product,
     setFilterValue: setFilterValue,
@@ -120,10 +129,10 @@ const Catgory = ({
     findTruetoChooseItems: findTruetoChooseItems,
     FilterValue: FilterValue,
     kind_filters: kind_filters,
-    handeOnClick: handeOnClick,
+    setPriceFunction: setPriceFunction,
     itemsSetting: value_kind_filter,
     filterItmes: filterItmes,
-    valid: valid,
+    bolShowSmallBox: bolShowSmallBox,
     displayFilterBox: displayFilterBox,
     SmallSizeMainBox: SmallSizeMainBox,
     MainBox: MainBox,
