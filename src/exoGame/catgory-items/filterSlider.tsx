@@ -2,11 +2,14 @@ import { Typography, Box, Slider } from "@mui/material";
 import component from "./Style-Component/StyleFilterSlider";
 import { useEffect, useState } from "react";
 import { Props_Component, Type_handelOnchange } from "./Types_FilterSlider";
-const FilterSlider = ({ onFilterChange }: Props_Component) => {
+const FilterSlider: Props_Component = ({ setPriceFunction }) => {
   const { InsideBox, TextItems } = component;
-  const [maxValue] = useState(20000);
-  const [minValue] = useState(100);
-  const [valueSlider, setValueSlider] = useState([minValue, maxValue]);
+  const [maxValuePrice] = useState(20000);
+  const [minValuePrice] = useState(100);
+  const [valueSlider, setValueSlider] = useState([
+    minValuePrice,
+    maxValuePrice,
+  ]);
   const [ItemsSlider, ItemsSetSlider] = useState([]);
 
   useEffect(() => {
@@ -23,7 +26,7 @@ const FilterSlider = ({ onFilterChange }: Props_Component) => {
 
   const handelOnchange: Type_handelOnchange = (event, newitem) => {
     setValueSlider(newitem);
-    onFilterChange({
+    setPriceFunction({
       minPrice: valueSlider[0],
       maxPrice: valueSlider[1],
     });
@@ -39,8 +42,8 @@ const FilterSlider = ({ onFilterChange }: Props_Component) => {
                 valueLabelDisplay="auto"
                 onChange={handelOnchange}
                 value={valueSlider}
-                max={maxValue}
-                min={minValue}
+                max={maxValuePrice}
+                min={minValuePrice}
               />
               <Box
                 sx={{
