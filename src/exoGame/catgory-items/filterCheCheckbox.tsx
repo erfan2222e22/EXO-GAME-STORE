@@ -1,20 +1,22 @@
 import { Checkbox, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import { Box } from "@mui/material";
 import { Component_Props } from "./Types_FilterCheckBox";
-
+import { Type_FilterValuse } from "./mainCatgoryPage/types/types-Catgory";
+import styleComponent from "./Style-Component/styleFilterCheckBox";
 const FilterCheckbox = ({
   filterType,
   onFilterChange,
   setingConsoleFilters,
   FilterValue,
 }: Component_Props) => {
+  const { ParntBox, ContinerBox } = styleComponent;
   const [filter, setFilter] = useState({});
-  const [filterValues, setfilterValues] = useState([]);
+  const [filterValues, setfilterValues] = useState<Type_FilterValuse>(
+    {} as Type_FilterValuse
+  );
 
   useEffect(() => {
-    setfilterValues(setingConsoleFilters[0]);
-    console.log(filter);
+    setfilterValues(setingConsoleFilters);
   }, [setingConsoleFilters]);
 
   const handeClickBox = (value: string[]) => {
@@ -26,30 +28,23 @@ const FilterCheckbox = ({
       });
       return prev;
     });
+    console.log();
   };
 
+  const currentFilterValues =
+    (filterValues[filterType] as string[] | undefined) || [];
+
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        gap: 1,
-      }}
-    >
-      {filterValues[filterType]?.map((value: string[], index: number) => (
-        <Box
-          key={index}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: 1,
-          }}
-        >
-          <Checkbox onClick={() => handeClickBox(value)} />
-          <Typography>{value}</Typography>
-        </Box>
-      ))}
-    </Box>
+    <ParntBox>
+      {currentFilterValues.map((value: string, index: number) => {
+        return (
+          <ContinerBox key={index}>
+            <Checkbox onClick={() => handeClickBox([value])} />
+            <Typography sx={{ overflow: "hidden" }}>{value}</Typography>
+          </ContinerBox>
+        );
+      })}
+    </ParntBox>
   );
 };
 
