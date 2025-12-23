@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Component_Props } from "./Types_FilterCheckBox";
 import { Type_FilterValuse } from "./mainCatgoryPage/types/types-Catgory";
 import styleComponent from "./Style-Component/styleFilterCheckBox";
+
 const FilterCheckbox = ({
   filterType,
   onFilterChange,
@@ -12,38 +13,36 @@ const FilterCheckbox = ({
   const { ParntBox, ContinerBox } = styleComponent;
   const [filter, setFilter] = useState({});
   const [filterValues, setfilterValues] = useState<Type_FilterValuse>(
-    {} as Type_FilterValuse
+    {} as Type_FilterValuse | [] as Type_FilterValuse
   );
-
   useEffect(() => {
-    setfilterValues(setingConsoleFilters);
-  }, [setingConsoleFilters]);
+    setfilterValues(setingConsoleFilters[0]);
+  }, []);
 
-  const handeClickBox = (value: string[]) => {
+  const handeClickBox = (value: string) => {
     setFilter((prev) => {
       Object.keys(FilterValue).forEach((item) => {
         if (filterType === item) {
-          onFilterChange(item, value);
+          onFilterChange(item, value); //send data to function
         }
       });
       return prev;
     });
-    console.log();
   };
 
-  const currentFilterValues =
-    (filterValues[filterType] as string[] | undefined) || [];
+  const currentFilterValues = (filterValues[filterType] as string[]) || [];
 
   return (
     <ParntBox>
       {currentFilterValues.map((value: string, index: number) => {
         return (
           <ContinerBox key={index}>
-            <Checkbox onClick={() => handeClickBox([value])} />
+            <Checkbox onClick={() => handeClickBox(value)} />
             <Typography sx={{ overflow: "hidden" }}>{value}</Typography>
           </ContinerBox>
         );
       })}
+      <button onClick={() => console.log(setingConsoleFilters)}>slame </button>
     </ParntBox>
   );
 };
