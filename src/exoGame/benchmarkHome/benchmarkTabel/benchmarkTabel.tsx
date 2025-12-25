@@ -11,7 +11,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/system";
 import { useState } from "react";
-import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage";
+import { AxiosError } from "axios";
+import { Type_originalItems_extends } from "../../catgory-items/mainCatgoryPage/types/types-Catgory";
+import { Type_handelOnclick } from "./types/type-benchmark-table";
 const BenchmarkTabel = () => {
   const {
     ContiberBoxDiv,
@@ -32,13 +34,14 @@ const BenchmarkTabel = () => {
   const { products } = location.state || {};
   const navigate = useNavigate();
 
-  const [test, setTest] = useState(products);
+  const [test, setTest] = useState<Type_originalItems_extends[]>(products);
   const [switchToOutOfStock, setSwitchToOutOfStock] = useState(false);
   const [switchToShowItems, setSwitchToShowItems] = useState(false);
 
-  const handelOnclick = (item) => {
+  const handelOnclick: Type_handelOnclick = (item) => {
+    const { id, title } = item;
     axios
-      .get(`http://localhost:3300/${item.title}/${item.id}`)
+      .get(`http://localhost:3300/${title}/${id}`)
       .then((data) => {
         const dataItems = [data.data];
         navigate(`/catgory/cpu-product`, {
@@ -46,7 +49,11 @@ const BenchmarkTabel = () => {
         });
       })
       .catch((err) => {
-        FailToFetchDataPage(navigate);
+        const errStatus = err as AxiosError;
+        axios.isAxiosError(err) &&
+          navigate("/failedToFetch", {
+            state: { errorStatus: errStatus.status },
+          });
       });
   };
 
@@ -82,7 +89,7 @@ const BenchmarkTabel = () => {
         </Text>
         <ContainerBtns>
           <BtnSortItems
-            component="button"
+            as="button"
             onClick={handel_Onclick_Sort_Out_Of_Stock_Products}
             sx={{
               backgroundColor: switchToOutOfStock && "#03c03c",
@@ -92,7 +99,7 @@ const BenchmarkTabel = () => {
             Display available products
           </BtnSortItems>
           <BtnSortItems
-            component="button"
+            as="button"
             onClick={handel_Onclick_Show_All_Items}
             sx={{
               backgroundColor: switchToShowItems && "#03c03c",
@@ -104,7 +111,7 @@ const BenchmarkTabel = () => {
         </ContainerBtns>
       </ContiberBoxHeder>
 
-      <TabelParentContainer component={Paper}>
+      <TabelParentContainer as={Paper}>
         <Table>
           <TableHead>
             <TableRow sx={{ backgroundColor: "#e5f9eb" }}>
@@ -119,7 +126,7 @@ const BenchmarkTabel = () => {
           </TableHead>
           <TableBody>
             {test
-              .sort((a, b) => b.chartNumber - a.chartNumber)
+              .sort((a, b) => Number(b.chartNumber) - Number(a.chartNumber))
               .map((item) => {
                 return (
                   <TableRowBody key={item.id}>
@@ -131,13 +138,22 @@ const BenchmarkTabel = () => {
                       </ChartContiner>
                     </BodyTabelCell>
 
-                    <BodyTabelCell>{item.benchmarkNumber}</BodyTabelCell>
-                    <BodyTabelCell>{item.price}</BodyTabelCell>
+                    <BodyTabelCell>
+                      {String(item.benchmarkNumber)}
+                    </BodyTabelCell>
+                    <BodyTabelCell
+                      sx={{
+                        color:
+                          item.price === "ناموجود" && "rgba(253, 0, 0, 0.8)",
+                      }}
+                    >
+                      {item.price}
+                    </BodyTabelCell>
                     <BodyTabelCell>
                       <Tooltip title="show" placement="top">
                         <ShowIcon
                           onClick={() => handelOnclick(item)}
-                          component={ChevronRightIcon}
+                          as={ChevronRightIcon}
                         ></ShowIcon>
                       </Tooltip>
                     </BodyTabelCell>

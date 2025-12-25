@@ -9,7 +9,6 @@ const ParentDiv = styled(Box)({
 });
 
 const ParentListDiv = styled(Box)({
-  backgroundColor: "white",
   height: "600px",
   display: "flex",
   justifyContent: "center",
