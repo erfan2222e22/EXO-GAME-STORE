@@ -2,7 +2,8 @@ import { Box } from "@mui/material";
 import styleComponents from "./Style-Component/StyleBenchMarklLst";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage";
+import { AxiosError } from "axios";
+import { type_handelOnclick } from "./types/type-BenchmarkList";
 const BenchmarkList = () => {
   const { ParentDiv, ParentListDiv, DivItems, ItemsText, HederText } =
     styleComponents;
@@ -47,7 +48,7 @@ const BenchmarkList = () => {
     },
   ];
 
-  const handelOnclick = (item) => {
+  const handelOnclick: type_handelOnclick = (item) => {
     axios
       .get(item.jsoneServer)
       .then((data) => {
@@ -56,7 +57,11 @@ const BenchmarkList = () => {
         });
       })
       .catch((err) => {
-        FailToFetchDataPage(navigate);
+        const errStatus = err as AxiosError;
+        axios.isAxiosError(err) &&
+          navigate("/failedToFetch", {
+            state: { errorStatus: errStatus.status },
+          });
       });
   };
 
@@ -68,7 +73,7 @@ const BenchmarkList = () => {
           return (
             <DivItems key={item.id} onClick={() => handelOnclick(item)}>
               <Box component="img" src={item.img} alt="☠"></Box>
-              <ItemsText component="h6">{item.text}</ItemsText>
+              <ItemsText as="h6">{item.text}</ItemsText>
             </DivItems>
           );
         })}
