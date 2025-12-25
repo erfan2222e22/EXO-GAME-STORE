@@ -2,7 +2,7 @@ import React from "react";
 import styleComponent from "./Style-Component/StyleContentHeder";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import FailToFetchDataPage from "../../../failToFetchDataPage/failToFetchDataPage";
+import { AxiosError } from "axios";
 import {
   Component_Props,
   navigatingRoter,
@@ -29,7 +29,11 @@ const HederCatgoryContent: Component_Props = ({
       );
       valid_Status === 200 && navigatingRoter(values);
     } catch (err) {
-      FailToFetchDataPage();
+      const errStatus = err as AxiosError;
+      axios.isAxiosError(err) &&
+        navigate("/failedToFetch", {
+          state: { errorStatus: errStatus.status },
+        });
     }
   };
 
@@ -40,7 +44,6 @@ const HederCatgoryContent: Component_Props = ({
           style={{
             fontWeight: item.type === "text" ? "normal" : "bolder",
             cursor: "pointer",
-            color: "red",
           }}
           onClick={handelOnClick}
         >

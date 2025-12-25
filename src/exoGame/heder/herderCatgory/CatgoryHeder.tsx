@@ -2,9 +2,9 @@ import styleComponent from "./Style-Component/StyleCatgoryHeder";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import HederCatgoryContent from "./hederCatgoryText/HederCatgoryContent";
-import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage";
+import { AxiosError } from "axios";
 import ParentEmptyImg from "./emptyiImgBox/ParentEmptyBoxImg";
-
+import { useNavigate } from "react-router-dom";
 import {
   Component_Props,
   itemsType,
@@ -27,7 +27,7 @@ const HederCatgory: Component_Props = ({ setCatgoryDisplay }) => {
     { fristHalfArray: [], secendHalfArray: [], imgAddrs: "" },
   ]);
   const { fristHalfArray, secendHalfArray, imgAddrs } = ReciveDataValue[0];
-
+  const navigate = useNavigate();
   const fetchData = async () => {
     try {
       const { data: Dataitems } = await axios.get(
@@ -35,7 +35,11 @@ const HederCatgory: Component_Props = ({ setCatgoryDisplay }) => {
       );
       setReciveData(await Dataitems);
     } catch (err) {
-      FailToFetchDataPage();
+      const errStatus = err as AxiosError;
+      axios.isAxiosError(err) &&
+        navigate("/failedToFetch", {
+          state: { errorStatus: errStatus.status },
+        });
     }
   };
 
@@ -127,7 +131,7 @@ const HederCatgory: Component_Props = ({ setCatgoryDisplay }) => {
           </CatgoryContiner>
           <ImgBox>
             <img
-              src={imgAddrs}
+              src={ReciveDataValue[0].imgAddrs}
               style={{ width: "100%", height: "100%" }}
               alt="🖼"
             ></img>

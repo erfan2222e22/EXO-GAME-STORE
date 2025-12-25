@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import styleComponent from "./Style-Component/StyleBestLaptopBrand";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
+import { AxiosError } from "axios";
 import {
   Types_itmes,
   Types_BestBrandLaptop,
@@ -10,7 +10,7 @@ import {
 const BestBrandLaptop = () => {
   const { ParentDiv, TextHead, BoxImg, TextItems } = styleComponent;
   const navigate = useNavigate();
-  const itmes: Types_itmes[] = [
+  const itmesLaotop: Types_itmes[] = [
     {
       imgs: "https://exo.ir/image/cache/catalog/New_Template/Banners/carousel_banner/Icons%20Cat%20v1%20Acer-400x400.png",
       text: "Acer",
@@ -47,19 +47,24 @@ const BestBrandLaptop = () => {
           state: { product: data.data, pathName: "laptopProduct" },
         });
       })
-      .catch((err) => FailToFetchDataPage());
+      .catch((err) => {
+        const errStatus = err as AxiosError;
+        axios.isAxiosError(err) &&
+          navigate("/failedToFetch", {
+            state: { errorStatus: errStatus.status },
+          });
+      });
   };
 
   return (
     <Box>
       <TextHead>best laptop brands</TextHead>
       <ParentDiv>
-        {itmes.map((item) => {
+        {itmesLaotop.map((item) => {
           return (
             <Box key={item.id}>
               <BoxImg
                 onClick={() => handeloOnclick(item)}
-                // component="img"
                 src={item.imgs}
                 alt="☹"
               ></BoxImg>

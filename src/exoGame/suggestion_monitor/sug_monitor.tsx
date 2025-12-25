@@ -1,8 +1,11 @@
 import { Box } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import styleComponent from "./Style-Component/StyleSugestMonitor";
-import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
+import { Type_handelOnclick } from "./types/type-Sug-Monitor";
+import { useNavigate } from "react-router-dom";
+import { AxiosError } from "axios";
+import { isAxiosError } from "axios";
+
 const SugMonitor = () => {
   const { DivParent, DivImg, Text, HeadrText } = styleComponent;
   const items = [
@@ -33,16 +36,20 @@ const SugMonitor = () => {
   ];
   const navigate = useNavigate();
 
-  const handelOnclick = (item) => {
-    const itemsJsonLinks = `http://localhost:3300/monitorProduct?ImageResolutionSpecification=${item.text}`;
-    axios
-      .get(itemsJsonLinks)
-      .then((data) => {
-        navigate(`catgory/${item.text}`, {
-          state: { product: data.data, pathName: "monitorProduct" },
+  const handelOnclick: Type_handelOnclick = async (item) => {
+    try {
+      const itemsJsonLinks = `http://localhost:3300/monitorProduc2t?ImageResolutionSpecification=${item.text}`;
+      const { data: items } = await axios.get(itemsJsonLinks);
+      navigate(`catgory/${item.text}`, {
+        state: { product: items, pathName: "monitorProduct" },
+      });
+    } catch (err) {
+      const errStatus = err as AxiosError;
+      axios.isAxiosError(err) &&
+        navigate("/failedToFetch", {
+          state: { errorStatus: errStatus.status },
         });
-      })
-      .catch((err) => FailToFetchDataPage(navigate));
+    }
   };
 
   return (
@@ -58,7 +65,7 @@ const SugMonitor = () => {
                 onClick={() => handelOnclick(item)}
                 sx={{ cursor: "pointer" }}
               >
-                <DivImg component="img" src={item.img}></DivImg>
+                <DivImg as="img" src={item.img}></DivImg>
                 <Text>{item.text}</Text>
               </Box>
             </Box>

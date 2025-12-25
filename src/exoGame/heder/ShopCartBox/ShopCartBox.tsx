@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import ControlShopingCart from "../ControlShopingCart/controlShopingCart";
 import emmiter from "../../../mitt/emmiter";
 import styleComponent from "./Style-Component/StyleShopCartParentBox";
+import axios from "axios";
+import { AxiosError } from "axios";
+import { useNavigate } from "react-router-dom";
 import {
   Component_Props,
   handlerType,
@@ -16,7 +19,7 @@ const ShopCartBox: Component_Props = ({ sendmassage }) => {
   }: Type_UseContext_Main = useShopCardContext();
 
   const { ParentBox, HederText, Img } = styleComponent;
-
+  const navigate = useNavigate();
   // Load cart data from localStorage on component mount
   useEffect(() => {
     try {
@@ -34,7 +37,11 @@ const ShopCartBox: Component_Props = ({ sendmassage }) => {
         setTotalPrice(total);
       }
     } catch (error) {
-      console.error("Error loading cart from localStorage:", error);
+      const errStatus = error as AxiosError;
+      axios.isAxiosError(error) &&
+        navigate("/failedToFetch", {
+          state: { errorStatus: errStatus.status },
+        });
     }
   }, []);
 

@@ -1,7 +1,7 @@
 import styleComponents from "./Style-Componet/StyleConsoleGm";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
+import { AxiosError } from "axios";
 import { handelOnClickType } from "./types/Type_Console_gm_slider";
 
 const ConsoleGamingSlider = () => {
@@ -21,7 +21,11 @@ const ConsoleGamingSlider = () => {
         });
       }
     } catch (err) {
-      FailToFetchDataPage();
+      const errStatus = err as AxiosError;
+      axios.isAxiosError(err) &&
+        navigate("/failedToFetch", {
+          state: { errorStatus: errStatus.status },
+        });
     }
   };
 
