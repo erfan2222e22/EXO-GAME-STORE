@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import contextUse from "../../useContext/useContext";
-import { Avatar, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import styleComponents from "./Style-Component/StyleSelectPcProductBox";
 import { useState } from "react";
 import axios from "axios";
 import CatgoryPcBox from "./CatgoryBox/CatgoryPcBox";
 import SelectedItemEdited from "../SelectedItemEdited/SelectedItemEdited";
-import FailToFetchDataPage from "../../failToFetchDataPage/failToFetchDataPage";
+import { AxiosError } from "axios";
 import * as Scroll from "react-scroll";
-
+import { useNavigate } from "react-router-dom";
 import {
   Type_SelectPCPartBox,
   EventClick_Types,
@@ -40,7 +40,7 @@ const SelectPcProductBox = () => {
 
   const [DisplayCatgory, setDisplayCatgory] = useState<boolean>(false);
   const [categoryData, setCategoryData] = useState<SwitchCatgoryData>(null);
-
+  const navigate = useNavigate();
   const handelAddPcClick: Type_handelAddPcClick = async (e, item) => {
     try {
       // recive  data from server when click on btn
@@ -51,7 +51,11 @@ const SelectPcProductBox = () => {
       switchtoChooseProducts(item);
       Scroll.scroller.scrollTo("catgoryBox"); // scroll on catgoryProducts
     } catch (err) {
-      FailToFetchDataPage();
+      const errStatus = err as AxiosError;
+      axios.isAxiosError(err) &&
+        navigate("/failedToFetch", {
+          state: { errorStatus: errStatus.status },
+        });
     }
   };
 
@@ -79,7 +83,6 @@ const SelectPcProductBox = () => {
         fill.toChoose === true ? { ...fill, toChoose: false } : fill
       )
     );
-    console.log(findTruetoChooseItems()[0]);
   };
 
   return (

@@ -3,7 +3,7 @@ import styleComponent from "./Style-Component/StylePlaystaionXboxSlider";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
+import { AxiosError } from "axios";
 import { Type_handelClickLink } from "./types/Type_PlayStaionXbox";
 
 const PlaystaionXboxConsoleSlider = () => {
@@ -39,7 +39,11 @@ const PlaystaionXboxConsoleSlider = () => {
         state: { product: PropductData, pathName: title },
       });
     } catch (err) {
-      FailToFetchDataPage();
+      const errStatus = err as AxiosError;
+      axios.isAxiosError(err) &&
+        navigate("/failedToFetch", {
+          state: { errorStatus: errStatus.status },
+        });
     }
   };
 

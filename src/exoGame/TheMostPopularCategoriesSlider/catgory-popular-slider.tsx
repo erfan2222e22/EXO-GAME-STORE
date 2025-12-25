@@ -6,8 +6,8 @@ import styleComponent from "./Style-Component/StyleCategoryPopularSlider";
 import "./Style-Component/style.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
 import { Type_handelOnClick } from "./types/Type-catgory-popular-slider";
+import { AxiosError } from "axios";
 
 const CategoryPopularSlider = () => {
   const { ParentDiv, BoxImg, TextHeadr, TextImg, LinkPath } = styleComponent;
@@ -109,7 +109,11 @@ const CategoryPopularSlider = () => {
         state: { product: items, pathName: items.title },
       });
     } catch (err) {
-      FailToFetchDataPage();
+      const errStatus = err as AxiosError;
+      axios.isAxiosError(err) &&
+        navigate("/failedToFetch", {
+          state: { errorStatus: errStatus.status },
+        });
     }
   };
 

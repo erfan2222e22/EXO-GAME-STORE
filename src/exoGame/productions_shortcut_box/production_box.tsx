@@ -1,7 +1,7 @@
 import styleComponent from "./Style-Componetn/StyleProduction";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import FailToFetchDataPage from "../failToFetchDataPage/failToFetchDataPage";
+import { AxiosError } from "axios";
 import { Type_handelOnclick } from "./types/types_Production_Box";
 
 const ProductionBox = () => {
@@ -38,7 +38,11 @@ const ProductionBox = () => {
         state: { product: dataFetch, pathName: item.title },
       });
     } catch (err) {
-      FailToFetchDataPage();
+      const errStatus = err as AxiosError;
+      axios.isAxiosError(err) &&
+        navigate("/failedToFetch", {
+          state: { errorStatus: errStatus.status },
+        });
     }
   };
 
