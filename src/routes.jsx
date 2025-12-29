@@ -1,39 +1,44 @@
-import LoginWithPhone from "./exoGame/loginWithPhon/loginWithPhone.jsx";
-import Footer from "./exoGame/foter/footer.jsx";
-import AboutUs from "./exoGame/aboutUs/aboutUs.jsx";
-import Slider1 from "./exoGame/slider1/slider.jsx";
-import ProductionBox from "./exoGame/productions_shortcut_box/production_box.jsx";
-import SliderContainer from "./exoGame/sliderContiner/sliderContainer.jsx";
-import ConsoleGamingSlider from "./exoGame/consoleGaming/console_gm_slider.jsx";
-import SugMonitor from "./exoGame/suggestion_monitor/sug_monitor.jsx";
-import BestBrandLaptop from "./exoGame/bestMonitorBrand/best-laptop-brand.jsx";
-import FormAndBenchmarkSlider from "./exoGame/form-and-benchmark-slide/form-and-benchmark-slider.jsx";
-import CategoryPopularSlider from "./exoGame/TheMostPopularCategoriesSlider/catgory-popular-slider.jsx";
-import PlaystaionXboxConsoleSlider from "./exoGame/playstaion-xbox-console-slide/playstaion-xbox-console-slide.jsx";
-import Catgory from "./exoGame/catgory-items/mainCatgoryPage/catgory.jsx";
-import BenchmarkHome from "./exoGame/benchmarkHome/benchmarkHome.jsx";
-import ProductDiscription from "./exoGame/catgory-items/productDiscription/ProductDiscription.jsx";
-import IconsSlider from "./exoGame/catgory-items/productDiscription/iconsSlider/IconsSlider.jsx";
-import BoxInfoProducts from "./exoGame/catgory-items/box-Information-Items/box-Information-products.jsx";
-import HederPrentBox from "./exoGame/heder/HederPrentBox/HederPrentBox.jsx";
-import BenchmarkTabel from "./exoGame/benchmarkHome/benchmarkTabel/benchmarkTabel.jsx";
-import InformationEnquiry from "./exoGame/information_enquiry/information_enquiry.jsx";
+import LoginWithPhone from "./exoGame/loginWithPhon/loginWithPhone.tsx";
+import Footer from "./exoGame/foter/footer.tsx";
+import AboutUs from "./exoGame/aboutUs/aboutUs.tsx";
+import FristSliderPage from "./exoGame/slider1/slider.tsx";
+import ProductionBox from "./exoGame/productions_shortcut_box/production_box.tsx";
+import SliderContainer from "./exoGame/sliderContiner/sliderContainer.tsx";
+import ConsoleGamingSlider from "./exoGame/consoleGaming/console_gm_slider.tsx";
+import SugMonitor from "./exoGame/suggestion_monitor/sug_monitor.tsx";
+import BestBrandLaptop from "./exoGame/bestMonitorBrand/best-laptop-brand.tsx";
+import FormAndBenchmarkSlider from "./exoGame/form-and-benchmark-slide/form-and-benchmark-slider.tsx";
+import CategoryPopularSlider from "./exoGame/TheMostPopularCategoriesSlider/catgory-popular-slider.tsx";
+import PlaystaionXboxConsoleSlider from "./exoGame/playstaion-xbox-console-slide/playstaion-xbox-console-slide.tsx";
+import Catgory from "./exoGame/catgory-items/mainCatgoryPage/catgory.tsx";
+import BenchmarkHome from "./exoGame/benchmarkHome/benchmarkHome.tsx";
+import ProductDiscription from "./exoGame/catgory-items/productDiscription/ProductDiscription.tsx";
+import IconsSlider from "./exoGame/catgory-items/productDiscription/iconsSlider/IconsSlider.tsx";
+import BoxInfoProducts from "./exoGame/catgory-items/box-Information-Items/box-Information-products.tsx";
+import HederPrentBox from "./exoGame/heder/HederPrentBox/HederPrentBox.tsx";
+import BenchmarkTabel from "./exoGame/benchmarkHome/benchmarkTabel/benchmarkTabel.tsx";
+import InformationEnquiry from "./exoGame/information_enquiry/information_enquiry.tsx";
 import AssmbleContiner from "./exoGame/AssmblePc/AssmbleCntiner.tsx";
-import ShoppingCartCheckout from "./exoGame/ShoppingCartCheckout/ShoppingCartCheckout.jsx";
-import ShoppingStepBox from "./exoGame/ShoppingCartCheckout/Shopping Steps Box/Shopping Steps Box.jsx";
-import ScrollBtn from "./exoGame/ScrollBtn/ScrollBtn.jsx";
+import ShoppingCartCheckout from "./exoGame/ShoppingCartCheckout/ShoppingCartCheckout.tsx";
+import ShoppingStepBox from "./exoGame/ShoppingCartCheckout/Shopping Steps Box/Shopping Steps Box.tsx";
+import ScrollBtn from "./exoGame/ScrollBtn/ScrollBtn.tsx";
 import Test from "./test.jsx";
 import Test2 from "./test2.jsx";
-import Page404Erroe from "./exoGame/404UndefindPage/404PageErroe.jsx";
-import FailToFetchDataPage from "./exoGame/failToFetchDataPage/failToFetchDataPage.jsx";
-import FuqReact from "./fuqReact.tsx";
+import Page404Erroe from "./exoGame/404UndefindPage/404PageErroe.tsx";
+import RegisterCodeBox from "./exoGame/loginWithPhon/RegisterCodeBox/RegisterCode_Box.tsx";
+import FailToFetchDataPage from "./exoGame/failToFetchDataPage/failToFetchDataPage.tsx";
+import RegisterNewUser from "./exoGame/Register-User/Register-user";
+import UserAccount from "./exoGame/userAcount/UserAccount.tsx";
+import MyAccountBox from "./exoGame/userAcount/My-account-Box/My-Account-Box.tsx";
+import Awd from "./exoGame/userAcount/test/test.jsx";
+import EditAccount from "./exoGame/userAcount/Edit-account/Edit-account.tsx";
 let rutes = [
   {
     path: "/",
     element: (
       <div>
         <HederPrentBox></HederPrentBox>
-        <Slider1></Slider1>
+        <FristSliderPage></FristSliderPage>
         <ScrollBtn></ScrollBtn>
         <ProductionBox></ProductionBox>
         <SliderContainer></SliderContainer>
@@ -65,6 +70,134 @@ let rutes = [
       <div>
         <HederPrentBox></HederPrentBox>
         <LoginWithPhone></LoginWithPhone>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/register-user",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <RegisterNewUser></RegisterNewUser>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "failedToFetch",
+    element: (
+      <div>
+        <FailToFetchDataPage></FailToFetchDataPage>
+      </div>
+    ),
+  },
+  {
+    path: "/acount",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <UserAccount></UserAccount>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/acount/My-Account",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <UserAccount Component={MyAccountBox}></UserAccount>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/acount/Edit",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <UserAccount Component={EditAccount}></UserAccount>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/acount/password",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <UserAccount Component={Awd}></UserAccount>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/acount/address",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <UserAccount Component={Awd}></UserAccount>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/acount/Wishlist",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <UserAccount Component={Awd}></UserAccount>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/acount/order",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <UserAccount Component={Awd}></UserAccount>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/acount/return",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <UserAccount Component={Awd}></UserAccount>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/acount/transaction",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <UserAccount Component={Awd}></UserAccount>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/acount/logout",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <UserAccount Component={Awd}></UserAccount>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/acount-login-Phone/verify-Code",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <RegisterCodeBox></RegisterCodeBox>
         <Footer></Footer>
       </div>
     ),
@@ -215,7 +348,7 @@ let rutes = [
     path: "/test2",
     element: (
       <div>
-        <FuqReact></FuqReact>
+        <Test2></Test2>
       </div>
     ),
   },
