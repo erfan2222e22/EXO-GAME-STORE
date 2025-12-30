@@ -22,10 +22,10 @@ const MyAccountBox = () => {
       title: "My-Account",
       iconTitle: PersonIcon,
       textArrayElment: [
-        [{ text: "Edit Account Information", routeAddres: "" }],
-        [{ text: "Change password", routeAddres: "" }],
-        [{ text: "Change address book information", routeAddres: "" }],
-        [{ text: "Edit Wishlist", routeAddres: "" }],
+        [{ id: 1, text: "Edit Account Information", routeAddres: "" }],
+        [{ id: 2, text: "Change password", routeAddres: "" }],
+        [{ id: 3, text: "Change address book information", routeAddres: "" }],
+        [{ id: 4, text: "Edit Wishlist", routeAddres: "" }],
       ],
     },
     {
@@ -33,9 +33,9 @@ const MyAccountBox = () => {
       title: "My Orders",
       iconTitle: AccountBalanceWalletIcon,
       textArrayElment: [
-        [{ text: "Order History", routeAddres: "" }],
-        [{ text: "View Returned Goods Requests", routeAddres: "" }],
-        [{ text: "Your Transactions", routeAddres: "" }],
+        [{ id: 1, text: "Order History", routeAddres: "" }],
+        [{ id: 2, text: "View Returned Goods Requests", routeAddres: "" }],
+        [{ id: 3, text: "Your Transactions", routeAddres: "" }],
       ],
     },
   ];
@@ -68,7 +68,7 @@ const MyAccountBox = () => {
                   return (
                     <p
                       style={{ cursor: "pointer" }}
-                      key={value.text}
+                      key={value.id}
                       onClick={() => {
                         navigate(value.routeAddres, { state: "" });
                       }}
