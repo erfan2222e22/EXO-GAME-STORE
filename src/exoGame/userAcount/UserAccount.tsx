@@ -44,13 +44,7 @@ const UserAccount = ({ Component }: any) => {
       id: 6,
       text: "Returned Goods",
       routeAddres: "/acount/return",
-      icon: "https://img.icons8.com/?size=100&id=3483&format=png&color=737373",
-    },
-    {
-      id: 7,
-      text: "Transactions",
-      routeAddres: "/acount/transaction",
-      icon: "https://img.icons8.com/?size=100&id=AUjdrHiRjI0U&format=png&color=737373",
+      icon: "https://img.icons8.com/?size=100&id=37213&format=png&color=737373",
     },
     {
       id: 8,
