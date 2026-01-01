@@ -3,11 +3,13 @@ import styleComponent from "./style_Component/Style-RegisterCode-Box";
 import { useLocation } from "react-router-dom";
 import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { AxiosError } from "axios";
 
 const RegisterCodeBox = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { code } = location.state;
+  const { code, phoneNumber } = location.state;
   const {
     Input,
     ContinuBtn,
@@ -16,18 +18,43 @@ const RegisterCodeBox = () => {
     InputParentBox,
     HederImg,
   } = styleComponent;
-  const [UserInputCode, setUserInputCode] = useState<string[]>(
+
+  const [UserInputCode, setUserInputCode] = useState<string[]>( //input Box from code length
     Array.from({ length: code.length }, () => "")
   );
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
   const [validInterdCode, setValidInterdCode] = useState(null);
-
+  const [userIsRegistered, setUserIsRegistered] = useState(null);
   useEffect(() => {
     const timer = setTimeout(() => {
       setValidInterdCode(null);
     }, 5000);
     return () => clearTimeout(timer);
   }, [validInterdCode]);
+
+  useEffect(() => {
+    fetchPhoneNumber();
+  }, []);
+
+  const fetchPhoneNumber = async () => {
+    try {
+      const { data: value } = await axios.get(
+        `http://localhost:3300/users?phoneNumber=${phoneNumber}`
+      );
+      const { id, logined, ...rest } = value[0];
+      const validating = Object.values(rest).every(
+        (items: any) => items.length > 0
+      );
+      console.log(rest);
+      if (validating) {
+        setUserIsRegistered(true);
+      } else {
+        setUserIsRegistered(false);
+      }
+    } catch (err) {
+      handelCatchError(err as AxiosError);
+    }
+  };
 
   const handelOnChange = (value: string, index: number) => {
     if (isNaN(+value)) return;
@@ -46,7 +73,8 @@ const RegisterCodeBox = () => {
 
     const TestCode = UserInputCode.every((item, index) => {
       return Number(item) === ReciveCoded[index];
-    });
+    }); //test User input Code
+
     TestCode
       ? setValidInterdCode((prev: boolean) => (prev = true))
       : setValidInterdCode((prev: boolean) => (prev = false));
@@ -57,13 +85,60 @@ const RegisterCodeBox = () => {
       })
     );
 
-    validInterdCode && Navigation();
+    validInterdCode && navigation();
   };
 
-  const Navigation = () => {
-    navigate(`/register-user`, {
-      state: { products: "" },
-    });
+  const navigateToUserAccount = async (id: number) => {
+    try {
+      await axios.patch(`http://localhost:3300/users/${id}`, {
+        logined: true,
+      });
+      setTimeout(() => {
+        navigate(`/acount`, {
+          state: { state: "" },
+        });
+      }, 500);
+    } catch (err) {
+      handelCatchError(err as AxiosError);
+    }
+  };
+  const createNewUserData = async () => {
+    try {
+      const newUser = {
+        name: "",
+        phoneNumber: phoneNumber,
+        LastName: "",
+        email: "",
+        logined: false,
+      };
+      const { data: values } = await axios.post(
+        "http://localhost:3300/users",
+        newUser
+      );
+
+      const { id } = values;
+
+      setTimeout(() => {
+        navigate(`/register-user`, {
+          state: { id: id },
+        });
+      }, 500);
+      console.log(values);
+    } catch (err) {
+      handelCatchError(err as AxiosError);
+    }
+  };
+
+  const navigation = () => {
+    userIsRegistered ? navigateToUserAccount(2) : createNewUserData();
+  };
+
+  const handelCatchError = (err: AxiosError) => {
+    const errStatus = err as AxiosError;
+    axios.isAxiosError(err) &&
+      navigate("/failedToFetch", {
+        state: { errorStatus: errStatus.status },
+      });
   };
 
   const SetColorElment = (): string => {

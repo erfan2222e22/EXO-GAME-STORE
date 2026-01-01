@@ -3,16 +3,14 @@ import styleComponent from "./Style-Component/StyledComponentLoginPhone";
 import { Typography } from "@mui/material";
 import Alert from "@mui/material/Alert";
 import { useNavigate } from "react-router-dom";
-import { Axios, AxiosError } from "axios";
+import { AxiosError } from "axios";
+import axios from "axios";
 import {
-  userData,
   Type_checkPhoneNumber,
   Type_onChangHandelInput,
-  Type_findUserPhoneNumber,
-  Type_sendNewUserDataToServer,
   Type_navigateToLoginCode,
 } from "./types/type-LoginWidthPhone";
-import axios from "axios";
+
 const LoginWithPhone = () => {
   const navigate = useNavigate();
   const {
@@ -27,78 +25,32 @@ const LoginWithPhone = () => {
 
   const [phoneNumber, setPhoneNumber] = useState("");
   const [truePhoneNumber, setTruePhoneNumber] = useState(false);
-  const [userIsRegistered, userSetIsRegistered] = useState(null);
-  const [phoneNumberToSend, setPhoneNumberToSend] = useState("");
   const maxLength = 11;
   const patern = /^09\d{9}$/;
   //👆filter numbers 1 to 11 length and number start with 09
+  useEffect(() => {
+    const validPhoneNumber = checkPhoneNumber(phoneNumber, patern);
+    validPhoneNumber && setTruePhoneNumber(true);
+  }, [phoneNumber]);
 
   const checkPhoneNumber: Type_checkPhoneNumber = (phoneNumber, patern) => {
     const valid = patern.test(phoneNumber);
     return valid;
   };
 
-  useEffect(() => {
-    const validPhoneNumber = checkPhoneNumber(phoneNumber, patern);
-    validPhoneNumber && setTruePhoneNumber(true);
-  }, [phoneNumber]);
-
-  useEffect(() => {
-    console.log(userIsRegistered);
-    if (userIsRegistered === false && phoneNumberToSend) {
-      sendNewUserDataToServer(phoneNumberToSend);
-    }
-  }, [userIsRegistered, phoneNumberToSend]);
-
   const onChangHandelInput: Type_onChangHandelInput = (value, event) => {
     setPhoneNumber(value.slice(0, 11));
     value.length >= maxLength && event.preventDefault();
   };
 
-  const findUserPhoneNumber: Type_findUserPhoneNumber = async (phone) => {
-    try {
-      const { data: value } = await axios.get(
-        `http://localhost:3300/users?phoneNumber=${phone}`
-      );
-      const { id, logined, phoneNumber, ...rest }: userData = value[0] || {};
-
-      value.length > 0 && Object.values(rest).every((value) => value.length > 0)
-        ? userSetIsRegistered(true)
-        : userSetIsRegistered(false);
-      console.log(value);
-    } catch (err) {
-      handelCatchError(err as AxiosError);
-    }
-  };
-
   const onClickButton = () => {
     if (truePhoneNumber) {
-      const currentPhoneNumber = phoneNumber; // ذخیره phoneNumber قبل از خالی کردن
-      setPhoneNumberToSend(currentPhoneNumber); // ذخیره برای استفاده در useEffect
       setTimeout(() => {
         setPhoneNumber("");
         setTruePhoneNumber(false);
-        findUserPhoneNumber(currentPhoneNumber);
         createRandomeCode();
         alert("Code-Sended");
       }, 1000);
-    }
-  };
-
-  const sendNewUserDataToServer: Type_sendNewUserDataToServer = async (
-    phone
-  ) => {
-    try {
-      const newUser = {
-        name: "",
-        phoneNumber: phone,
-        LastName: "",
-        email: "",
-        logined: false,
-      };
-      await axios.post("http://localhost:3300/users", newUser);
-    } catch (err) {
-      handelCatchError(err as AxiosError);
     }
   };
 
@@ -116,7 +68,6 @@ const LoginWithPhone = () => {
       state: {
         code: randomeNumber,
         phoneNumber: phoneNumber,
-        userIsRegistered: userIsRegistered,
       },
     });
   };
