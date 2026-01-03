@@ -5,26 +5,26 @@ import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AxiosError } from "axios";
+import { TypeLocation, Type_handelCatchError } from "./types/typeRegisterCode";
+import InputElment from "./inputElment/inputElment";
+import RegisterBtnElment from "./btnElment/RegisterBtnElment";
+import { addDataToServer } from "./addDataToServer/AddDataToServer";
 
 const RegisterCodeBox = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { code, phoneNumber } = location.state;
-  const {
-    Input,
-    ContinuBtn,
-    BoxConteriner,
-    ParentBox,
-    InputParentBox,
-    HederImg,
-  } = styleComponent;
+
+  const { code, phoneNumber }: TypeLocation = location.state;
+  const { BoxConteriner, ParentBox, HederImg } = styleComponent;
 
   const [UserInputCode, setUserInputCode] = useState<string[]>( //input Box from code length
     Array.from({ length: code.length }, () => "")
   );
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
+  const [userId, setUserId] = useState(0);
   const [validInterdCode, setValidInterdCode] = useState(null);
   const [userIsRegistered, setUserIsRegistered] = useState(null);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setValidInterdCode(null);
@@ -38,16 +38,25 @@ const RegisterCodeBox = () => {
 
   const fetchPhoneNumber = async () => {
     try {
-      const { data: value } = await axios.get(
+      const { data: dataUser } = await axios.get(
         `http://localhost:3300/users?phoneNumber=${phoneNumber}`
       );
-      const { id, logined, ...rest } = value[0];
+      const { id, logined, ...rest } = dataUser[0] || {
+        id: "",
+        logined: "",
+        items: "",
+      };
       const validating = Object.values(rest).every(
         (items: any) => items.length > 0
       );
-      console.log(rest);
-      if (validating) {
+
+      if (dataUser.length === 0) {
+        setUserIsRegistered(false);
+      } else if (validating && dataUser.length === 1) {
         setUserIsRegistered(true);
+        setUserId(id);
+      } else if (!validating && dataUser.length > 0) {
+        setUserIsRegistered(null);
       } else {
         setUserIsRegistered(false);
       }
@@ -55,85 +64,19 @@ const RegisterCodeBox = () => {
       handelCatchError(err as AxiosError);
     }
   };
-
-  const handelOnChange = (value: string, index: number) => {
-    if (isNaN(+value)) return;
-
-    setUserInputCode((prev) =>
-      prev.map((item, index2) => (index2 === index ? value : item))
-    );
-
-    if (value.length === 1 && inputRefs.current[index + 1]) {
-      inputRefs.current[index + 1]?.focus();
-    }
-  };
-
-  const handelOnClick = () => {
-    const ReciveCoded = code.flatMap((item: number[]) => item);
-
-    const TestCode = UserInputCode.every((item, index) => {
-      return Number(item) === ReciveCoded[index];
-    }); //test User input Code
-
-    TestCode
-      ? setValidInterdCode((prev: boolean) => (prev = true))
-      : setValidInterdCode((prev: boolean) => (prev = false));
-
-    setUserInputCode((prev) =>
-      prev.map((item) => {
-        return item.toString().trim().length > 0 ? "" : item;
-      })
-    );
-
-    validInterdCode && navigation();
-  };
-
-  const navigateToUserAccount = async (id: number) => {
-    try {
-      await axios.patch(`http://localhost:3300/users/${id}`, {
-        logined: true,
-      });
-      setTimeout(() => {
-        navigate(`/acount`, {
-          state: { state: "" },
-        });
-      }, 500);
-    } catch (err) {
-      handelCatchError(err as AxiosError);
-    }
-  };
-  const createNewUserData = async () => {
-    try {
-      const newUser = {
-        name: "",
-        phoneNumber: phoneNumber,
-        LastName: "",
-        email: "",
-        logined: false,
-      };
-      const { data: values } = await axios.post(
-        "http://localhost:3300/users",
-        newUser
-      );
-
-      const { id } = values;
-
-      setTimeout(() => {
-        navigate(`/register-user`, {
-          state: { id: id },
-        });
-      }, 500);
-      console.log(values);
-    } catch (err) {
-      handelCatchError(err as AxiosError);
-    }
-  };
+  // userIsRegistered,
 
   const navigation = () => {
-    userIsRegistered ? navigateToUserAccount(2) : createNewUserData();
+    addDataToServer(
+      userIsRegistered,
+      navigate,
+      userId,
+      phoneNumber,
+      handelCatchError
+    );
   };
 
-  const handelCatchError = (err: AxiosError) => {
+  const handelCatchError: Type_handelCatchError = (err) => {
     const errStatus = err as AxiosError;
     axios.isAxiosError(err) &&
       navigate("/failedToFetch", {
@@ -165,42 +108,22 @@ const RegisterCodeBox = () => {
           aria-label="."
           src="https://exo.ir/catalog/view/theme/exo/image/logo.svg"
         ></HederImg>
-        <InputParentBox>
-          {UserInputCode.map((item: string, index: number) => {
-            return (
-              <Input
-                onChange={(e) => handelOnChange(e.target.value, index)}
-                aria-label="."
-                value={item}
-                type="tel"
-                inputMode="numeric"
-                inputProps={{
-                  maxLength: 1,
-                  style: { textAlign: "center" },
-                }}
-                sx={{ borderColor: SetColorElment() }}
-                inputRef={(el: HTMLInputElement | null) => {
-                  inputRefs.current[index] = el;
-                }}
-              ></Input>
-            );
-          })}
-        </InputParentBox>
 
-        <ContinuBtn
-          sx={{
-            "&:hover": {
-              backgroundColor: SetColorElment(),
-              boxShadow: `${SetColorElment()} 0px 7px 29px 0px`,
-            },
-            "&:active": {
-              backgroundColor: "black",
-            },
-          }}
-          onClick={handelOnClick}
-        >
-          click me
-        </ContinuBtn>
+        <InputElment
+          inputRefs={inputRefs}
+          UserInputCode={UserInputCode}
+          setUserInputCode={setUserInputCode}
+          SetColorElment={SetColorElment}
+        />
+        <RegisterBtnElment
+          code={code}
+          UserInputCode={UserInputCode}
+          setValidInterdCode={setValidInterdCode}
+          setUserInputCode={setUserInputCode}
+          SetColorElment={SetColorElment}
+          validInterdCode={validInterdCode}
+          navigation={navigation}
+        />
         {validInterdCode === false && (
           <Typography sx={{ color: "red" }}>
             code is wrong pls try again!
