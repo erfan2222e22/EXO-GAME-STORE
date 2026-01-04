@@ -1,11 +1,16 @@
 import styleComponent from "./style-Component/style-UserAccount";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
+import contextUse from "../useContext/useContext";
 const UserAccount = ({ Component }: any) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { ParentDiv, HederImg, ParentLink, ContinerLink, Icon, LinkText } =
+  const { id } = location.state || {};
+  const [stateId] = useState(id);
+
+  const { Div, ParentDiv, HederImg, ParentLink, ContinerLink, Icon, LinkText } =
     styleComponent;
 
   const boxLinksElement = [
@@ -42,6 +47,12 @@ const UserAccount = ({ Component }: any) => {
     },
     {
       id: 6,
+      text: "Transactions",
+      routeAddres: "/acount/Transactions",
+      icon: "https://img.icons8.com/?size=100&id=kuzF9jfzqSmJ&format=png&color=737373",
+    },
+    {
+      id: 7,
       text: "Returned Goods",
       routeAddres: "/acount/return",
       icon: "https://img.icons8.com/?size=100&id=37213&format=png&color=737373",
@@ -55,19 +66,13 @@ const UserAccount = ({ Component }: any) => {
   ];
 
   return (
-    <div
-      style={{
-        display: "flex",
-        height: "550px",
-        marginTop: "100px",
-        gap: "5px",
-      }}
-    >
+    <Div>
       <ParentDiv>
         <HederImg
           as="img"
           src="https://exo.ir/catalog/view/theme/exo/image/avatar.png"
           alt="."
+          onClick={() => console.log(id)}
         ></HederImg>
         <ParentLink>
           <div>
@@ -81,7 +86,7 @@ const UserAccount = ({ Component }: any) => {
                     }}
                     as="p"
                     onClick={() => {
-                      navigate(`${item.routeAddres}`, { state: "" });
+                      navigate(`${item.routeAddres}`);
                     }}
                   >
                     <Icon src={item.icon} alt="" as="img" />
@@ -93,8 +98,12 @@ const UserAccount = ({ Component }: any) => {
           </div>
         </ParentLink>
       </ParentDiv>
-      {Component !== undefined && <Component></Component>}
-    </div>
+      <p onClick={() => console.log(id)}>🖤</p>
+      <p onClick={() => console.log(stateId)}>❤</p>
+      <contextUse.Provider value={{ stateId }}>
+        {Component !== undefined && <Component></Component>}
+      </contextUse.Provider>
+    </Div>
   );
 };
 export default UserAccount;
