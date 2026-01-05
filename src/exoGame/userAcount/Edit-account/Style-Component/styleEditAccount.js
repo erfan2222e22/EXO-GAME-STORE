@@ -1,19 +1,20 @@
-import { Box } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
+
 const Div = styled(Box)({
-  width: "80%",
+  width: "100%",
   padding: "5px",
 });
 
 const HederParntDiv = styled(Box)({
-  borderRadius: "1.5%",
+  borderRadius: "7px",
   overflow: "hidden",
   display: "flex",
   justifyContent: "space-between",
   backgroundColor: "#d4f7df",
   alignItems: "center",
   width: "100%",
-  height: "10%",
+  height: "60px",
   boxShadow:
     " rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px",
 });
@@ -54,13 +55,14 @@ const DefaultBtnStyle = styled(Box)({
 const BtnContinued = styled(DefaultBtnStyle)({ backgroundColor: "#03c03c" });
 const BtnReturn = styled(DefaultBtnStyle)({ backgroundColor: "#6c757d" });
 
-const Input = styled(Box)({
+const Input = styled(TextField)({
   display: "block",
   height: "30px",
   margin: "10px",
   width: "80%",
   border: "1px solid #ced4da",
   borderRadius: "3px",
+  padding: "5px",
   "&:focus ": {
     // border: "1px solid #ced4da",
     borderColor: "red",
