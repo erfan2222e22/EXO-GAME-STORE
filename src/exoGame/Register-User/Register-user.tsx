@@ -46,15 +46,24 @@ const RegisterNewUser = () => {
     },
     {
       id: 4,
-      type: "text",
-      nameInput: "idk name ",
-      importValue: false,
+      type: "password",
+      nameInput: "password input",
+      importValue: true,
       value: "",
-      InputTitle: "set again your email",
+      InputTitle: "set your password",
+      error: "",
+    },
+    {
+      id: 5,
+      type: "password",
+      nameInput: "password",
+      importValue: true,
+      value: "",
+      InputTitle: "set again your password",
       error: "",
     },
   ]);
-  const [allInputValuseTrue, setAllInputValuseTrue] = useState(null);
+  const [allInputValuseTrue, setAllInputValuseTrue] = useState(false);
 
   return (
     <ParntBox>

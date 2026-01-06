@@ -2,7 +2,7 @@ import React from "react";
 import StyleComponent from "./style-Component/Style-InputElment";
 import {
   ComponentType,
-  handelInputEmail_Types,
+  handelInputPassEmail_Types,
   handelOnchangeInput_Types,
 } from "./Types/Type_inputElment";
 const InputElment: ComponentType = ({
@@ -14,48 +14,69 @@ const InputElment: ComponentType = ({
   const { id, InputTitle, error, value, type } = item;
   const { ErrorText, Input, InputBox, InputTitle2 } = StyleComponent;
 
-  const handelInputEmail: handelInputEmail_Types = (inputValue, index) => {
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const handelInputPassEmail: handelInputPassEmail_Types = (
+    inputValue,
+    index,
+    type
+  ) => {
+    let paternEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const testPatern = paternEmail.test(inputValue);
+
     const FindFristEmailInput = inputElmentAtributes.find(
-      (fill) => fill.nameInput === "email input"
+      (fill) => fill.type === type
     );
-    const { value } = FindFristEmailInput; //frist input value
-    const testPatern = emailPattern.test(inputValue);
+    const { value, nameInput } = FindFristEmailInput;
 
     seIinputElmentAtributes((prev) => {
-      return prev.map((item) =>
-        item.id === index && item.nameInput === "email input"
-          ? item.id === index
-            ? {
-                ...item,
-                value: inputValue,
-                error: testPatern ? "" : "this is not email!",
-              }
-            : item
-          : item.id === index
-          ? {
+      return prev.map((item) => {
+        if (item.nameInput === nameInput) {
+          if (item.id !== index) return item;
+          if (type === "email") {
+            // handel frist input of email and password
+            //handel email input
+            return {
               ...item,
               value: inputValue,
-              error: inputValue === value ? "" : "value not match to email",
-            }
-          : item
-      );
+              error: testPatern ? "" : "this is not email!",
+            };
+          } else {
+            //handel password input
+            return {
+              ...item,
+              value: inputValue,
+              error: value.trim().length > 6 ? "" : "you need length more 6",
+            };
+          }
+        } else {
+          // handel secend input of email and password
+          let errorText = "";
+          if (item.id !== index) return item;
+          item.type === "email"
+            ? (errorText = "value not match to email")
+            : (errorText = "value not match to password");
+
+          return {
+            ...item,
+            value: inputValue,
+            error: inputValue === value ? "" : errorText,
+          };
+        }
+      });
     });
   };
 
   const handelOnchangeInput: handelOnchangeInput_Types = (
     inputValue,
-    item,
     index
   ) => {
-    const { value } = item;
     seIinputElmentAtributes((prev) => {
       return prev.map((item) =>
-        item.id === index
+        +item.id === +index
           ? {
               ...item,
               value: inputValue,
-              error: value.trim().length < 7 ? "you need length more 7" : "",
+              error:
+                inputValue.trim().length < 3 ? "you need length more 3" : "",
             }
           : item
       );
@@ -73,11 +94,13 @@ const InputElment: ComponentType = ({
         value={value}
         type={type}
         aria-label="."
-        onChange={(e) =>
-          type === "email"
-            ? handelInputEmail(e.target.value, index)
-            : handelOnchangeInput(e.target.value, item, index)
-        }
+        onChange={(e) => {
+          if (type === "text") {
+            handelOnchangeInput(e.target.value, index);
+          } else {
+            handelInputPassEmail(e.target.value, index, item.type);
+          }
+        }}
       ></Input>
       <ErrorText as="p">{item.error}</ErrorText>
     </InputBox>
