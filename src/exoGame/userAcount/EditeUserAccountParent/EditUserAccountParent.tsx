@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import { useLocation } from "react-router-dom";
-import EditAccount from "../Edit-account/Edit-account";
 import { useContext } from "react";
 import contextUse from "../../useContext/useContext";
 import { useEffect, useState } from "react";
@@ -8,6 +7,8 @@ import axios from "axios";
 import { elmentListStructure } from "./types/Type_EditUserAccountParent";
 import { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
+import EditPasswordUser from "../Edit-password-Account/editPasswordUser";
+import EditUserAccount from "../EditUserName/EditUserAccount";
 
 const EditUserAccountParent = () => {
   const location = useLocation();
@@ -23,9 +24,21 @@ const EditUserAccountParent = () => {
       { id: 4, title: "email", importData: true, value: "" },
     ],
     EditPasswrodAccount: [
-      { id: 1, title: "New password", importData: true, value: "" },
-      { id: 2, title: "Repeat new password", importData: true, value: "" },
-      { id: 3, title: "Previous password", importData: true, value: "" },
+      { id: 1, title: "New password", importData: true, value: "", error: "" },
+      {
+        id: 2,
+        title: "Repeat new password",
+        importData: true,
+        value: "",
+        error: "",
+      },
+      {
+        id: 3,
+        title: "Previous password",
+        importData: true,
+        value: "",
+        error: "",
+      },
     ],
   });
 
@@ -38,7 +51,7 @@ const EditUserAccountParent = () => {
       const { data: userData } = await axios.get(
         `http://localhost:3300/users/${stateId}`
       );
-      const { id, logined, ...rest } = userData;
+      const { id, logined, password, ...rest } = userData;
 
       setElmentValueList((prev) => ({
         //add UserData on value of state
@@ -61,13 +74,13 @@ const EditUserAccountParent = () => {
   return (
     <Box sx={{ width: "80%" }}>
       {location.pathname === "/acount/Edit" ? (
-        <EditAccount
+        <EditUserAccount
           elmentValueList={elmentValueList.EditAccount}
           setElmentValueList={setElmentValueList}
           stateId={stateId}
         />
       ) : (
-        <EditAccount
+        <EditPasswordUser
           elmentValueList={elmentValueList.EditPasswrodAccount}
           setElmentValueList={setElmentValueList}
           stateId={stateId}

@@ -1,22 +1,24 @@
-import StyleComponent from "./Style-Component/styleEditAccount";
+import StyleComponent from "./style-EditUserName/style-EditeUser";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import PersonIcon from "@mui/icons-material/Person";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AxiosError } from "axios";
+
 import {
   Component_Props,
   Type_handelOnChange,
   Type_handelUpdateUser,
-} from "./types/Type-Edit-Account";
+} from "./types/typeUserAccount";
 
-const EditAccount: Component_Props = ({
+const EditUserAccount: Component_Props = ({
   elmentValueList,
   setElmentValueList,
   stateId,
 }) => {
   const location = useLocation();
+  const path = location.pathname;
   const navigate = useNavigate();
   const {
     BoxTitle,
@@ -31,29 +33,19 @@ const EditAccount: Component_Props = ({
     Div,
   } = StyleComponent;
 
-  const handelOnChange: Type_handelOnChange = (e, title) => {
+  const handelOnChangeDataUser: Type_handelOnChange = (e, title) => {
     const value = e.target.value;
-    const path = location.pathname;
-
-    path === "/acount/Edit"
-      ? setElmentValueList((prev) => ({
-          ...prev,
-          EditAccount: prev.EditAccount.map((item) => {
-            return item.title === title ? { ...item, value: value } : item;
-          }),
-        }))
-      : setElmentValueList((prev) => ({
-          ...prev,
-          EditPasswrodAccount: prev.EditAccount.map((item) => {
-            return item.title === title ? { ...item, value: value } : item;
-          }),
-        }));
+    setElmentValueList((prev) => ({
+      ...prev,
+      EditAccount: prev.EditAccount.map((item) => {
+        return item.title === title ? { ...item, value: value } : item;
+      }),
+    }));
   };
 
-  const handelOnClick = () => {
+  const handelUserData = () => {
     const userData = elmentValueList.map((item) => item.value);
     const [name, phoneNumber, lastName, email] = userData;
-
     const updateUser = {
       name: name,
       phoneNumber: phoneNumber,
@@ -105,21 +97,29 @@ const EditAccount: Component_Props = ({
               as="input"
               type="text"
               aria-label="."
-              placeholder={item.value}
-              onChange={(e) => handelOnChange(e, item.title)}
+              placeholder={path === "/acount/Edit" && item.value}
+              // value={item.value}
+              onChange={(e) => {
+                path === "/acount/Edit" &&
+                  handelOnChangeDataUser(e, item.title);
+              }}
             ></Input>
+            <span style={{ color: "#ff0404ff" }}>{item.error}</span>
           </ParagraphBox>
         );
       })}
       <BoxBtns>
-        <BtnReturn onClick={() => navigate("/acount/My-Account")} as="button">
+        <BtnReturn
+          onClick={() => console.log(elmentValueList.map((item) => item))}
+          as="button"
+        >
           Return
         </BtnReturn>
-        <BtnContinued as="button" onClick={handelOnClick}>
+        <BtnContinued as="button" onClick={handelUserData}>
           Continued
         </BtnContinued>
       </BoxBtns>
     </Div>
   );
 };
-export default EditAccount;
+export default EditUserAccount;

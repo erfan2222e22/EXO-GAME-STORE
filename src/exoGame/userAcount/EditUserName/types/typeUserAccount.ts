@@ -1,4 +1,3 @@
-import { FormEvent } from "react";
 import { elmentValueList } from "../../EditeUserAccountParent/types/Type_EditUserAccountParent";
 
 interface elmentListStructure {
@@ -28,3 +27,4 @@ export type Type_handelOnChange = (
   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   title: string
 ) => void;
+export type Type_handelOnChangePassUser = (e_value: string, id: number) => void;
