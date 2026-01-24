@@ -1,5 +1,5 @@
 interface Type_imgSrc {
-  imgSrc: Partial<Readonly<string>>;
+  readonly imgSrc?: string;
 }
 
 export type Type_Component = (imgSrc: Type_imgSrc) => React.ReactNode;

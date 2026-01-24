@@ -1,12 +1,12 @@
 import React from "react";
 import { ElmentInputInterface } from "../../types/Types_Register-User";
 interface Props_interface {
-  inputElmentAtributes: Readonly<ElmentInputInterface[]>;
+  readonly inputElmentAtributes: ElmentInputInterface[];
   seIinputElmentAtributes: React.Dispatch<
     React.SetStateAction<ElmentInputInterface[]>
   >;
   setAllInputValuseTrue: React.Dispatch<React.SetStateAction<boolean>>;
-  allInputValuseTrue: Readonly<null | boolean>;
+  readonly allInputValuseTrue: null | boolean;
 }
 export type Component_Porps = ({
   ...props

@@ -1,8 +1,10 @@
+type everyType = string | number | boolean | string[] | number[] | undefined;
+
 export interface ProductInformationItem {
-  text: Readonly<string>;
-  value: string | number | boolean | string[] | number[] | undefined;
+  readonly text: string;
+  value: everyType;
 }
 
 export interface ProductInformationProps {
-  [key: string]: string | number | boolean | string[] | number[] | undefined;
+  [key: string]: everyType;
 }

@@ -12,7 +12,6 @@ export interface elmentsInArrayTypes {
   readonly importeData: boolean;
   readonly name: string;
   value: string;
-  label?: any;
 }
 
 interface requtest {
