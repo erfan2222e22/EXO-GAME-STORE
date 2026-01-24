@@ -1,45 +1,10 @@
 import { Type_AsslbleContiner } from "../../../AssmblePc/types/types-AssmbleCniter";
-
-export interface Type_FilterValuse {
-  minPrice: number | string;
-  maxPrice: number | string;
-  company?: string[];
-  Manufacturers?: string[];
-  [key: string]:
-    | undefined
-    | string
-    | number
-    | boolean
-    | string[]
-    | number[]
-    | boolean[]
-    | [string]
-    | [number]
-    | [boolean];
-}
-
-interface Type_originalItems_ReadOnly {
-  id: string | number;
-  nameProduct: string;
-  img: string;
-  ProductReview: boolean | string;
-  productSetting: string;
-  Manufacturers: string;
-  company: string;
-  title: string;
-}
-
-type readOnlyTypes = Readonly<Partial<Type_originalItems_ReadOnly>>;
-
-export interface Type_originalItems_extends extends readOnlyTypes {
-  price: number | string;
-  [key: string]: string | number | boolean | undefined | [] | object[];
-}
+import { Type_originalItems_extends } from "../../mainCatgoryPage/types/types-Catgory";
 
 export interface Type_Props {
   filteredItems: [] | Type_originalItems_extends[];
   originalItems: Type_originalItems_extends[];
-  pathName: Readonly<string>;
+  readonly pathName: string;
   stateProduct: [Type_originalItems_extends];
   setDisplayFilterBox: React.Dispatch<React.SetStateAction<boolean>>;
   selectPCPartBox: Type_AsslbleContiner[];
@@ -47,8 +12,7 @@ export interface Type_Props {
     React.SetStateAction<Type_AsslbleContiner[] | [Type_AsslbleContiner]>
   >;
   closeCatgoryPcShape: () => void;
-  findTruetoChooseItems: () => Type_AsslbleContiner;
-  value_kind_filter: Type_FilterValuse[];
+  findTruetoChooseItems: () => [Type_AsslbleContiner];
 }
 
 export type Type_handelOnClick = (

@@ -1,23 +1,25 @@
 import { Type_AsslbleContiner } from "../../../AssmblePc/types/types-AssmbleCniter";
 
+type unknownItemsType =
+  | undefined
+  | string
+  | number
+  | boolean
+  | number[]
+  | boolean[]
+  | string[]
+  | [string]
+  | [number]
+  | [boolean]
+  | {};
+
 export interface Type_FilterValuse {
   minPrice?: number | string;
   maxPrice?: number | string;
   company?: string[];
   Manufacturers?: string[];
-  [key: string]: any;
+  [key: string]: unknownItemsType;
 }
-// | undefined
-// | string
-// | number
-// | boolean
-// | string[]
-// | number[]
-// | boolean[]
-// | [string]
-// | [number]
-// | [boolean];
-
 interface Type_originalItems_ReadOnly {
   id: string | number;
   nameProduct: string;
@@ -33,7 +35,8 @@ type readOnlyTypes = Readonly<Partial<Type_originalItems_ReadOnly>>;
 
 export interface Type_originalItems_extends extends readOnlyTypes {
   price: number | string;
-  [key: string]: string | number | boolean | undefined | [] | object[];
+  [key: string]: string | number | boolean | undefined | object[] | [];
+  // | (() => React.ReactNode);
 }
 
 export interface Type_CatgoryProps {
@@ -52,3 +55,10 @@ export interface setPriceFunction_Entris {
 }
 
 export type setPriceFunction = (selectedValue: setPriceFunction_Entris) => void;
+
+export interface FilterConfigItem {
+  readonly id: string | number;
+  readonly label: string;
+  readonly kindOfFilter: "cheCheckbox" | "Slider";
+  readonly filterType?: string;
+}

@@ -6,10 +6,10 @@ type PickUseContextItems = Pick<
 >;
 
 export interface Extends_ProductsInShopCart extends ProductsInShopCart {
-  uniqueCode?: number;
+  readonly uniqueCode?: number;
 }
 
 export interface useContext_Type extends PickUseContextItems {}
 
-export type ReductionQty_Types = (valueUniqueCode: number) => void;
-export type Function_Types = (valueId: string | number) => void;
+export type ReductionQty_Types = (valueUniqueCode: Readonly<number>) => void;
+export type Function_Types = (valueId: Readonly<string | number>) => void;

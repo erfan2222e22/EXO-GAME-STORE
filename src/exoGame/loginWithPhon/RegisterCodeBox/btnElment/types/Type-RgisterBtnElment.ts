@@ -1,9 +1,9 @@
 interface Porps_Type {
-  code: number[][];
-  UserInputCode: Readonly<string[]>;
+  readonly code: readonly number[][];
+  readonly UserInputCode: readonly string[];
   setValidInterdCode: React.Dispatch<React.SetStateAction<boolean | null>>;
   SetColorElment: () => string;
-  validInterdCode: Readonly<boolean | null>;
+  readonly validInterdCode: boolean | null;
   setUserInputCode: React.Dispatch<React.SetStateAction<string[]>>;
   navigation: () => void;
 }

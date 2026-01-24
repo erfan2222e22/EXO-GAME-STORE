@@ -12,10 +12,10 @@ interface Props_Interface {
 }
 
 interface handelUpdateUser {
-  name: Readonly<string>;
-  phoneNumber: Readonly<string>;
-  LastName: Readonly<string>;
-  email: Readonly<string>;
+  readonly name: string;
+  readonly phoneNumber: string;
+  readonly LastName: string;
+  readonly email: string;
 }
 
 export type Component_Props = ({

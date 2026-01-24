@@ -2,7 +2,7 @@ import { ElmentInputInterface } from "../../types/Types_Register-User";
 
 interface Props_types {
   item: ElmentInputInterface;
-  index: Readonly<number>;
+  readonly index: number;
   seIinputElmentAtributes: React.Dispatch<
     React.SetStateAction<ElmentInputInterface[]>
   >;

@@ -21,7 +21,7 @@ export type Type_HandelOnChange = (
 ) => void;
 
 export type Type_handelAutocomplete = (
-  e: React.SyntheticEvent<any, any>
+  e: React.SyntheticEvent<Element, Event>
 ) => void;
 
 export type Type_PhoneNumberHndelErroe = (

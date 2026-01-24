@@ -1,8 +1,8 @@
 import { itemsType } from "../../types/Type_CatgoryHeder";
-import { Type_originalItems_extends } from "../../../../catgory-items/ProductParentBox/types/Type-ProductParentBox";
+import { Type_originalItems_extends } from "../../../../catgory-items/mainCatgoryPage/types/types-Catgory";
 interface propsType {
-  item: Readonly<itemsType>;
-  key: Readonly<number>;
+  readonly item: itemsType;
+  readonly key: number;
   setCatgoryDisplay: React.Dispatch<React.SetStateAction<boolean>>;
 }
 

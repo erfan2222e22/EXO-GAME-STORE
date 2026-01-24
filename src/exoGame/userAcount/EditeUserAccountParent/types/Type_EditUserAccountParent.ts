@@ -4,9 +4,9 @@ export interface elmentListStructure {
 }
 
 export interface elmentValueList {
-  id: Readonly<number>;
-  title: Readonly<string>;
+  readonly id: number;
+  readonly title: string;
   value: string;
   error?: string;
-  importData: Readonly<boolean>;
+  readonly importData: boolean;
 }

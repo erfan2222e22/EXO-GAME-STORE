@@ -4,12 +4,17 @@ interface typeProps {
 export type Component_Props = (props: typeProps) => React.ReactNode;
 
 export interface itemsType {
-  id: Readonly<string | number>;
-  DataLink: Readonly<string>;
-  text: Readonly<string>;
-  type: Readonly<string>;
+  readonly id: string | number;
+  readonly DataLink: string;
+  readonly text: string;
+  readonly type: string;
 }
 export interface Type_ItemValue {
   img?: string;
   productList?: { items: itemsType[] };
 }
+
+export type Type_onMouseHandel = (
+  e: React.MouseEvent<HTMLElement>,
+  item: Type_ItemValue
+) => void;
