@@ -90,7 +90,6 @@ const InformationEnquiry = () => {
             setCorrectRequest,
             setFailRequest,
             setElmentInArray,
-
             phoneNumberEroreText,
             phoneNumberEroreBolean,
             request,

@@ -1,34 +1,36 @@
 type Type_id = 1 | 2 | 3 | 4 | 5 | 6 | 7;
 type Type_type = "input" | "Autocomplete" | "textarea";
+
 export type Type_ChangeBooleanState = React.Dispatch<
   React.SetStateAction<boolean>
 >;
 
-interface elmentsInArrayTypes {
-  id: Readonly<Type_id>;
-  type: Type_type;
-  hederText: string;
-  importeData: boolean;
-  name: string;
+export interface elmentsInArrayTypes {
+  readonly id: Type_id;
+  readonly type: Type_type;
+  readonly hederText: string;
+  readonly importeData: boolean;
+  readonly name: string;
   value: string;
+  label?: any;
 }
 
 interface requtest {
-  name: string;
-  phoneNumber: string;
-  emailAdrees: string;
-  fille: string;
-  titleRequest: string;
-  HowNoticeYou: string;
-  request: string;
+  readonly name: string;
+  readonly phoneNumber: string;
+  readonly emailAdrees: string;
+  readonly fille: string;
+  readonly titleRequest: string;
+  readonly HowNoticeYou: string;
+  readonly request: string;
 }
 
 export interface Main_UseContext_Type {
-  elmentsInArray: elmentsInArrayTypes[];
+  readonly elmentsInArray: elmentsInArrayTypes[];
   setCorrectRequest: Type_ChangeBooleanState;
-  phoneNumberEroreBolean: Type_ChangeBooleanState;
+  readonly phoneNumberEroreBolean: Type_ChangeBooleanState;
   setFailRequest: Type_ChangeBooleanState;
-  correctRequest: boolean;
+  readonly correctRequest: boolean;
   setElmentInArray: React.Dispatch<React.SetStateAction<elmentsInArrayTypes[]>>;
   setRequest: React.Dispatch<React.SetStateAction<Partial<requtest>>>;
 }

@@ -10,8 +10,21 @@ type Picks = Pick<
 >;
 
 export interface Types_useContext extends Picks {
-  failRequest: boolean;
-  phoneNumberEroreText: string;
+  readonly failRequest: boolean;
+  readonly phoneNumberEroreText: string;
   setPhoneNumberEroreBolean: Type_ChangeBooleanState;
   setPhoneNumberEroreText: React.Dispatch<React.SetStateAction<string>>;
 }
+export type Type_HandelOnChange = (
+  itemName: Readonly<string>,
+  e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+) => void;
+
+export type Type_handelAutocomplete = (
+  e: React.SyntheticEvent<any, any>
+) => void;
+
+export type Type_PhoneNumberHndelErroe = (
+  ItemName: Readonly<string>,
+  valueText: string
+) => void;

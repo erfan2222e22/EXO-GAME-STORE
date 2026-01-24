@@ -40,7 +40,6 @@ const InformationEnquryBtn = () => {
       setCorrectRequest(false);
     }
     correctRequest && resetInputValue();
-    console.log(phoneNumberEroreBolean);
   };
 
   return <BtnSend onClick={handelOnclick}>send</BtnSend>;
