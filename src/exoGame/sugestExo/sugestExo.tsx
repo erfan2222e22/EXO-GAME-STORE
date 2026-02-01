@@ -5,8 +5,9 @@ import Slider from "react-slick";
 import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styleComponent from "./Style-Component/StyleSugestExoSlider";
+import { Component_Props, Type_handelOnClick } from "./types/type-sugestExo";
 
-const SugestExoSlider = ({ titeltext, arrayItems }) => {
+const SugestExoSlider: Component_Props = ({ titeltext, arrayItems }) => {
   let settings = {
     arrows: true,
     infinite: true,
@@ -19,20 +20,22 @@ const SugestExoSlider = ({ titeltext, arrayItems }) => {
 
   const navigate = useNavigate();
 
-  const handelOnClick = (e, item) => {
+  const handelOnClick: Type_handelOnClick = (e, item) => {
     e.stopPropagation();
-    navigate(`catgory/test/${item.id}`, { state: { item: item } });
+    navigate(`catgory/${item.nameProduct}/${item.id}`, {
+      state: { itemProduct: item },
+    });
   };
 
   return (
     <BoxSugest>
-      <HederTextBox variant="body3">{titeltext}</HederTextBox>
+      <HederTextBox>{titeltext}</HederTextBox>
       <Slider {...settings}>
-        {arrayItems.map((item, index) => {
+        {arrayItems?.map((item, index) => {
           return (
             <BoxParent key={index}>
               <BoxContiner onClick={(e) => handelOnClick(e, item)}>
-                <BoxImg src={item.img} component="img"></BoxImg>
+                <BoxImg src={item.img} as="img"></BoxImg>
                 <Typography sx={{ height: "4rem" }}>
                   {item.nameProduct}
                 </Typography>

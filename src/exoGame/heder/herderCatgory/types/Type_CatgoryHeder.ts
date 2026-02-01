@@ -8,6 +8,7 @@ export interface itemsType {
   readonly DataLink: string;
   readonly text: string;
   readonly type: string;
+  readonly filterdLinkProduct: boolean;
 }
 export interface Type_ItemValue {
   img?: string;
@@ -16,5 +17,5 @@ export interface Type_ItemValue {
 
 export type Type_onMouseHandel = (
   e: React.MouseEvent<HTMLElement>,
-  item: Type_ItemValue
+  item: Type_ItemValue,
 ) => void;

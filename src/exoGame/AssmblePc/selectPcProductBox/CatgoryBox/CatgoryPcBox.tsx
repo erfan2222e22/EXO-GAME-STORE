@@ -12,6 +12,7 @@ const CatgoryPcBox = ({
   selectPCPartBox,
   setSelectPCPartBox,
 }: Props_Types) => {
+  const { ProductLink, pathName, filterdLinkProduct } = categoryData || {};
   const {
     BoxContainer,
     BoxParent,
@@ -46,7 +47,7 @@ const CatgoryPcBox = ({
             </Box>
 
             <Box>
-              {findTruetoChooseItems().map((item: any) => {
+              {findTruetoChooseItems().map((item) => {
                 return (
                   <TitleBox>
                     <Typography>{item.text}</Typography>
@@ -57,8 +58,9 @@ const CatgoryPcBox = ({
             </Box>
           </BoxContainer>
           <Catgory
-            product={categoryData?.product}
-            pathName={categoryData?.pathName}
+            ProductLink={ProductLink}
+            pathName={pathName}
+            filterdLinkBoll={filterdLinkProduct}
             selectPCPartBox={selectPCPartBox}
             setSelectPCPartBox={setSelectPCPartBox}
             closeCatgoryPcShape={closeCatgoryPcShape}

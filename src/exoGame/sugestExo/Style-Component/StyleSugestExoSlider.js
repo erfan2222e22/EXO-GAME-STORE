@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Avatar } from "@mui/material";
 
 const BoxSugest = styled(Box)({
   width: "100%",
@@ -7,6 +7,9 @@ const BoxSugest = styled(Box)({
   padding: "0 50px",
   position: "relative",
   marginTop: "2rem",
+  display: "flex",
+  flexDirection: "column",
+  gap: "1rem",
 });
 
 const BoxParent = styled(Box)({
@@ -26,7 +29,7 @@ const HederTextBox = styled(Typography)({
   justifyContent: "flex-end",
 });
 
-const BoxImg = styled(Box)({
+const BoxImg = styled(Avatar)({
   width: "90%",
   height: "90%",
 });

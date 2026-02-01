@@ -1,7 +1,6 @@
 import React from "react";
 import { Type_AsslbleContiner } from "../../types/types-AssmbleCniter";
-import { Type_originalItems_extends } from "../../../catgory-items/ProductParentBox/types/Type-ProductParentBox";
-
+import { Type_originalItems_extends } from "../../../catgory-items/mainCatgoryPage/types/types-Catgory";
 export interface Props_Type {
   setDisplayBoxes: (prev: boolean) => void;
   displayBoxes: boolean;

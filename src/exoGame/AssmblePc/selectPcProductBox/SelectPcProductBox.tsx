@@ -3,15 +3,11 @@ import contextUse from "../../useContext/useContext";
 import { Typography } from "@mui/material";
 import styleComponents from "./Style-Component/StyleSelectPcProductBox";
 import { useState } from "react";
-import axios from "axios";
 import CatgoryPcBox from "./CatgoryBox/CatgoryPcBox";
 import SelectedItemEdited from "../SelectedItemEdited/SelectedItemEdited";
-import { AxiosError } from "axios";
 import * as Scroll from "react-scroll";
-import { useNavigate } from "react-router-dom";
 import {
   Type_SelectPCPartBox,
-  EventClick_Types,
   SwitchCatgoryData,
   Type_handelAddPcClick,
   Type_switchtoChooseProducts,
@@ -38,39 +34,34 @@ const SelectPcProductBox = () => {
     ImgBox,
   } = styleComponents;
 
-  const [DisplayCatgory, setDisplayCatgory] = useState<boolean>(false);
+  const [DisplayCatgory, setDisplayCatgory] = useState(false);
   const [categoryData, setCategoryData] = useState<SwitchCatgoryData>(null);
-  const navigate = useNavigate();
-  const handelAddPcClick: Type_handelAddPcClick = async (e, item) => {
-    try {
-      // recive  data from server when click on btn
-      const fetchData = axios.get(item.jsonServer);
-      const result = (await fetchData).data;
-      setCategoryData({ product: result, pathName: item.title });
-      setDisplayCatgory(true);
-      switchtoChooseProducts(item);
-      Scroll.scroller.scrollTo("catgoryBox"); // scroll on catgoryProducts
-    } catch (err) {
-      const errStatus = err as AxiosError;
-      axios.isAxiosError(err) &&
-        navigate("/failedToFetch", {
-          state: { errorStatus: errStatus.status },
-        });
-    }
+  const handelAddPcClick: Type_handelAddPcClick = (item) => {
+    setCategoryData(
+      (prev) =>
+        (prev = {
+          ProductLink: item.jsonServer,
+          pathName: item.title,
+          filterdLinkProduct: false,
+        }),
+    );
+    setDisplayCatgory(true);
+    switchtoChooseProducts(item);
+    Scroll.scroller.scrollTo("catgoryBox"); // scroll on catgoryProducts
   };
 
   const switchtoChooseProducts: Type_switchtoChooseProducts = (item) => {
     // switch
     setSelectPCPartBox((prev: Type_SelectPCPartBox[]) =>
       prev.map((fill) =>
-        fill.text === item.text ? { ...fill, toChoose: true } : fill
-      )
+        fill.text === item.text ? { ...fill, toChoose: true } : fill,
+      ),
     );
   };
 
   const findTruetoChooseItems = () => {
     const filt = selectPCPartBox.filter(
-      (fill: Type_SelectPCPartBox) => fill.toChoose === true
+      (fill: Type_SelectPCPartBox) => fill.toChoose === true,
     );
     return filt || false;
   };
@@ -80,8 +71,8 @@ const SelectPcProductBox = () => {
     setDisplayCatgory(false);
     setSelectPCPartBox((prev: Type_SelectPCPartBox[]) =>
       prev.map((fill) =>
-        fill.toChoose === true ? { ...fill, toChoose: false } : fill
-      )
+        fill.toChoose === true ? { ...fill, toChoose: false } : fill,
+      ),
     );
   };
 
@@ -119,19 +110,13 @@ const SelectPcProductBox = () => {
                 }}
               >
                 <SelectBoxSecendContiner>
-                  <ImgBox
-                    // as={Avatar}
-                    src={item.iconSrc}
-                    alt={item.text}
-                  ></ImgBox>
+                  <ImgBox src={item.iconSrc} alt={item.text}></ImgBox>
                   <Typography>{item.text}</Typography>
                 </SelectBoxSecendContiner>
                 {item.MandatoryPcPart ? (
                   <></>
                 ) : (
-                  <AddPcPartsButton
-                    onClick={(e: EventClick_Types) => handelAddPcClick(e, item)}
-                  >
+                  <AddPcPartsButton onClick={() => handelAddPcClick(item)}>
                     <TextHederBox>+</TextHederBox>
                   </AddPcPartsButton>
                 )}
@@ -141,9 +126,7 @@ const SelectPcProductBox = () => {
 
           <SelectedItemEdited
             //Aded Pc Parts Box ✔
-            handelAddPcClick={(e: EventClick_Types) =>
-              handelAddPcClick(e, item)
-            }
+            handelAddPcClick={() => handelAddPcClick(item)}
             item={item}
             setSelectPCPartBox={setSelectPCPartBox}
           />

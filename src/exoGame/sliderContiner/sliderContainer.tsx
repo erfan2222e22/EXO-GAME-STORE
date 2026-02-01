@@ -7,6 +7,10 @@ const SliderContainer = () => {
   const [offerItems, setOfferItems] = useState([]);
   const [lastFronExiItems, setLastFronExiItems] = useState([]);
   const [BestsellersExoItems, setBestsellersExoItems] = useState([]);
+
+  useEffect(() => {
+    fetchDataFromServer();
+  }, []);
   const navigate = useNavigate();
 
   const fetchDataFromServer = async () => {
@@ -17,7 +21,7 @@ const SliderContainer = () => {
     } as const;
     try {
       const response = await Promise.all(
-        Object.values(arrayAddres).map((urls) => axios.get(urls))
+        Object.values(arrayAddres).map((urls) => axios.get(urls)),
       );
       const [BESTSELLERS, LATEST, OFFERS] = response.map((item) => item.data);
       setOfferItems(BESTSELLERS);
@@ -31,10 +35,6 @@ const SliderContainer = () => {
         });
     }
   };
-
-  useEffect(() => {
-    fetchDataFromServer();
-  }, []);
 
   return (
     <div>

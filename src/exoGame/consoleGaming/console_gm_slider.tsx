@@ -1,32 +1,23 @@
 import styleComponents from "./Style-Componet/StyleConsoleGm";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { AxiosError } from "axios";
 import { handelOnClickType } from "./types/Type_Console_gm_slider";
 
 const ConsoleGamingSlider = () => {
   const { ParentDiv, BoxConsoleGm } = styleComponents;
   const navigate = useNavigate();
 
-  const handelOnClick: handelOnClickType = async (LinkAdrees, navigateLink) => {
-    try {
-      const { data: GetData } = await axios.get(LinkAdrees);
-      if (Array.isArray(GetData)) {
-        navigate(navigateLink, {
-          state: { product: GetData, pathName: "PortableConsolesProduct" },
-        });
-      } else {
-        navigate(`${navigateLink}${GetData[0].id}`, {
-          state: { itemProduct: GetData[0] },
-        });
-      }
-    } catch (err) {
-      const errStatus = err as AxiosError;
-      axios.isAxiosError(err) &&
-        navigate("/failedToFetch", {
-          state: { errorStatus: errStatus.status },
-        });
-    }
+  const handelOnClick: handelOnClickType = (
+    LinkAdrees,
+    navigateLink,
+    filterdLinkProduct,
+  ) => {
+    navigate(navigateLink, {
+      state: {
+        ProductLink: LinkAdrees,
+        pathName: "monitorProduct",
+        filterdLinkProduct: filterdLinkProduct,
+      },
+    });
   };
 
   return (
@@ -37,7 +28,8 @@ const ConsoleGamingSlider = () => {
         onClick={() =>
           handelOnClick(
             "http://localhost:3300/PortableConsolesProduct",
-            "catgory/PortableConsolesProduct"
+            "catgory/PortableConsolesProduct",
+            false,
           )
         }
       ></BoxConsoleGm>
@@ -47,7 +39,8 @@ const ConsoleGamingSlider = () => {
         onClick={() =>
           handelOnClick(
             "http://localhost:3300/productSonyConsole?id=3",
-            "catgory/productSonyConsole/"
+            "catgory/productSonyConsole/",
+            true,
           )
         }
       ></BoxConsoleGm>

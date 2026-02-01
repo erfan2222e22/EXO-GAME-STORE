@@ -1,6 +1,6 @@
 import { styled } from "@mui/material/styles";
-import { Box } from "@mui/material";
-const BoxConsoleGm = styled(Box)({
+import { Box, Avatar } from "@mui/material";
+const BoxConsoleGm = styled(Avatar)({
   width: "95%",
   height: "80%",
   margin: "10px",

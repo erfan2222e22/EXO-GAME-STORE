@@ -1,6 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Box, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Box, Typography, Avatar } from "@mui/material";
 
 const ParentDiv = styled(Box)({
   position: "relative",
@@ -8,7 +7,7 @@ const ParentDiv = styled(Box)({
   top: "40px",
 });
 
-const BoxImg = styled(Box)({
+const BoxImg = styled(Avatar)({
   width: "70%",
   cursor: "pointer",
   margin: "20px auto",
@@ -32,7 +31,7 @@ const TextImg = styled(Typography)({
   fontSize: "13px",
 });
 
-const LinkPath = styled(Link)({
+const LinkPath = styled(Box)({
   textDecoration: "none",
   color: "black",
   fontFamily: "vazir",

@@ -11,6 +11,6 @@ export interface Props_Types {
   closeCatgoryPcShape: () => void;
   findTruetoChooseItems: () => [Type_FindTruetoChooseItems];
   categoryData: SwitchCatgoryData;
-  selectPCPartBox: Type_SelectPCPartBox;
+  selectPCPartBox: Type_SelectPCPartBox[];
   setSelectPCPartBox: () => void;
 }

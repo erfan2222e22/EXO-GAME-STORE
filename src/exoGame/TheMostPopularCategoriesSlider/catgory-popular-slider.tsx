@@ -5,9 +5,7 @@ import { Box } from "@mui/system";
 import styleComponent from "./Style-Component/StyleCategoryPopularSlider";
 import "./Style-Component/style.css";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { Type_handelOnClick } from "./types/Type-catgory-popular-slider";
-import { AxiosError } from "axios";
 
 const CategoryPopularSlider = () => {
   const { ParentDiv, BoxImg, TextHeadr, TextImg, LinkPath } = styleComponent;
@@ -101,20 +99,15 @@ const CategoryPopularSlider = () => {
     arrows: true,
   };
 
-  const handelOnClick: Type_handelOnClick = async (items) => {
-    const { jsonServer } = items || {};
-    try {
-      const { data: items } = await axios.get(jsonServer);
-      navigate(`catgory/${items.title}`, {
-        state: { product: items, pathName: items.title },
-      });
-    } catch (err) {
-      const errStatus = err as AxiosError;
-      axios.isAxiosError(err) &&
-        navigate("/failedToFetch", {
-          state: { errorStatus: errStatus.status },
-        });
-    }
+  const handelOnClick: Type_handelOnClick = (items) => {
+    const { jsonServer, title } = items || {};
+    navigate(`catgory/${title}`, {
+      state: {
+        ProductLink: jsonServer,
+        pathName: title,
+        filterdLinkProduct: false,
+      },
+    });
   };
 
   return (

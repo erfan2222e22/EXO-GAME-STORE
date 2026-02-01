@@ -77,7 +77,6 @@ const CatgoryJsx: ComponentProps = ({ props }) => {
           >
             ✖
           </button>
-
           <RemoveFilterdItems props={RemoveFilterdItems_Porps} />
           <FilterTolsValue props={FilterTolsValue_Props} />
           <FilterBtnComponent filterItmes={filterItmes} />

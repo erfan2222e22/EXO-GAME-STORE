@@ -1,9 +1,19 @@
-import { Type_originalItems_extends, Type_FilterValuse } from "./types-Catgory";
+import {
+  Type_originalItems_extends,
+  Type_FilterValuse,
+  FilterConfigItem,
+} from "./types-Catgory";
 import { Type_AsslbleContiner } from "../../../AssmblePc/types/types-AssmbleCniter";
+import styleComponents from "../Style-Component/StyleCatgory";
+const { MainBox, SmallSizeMainBox } = styleComponents;
 
 interface setPriceFunctionProps {
   minPrice: number;
   maxPrice: number;
+}
+
+export interface Item_Setting_Interface {
+  [key: string]: Type_FilterValuse;
 }
 
 interface ComponentProps_Interface {
@@ -27,15 +37,15 @@ interface ComponentProps_Interface {
       React.SetStateAction<Type_AsslbleContiner[]>
     >;
     closeCatgoryPcShape: () => void;
-    FilterValue: any;
-    kind_filters: Type_FilterValuse[];
+    FilterValue: Type_FilterValuse;
+    kind_filters: FilterConfigItem[];
     setPriceFunction: (selectedValue: setPriceFunctionProps) => void;
-    itemsSetting: string;
+    itemsSetting: Item_Setting_Interface;
     filterItmes: () => void;
     bolShowSmallBox: boolean;
     displayFilterBox: boolean;
-    SmallSizeMainBox: any;
-    MainBox: any;
+    SmallSizeMainBox: typeof SmallSizeMainBox; //HtmlStyledElment
+    MainBox: typeof MainBox; //HtmlStyledElment
     findTruetoChooseItems: () => [Type_AsslbleContiner];
   };
 }
