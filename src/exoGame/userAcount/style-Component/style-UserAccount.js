@@ -1,6 +1,13 @@
 import { Box, Typography, Avatar } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
+const Div = styled(Box)({
+  display: "flex",
+  height: "550px",
+  marginTop: "100px",
+  gap: "5px",
+});
+
 const ParentDiv = styled(Box)({
   display: "flex",
   flexDirection: "column",
@@ -18,6 +25,7 @@ const HederImg = styled(Avatar)({
   borderRadius: "50%",
   margin: "0 auto",
 });
+
 const ParentLink = styled(Box)({
   borderTop: "1px solid #dee2e6",
 });
@@ -32,7 +40,6 @@ const ContinerLink = styled(Box)({
 const Icon = styled(Avatar)({
   width: "7.7%",
   height: "7.7%",
-  // color: "#3c3c3c",
   color: "#03c03cff",
   "&:hover": {
     color: "#03c03c",
@@ -54,6 +61,7 @@ const LinkText = styled(Typography)({
 });
 
 const styleComponent = {
+  Div,
   ParentDiv,
   HederImg,
   ParentLink,

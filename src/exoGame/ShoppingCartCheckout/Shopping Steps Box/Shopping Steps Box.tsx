@@ -20,14 +20,14 @@ const ShoppingStepBox = () => {
             sx={{ color: "#03c03c", fontSize: "40px" }}
           ></LocalGroceryStoreOutlinedIcon>
         </ContinerIconsShopping>
-        <Line component="hr"></Line>
+        <Line as="hr"></Line>
         <ContinerIcons>
           Shipping Details
           <LocalShippingOutlinedIcon
             sx={{ color: "#818181", fontSize: "40px" }}
           ></LocalShippingOutlinedIcon>
         </ContinerIcons>
-        <Line component="hr"></Line>
+        <Line as="hr"></Line>
         <ContinerIcons>
           Payment
           <CreditCardOutlinedIcon

@@ -30,17 +30,17 @@ const SelectedItemEdited = ({
               ...selectItem,
               ProductArray: selectItem.ProductArray?.filter(
                 (fill: Type_AsslbleContiner_ProductArray_Filter) =>
-                  fill.id !== ItemId
+                  fill.id !== ItemId,
               ),
             }
-          : selectItem
-      )
+          : selectItem,
+      ),
     );
   };
 
   const editeItem = (e: click_Event_Type) => {
     e.stopPropagation();
-    handelAddPcClick(e);
+    handelAddPcClick();
   };
 
   return (
@@ -78,7 +78,7 @@ const SelectedItemEdited = ({
                   </IconsContiner>
                 </SelctedPcPatBox>
               );
-            }
+            },
           )}
         </>
       )}

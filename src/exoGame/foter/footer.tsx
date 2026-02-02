@@ -1,6 +1,5 @@
 import Tooltip from "@mui/material/Tooltip";
 import { Link } from "react-router-dom";
-// import { img } from "./navbar-Img";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import styleComponent from "./Style-Component/StyleFooter";
 import { Box } from "@mui/material";
@@ -43,7 +42,10 @@ const Footer = () => {
       <BoxFooter>
         {elmentsArray.map((value) => {
           return (
-            <Tooltip title={value.title}>
+            <Tooltip
+              title={value.title}
+              sx={{ display: "flex", gap: "20px", backgroundColor: "blue" }}
+            >
               <Link to={value.LinkAddres}>
                 <Box
                   component="img"
@@ -56,7 +58,7 @@ const Footer = () => {
           );
         })}
         <Img
-          src="http://localhost:3000/static/media/logo.8a05ed6da936dc416c38.png"
+          src="https://exo.ir/catalog/view/theme/exo/image/logo.svg"
           alt="img"
           as="img"
         ></Img>

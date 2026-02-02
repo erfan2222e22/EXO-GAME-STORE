@@ -80,6 +80,7 @@ const AddPcPartsButton = styled(Box)({
   padding: "5px",
   borderRadius: "30%",
   backgroundColor: "#03c03c",
+  // backgroundColor: "red",
   color: "#fff",
   border: "none",
   display: "flex",

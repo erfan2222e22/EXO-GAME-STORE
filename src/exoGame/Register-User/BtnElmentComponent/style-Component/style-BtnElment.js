@@ -16,7 +16,7 @@ const ContinuBtn = styled(Button)({
   color: "black ",
   "&:hover": {
     letterSpacing: "5px",
-    color: "#131313ff",
+    color: "#ffff",
     fontWeight: "10px",
   },
   "&:active ": {

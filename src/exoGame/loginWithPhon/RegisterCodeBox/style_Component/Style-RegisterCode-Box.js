@@ -1,4 +1,4 @@
-import { Box, Button, TextField } from "@mui/material";
+import { Box, Avatar, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const BoxConteriner = styled(Box)({
@@ -6,75 +6,60 @@ const BoxConteriner = styled(Box)({
   justifyContent: "center",
   flexDirection: "column",
   margin: "0 auto",
-  height: "500px",
+  height: "530px",
   textAlign: "center",
+  marginTop: "120px",
 });
 
 const ParentBox = styled(Box)({
   borderRadius: "10px",
   display: "flex",
   flexDirection: "column",
-  gap: "30px",
+  gap: "15px",
   justifyContent: "center",
   alignItems: "center",
   margin: "0 auto",
   textAlign: "center",
-  height: "350px",
-  padding: "10px",
-  boxShadow:
-    " rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px",
+  height: "500px",
+  padding: "5px",
+  width: "35%",
 });
 
-const InputParentBox = styled(TextField)({
-  width: "100%",
+const HederImg = styled(Avatar)({
+  width: "50%",
+  height: "20%",
+});
+
+const BoxHederTexts = styled(Box)({
   display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  gap: "5px",
+  flexDirection: "column",
+  gap: "15px",
 });
 
-const Input = styled(TextField)({
-  width: "50px",
-  textAlign: "center",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  border: "1px solid black",
-  borderRadius: "5px",
+const PhoneNumberText = styled(Typography)({
+  color: "#03c03c",
 });
 
-const ContinuBtn = styled(Button)({
-  boxShadow: " rgba(0, 0, 0, 0.15) 0px 3px 3px 0px",
-  backgroundColor: "#f3f3f3ff",
-  padding: "10px 40px",
-  borderRadius: "50px",
-  cursor: "pointer",
-  border: "0;",
-  letterSpacing: " 1.5px",
-  textTransform: " uppercase",
-  fontSize: " 15px",
-  transition: " all 0.5s ease",
-  color: "black ",
-  "&:hover": {
-    letterSpacing: "3px",
-    color: "#ffff",
-    // boxShadow: `black 0px 7px 29px 0px`,
-  },
-  "&:active ": {
-    letterSpacing: "3px",
-    backgroundColor: "black",
-    color: "hsl(0, 0%, 100%)",
-    boxShadow: "#000000ff 0px 0px 0px 0px",
-    transform: "translateY(10px)",
-    transition: "100ms",
-  },
+const FristText = styled(Typography)({
+  overflow: "hidden",
+  color: "#3c3c3c",
+  fontWeight: "normal",
+});
+
+const SecendText = styled(Typography)({
+  overflow: "hidden",
+  fontWeight: "inherit",
+  letterSpacing: "1px",
 });
 
 const styleComponent = {
-  Input,
-  ContinuBtn,
   BoxConteriner,
   ParentBox,
-  InputParentBox,
+  HederImg,
+  BoxHederTexts,
+  PhoneNumberText,
+  FristText,
+  SecendText,
 };
+
 export default styleComponent;

@@ -36,11 +36,11 @@ type readOnlyTypes = Readonly<Partial<Type_originalItems_ReadOnly>>;
 export interface Type_originalItems_extends extends readOnlyTypes {
   price: number | string;
   [key: string]: string | number | boolean | undefined | object[] | [];
-  // | (() => React.ReactNode);
 }
 
 export interface Type_CatgoryProps {
-  product: any;
+  ProductLink: string;
+  filterdLinkBoll: boolean;
   pathName: number | string;
   selectPCPartBox: Type_AsslbleContiner[];
   setSelectPCPartBox: React.Dispatch<
@@ -49,6 +49,7 @@ export interface Type_CatgoryProps {
   closeCatgoryPcShape: () => void;
   findTruetoChooseItems: () => [Type_AsslbleContiner];
 }
+
 export interface setPriceFunction_Entris {
   minPrice: number;
   maxPrice: number;

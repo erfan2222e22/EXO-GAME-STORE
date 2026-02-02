@@ -3,8 +3,7 @@ import styleComponent from "./Style-Component/StyledComponentLoginPhone";
 import { Typography } from "@mui/material";
 import Alert from "@mui/material/Alert";
 import { useNavigate } from "react-router-dom";
-import { AxiosError } from "axios";
-import axios from "axios";
+import { useLocation } from "react-router-dom";
 import {
   Type_checkPhoneNumber,
   Type_onChangHandelInput,
@@ -23,23 +22,43 @@ const LoginWithPhone = () => {
     BtnContiner,
   } = styleComponent; //style component
 
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const location = useLocation();
+  const [phoneNumber, setPhoneNumber] = useState(
+    location.state?.phoneNumber || ""
+  );
   const [truePhoneNumber, setTruePhoneNumber] = useState(false);
+  const [sendCodeAgain, setSendCodeAgain] = useState(false);
   const maxLength = 11;
-  const patern = /^09\d{9}$/;
+  const PATERN_IRAN_PHONE_NUMBER = /^09\d{9}$/;
   //👆filter numbers 1 to 11 length and number start with 09
   useEffect(() => {
-    const validPhoneNumber = checkPhoneNumber(phoneNumber, patern);
+    const validPhoneNumber = checkPhoneNumber(
+      phoneNumber,
+      PATERN_IRAN_PHONE_NUMBER
+    );
     validPhoneNumber && setTruePhoneNumber(true);
   }, [phoneNumber]);
 
-  const checkPhoneNumber: Type_checkPhoneNumber = (phoneNumber, patern) => {
-    const valid = patern.test(phoneNumber);
+  useEffect(() => {
+    const valid = PATERN_IRAN_PHONE_NUMBER.test(phoneNumber);
+    if (valid) {
+      setSendCodeAgain(false);
+    }
+  }, []);
+
+  const checkPhoneNumber: Type_checkPhoneNumber = (
+    phoneNumber,
+    PATERN_IRAN_PHONE_NUMBER
+  ) => {
+    const valid = PATERN_IRAN_PHONE_NUMBER.test(phoneNumber);
     return valid;
   };
 
   const onChangHandelInput: Type_onChangHandelInput = (value, event) => {
-    setPhoneNumber(value.slice(0, 11));
+    setPhoneNumber(value.slice(0, maxLength));
+    value.trim().length < maxLength &&
+      truePhoneNumber &&
+      setTruePhoneNumber(false);
     value.length >= maxLength && event.preventDefault();
   };
 
@@ -50,7 +69,7 @@ const LoginWithPhone = () => {
         setTruePhoneNumber(false);
         createRandomeCode();
         alert("Code-Sended");
-      }, 1000);
+      }, 2000);
     }
   };
 
@@ -68,16 +87,9 @@ const LoginWithPhone = () => {
       state: {
         code: randomeNumber,
         phoneNumber: phoneNumber,
+        sendCodeAgain: sendCodeAgain,
       },
     });
-  };
-
-  const handelCatchError = (err: AxiosError) => {
-    const errStatus = err as AxiosError;
-    axios.isAxiosError(err) &&
-      navigate("/failedToFetch", {
-        state: { errorStatus: errStatus.status },
-      });
   };
 
   return (
@@ -106,7 +118,9 @@ const LoginWithPhone = () => {
             Continue
           </CustomButton>
         </BtnContiner>
-        <BtnContiner>
+        <BtnContiner
+          onClick={() => navigate("/register-with-userPass", { state: "" })}
+        >
           <CustomButton2 variant="contained">
             Login with username and password
           </CustomButton2>
@@ -118,12 +132,12 @@ const LoginWithPhone = () => {
         </BtnContiner>
       </LoginBox>
 
-      {patern.test(phoneNumber) && (
+      {PATERN_IRAN_PHONE_NUMBER.test(phoneNumber) && (
         <Alert severity="success" sx={{ textAlign: "center" }}>
           good phone number
         </Alert>
       )}
-      <p>09904606964</p>
+      <p onClick={() => console.log(truePhoneNumber)}>09904606964</p>
     </div>
   );
 };

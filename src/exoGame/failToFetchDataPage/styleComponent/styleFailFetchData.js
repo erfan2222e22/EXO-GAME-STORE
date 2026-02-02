@@ -14,7 +14,7 @@ const ContinerBox = styled(Box)({
   marginTop: "50px",
 
   background:
-    "radial-gradient(100% 100% at 11% 99%, #f00000 -100%, transparent),radial-gradient(100% 100% at 79% 24%, #080808 0%, transparent),radial-gradient(100% 100% at 30% 29%, #f7f7f7 0%, transparent),#000000;  } ",
+    "radial-gradient(100% 100% at 11% 99%, #f00000 -100%, transparent),radial-gradient(100% 100% at 100% 14%, #080808 0%, transparent),radial-gradient(100% 100% at 30% 29%, #f7f7f7 0%, transparent),#000000;  } ",
 });
 
 const ParentBox = styled(Box)({

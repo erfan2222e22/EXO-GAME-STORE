@@ -1,7 +1,7 @@
 import {
   Type_originalItems_extends,
   Type_FilterValuse,
-} from "../../ProductParentBox/types/Type-ProductParentBox";
+} from "../../mainCatgoryPage/types/types-Catgory";
 import React from "react";
 
 export interface Component_Props_Types {
@@ -9,12 +9,13 @@ export interface Component_Props_Types {
   setFilteredItems: React.Dispatch<
     React.SetStateAction<Type_originalItems_extends[]>
   >;
-  setValid: React.Dispatch<React.SetStateAction<boolean>>;
+  SetBolShowSmallBox: React.Dispatch<React.SetStateAction<boolean>>;
   setOriginalItems: React.Dispatch<
     React.SetStateAction<Type_originalItems_extends[]>
   >;
   initialItems: Type_originalItems_extends[];
   setFilterValue: React.Dispatch<React.SetStateAction<Type_FilterValuse>>;
+  FilterValue: Type_FilterValuse;
 }
 
 export type Component_Props = ({

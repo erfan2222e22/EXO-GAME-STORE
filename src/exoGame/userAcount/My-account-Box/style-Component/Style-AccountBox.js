@@ -20,6 +20,7 @@ const ParentDiv = styled(Box)({
   marginLeft: "20px",
 });
 const HederParntDiv = styled(Box)({
+  borderRadius: "7px",
   overflow: "hidden",
   display: "flex",
   justifyContent: "space-between",

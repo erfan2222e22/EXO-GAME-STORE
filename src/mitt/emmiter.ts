@@ -6,10 +6,15 @@ export type EmmiterEvents = {
     cartList: Types_itemProduct;
     counter: number;
   };
+  test: {
+    sendedMassage: any;
+    setMassage: any;
+  };
+  updateMassage: {
+    newValue: any;
+  };
 };
 
 const emmiter: Emitter<EmmiterEvents> = mitt<EmmiterEvents>();
 
 export default emmiter;
-// const emmiter = mitt();
-// export default emmiter;

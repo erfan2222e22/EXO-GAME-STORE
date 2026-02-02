@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { AxiosError } from "axios";
 import { Type_handelClickLink } from "./types/Type_PlayStaionXbox";
-
 const PlaystaionXboxConsoleSlider = () => {
   const { ParentDiv } = styleComponent;
   const navigate = useNavigate();
@@ -27,42 +26,33 @@ const PlaystaionXboxConsoleSlider = () => {
       id: 3,
       title: "productSonyConsole",
       img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Main%20banner/Consoles%20TMB%20Playstation%202-760x570.webp",
-      jsonServer: "http://localhost:3300/productSonyConsole",
+      jsonServer: `http://localhost:3300/productSonyConsole`,
     },
   ];
 
-  const handelClickLink: Type_handelClickLink = async (item) => {
-    try {
-      const { jsonServer, title } = item;
-      const { data: PropductData } = await axios.get(jsonServer);
-      navigate(`catgory/${title}`, {
-        state: { product: PropductData, pathName: title },
-      });
-    } catch (err) {
-      const errStatus = err as AxiosError;
-      axios.isAxiosError(err) &&
-        navigate("/failedToFetch", {
-          state: { errorStatus: errStatus.status },
-        });
-    }
+  const handelClickLink: Type_handelClickLink = (item) => {
+    const { jsonServer, title } = item;
+    navigate(`catgory/${title}`, {
+      state: {
+        pathName: title,
+        ProductLink: jsonServer,
+        filterdLinkProduct: false,
+      },
+    });
   };
 
   return (
     <ParentDiv>
       {itmes.map((item) => {
         return (
-          <Link
-            to="#"
-            onClick={() => handelClickLink(item)}
-            style={{ display: "flex" }}
-            key={item.id}
-          >
+          <Box style={{ display: "flex" }} key={item.id}>
             <Box
               component="img"
+              onClick={() => handelClickLink(item)}
               src={item.img}
-              sx={{ borderRadius: "5px" }}
+              sx={{ borderRadius: "5px", backgroundColor: "red" }}
             ></Box>
-          </Link>
+          </Box>
         );
       })}
     </ParentDiv>

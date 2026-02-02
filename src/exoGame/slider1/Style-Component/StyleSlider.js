@@ -1,6 +1,6 @@
 import { Box, styled } from "@mui/system";
-
-const BoxImg = styled(Box)({
+import { Avatar } from "@mui/material";
+const ParentBox = styled(Box)({
   width: "95%",
   borderRadius: "20px",
   height: "300px",
@@ -24,6 +24,6 @@ const BoxImg = styled(Box)({
   },
 });
 const styleComponent = {
-  BoxImg,
+  ParentBox,
 };
 export default styleComponent;

@@ -1,5 +1,6 @@
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
+import { TextField } from "@mui/material";
 
 const ParentBox = styled(Box)({
   width: "100%",
@@ -50,7 +51,7 @@ const ParentBoxAddItems = styled(Box)({
   color: "black",
 });
 
-const BoxInputCounterItemsInBox = styled(Box)({
+const BoxInputCounterItemsInBox = styled(TextField)({
   textAlign: "center",
   width: "100px",
   height: "100%",

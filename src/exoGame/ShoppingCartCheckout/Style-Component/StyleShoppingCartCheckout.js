@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Box } from "@mui/material";
+import { Avatar, Box, TextField } from "@mui/material";
 
 const MainBox = styled(Box)({
   marginTop: "40px",
@@ -106,7 +106,7 @@ const ContinueShoppingBtn = styled(Box)({
   },
 });
 
-const Input = styled(Box)({
+const Input = styled(TextField)({
   textAlign: "center",
   width: "100px",
   borderRadius: "5px",
@@ -136,7 +136,7 @@ const EmptyContainerText = styled(Box)({
   color: "#3c3838ff",
 });
 
-const EmptyContainerImg = styled(Box)({
+const EmptyContainerImg = styled(Avatar)({
   width: "200px",
   height: "200px",
   textAlign: "center",
@@ -162,7 +162,7 @@ const SpanText = styled(Box)({
   fontWeight: "400",
 });
 
-const BoxImg = styled(Box)({ width: "100%", height: "auto" });
+const BoxImg = styled(Avatar)({ width: "100%", height: "auto" });
 
 const styleComponents = {
   MainBox,

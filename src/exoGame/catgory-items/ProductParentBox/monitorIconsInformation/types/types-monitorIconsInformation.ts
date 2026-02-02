@@ -1,4 +1,4 @@
-import { Type_originalItems_extends } from "../../types/Type-ProductParentBox";
+import { Type_originalItems_extends } from "../../../mainCatgoryPage/types/types-Catgory";
 
 interface Monitor_information extends Type_originalItems_extends {
   refreshRate: string;

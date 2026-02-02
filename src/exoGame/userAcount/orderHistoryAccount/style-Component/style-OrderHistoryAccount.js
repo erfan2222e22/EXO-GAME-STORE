@@ -7,7 +7,7 @@ const Div = styled(Box)({
 
 const HederParntDiv = styled(Box)({
   padding: "5px",
-  borderRadius: "1.5%",
+  borderRadius: "7px",
   overflow: "hidden",
   display: "flex",
   justifyContent: "space-between",

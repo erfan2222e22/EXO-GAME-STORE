@@ -2,7 +2,7 @@ import { AxiosError } from "axios";
 
 type NavigateFunction = (
   to: string,
-  options?: { replace?: boolean; state?: any }
+  options?: { replace?: boolean; state?: unknown },
 ) => void;
 
 type HandelError = (err: AxiosError) => void;
@@ -21,23 +21,23 @@ export type Type_AddDataToServer = (
   navigate: NavigateFunction,
   userId: number,
   phoneNumber: string,
-  handelCatchError: HandelError
+  handelCatchError: HandelError,
 ) => void;
 
 export type Type_NavigateToUserAccount = (
   navigate: NavigateFunction,
   userId: number,
-  handelCatchError: HandelError
+  handelCatchError: HandelError,
 ) => void;
 
 export type Type_CreateNewUserData = (
   navigate: NavigateFunction,
-  userId: number,
-  handelCatchError: HandelError
+  phoneNumber: string,
+  handelCatchError: HandelError,
 ) => void;
 
 export type Type_DelteCloneUser = (
   phoneNumber: string,
   navigate: NavigateFunction,
-  handelCatchErro: HandelError
+  handelCatchErro: HandelError,
 ) => void;

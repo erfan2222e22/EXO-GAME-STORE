@@ -1,4 +1,5 @@
 export type handelOnClickType = (
-  LinkAdrees: string,
-  navigateLink: string
+  LinkAdrees: Readonly<string>,
+  navigateLink: Readonly<string>,
+  filterdLinkProduct: Readonly<boolean>,
 ) => void;

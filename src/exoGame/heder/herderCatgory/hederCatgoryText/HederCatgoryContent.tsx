@@ -1,12 +1,7 @@
 import React from "react";
 import styleComponent from "./Style-Component/StyleContentHeder";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { AxiosError } from "axios";
-import {
-  Component_Props,
-  navigatingRoter,
-} from "./types/Type_HederCatgoryContext";
+import { Component_Props } from "./types/Type_HederCatgoryContext";
 const HederCatgoryContent: Component_Props = ({
   item,
   key,
@@ -15,26 +10,16 @@ const HederCatgoryContent: Component_Props = ({
   const { Ul, UlContiner } = styleComponent;
   const navigate = useNavigate();
 
-  const navigatingRoter: navigatingRoter = (values) => {
-    navigate(`catgory/${item.text}`, {
-      state: { product: values, pathName: item.text },
+  const handelOnClick = () => {
+    const { DataLink, text, filterdLinkProduct } = item;
+    navigate(`catgory/${text}`, {
+      state: {
+        pathName: text,
+        ProductLink: DataLink,
+        filterdLinkProduct: filterdLinkProduct,
+      },
     });
     setCatgoryDisplay((prev) => (prev = false));
-  };
-
-  const handelOnClick = async () => {
-    try {
-      const { data: values, status: valid_Status } = await axios.get(
-        item.DataLink
-      );
-      valid_Status === 200 && navigatingRoter(values);
-    } catch (err) {
-      const errStatus = err as AxiosError;
-      axios.isAxiosError(err) &&
-        navigate("/failedToFetch", {
-          state: { errorStatus: errStatus.status },
-        });
-    }
   };
 
   return (

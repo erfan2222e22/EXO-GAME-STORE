@@ -6,10 +6,11 @@ import { Component_Props } from "./types/BoxHderFilterPrice";
 const BoxHederFilterPrice: Component_Props = ({
   originalItems,
   setFilteredItems,
-  setValid,
+  SetBolShowSmallBox,
   setOriginalItems,
   initialItems,
   setFilterValue,
+  FilterValue,
 }) => {
   const { BoxHderFilterPrice, SortFilterText, BtnDisplayCatgory } =
     styleComponents;
@@ -26,12 +27,12 @@ const BoxHederFilterPrice: Component_Props = ({
       setFilteredItems([]);
       setSwitchToLowerPrice(false);
     }
+    console.log(FilterValue);
   };
 
   const lowerPriceFilterItems = () => {
     const lowPrice = originalItems.sort(
-      (a: { price: string | number }, b: { price: string | number }) =>
-        Number(a.price) - Number(b.price)
+      (a, b) => Number(a.price) - Number(b.price)
     );
     setSwitchToLowerPrice(true);
     setFilteredItems(lowPrice);
@@ -40,6 +41,7 @@ const BoxHederFilterPrice: Component_Props = ({
       setFilteredItems([]);
       setSwitchToMaxPrice(false);
     }
+    console.log(FilterValue);
   };
 
   const defualtProductSorted = () => {
@@ -58,7 +60,9 @@ const BoxHederFilterPrice: Component_Props = ({
 
   return (
     <BoxHderFilterPrice>
-      <BtnDisplayCatgory onClick={() => setValid((prev) => (prev = true))}>
+      <BtnDisplayCatgory
+        onClick={() => SetBolShowSmallBox((prev) => (prev = true))}
+      >
         <AddchartIcon></AddchartIcon>
       </BtnDisplayCatgory>
 

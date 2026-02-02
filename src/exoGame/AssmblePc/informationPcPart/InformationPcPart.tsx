@@ -136,9 +136,7 @@ const InformationPcPart = ({
               <BtnBoxContiner>
                 <BtnBoxParent>
                   <SelectBtn
-                    onClick={(e: React.MouseEvent<HTMLElement>) =>
-                      selectPcPartHandel(e, item, item.title)
-                    }
+                    onClick={(e) => selectPcPartHandel(e, item, item.title)}
                   >
                     Selection
                   </SelectBtn>

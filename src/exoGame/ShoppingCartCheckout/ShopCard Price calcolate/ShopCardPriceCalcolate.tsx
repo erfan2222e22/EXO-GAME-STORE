@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styleComponent from "./Style-Component/StyleShoppingCartCheckout";
-const ShopCardPriceCalcolate = ({ ProductsValue }) => {
+import { Component_Porps } from "./types/Type-ShopCardPriceCalcolate";
+
+const ShopCardPriceCalcolate: Component_Porps = ({ ProductsValue }) => {
   const { ContinerShopCard, SettlementOfAccount, ContinueShoppingBtn } =
     styleComponent;
 
-  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalPrice, setTotalPrice] = useState<number | number[]>(0);
 
   useEffect(() => {
     const calulatPrice = ProductsValue.map(
@@ -27,7 +29,7 @@ const ShopCardPriceCalcolate = ({ ProductsValue }) => {
           borderBottom: "1px solid #dee2e6",
         }}
       >
-        <p>Collect part:</p>
+        <p onClick={() => console.log(ProductsValue)}>Collect part:</p>
         <p>{totalPrice} $</p>
       </div>
       <div style={{ display: "flex", justifyContent: "space-between" }}>

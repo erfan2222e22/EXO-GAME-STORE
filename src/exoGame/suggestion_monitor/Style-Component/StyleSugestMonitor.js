@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Avatar } from "@mui/material";
 
 const DivParent = styled(Box)({
   textAlign: "center",
@@ -8,7 +8,7 @@ const DivParent = styled(Box)({
   marginTop: "10px",
 });
 
-const DivImg = styled(Box)({
+const DivImg = styled(Avatar)({
   width: "55%",
   margin: "5px",
 });

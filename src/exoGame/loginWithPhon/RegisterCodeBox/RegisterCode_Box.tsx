@@ -14,8 +14,16 @@ const RegisterCodeBox = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { code, phoneNumber }: TypeLocation = location.state;
-  const { BoxConteriner, ParentBox, HederImg } = styleComponent;
+  const { code, phoneNumber, sendCodeAgain }: TypeLocation = location.state;
+  const {
+    BoxConteriner,
+    ParentBox,
+    HederImg,
+    BoxHederTexts,
+    PhoneNumberText,
+    FristText,
+    SecendText,
+  } = styleComponent;
 
   const [UserInputCode, setUserInputCode] = useState<string[]>( //input Box from code length
     Array.from({ length: code.length }, () => "")
@@ -102,19 +110,34 @@ const RegisterCodeBox = () => {
 
   return (
     <BoxConteriner>
-      <ParentBox>
+      <ParentBox
+        sx={{
+          boxShadow: `${SetColorElment()} 0px 1px 2px 0px,${SetColorElment()} 0px 2px 6px 2px`,
+        }}
+      >
         <HederImg
           as="img"
           aria-label="."
-          src="https://exo.ir/catalog/view/theme/exo/image/logo.svg"
+          src="https://exo.ir/catalog/view/theme/exo/image/cover.svg"
         ></HederImg>
 
+        <BoxHederTexts>
+          <FristText as="h4">Verify Mobile Number</FristText>
+          <SecendText as="h6">
+            Verification code sent to,
+            <PhoneNumberText as="span">{phoneNumber}</PhoneNumberText>
+          </SecendText>
+        </BoxHederTexts>
+
         <InputElment
+          phoneNumber={phoneNumber}
           inputRefs={inputRefs}
           UserInputCode={UserInputCode}
           setUserInputCode={setUserInputCode}
           SetColorElment={SetColorElment}
+          sendCodeAgain={sendCodeAgain}
         />
+
         <RegisterBtnElment
           code={code}
           UserInputCode={UserInputCode}
@@ -124,6 +147,7 @@ const RegisterCodeBox = () => {
           validInterdCode={validInterdCode}
           navigation={navigation}
         />
+
         {validInterdCode === false && (
           <Typography sx={{ color: "red" }}>
             code is wrong pls try again!

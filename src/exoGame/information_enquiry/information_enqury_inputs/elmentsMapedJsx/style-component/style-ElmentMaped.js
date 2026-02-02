@@ -5,7 +5,7 @@ const Inputs = styled(TextField)({
   width: "95%",
   borderRadius: "0.4rem",
   margin: "1px",
-  padding: "1px",
+  padding: "2px",
   border: "1px solid #ccc;",
 });
 
