@@ -23,7 +23,17 @@ const ParentBox = styled(Box)({
     height: "100%",
   },
 });
+
+const ImgBox = styled(Avatar)({
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  borderRadius: "8px",
+  cursor: "pointer",
+});
+
 const styleComponent = {
   ParentBox,
+  ImgBox,
 };
 export default styleComponent;
