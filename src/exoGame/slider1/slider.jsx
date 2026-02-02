@@ -1,3 +1,4 @@
+
 import styleComponent from "./Style-Component/StyleSlider";
 import Slider from "react-slick";
 import { Box } from "@mui/material";
@@ -7,7 +8,7 @@ import emmiter from "../../mitt/emmiter";
 import { Type_sendSoloItem } from "./types/Type-FrilstSlider";
 
 const FristSliderPage = () => {
-  const { ParentBox, ImgBox } = styleComponent;
+  const {ParentBox, BoxImg } = styleComponent;
   const useref = useRef(null);
   const navigate = useNavigate();
 
@@ -39,7 +40,7 @@ const FristSliderPage = () => {
       title: "pcProduct",
     },
     {
-      img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Slider/Gaming%20Monitors%20slider%20pc%20v1%20copy-1600x400.jpg",
+      img:  "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Slider/Gaming%20Monitors%20slider%20pc%20v1%20copy-1600x400.jpg",
       jsoneServer: "http://localhost:3300/monitorProduct",
       id: 3,
       title: "monitorProduct",
@@ -51,7 +52,7 @@ const FristSliderPage = () => {
       title: "allMsiProducts",
     },
     {
-      img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Slider/Rendering%20Systems%20slider%20pc%20v1%20copy-1600x400.jpg",
+      img:  "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Slider/Rendering%20Systems%20slider%20pc%20v1%20copy-1600x400.jpg",
       jsoneServer: "http://localhost:3300/rendringPcProducts",
       id: 5,
       title: "rendringPcProducts",
@@ -98,7 +99,7 @@ const FristSliderPage = () => {
   };
 
   return (
-    <ParentBox>
+    <BoxImg sx={{}}>
       <Slider {...settings}>
         {imgsProductList.map((value) => (
           <Box ref={useref} key={value.id}>
@@ -112,7 +113,7 @@ const FristSliderPage = () => {
           </Box>
         ))}
       </Slider>
-    </ParentBox>
+    </BoxImg>
   );
 };
 
