@@ -15,7 +15,7 @@ const BenchMarkFoter = () => {
         will be at your service.
       </Text>
       <BoxImg
-        component="img"
+        as="img"
         src="https://exo.ir/catalog/view/theme/exo/image/exo-mark-footer.jpg"
         sx={{ width: "66.666667%", height: "50%" }}
       ></BoxImg>

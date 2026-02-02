@@ -5,7 +5,9 @@ import {
   Type_AddDataToServer,
   Type_NavigateToUserAccount,
   Type_DelteCloneUser,
+  Type_CreateNewUserData,
 } from "./types/Type_addDataToServer";
+
 export const addDataToServer: Type_AddDataToServer = (
   userIsRegistered,
   navigate,
@@ -31,10 +33,11 @@ const navigateToUserAccount: Type_NavigateToUserAccount = async (
     await axios.patch(`http://localhost:3300/users/${userId}`, {
       logined: true,
     });
+    const id = userId;
 
     setTimeout(() => {
       navigate(`/acount`, {
-        state: { state: "" },
+        state: { id: id },
       });
     }, 500);
   } catch (err) {
@@ -42,10 +45,10 @@ const navigateToUserAccount: Type_NavigateToUserAccount = async (
   }
 };
 
-const createNewUserData = async (
-  navigate: any,
-  phoneNumber: string,
-  handelCatchError: any
+const createNewUserData: Type_CreateNewUserData = async (
+  navigate,
+  phoneNumber,
+  handelCatchError
 ) => {
   try {
     const newUser = {
@@ -53,6 +56,7 @@ const createNewUserData = async (
       phoneNumber: phoneNumber,
       LastName: "",
       email: "",
+      password: "",
       logined: false,
     };
 
@@ -89,14 +93,13 @@ const delteCloneUser: Type_DelteCloneUser = async (
       idUsers.forEach((item: number[]) => {
         axios
           .delete(`http://localhost:3300/users/${item}`)
-          .then((item) =>
+          .then(() =>
             createNewUserData(navigate, phoneNumber, handelCatchError)
           )
-          .catch((err) => console.log(err));
+          .catch((err) => handelCatchError(err as AxiosError));
       })
     );
   } catch (err) {
     handelCatchError(err as AxiosError);
-    console.log(err);
   }
 };

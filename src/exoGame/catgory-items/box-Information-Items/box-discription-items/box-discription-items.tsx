@@ -22,7 +22,6 @@ const BoxDiscriptionItems = ({ ...item }) => {
         })
         .catch((err) => FailToFetchDataPage());
     }
-    console.log(false);
   }, [arrayProducts, indexFristArrayProducts]);
 
   return (

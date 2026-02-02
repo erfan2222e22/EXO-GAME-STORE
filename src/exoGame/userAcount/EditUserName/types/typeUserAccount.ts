@@ -27,4 +27,5 @@ export type Type_handelOnChange = (
   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   title: string
 ) => void;
+
 export type Type_handelOnChangePassUser = (e_value: string, id: number) => void;

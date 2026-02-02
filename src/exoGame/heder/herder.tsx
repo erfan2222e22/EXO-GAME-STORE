@@ -44,13 +44,11 @@ const Herder = () => {
 
   return (
     <Box>
-      <Box>kiram kose amd awekdplawdawdpo</Box>
       <StyledAppBar sx={{ height: elmentYPosition < 129 ? "80px" : "125px" }}>
         <CoustomToolbar>
           <Box>
             <BoxIcons>
               <ShoppingCartIconBox
-                valid={valid}
                 setValid={setValid}
                 ProductLength={ProductLength}
               ></ShoppingCartIconBox>
@@ -66,7 +64,7 @@ const Herder = () => {
                     sx={{ color: "#858585" }}
                     as={DensityMediumIcon}
                   ></Icons>
-                  a
+                  .
                 </button>
                 <Drawer
                   open={drawerDisplay}
@@ -92,7 +90,7 @@ const Herder = () => {
           <SmallSizeBoxLogoAndInput>
             <Link to="/">
               <LogoImg
-                src="http://localhost:3000/static/media/logo.8a05ed6da936dc416c38.png"
+                src="https://exo.ir/catalog/view/theme/exo/image/logo.svg"
                 alt="😑"
                 as="img"
               ></LogoImg>
@@ -125,7 +123,7 @@ const Herder = () => {
             />
             <Link to="/">
               <LogoImg
-                src="http://localhost:3000/static/media/logo.8a05ed6da936dc416c38.png"
+                src="https://exo.ir/catalog/view/theme/exo/image/logo.svg"
                 alt="😑"
                 as="img"
               ></LogoImg>

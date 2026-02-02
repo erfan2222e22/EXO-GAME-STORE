@@ -10,4 +10,4 @@ export interface Props_Component_Interface {
 export type Props_Component = (
   props: Props_Component_Interface
 ) => React.ReactNode;
-export type Type_handelOnchange = (event: any, newitem: number[]) => void;
+export type Type_handelOnchange = (event: unknown, newitem: number[]) => void;

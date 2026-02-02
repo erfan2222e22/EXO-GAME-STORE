@@ -23,15 +23,21 @@ import ShoppingCartCheckout from "./exoGame/ShoppingCartCheckout/ShoppingCartChe
 import ShoppingStepBox from "./exoGame/ShoppingCartCheckout/Shopping Steps Box/Shopping Steps Box.tsx";
 import ScrollBtn from "./exoGame/ScrollBtn/ScrollBtn.tsx";
 import Test from "./test.jsx";
-import Test2 from "./test2.jsx";
 import Page404Erroe from "./exoGame/404UndefindPage/404PageErroe.tsx";
 import RegisterCodeBox from "./exoGame/loginWithPhon/RegisterCodeBox/RegisterCode_Box.tsx";
 import FailToFetchDataPage from "./exoGame/failToFetchDataPage/failToFetchDataPage.tsx";
 import RegisterNewUser from "./exoGame/Register-User/Register-user";
 import UserAccount from "./exoGame/userAcount/UserAccount.tsx";
 import MyAccountBox from "./exoGame/userAcount/My-account-Box/My-Account-Box.tsx";
-import Awd from "./exoGame/userAcount/test/test.jsx";
-import EditAccount from "./exoGame/userAcount/Edit-account/Edit-account.tsx";
+import EditUserAccountParent from "./exoGame/userAcount/EditeUserAccountParent/EditUserAccountParent.tsx";
+import AddAddressAccount from "./exoGame/userAcount/addAddressAccount/addAddressAccount.tsx";
+import WishlistAccount from "./exoGame/userAcount/WishlistAccount/WishlistAccount.tsx";
+import OrderHistoryAccount from "./exoGame/userAcount/orderHistoryAccount/orderHistoryAccount.tsx";
+import ReturnsGoodAccount from "./exoGame/userAcount/ReturnedGoodsAccount/ReturnsGoodAccount.tsx";
+import LogOutAccount from "./exoGame/userAcount/Log out Account/LogOutAccount.tsx";
+import UserTransactions from "./exoGame/userAcount/UserTransactions/userTransactions.tsx";
+import LogUserPassUser from "./exoGame/logUserWidthUserAndPass/logUserPassUser.tsx";
+import AddAddressAccountInputs from "./exoGame/userAcount/addAddressAccount/addUserAccoutnInputs/AccounAddrestInputs.tsx";
 let rutes = [
   {
     path: "/",
@@ -75,6 +81,16 @@ let rutes = [
     ),
   },
   {
+    path: "/register-with-userPass",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <LogUserPassUser></LogUserPassUser>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
     path: "/register-user",
     element: (
       <div>
@@ -97,7 +113,7 @@ let rutes = [
     element: (
       <div>
         <HederPrentBox></HederPrentBox>
-        <UserAccount></UserAccount>
+        <UserAccount Component={MyAccountBox}></UserAccount>
         <Footer></Footer>
       </div>
     ),
@@ -117,17 +133,18 @@ let rutes = [
     element: (
       <div>
         <HederPrentBox></HederPrentBox>
-        <UserAccount Component={EditAccount}></UserAccount>
+        <UserAccount Component={EditUserAccountParent}></UserAccount>
         <Footer></Footer>
       </div>
     ),
   },
+
   {
     path: "/acount/password",
     element: (
       <div>
         <HederPrentBox></HederPrentBox>
-        <UserAccount Component={Awd}></UserAccount>
+        <UserAccount Component={EditUserAccountParent}></UserAccount>
         <Footer></Footer>
       </div>
     ),
@@ -137,7 +154,17 @@ let rutes = [
     element: (
       <div>
         <HederPrentBox></HederPrentBox>
-        <UserAccount Component={Awd}></UserAccount>
+        <UserAccount Component={AddAddressAccount}></UserAccount>
+        <Footer></Footer>
+      </div>
+    ),
+  },
+  {
+    path: "/acount/AddAddress",
+    element: (
+      <div>
+        <HederPrentBox></HederPrentBox>
+        <UserAccount Component={AddAddressAccountInputs}></UserAccount>
         <Footer></Footer>
       </div>
     ),
@@ -147,7 +174,7 @@ let rutes = [
     element: (
       <div>
         <HederPrentBox></HederPrentBox>
-        <UserAccount Component={Awd}></UserAccount>
+        <UserAccount Component={WishlistAccount}></UserAccount>
         <Footer></Footer>
       </div>
     ),
@@ -157,7 +184,7 @@ let rutes = [
     element: (
       <div>
         <HederPrentBox></HederPrentBox>
-        <UserAccount Component={Awd}></UserAccount>
+        <UserAccount Component={OrderHistoryAccount}></UserAccount>
         <Footer></Footer>
       </div>
     ),
@@ -167,17 +194,17 @@ let rutes = [
     element: (
       <div>
         <HederPrentBox></HederPrentBox>
-        <UserAccount Component={Awd}></UserAccount>
+        <UserAccount Component={ReturnsGoodAccount}></UserAccount>
         <Footer></Footer>
       </div>
     ),
   },
   {
-    path: "/acount/transaction",
+    path: "/acount/Transactions",
     element: (
       <div>
         <HederPrentBox></HederPrentBox>
-        <UserAccount Component={Awd}></UserAccount>
+        <UserAccount Component={UserTransactions}></UserAccount>
         <Footer></Footer>
       </div>
     ),
@@ -187,7 +214,7 @@ let rutes = [
     element: (
       <div>
         <HederPrentBox></HederPrentBox>
-        <UserAccount Component={Awd}></UserAccount>
+        <UserAccount Component={LogOutAccount}></UserAccount>
         <Footer></Footer>
       </div>
     ),
@@ -341,14 +368,6 @@ let rutes = [
     element: (
       <div>
         <Test></Test>
-      </div>
-    ),
-  },
-  {
-    path: "/test2",
-    element: (
-      <div>
-        <Test2></Test2>
       </div>
     ),
   },

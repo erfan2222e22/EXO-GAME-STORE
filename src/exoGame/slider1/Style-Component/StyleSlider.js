@@ -1,6 +1,5 @@
 import { Box, styled } from "@mui/system";
 import { Avatar } from "@mui/material";
-
 const ParentBox = styled(Box)({
   width: "95%",
   borderRadius: "20px",

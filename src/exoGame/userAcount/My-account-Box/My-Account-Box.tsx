@@ -5,8 +5,13 @@ import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import styleComponent from "./style-Component/Style-AccountBox";
 import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
+import contextUse from "../../useContext/useContext";
+import { useContext } from "react";
 const MyAccountBox = () => {
   const navigate = useNavigate();
+  const context = useContext(contextUse);
+  const { stateId } = context;
+
   const {
     Div,
     ParentDiv,
@@ -22,10 +27,22 @@ const MyAccountBox = () => {
       title: "My-Account",
       iconTitle: PersonIcon,
       textArrayElment: [
-        [{ id: 1, text: "Edit Account Information", routeAddres: "" }],
-        [{ id: 2, text: "Change password", routeAddres: "" }],
-        [{ id: 3, text: "Change address book information", routeAddres: "" }],
-        [{ id: 4, text: "Edit Wishlist", routeAddres: "" }],
+        [
+          {
+            id: 1,
+            text: "Edit Account Information",
+            routeAddres: "/acount/Edit",
+          },
+        ],
+        [{ id: 2, text: "Change password", routeAddres: "/acount/password" }],
+        [
+          {
+            id: 3,
+            text: "Change address book information",
+            routeAddres: "/acount/address",
+          },
+        ],
+        [{ id: 4, text: "Edit Wishlist", routeAddres: "/acount/Wishlist" }],
       ],
     },
     {
@@ -33,9 +50,21 @@ const MyAccountBox = () => {
       title: "My Orders",
       iconTitle: AccountBalanceWalletIcon,
       textArrayElment: [
-        [{ id: 1, text: "Order History", routeAddres: "" }],
-        [{ id: 2, text: "View Returned Goods Requests", routeAddres: "" }],
-        [{ id: 3, text: "Your Transactions", routeAddres: "" }],
+        [{ id: 1, text: "Order History", routeAddres: "/acount/order" }],
+        [
+          {
+            id: 2,
+            text: "View Returned Goods Requests",
+            routeAddres: "/acount/return",
+          },
+        ],
+        [
+          {
+            id: 3,
+            text: "Your Transactions",
+            routeAddres: "/acount/Transactions",
+          },
+        ],
       ],
     },
   ];
@@ -70,7 +99,8 @@ const MyAccountBox = () => {
                       style={{ cursor: "pointer" }}
                       key={value.id}
                       onClick={() => {
-                        navigate(value.routeAddres, { state: "" });
+                        // navigate(value.routeAddres, { state: { id: id } });
+                        console.log(stateId);
                       }}
                     >
                       {value.text}

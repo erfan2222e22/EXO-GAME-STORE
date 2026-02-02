@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Avatar } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const ParentBox = styled(Box)({
@@ -16,7 +16,7 @@ const ParentBox = styled(Box)({
   textAlign: "center",
   top: "20%",
   boxShadow: " rgba(0, 0, 0, 0.24) 0px 3px 8px",
-  backgroundColor: "#fff",
+  backgroundColor: "#ffff",
 });
 
 const HederText = styled(Box)({
@@ -25,7 +25,7 @@ const HederText = styled(Box)({
   borderBottom: "2px solid #9ea7af",
 });
 
-const Img = styled(Box)({
+const Img = styled(Avatar)({
   width: "50%",
   height: "50%",
 });

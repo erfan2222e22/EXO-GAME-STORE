@@ -98,8 +98,6 @@ const UserAccount = ({ Component }: any) => {
           </div>
         </ParentLink>
       </ParentDiv>
-      <p onClick={() => console.log(id)}>🖤</p>
-      <p onClick={() => console.log(stateId)}>❤</p>
       <contextUse.Provider value={{ stateId }}>
         {Component !== undefined && <Component></Component>}
       </contextUse.Provider>

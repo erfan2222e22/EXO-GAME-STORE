@@ -2,9 +2,6 @@ import styleComponent from "./Style-Component/StyleSlider";
 import Slider from "react-slick";
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import "./Style-Component/slide.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { useRef, useEffect } from "react";
 import emmiter from "../../mitt/emmiter";
 import { Type_sendSoloItem } from "./types/Type-FrilstSlider";
@@ -62,7 +59,7 @@ const FristSliderPage = () => {
     {
       img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Slider/Accessories%20pc%20v1%20copy-1600x400.jpg",
       jsoneServer: "http://localhost:3300/AllAccessoriesGamingProduct",
-      id: 7,
+      id: 6,
       title: "AccessoriesGaming",
     },
   ];

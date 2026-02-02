@@ -1,8 +1,6 @@
 import React from "react";
-import {
-  Type_Props,
-  Type_originalItems_extends,
-} from "../../types/Type-ProductParentBox";
+import { Type_originalItems_extends } from "../../../mainCatgoryPage/types/types-Catgory";
+import { Type_Props } from "../../../ProductParentBox/types/Type-ProductParentBox";
 
 type SelectProps = Pick<
   Type_Props,

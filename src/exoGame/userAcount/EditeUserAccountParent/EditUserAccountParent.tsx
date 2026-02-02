@@ -49,7 +49,7 @@ const EditUserAccountParent = () => {
   const fetchUserData = async () => {
     try {
       const { data: userData } = await axios.get(
-        `http://localhost:3300/users/${stateId}`
+        `http://localhost:3300/users/${stateId}`,
       );
       const { id, logined, password, ...rest } = userData;
 
@@ -59,7 +59,7 @@ const EditUserAccountParent = () => {
         EditAccount: prev.EditAccount.map((item) =>
           Object.keys(rest).includes(item.title)
             ? { ...item, value: rest[item.title] }
-            : item
+            : item,
         ),
       }));
     } catch (err) {

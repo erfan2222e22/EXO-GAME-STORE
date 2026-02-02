@@ -25,6 +25,7 @@ const UserTransactions = () => {
     CenterTableCell,
     TableBodyBox,
   } = styleComponent;
+
   return (
     <div
       style={{

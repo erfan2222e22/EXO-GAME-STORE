@@ -40,20 +40,13 @@ const BestBrandLaptop = () => {
 
   const handeloOnclick: Types_BestBrandLaptop = (item) => {
     const ProductsJsonLink = `http://localhost:3300/laptopProduct?Manufacturers=${item.text}`;
-    axios
-      .get(ProductsJsonLink)
-      .then((data) => {
-        navigate(`catgory/${item.text}`, {
-          state: { product: data.data, pathName: "laptopProduct" },
-        });
-      })
-      .catch((err) => {
-        const errStatus = err as AxiosError;
-        axios.isAxiosError(err) &&
-          navigate("/failedToFetch", {
-            state: { errorStatus: errStatus.status },
-          });
-      });
+    navigate(`catgory/${item.text}`, {
+      state: {
+        ProductLink: ProductsJsonLink,
+        pathName: "laptopProduct",
+        filterdLinkProduct: true,
+      },
+    });
   };
 
   return (

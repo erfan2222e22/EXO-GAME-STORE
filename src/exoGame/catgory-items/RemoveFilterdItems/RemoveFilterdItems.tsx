@@ -1,17 +1,16 @@
 import styleComponents from "./Style-Component/StyleRemoveFilterdItems";
-import { Type_FilterValuse } from "../ProductParentBox/types/Type-ProductParentBox";
-import { Props_Component } from "./types/Types_RemoveFilterdItems";
-import { number } from "prop-types";
+import {
+  Component_Porps,
+  showDelteValueFilters,
+} from "./types/Types_RemoveFilterdItems";
+import { Type_FilterValuse } from "../mainCatgoryPage/types/types-Catgory";
 
-const RemoveFilterdItems = ({
-  FilterValue,
-  setFilterValue,
-  setFilteredItems,
-}: Props_Component) => {
+const RemoveFilterdItems: Component_Porps = ({ props }) => {
+  const { FilterValue, setFilterValue, setFilteredItems } = props;
   const { HeadrBox, HeadrText, DelteBtn } = styleComponents;
 
   const showDelteBtn = (function () {
-    const show = (arr: Type_FilterValuse[]) => {
+    const showDelteValueFilters: showDelteValueFilters = (arr) => {
       const itemsValue = Object.entries(arr)
         .map(([key, value]) => value.toString().length > 0)
         .find((value) => {
@@ -20,25 +19,24 @@ const RemoveFilterdItems = ({
       return itemsValue;
     };
     return {
-      doSomthing(arr: Type_FilterValuse[]) {
-        return show(arr);
+      doSomthing(arr: Type_FilterValuse) {
+        return showDelteValueFilters(arr);
       },
     };
   })();
   const result = showDelteBtn.doSomthing(FilterValue);
 
-  const delteFilterItemsBtn = () => {
-    setFilterValue(
-      //delete all FiterValuse
-      (prev) => Object.fromEntries(Object.keys(prev).map((key) => [key, ""]))
+  const delteAllFiltersItems = () => {
+    setFilterValue((prev) =>
+      Object.fromEntries(Object.keys(prev).map((key) => [key, ""]))
     );
     setFilteredItems([]);
   };
 
   return (
     <HeadrBox>
-      <HeadrText>filter</HeadrText>
-      {result && <DelteBtn onClick={delteFilterItemsBtn}>delteitems</DelteBtn>}
+      <HeadrText onClick={() => console.log([FilterValue])}>filter</HeadrText>
+      {result && <DelteBtn onClick={delteAllFiltersItems}>delteitems</DelteBtn>}
     </HeadrBox>
   );
 };

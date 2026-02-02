@@ -51,7 +51,7 @@ const InformationEnquryInputs = () => {
     setElmentInArray((prev) =>
       prev.map((item) =>
         item.name === "howNotifYou"
-          ? { ...item, value: e.currentTarget.innerText ?? "" }
+          ? { ...item, value: e.currentTarget.innerHTML ?? "" }
           : item
       )
     );

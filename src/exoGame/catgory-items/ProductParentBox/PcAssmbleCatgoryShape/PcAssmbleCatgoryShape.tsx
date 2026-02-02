@@ -85,7 +85,7 @@ const PcAssmbleCatgoryShape = ({
             <Box key={item.id}>
               <MainBox>
                 <ContinerBoxDiscrib>
-                  {findTruetoChooseItems().SeveralChoices && (
+                  {findTruetoChooseItems()[0].SeveralChoices && (
                     <>
                       <Checkbox
                         onClick={() => checkBoxOnclick(item)}

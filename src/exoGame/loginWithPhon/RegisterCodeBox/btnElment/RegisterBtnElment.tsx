@@ -24,8 +24,8 @@ const RegisterBtnElment: Component_Porps = ({
       ? setValidInterdCode((prev: boolean) => (prev = true))
       : setValidInterdCode((prev: boolean) => (prev = false));
 
-    setUserInputCode((prev: any) =>
-      prev.map((item: any) => {
+    setUserInputCode((prev) =>
+      prev.map((item) => {
         return item.toString().trim().length > 0 ? "" : item;
       })
     );
