@@ -1,9 +1,6 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Box } from "@mui/system";
 import styleComponent from "./Style-Component/StyleCategoryPopularSlider";
-import "./Style-Component/style.css";
 import { useNavigate } from "react-router-dom";
 import { Type_handelOnClick } from "./types/Type-catgory-popular-slider";
 

@@ -7,6 +7,7 @@ const BoxConsoleGm = styled(Avatar)({
   cursor: "pointer",
   position: "relative",
   left: "5px",
+  overflow: "hidden",
 });
 const ParentDiv = styled(Box)({
   display: "flex",
