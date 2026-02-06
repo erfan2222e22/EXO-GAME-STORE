@@ -1,32 +1,113 @@
-import { AppBar, TextField, Toolbar, Box, Avatar } from "@mui/material";
+import { TextField, Toolbar, Box, Avatar, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 
-const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  direction: "rtl",
+const ContinerHeder = styled(Box)(({ theme }) => ({
   height: "125px",
+  width: "100%",
+  position: "fixed",
+  zIndex: "10000",
+  display: "grid",
+  gridColumnGap: "0px",
+  gridRowGap: "0px",
   backgroundColor: "#ffffffff",
+  direction: "rtl",
+  gridTemplateColumns: "repeat(5, 1fr)",
+  gridTemplateRows: "repeat(2, 1fr)",
+
+  boxShadow:
+    "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px",
+
+  [theme.breakpoints.down("sm")]: {
+    gridTemplateColumns: "repeat(4, 1fr)",
+    gridTemplateRows: "repeat(2, 1fr)",
+  },
 }));
-const CoustomToolbar = styled(Toolbar)({
+
+const ContinerIconHeder = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "end",
+
+  [theme.breakpoints.down("sm")]: {
+    gridArea: "1/1/2/5",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+}));
+
+const ContinerInputHeder = styled(Box)(({ theme }) => ({
+  overflow: "hidden",
+  [theme.breakpoints.down("sm")]: {
+    gridArea: "2 / 1 / 3 / 5",
+  },
+}));
+
+const ContinerLinksHeder = styled(Box)(({ theme }) => ({
+  [theme.breakpoints.down("sm")]: { display: "none" },
+}));
+
+const IconDiv = styled(Box)({
+  width: "50%",
+  height: "30%",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  height: "200px",
-  overflowY: "hidden",
+  margin: "0 auto",
+  padding: "1px",
+});
+
+const EditAccountBox = styled(Box)({
+  padding: "2px",
+  border: "1px solid #c3c3c3",
+  borderRadius: "3px",
+  backgroundColor: "#ffff",
+  width: "13%",
+  height: "26%",
+  direction: "ltr",
+  margin: "0 auto",
+  position: "fixed",
+  top: "10%",
+  left: "15%",
+});
+
+const EditAccountLinks = styled(Typography)({
+  // padding: "1px",
+  "&:hover": {
+    backgroundColor: "gray",
+  },
+});
+
+const InputDiv = styled(Toolbar)({
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  overflow: "hidden",
+  gap: "30px",
+  padding: "0.5px",
 });
 
 const SerchField = styled(TextField)(({ theme }) => ({
-  width: "75%",
+  width: "100%",
   height: "35%",
   overflow: "hidden",
-  direction: "rtl",
+  direction: "ltr",
   backgroundColor: "#e6e6e6",
   borderRadius: "6px",
   fontFamily: "vazir",
   position: "relative",
+  display: "flex",
+  justifyContent: "center",
   boxShadow:
     " rgba(0, 0, 0, 0.25) 0px 3px 15px, rgba(0, 0, 0, 0.22) 0px 3px 10px",
-  [theme.breakpoints.down("sm")]: { width: "100%" },
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
+    height: "100%",
+    fontSize: "10px",
+    overflow: "hidden",
+  },
 }));
 
 const BoxIcons = styled(Box)(({ theme }) => ({
@@ -36,9 +117,8 @@ const BoxIcons = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   alignItems: "center",
   gap: "10px",
-  height: "100px",
-  width: "100px",
-  [theme.breakpoints.down("sm")]: { position: "absolute", bottom: "35%" },
+  height: "100%",
+  width: "100%",
 }));
 
 const Spans = styled(Box)(({ theme }) => ({
@@ -60,27 +140,25 @@ const Icons = styled(Avatar)({
 });
 
 const TooltipBox = styled(Box)(({ theme }) => ({
-  // display: "none",
   display: "flex",
   textAlign: "left",
-  justifyContent: "space-around",
+  justifyContent: "space-between",
   width: "100%",
-  height: "125%",
+  height: "100%",
   opacity: "1",
-  [theme.breakpoints.down("sm")]: { display: "none" },
   animation: "3s ease-in-out",
 }));
 
-const LinkRoter = styled(Link)({
-  textDecoration: "none",
-  color: "#606060",
-});
 const LogoImg = styled(Avatar)(({ theme }) => ({
-  width: "70px",
-  height: "70px",
+  width: "80%",
+  height: "80%",
   cursor: "pointer",
-  [theme.breakpoints.down("sm")]: { width: "50px", height: "50px" },
+  [theme.breakpoints.down("sm")]: {
+    width: "80%",
+    height: "80%",
+  },
 }));
+
 const DrawerDisplay = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("xs")]: { display: "none" },
   [theme.breakpoints.down("xl")]: { display: "none" },
@@ -88,6 +166,7 @@ const DrawerDisplay = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("md")]: { display: "none" },
   [theme.breakpoints.down("sm")]: { display: "block" },
 }));
+
 const SmallSizeBoxLogoAndInput = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("xl")]: {
     display: "none",
@@ -101,20 +180,21 @@ const SmallSizeBoxLogoAndInput = styled(Box)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     margin: "0 auto",
     display: "flex",
-    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    width: "75%",
+    width: "90%",
     height: "100%",
-    padding: "2px",
+    padding: "1%",
+    gap: "5px",
   },
 }));
+
 const MediumeAndLargeBoxLogoAndInput = styled(Box)(({ theme }) => ({
   display: "flex",
   gap: "30px",
   justifyContent: "space-between",
   alignItems: "center",
-  width: "80%",
+  width: "100%",
   padding: "1%",
   [theme.breakpoints.down("sm")]: {
     display: "none",
@@ -123,17 +203,22 @@ const MediumeAndLargeBoxLogoAndInput = styled(Box)(({ theme }) => ({
 
 const styleComponents = {
   LogoImg,
-  StyledAppBar,
-  CoustomToolbar,
   BoxIcons,
   SerchField,
   Spans,
   Icons,
   TooltipBox,
-  LinkRoter,
   DrawerDisplay,
   SmallSizeBoxLogoAndInput,
   MediumeAndLargeBoxLogoAndInput,
+  ContinerHeder,
+  ContinerIconHeder,
+  ContinerInputHeder,
+  ContinerLinksHeder,
+  IconDiv,
+  InputDiv,
+  EditAccountBox,
+  EditAccountLinks,
 };
 
 export default styleComponents;

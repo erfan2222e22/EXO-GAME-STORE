@@ -12,11 +12,11 @@ import HederNavigationLink from "./HederNavigationLinks/HederNavigationLinks";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import HederCatgory from "./herderCatgory/CatgoryHeder";
 import emmiter, { EmmiterEvents } from "../../mitt/emmiter";
+import { useUserIdContext } from "../userIdContext/userIdContext.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Herder = () => {
   const {
-    StyledAppBar,
-    CoustomToolbar,
     SerchField,
     BoxIcons,
     TooltipBox,
@@ -25,68 +25,58 @@ const Herder = () => {
     Icons,
     SmallSizeBoxLogoAndInput,
     MediumeAndLargeBoxLogoAndInput,
+    ContinerHeder,
+    ContinerIconHeder,
+    ContinerInputHeder,
+    ContinerLinksHeder,
+    InputDiv,
+    IconDiv,
+    EditAccountBox,
+    EditAccountLinks,
   } = styleComponents;
 
-  const { valid, setValid, ProductLength } = useContext(contextUse);
   const [catgoryDisplay, setCatgoryDisplay] = useState(false);
   const [drawerDisplay, setDrawerDisplay] = useState(false);
   const [elmentYPosition, setElmentYPosition] = useState(0);
+  const [showEditAccountBox, setShowEditAccountBox] = useState(false);
+
+  const { setValid, ProductLength } = useContext(contextUse);
+  const { userId, setUserID } = useUserIdContext();
+
+  const navigate = useNavigate();
 
   const scroled = () => {
     emmiter.on("yPosition", (data: EmmiterEvents["yPosition"]) => {
       setElmentYPosition(data.item);
     });
   };
+
   useEffect(() => {
     window.addEventListener("scroll", scroled);
     return () => window.removeEventListener("scroll", scroled);
   }, []);
 
+  useEffect(() => {
+    const getLocalStorageId = localStorage.getItem("userId");
+    getLocalStorageId &&
+      setUserID((prev: number) => (prev = +getLocalStorageId));
+  }, []);
+
+  const checkToRemoveNaviLinks = () => {
+    const FristSliderYLocation = 129;
+    return elmentYPosition > FristSliderYLocation ? true : false;
+  };
+
   return (
-    <Box>
-      <StyledAppBar sx={{ height: elmentYPosition < 129 ? "80px" : "125px" }}>
-        <CoustomToolbar>
-          <Box>
-            <BoxIcons>
-              <ShoppingCartIconBox
-                setValid={setValid}
-                ProductLength={ProductLength}
-              ></ShoppingCartIconBox>
-              <Link to="/acount-login-Phone" style={{ color: "#858585" }}>
-                <PersonIcon></PersonIcon>
-              </Link>
-              <DrawerDisplay>
-                <button
-                  style={{ border: "none", backgroundColor: "#fff" }}
-                  onClick={() => setDrawerDisplay(true)}
-                >
-                  <Icons
-                    sx={{ color: "#858585" }}
-                    as={DensityMediumIcon}
-                  ></Icons>
-                  .
-                </button>
-                <Drawer
-                  open={drawerDisplay}
-                  onClick={() => setDrawerDisplay(false)}
-                >
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "5px",
-                      overflow: "hidden",
-                    }}
-                  >
-                    <HederNavigationLink
-                      catgoryDisplay={catgoryDisplay}
-                      setCatgoryDisplay={setCatgoryDisplay}
-                    />
-                  </Box>
-                </Drawer>
-              </DrawerDisplay>
-            </BoxIcons>
-          </Box>
+    <ContinerHeder sx={{ height: checkToRemoveNaviLinks() ? "125px" : "85px" }}>
+      <ContinerInputHeder
+        sx={{
+          gridArea: checkToRemoveNaviLinks()
+            ? "1 / 1 / 2 / 5"
+            : "1 / 1 / 4 / 4",
+        }}
+      >
+        <InputDiv>
           <SmallSizeBoxLogoAndInput>
             <Link to="/">
               <LogoImg
@@ -108,7 +98,15 @@ const Herder = () => {
               }}
             />
           </SmallSizeBoxLogoAndInput>
+
           <MediumeAndLargeBoxLogoAndInput>
+            <Link to="/">
+              <LogoImg
+                src="https://exo.ir/catalog/view/theme/exo/image/logo.svg"
+                alt="😑"
+                as="img"
+              ></LogoImg>
+            </Link>
             <SerchField
               placeholder="search..."
               variant="standard"
@@ -121,28 +119,91 @@ const Herder = () => {
                 disableUnderline: true,
               }}
             />
-            <Link to="/">
-              <LogoImg
-                src="https://exo.ir/catalog/view/theme/exo/image/logo.svg"
-                alt="😑"
-                as="img"
-              ></LogoImg>
-            </Link>
           </MediumeAndLargeBoxLogoAndInput>
-        </CoustomToolbar>
-        <TooltipBox>
-          {elmentYPosition < 129 ? (
-            <></>
-          ) : (
+        </InputDiv>
+      </ContinerInputHeder>
+
+      <ContinerIconHeder
+        sx={{
+          gridArea: checkToRemoveNaviLinks()
+            ? "1 / 5 / 3 / 6"
+            : "1 / 4 / 3 / 6",
+        }}
+      >
+        <IconDiv>
+          <BoxIcons>
+            <ShoppingCartIconBox
+              setValid={setValid}
+              ProductLength={ProductLength}
+            ></ShoppingCartIconBox>
+            <PersonIcon
+              onClick={() =>
+                userId > 0
+                  ? setShowEditAccountBox((prev) => (prev = true))
+                  : navigate("/acount-login-Phon")
+              }
+            ></PersonIcon>
+
+            <DrawerDisplay>
+              <button
+                style={{ border: "none", backgroundColor: "#fff" }}
+                onClick={() => setDrawerDisplay(true)}
+              >
+                <Icons sx={{ color: "#858585" }} as={DensityMediumIcon}></Icons>
+                .
+              </button>
+              <Drawer
+                open={drawerDisplay}
+                onClick={() => setDrawerDisplay(false)}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "5px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <HederNavigationLink
+                    catgoryDisplay={catgoryDisplay}
+                    setCatgoryDisplay={setCatgoryDisplay}
+                  />
+                </Box>
+              </Drawer>
+            </DrawerDisplay>
+          </BoxIcons>
+        </IconDiv>
+        {showEditAccountBox && (
+          <EditAccountBox
+            style={{
+              top: checkToRemoveNaviLinks() && "12%",
+              left: checkToRemoveNaviLinks() && "9%",
+            }}
+          >
+            <EditAccountLinks as="p">My Account</EditAccountLinks>
+            <EditAccountLinks as="p">Order History</EditAccountLinks>
+            <EditAccountLinks as="p">fav List</EditAccountLinks>
+            <EditAccountLinks as="p">Exit</EditAccountLinks>
+          </EditAccountBox>
+        )}
+      </ContinerIconHeder>
+
+      {checkToRemoveNaviLinks() && (
+        <ContinerLinksHeder
+          sx={{
+            gridArea: checkToRemoveNaviLinks() && "2 / 1 /3 / 5",
+          }}
+        >
+          <TooltipBox>
             <HederNavigationLink
               catgoryDisplay={catgoryDisplay}
               setCatgoryDisplay={setCatgoryDisplay}
             />
-          )}
-        </TooltipBox>
-      </StyledAppBar>
+          </TooltipBox>
+        </ContinerLinksHeder>
+      )}
       {catgoryDisplay && <HederCatgory setCatgoryDisplay={setCatgoryDisplay} />}
-    </Box>
+    </ContinerHeder>
   );
 };
 export default Herder;
