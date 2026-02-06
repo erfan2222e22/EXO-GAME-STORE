@@ -30,7 +30,7 @@ const HederNavigationLink: Component_Props = ({
     },
     {
       id: 3,
-      text: "Smart Assemble",
+      text: "Assemble",
       component: DashboardOutlinedIcon,
       addresLink: "/pc_assemble",
       onMouseEnter: false,
@@ -62,7 +62,12 @@ const HederNavigationLink: Component_Props = ({
 
   return (
     <div
-      style={{ display: "flex", width: "100%", gap: "4px", overflow: "hidden" }}
+      style={{
+        display: "flex",
+        width: "100%",
+        gap: "7px",
+        overflow: "hidden",
+      }}
     >
       {elmentItmes.map((item, index) => {
         return (
