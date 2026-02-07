@@ -1,8 +1,33 @@
-import React from "react";
 import styleComponent from "./Style_Component/Style_HederEditAccount";
+
+import { useUserIdContext } from "../../userIdContext/userIdContext";
 import { TypePropsComponent } from "./types/type_HederEditAccount";
-const HederEditAccount: TypePropsComponent = ({ checkToRemoveNaviLinks }) => {
+import { useNavigate } from "react-router-dom";
+
+const HederEditAccount: TypePropsComponent = ({
+  checkToRemoveNaviLinks,
+  setShowEditAccountBox,
+}) => {
   const { EditAccountBox, EditAccountLinks } = styleComponent;
+  const navigate = useNavigate();
+  const { userId } = useUserIdContext();
+
+  const handelMyAccountClick = () => {
+    const id = userId;
+    navigate("/acount", { state: { id: id } });
+    setShowEditAccountBox((prev) => (prev = false));
+  };
+
+  const handelLogOutUser = () => {
+    navigate("/acount/logout");
+    setShowEditAccountBox((prev) => (prev = false));
+  };
+
+  const handelNaviOrderWishlist = (routerAddress: string) => {
+    const id = userId;
+    navigate(routerAddress, { state: { id: id } });
+  };
+
   return (
     <EditAccountBox
       sx={{
@@ -10,10 +35,24 @@ const HederEditAccount: TypePropsComponent = ({ checkToRemoveNaviLinks }) => {
         left: checkToRemoveNaviLinks() && "9%",
       }}
     >
-      <EditAccountLinks as="p">My Account</EditAccountLinks>
-      <EditAccountLinks as="p">Order History</EditAccountLinks>
-      <EditAccountLinks as="p">fav List</EditAccountLinks>
-      <EditAccountLinks as="p">Exit</EditAccountLinks>
+      <EditAccountLinks as="p" onClick={handelMyAccountClick}>
+        My Account
+      </EditAccountLinks>
+      <EditAccountLinks
+        as="p"
+        onClick={() => handelNaviOrderWishlist("/acount/order")}
+      >
+        Order History
+      </EditAccountLinks>
+      <EditAccountLinks
+        as="p"
+        onClick={() => handelNaviOrderWishlist("/acount/Wishlist")}
+      >
+        fav List
+      </EditAccountLinks>
+      <EditAccountLinks as="p" onClick={handelLogOutUser}>
+        Exit
+      </EditAccountLinks>
     </EditAccountBox>
   );
 };

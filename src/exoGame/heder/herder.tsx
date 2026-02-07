@@ -3,17 +3,21 @@ import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
 import styleComponents from "./Style-Component/StyledComponentHeder";
 import ShoppingCartIconBox from "../ShoppingCart/ShoppingCartIcon";
-import { Link } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
 import contextUse from "../useContext/useContext";
-import { Box } from "@mui/system";
-import { Drawer } from "@mui/material";
 import HederNavigationLink from "./HederNavigationLinks/HederNavigationLinks";
 import DensityMediumIcon from "@mui/icons-material/DensityMedium";
 import HederCatgory from "./herderCatgory/CatgoryHeder";
+import HederEditAccount from "./hederEditeAccount/hederEditAccount";
+import axios from "axios";
+
+import { useContext, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Drawer } from "@mui/material";
+import { Box } from "@mui/system";
 import emmiter, { EmmiterEvents } from "../../mitt/emmiter";
 import { useUserIdContext } from "../userIdContext/userIdContext.jsx";
 import { useNavigate } from "react-router-dom";
+import { AxiosError } from "axios";
 
 const Herder = () => {
   const {
@@ -31,8 +35,6 @@ const Herder = () => {
     ContinerLinksHeder,
     InputDiv,
     IconDiv,
-    EditAccountBox,
-    EditAccountLinks,
   } = styleComponents;
 
   const [catgoryDisplay, setCatgoryDisplay] = useState(false);
@@ -57,10 +59,30 @@ const Herder = () => {
   }, []);
 
   useEffect(() => {
+    getLocalStorageUserId();
+  }, [userId, setUserID]);
+
+  const getLocalStorageUserId = () => {
     const getLocalStorageId = localStorage.getItem("userId");
-    getLocalStorageId &&
-      setUserID((prev: number) => (prev = +getLocalStorageId));
-  }, []);
+    getLocalStorageId && checkUserlogined(+getLocalStorageId);
+  };
+
+  const checkUserlogined = async (getLocalStorageId: number) => {
+    try {
+      const { data: userData } = await axios.get(
+        `http://localhost:3300/users/${getLocalStorageId}`,
+      );
+
+      const { logined } = userData;
+      logined && setUserID((prev: number) => (prev = getLocalStorageId));
+    } catch (err) {
+      const errStatus = err as AxiosError;
+      axios.isAxiosError(err) &&
+        navigate("/failedToFetch", {
+          state: { errorStatus: errStatus.status },
+        });
+    }
+  };
 
   const checkToRemoveNaviLinks = () => {
     const FristSliderYLocation = 129;
@@ -140,7 +162,7 @@ const Herder = () => {
               onClick={() =>
                 userId > 0
                   ? setShowEditAccountBox((prev) => (prev = true))
-                  : navigate("/acount-login-Phon")
+                  : navigate("/acount-login-Phone")
               }
             ></PersonIcon>
 
@@ -174,17 +196,10 @@ const Herder = () => {
           </BoxIcons>
         </IconDiv>
         {showEditAccountBox && (
-          <EditAccountBox
-            style={{
-              top: checkToRemoveNaviLinks() && "12%",
-              left: checkToRemoveNaviLinks() && "9%",
-            }}
-          >
-            <EditAccountLinks as="p">My Account</EditAccountLinks>
-            <EditAccountLinks as="p">Order History</EditAccountLinks>
-            <EditAccountLinks as="p">fav List</EditAccountLinks>
-            <EditAccountLinks as="p">Exit</EditAccountLinks>
-          </EditAccountBox>
+          <HederEditAccount
+            checkToRemoveNaviLinks={checkToRemoveNaviLinks}
+            setShowEditAccountBox={setShowEditAccountBox}
+          ></HederEditAccount>
         )}
       </ContinerIconHeder>
 

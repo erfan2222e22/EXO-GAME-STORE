@@ -1,4 +1,4 @@
-import { TextField, Toolbar, Box, Avatar, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const EditAccountBox = styled(Box)({
@@ -16,6 +16,7 @@ const EditAccountBox = styled(Box)({
 });
 
 const EditAccountLinks = styled(Typography)({
+  cursor: "pointer",
   "&:hover": {
     backgroundColor: "gray",
   },

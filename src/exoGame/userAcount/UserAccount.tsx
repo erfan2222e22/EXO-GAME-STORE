@@ -1,17 +1,28 @@
 import styleComponent from "./style-Component/style-UserAccount";
+import contextUse from "../useContext/useContext";
+
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
-import contextUse from "../useContext/useContext";
+import { useEffect, useState } from "react";
+import { useUserIdContext } from "../userIdContext/userIdContext";
+
 const UserAccount = ({ Component }: any) => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const { id } = location.state || {};
+  const { setUserID } = useUserIdContext();
   const [stateId] = useState(id);
 
   const { Div, ParentDiv, HederImg, ParentLink, ContinerLink, Icon, LinkText } =
     styleComponent;
+
+  useEffect(() => {
+    if (stateId) {
+      localStorage.setItem("userId", stateId);
+      setUserID((prev: number) => (prev = stateId));
+    }
+  }, []);
 
   const boxLinksElement = [
     { id: 0, text: "My Account", routeAddres: "/acount/My-Account" },
@@ -85,9 +96,7 @@ const UserAccount = ({ Component }: any) => {
                         item.routeAddres === location.pathname && "#03c03c",
                     }}
                     as="p"
-                    onClick={() => {
-                      navigate(`${item.routeAddres}`);
-                    }}
+                    onClick={() => navigate(item.routeAddres)}
                   >
                     <Icon src={item.icon} alt="" as="img" />
                     {item.text}
