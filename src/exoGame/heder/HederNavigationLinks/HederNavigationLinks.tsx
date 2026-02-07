@@ -73,8 +73,8 @@ const HederNavigationLink: Component_Props = ({
         return (
           <Spans
             key={index}
-            onMouseEnter={() => item.onMouseEnter && onMouseHandel()}
-            onMouseLeave={() => item.onMouseEnter && onMouseLeaveHandel()}
+            onMouseEnter={()=> item.onMouseEnter && onMouseHandel}
+            onMouseLeave={()=> item.onMouseEnter && onMouseLeaveHandel}
           >
             <LinkRoter as={Link} to={item.addresLink}>
               {item.text}
