@@ -15,7 +15,7 @@ const CatgoryJsx: ComponentProps = ({ props }) => {
     setFilterValue,
     filteredItems,
     pathName,
-    stateProduct,
+    DisplayCatgoryAssmble,
     setDisplayFilterBox,
     selectPCPartBox,
     setSelectPCPartBox,
@@ -61,7 +61,7 @@ const CatgoryJsx: ComponentProps = ({ props }) => {
         filteredItems={filteredItems}
         originalItems={originalItems}
         pathName={pathName}
-        stateProduct={stateProduct}
+        DisplayCatgoryAssmble={DisplayCatgoryAssmble}
         setDisplayFilterBox={setDisplayFilterBox}
         selectPCPartBox={selectPCPartBox}
         setSelectPCPartBox={setSelectPCPartBox}

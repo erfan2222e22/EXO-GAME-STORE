@@ -10,7 +10,7 @@ const ProductParentBoxComponent: Type_ComponentProps = ({
   filteredItems,
   originalItems,
   pathName,
-  stateProduct,
+  DisplayCatgoryAssmble,
   setDisplayFilterBox,
   selectPCPartBox,
   setSelectPCPartBox,
@@ -28,13 +28,7 @@ const ProductParentBoxComponent: Type_ComponentProps = ({
 
   return (
     <>
-      {stateProduct ? (
-        <GenraleCatgoryShape
-          filteredItems={filteredItems}
-          originalItems={originalItems}
-          handelOnClick={handelOnClick}
-        />
-      ) : (
+      {DisplayCatgoryAssmble ? (
         <PcAssmbleCatgoryShape
           filteredItems={filteredItems}
           originalItems={originalItems}
@@ -45,6 +39,12 @@ const ProductParentBoxComponent: Type_ComponentProps = ({
           closeCatgoryPcShape={closeCatgoryPcShape}
           findTruetoChooseItems={findTruetoChooseItems}
         ></PcAssmbleCatgoryShape>
+      ) : (
+        <GenraleCatgoryShape
+          filteredItems={filteredItems}
+          originalItems={originalItems}
+          handelOnClick={handelOnClick}
+        />
       )}
     </>
   );

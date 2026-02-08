@@ -5,7 +5,7 @@ import styleComponent from "./Style-Component/StylePcPartsCatgory";
 import { Props_Types } from "./types/types-CatgoryPcBox";
 
 const CatgoryPcBox = ({
-  DisplayCatgory,
+  DisplayCatgoryAssmble,
   closeCatgoryPcShape,
   findTruetoChooseItems,
   categoryData,
@@ -24,7 +24,7 @@ const CatgoryPcBox = ({
 
   return (
     <>
-      {DisplayCatgory && (
+      {DisplayCatgoryAssmble && (
         <BoxParent>
           <BoxContainer>
             <Box sx={{ display: "flex", alignItems: "center", gap: "5px" }}>
@@ -65,6 +65,7 @@ const CatgoryPcBox = ({
             setSelectPCPartBox={setSelectPCPartBox}
             closeCatgoryPcShape={closeCatgoryPcShape}
             findTruetoChooseItems={findTruetoChooseItems}
+            DisplayCatgoryAssmble={DisplayCatgoryAssmble}
           />
         </BoxParent>
       )}

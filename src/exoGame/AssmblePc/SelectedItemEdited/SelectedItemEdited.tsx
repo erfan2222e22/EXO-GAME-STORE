@@ -7,7 +7,6 @@ import {
   Types_setSelectPCPartBox,
   SelectedItemEditedProps,
 } from "./types/types-SelectedItemEdited";
-import React from "react";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 
@@ -25,7 +24,7 @@ const SelectedItemEdited = ({
     e.stopPropagation();
     setSelectPCPartBox((prev) =>
       prev.map((selectItem: Types_setSelectPCPartBox) =>
-        selectItem.title === ItemTitle
+        selectItem.title === item.title
           ? {
               ...selectItem,
               ProductArray: selectItem.ProductArray?.filter(
@@ -44,7 +43,7 @@ const SelectedItemEdited = ({
   };
 
   return (
-    <div>
+    <Box>
       {ProductArray.length > 0 && (
         <>
           {ProductArray.map(
@@ -82,7 +81,7 @@ const SelectedItemEdited = ({
           )}
         </>
       )}
-    </div>
+    </Box>
   );
 };
 

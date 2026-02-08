@@ -8,20 +8,30 @@ const SelctedPcPatBox = styled(Box)({
   height: "80px",
   padding: "15px",
 });
+
 const IconsDelete = styled(Box)({
   color: "#7f7d7d",
   fontSize: "200%",
   cursor: "pointer",
+  "&:hover": {
+    color: "#ff0101",
+  },
 });
+
 const IconsEdit = styled(Box)({
   color: "#7f7d7d",
   fontSize: "200%",
   cursor: "pointer",
+  "&:hover": {
+    color: "#03c03c",
+  },
 });
+
 const IconsContiner = styled(Box)({
   display: "flex",
   gap: "10px",
 });
+
 const ImgBox = styled(Avatar)({
   width: "50px",
   height: "50px",

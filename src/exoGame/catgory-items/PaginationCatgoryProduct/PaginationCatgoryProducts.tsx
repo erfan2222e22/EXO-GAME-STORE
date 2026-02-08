@@ -1,7 +1,7 @@
-import React from "react";
 import styleComponent from "./styleComponent/style_PaginationCatgoryProdycts";
 import { Box } from "@mui/material";
 import { Type_ComponentProps } from "./types/type_PagenationCatgoryProducts";
+
 const PaginationCatgoryProducts: Type_ComponentProps = ({
   allProductData,
   setPageConter,

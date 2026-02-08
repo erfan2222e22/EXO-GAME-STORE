@@ -30,7 +30,7 @@ interface ComponentProps_Interface {
     filteredItems: Type_originalItems_extends[];
     pathName: string;
     setFilterValue: React.Dispatch<React.SetStateAction<Type_FilterValuse>>;
-    stateProduct: [Type_originalItems_extends];
+    DisplayCatgoryAssmble: boolean;
     setDisplayFilterBox: React.Dispatch<React.SetStateAction<boolean>>;
     selectPCPartBox: Type_AsslbleContiner[];
     setSelectPCPartBox: React.Dispatch<
