@@ -15,7 +15,6 @@ export interface Props_Type {
 }
 
 export type Type_selectPcPartHandel = (
-  e: React.MouseEvent<HTMLElement>,
   items: Type_originalItems_extends,
-  ItemTitle: Readonly<string>
+  ItemTitle: Readonly<string>,
 ) => void;

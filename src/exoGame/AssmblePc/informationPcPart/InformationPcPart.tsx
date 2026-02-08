@@ -38,28 +38,30 @@ const InformationPcPart = ({
     BtnBoxParent,
   } = styleComponent;
 
-  const returnToSelectBox = (e: React.MouseEvent<HTMLElement>) => {
+  const returnToSelectBox = () => {
     setDisplayFilterBox(true);
     setDisplayBoxes(false);
   };
 
-  const selectPcPartHandel: Type_selectPcPartHandel = (e, items, ItemTitle) => {
+  const selectPcPartHandel: Type_selectPcPartHandel = (items, ItemTitle) => {
+    const { price, id, img, nameProduct } = items;
+
     const filterArray = selectPCPartBox.filter((fill: Type_AsslbleContiner) => {
       return fill.title === ItemTitle && fill.SeveralChoices;
     });
 
     const productItem: Type_AsslbleContiner_ProductArray = {
-      id: items.id ?? "",
-      price: items.price ?? 0,
-      img: items.img ?? "",
-      ...(items.nameProduct && { nameProduct: items.nameProduct }),
+      id: id ?? "",
+      price: price ?? 0,
+      img: img ?? "",
+      ...(nameProduct && { nameProduct: nameProduct }),
     } as Type_AsslbleContiner_ProductArray;
 
     setSelectPCPartBox((prev: Type_AsslbleContiner[]) => {
       const selectSolo = prev.map((fill: Type_AsslbleContiner) =>
         fill.title === ItemTitle
           ? { ...fill, ProductArray: [productItem] }
-          : fill
+          : fill,
       );
 
       const selectAll = prev.map((fill: Type_AsslbleContiner) =>
@@ -71,11 +73,11 @@ const InformationPcPart = ({
                   [...fill.ProductArray, productItem].map((product) => [
                     product.id,
                     product,
-                  ])
-                ).values()
+                  ]),
+                ).values(),
               ),
             }
-          : fill
+          : fill,
       );
       return filterArray.length > 0 ? selectAll : selectSolo;
     });
@@ -119,7 +121,7 @@ const InformationPcPart = ({
                           <span style={{ color: "#666" }}>{key}:</span>
                           <span style={{ color: "#222" }}>{String(value)}</span>
                         </TableContainerBox>
-                      ))
+                      )),
                     )}
                   </TableParentBox>
                 </TableMainBox>
@@ -136,13 +138,11 @@ const InformationPcPart = ({
               <BtnBoxContiner>
                 <BtnBoxParent>
                   <SelectBtn
-                    onClick={(e) => selectPcPartHandel(e, item, item.title)}
+                    onClick={() => selectPcPartHandel(item, item.title)}
                   >
                     Selection
                   </SelectBtn>
-                  <ReturnBtn onClick={(e) => returnToSelectBox(e)}>
-                    return
-                  </ReturnBtn>
+                  <ReturnBtn onClick={returnToSelectBox}>return</ReturnBtn>
                 </BtnBoxParent>
               </BtnBoxContiner>
             </MainBox>

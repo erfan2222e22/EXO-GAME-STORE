@@ -18,6 +18,9 @@ const Button = styled(Box)({
   border: "1px solid black",
   backgroundColor: "#ffff",
   borderRadius: "5px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 });
 
 const styleComponents = { ParentBox, Button };

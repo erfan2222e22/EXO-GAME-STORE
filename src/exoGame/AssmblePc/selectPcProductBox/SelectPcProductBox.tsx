@@ -6,6 +6,8 @@ import { useState } from "react";
 import CatgoryPcBox from "./CatgoryBox/CatgoryPcBox";
 import SelectedItemEdited from "../SelectedItemEdited/SelectedItemEdited";
 import * as Scroll from "react-scroll";
+import axios from "axios";
+
 import {
   Type_SelectPCPartBox,
   SwitchCatgoryData,
@@ -34,20 +36,21 @@ const SelectPcProductBox = () => {
     ImgBox,
   } = styleComponents;
 
-  const [DisplayCatgory, setDisplayCatgory] = useState(false);
+  const [DisplayCatgoryAssmble, setDisplayCatgoryAssmble] = useState(false);
   const [categoryData, setCategoryData] = useState<SwitchCatgoryData>(null);
   const handelAddPcClick: Type_handelAddPcClick = (item) => {
+    const { jsonServer, title } = item;
     setCategoryData(
       (prev) =>
         (prev = {
-          ProductLink: item.jsonServer,
-          pathName: item.title,
+          ProductLink: jsonServer,
+          pathName: title,
           filterdLinkProduct: false,
         }),
     );
-    setDisplayCatgory(true);
+    setDisplayCatgoryAssmble(true);
     switchtoChooseProducts(item);
-    Scroll.scroller.scrollTo("catgoryBox"); // scroll on catgoryProducts
+    Scroll.scroller.scrollTo("catgoryBox");
   };
 
   const switchtoChooseProducts: Type_switchtoChooseProducts = (item) => {
@@ -68,7 +71,7 @@ const SelectPcProductBox = () => {
 
   const closeCatgoryPcShape = () => {
     // close catgoryBox on UI
-    setDisplayCatgory(false);
+    setDisplayCatgoryAssmble(false);
     setSelectPCPartBox((prev: Type_SelectPCPartBox[]) =>
       prev.map((fill) =>
         fill.toChoose === true ? { ...fill, toChoose: false } : fill,
@@ -80,7 +83,7 @@ const SelectPcProductBox = () => {
     <ParentBox>
       <ScrollElement name="catgoryBox">
         <CatgoryPcBox
-          DisplayCatgory={DisplayCatgory}
+          DisplayCatgoryAssmble={DisplayCatgoryAssmble}
           closeCatgoryPcShape={closeCatgoryPcShape}
           findTruetoChooseItems={findTruetoChooseItems}
           categoryData={categoryData}

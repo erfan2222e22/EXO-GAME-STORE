@@ -23,6 +23,7 @@ const Catgory = ({
   setSelectPCPartBox,
   closeCatgoryPcShape,
   findTruetoChooseItems,
+  DisplayCatgoryAssmble,
 }: Type_CatgoryProps) => {
   const { pageConter, setPageConter, allProductData, setAllProductData } =
     usePaginationConterCatgory();
@@ -48,20 +49,17 @@ const Catgory = ({
   }, [pageConter]);
 
   const filterValuesTols = allProductData[0]?.productSetting;
-  //main state
   const [FilterValue, setFilterValue] = useState<Type_FilterValuse>({});
 
   const [originalItems, setOriginalItems] = useState<
     Type_originalItems_extends[] | []
   >([]); // all items catch from json server
   const [filteredItems, setFilteredItems] = useState([]); //flterd items between slected filters
-
   const [kind_filters, setKind_filters] = useState([]); //filterd valus box
 
   const [value_kind_filter, setKind_filters_value] = useState();
 
   const [bolShowSmallBox, SetBolShowSmallBox] = useState(false);
-
   const [displayFilterBox, setDisplayFilterBox] = useState(true);
 
   const ProductJsonLink = productLinkProps || jsonServerState;
@@ -77,8 +75,7 @@ const Catgory = ({
         setKind_filters_value(filterValues);
         setKind_filters(kindofFilter);
       } catch (err) {
-        // handelFetchError(err as AxiosError);
-        console.log(err);
+        handelFetchError(err as AxiosError);
       }
     };
     fetchFillterData();
@@ -91,8 +88,7 @@ const Catgory = ({
       setOriginalItems(userData);
       console.log(userData);
     } catch (err) {
-      // handelFetchError(err as AxiosError);
-      console.log(err);
+      handelFetchError(err as AxiosError);
     }
   };
 
@@ -102,8 +98,7 @@ const Catgory = ({
       setAllProductData(ProductData);
       console.log(ProductData);
     } catch (err) {
-      // handelFetchError(err as AxiosError);
-      console.log(err);
+      handelFetchError(err as AxiosError);
     }
   };
 
@@ -123,7 +118,6 @@ const Catgory = ({
   };
 
   const setPriceFunction: setPriceFunction = (selectedValue) => {
-    // for now set filters valuse in state
     const { maxPrice, minPrice } = selectedValue;
     setFilterValue((prev) => ({
       ...prev,
@@ -176,7 +170,7 @@ const Catgory = ({
     setFilterValue: setFilterValue,
     filteredItems: filteredItems,
     pathName: pathName,
-    stateProduct: allProductData,
+    DisplayCatgoryAssmble: DisplayCatgoryAssmble,
     setDisplayFilterBox: setDisplayFilterBox,
     selectPCPartBox: selectPCPartBox,
     setSelectPCPartBox: setSelectPCPartBox,

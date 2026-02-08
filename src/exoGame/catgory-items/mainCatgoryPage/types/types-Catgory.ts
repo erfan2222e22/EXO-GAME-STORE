@@ -20,6 +20,7 @@ export interface Type_FilterValuse {
   Manufacturers?: string[];
   [key: string]: unknownItemsType;
 }
+
 interface Type_originalItems_ReadOnly {
   id: string | number;
   nameProduct: string;
@@ -48,6 +49,7 @@ export interface Type_CatgoryProps {
   >;
   closeCatgoryPcShape: () => void;
   findTruetoChooseItems: () => [Type_AsslbleContiner];
+  DisplayCatgoryAssmble: boolean;
 }
 
 export interface setPriceFunction_Entris {

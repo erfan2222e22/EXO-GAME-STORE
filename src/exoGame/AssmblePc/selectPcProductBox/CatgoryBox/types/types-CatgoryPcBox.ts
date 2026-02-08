@@ -7,7 +7,7 @@ import {
 export interface Type_FindTruetoChooseItems extends Type_AsslbleContiner {}
 
 export interface Props_Types {
-  DisplayCatgory: boolean;
+  DisplayCatgoryAssmble: boolean;
   closeCatgoryPcShape: () => void;
   findTruetoChooseItems: () => [Type_FindTruetoChooseItems];
   categoryData: SwitchCatgoryData;
