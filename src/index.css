@@ -1,0 +1,53 @@
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  text-decoration: none;
+}
+input::placeholder {
+  font-family: vazir;
+}
+.container {
+  transition: 100ms;
+}
+.continer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  border: 1px solid black;
+  font-size: x-large;
+  gap: 10px;
+  height: 300px;
+}
+.heder {
+  grid-column: 3;
+  grid-row: 2;
+  background-color: brown;
+}
+.leftSlider {
+  grid-column: span 3 / 3 span;
+  grid-row: 5;
+  grid-column-start: 4;
+  background-color: gray;
+}
+
+.rightSlider {
+  grid-column: span 3 / 3span;
+  grid-row: 5/5;
+  grid-column-start: 5;
+  background-color: red;
+}
+
+.con1 {
+  grid-column: 2 span / span 2;
+  grid-row: 3 span / span 3;
+  background-color: blueviolet;
+}
+
+.con2 {
+  grid-column: 1 span / span 1;
+  grid-row: 3 span / span 3;
+  background-color: teal;
+}
