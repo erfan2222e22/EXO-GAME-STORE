@@ -7,11 +7,11 @@ const DivParent = styled(Box)(({ theme }) => ({
   justifyContent: "center",
   marginTop: "10px",
   gap: "20px",
-
   [theme.breakpoints.down("sm")]: {
     display: "grid",
     gridTemplateColumns: "repeat(4 ,1fr)",
     gridTemplateRows: "repeat(4 ,1fr)",
+    height: "100%",
   },
 }));
 
@@ -30,27 +30,24 @@ const DivImg = styled(Avatar)({
   margin: "5px",
 });
 
-const ContinerImgAndText = styled(Box)(({ theme }) => ({
+const ContinerImgAndText = styled(Box)({
   padding: "1px",
-  width: "100%",
-  height: "100%",
+  width: "50%",
+  height: "50%",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   alignContent: "center",
   flexDirection: "column",
   textAlign: "center",
-  [theme.breakpoints.down("sm")]: {
-    width: "100px",
-    height: "100px",
-  },
-}));
+});
 
 const Text = styled(Typography)({
   fontFamily: "vazir",
   overflow: "hidden",
   fontSize: "14px",
   cursor: "pointer",
+  colro: "#3c3c3c",
   "&:hover": { color: "#03c03c" },
 });
 
@@ -58,7 +55,7 @@ const HeadrText = styled(Typography)({
   textAlign: "center",
   fontFamily: "vazir",
   overflow: "hidden",
-  color: "black",
+  colro: "#3c3c3c",
 });
 
 const styleComponent = {

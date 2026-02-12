@@ -1,14 +1,18 @@
-import { Box } from "@mui/material";
 import styleComponent from "./Style-Component/StylePlaystaionXboxSlider";
+
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import { AxiosError } from "axios";
-import { Type_handelClickLink } from "./types/Type_PlayStaionXbox";
+import {
+  Type_handelClickLink,
+  Type_resultElmentImg,
+} from "./types/Type_PlayStaionXbox";
+import { useXandYWindowPosition } from "../Y-X-WindowContext/Y-X-WindowContext.jsx";
+
 const PlaystaionXboxConsoleSlider = () => {
-  const { ParentDiv } = styleComponent;
+  const { xWindow } = useXandYWindowPosition();
+  const { ParentDiv, ImgBox } = styleComponent;
   const navigate = useNavigate();
-  let itmes = [
+
+  const itmesList = [
     {
       id: 1,
       title: "productXboxConsole",
@@ -30,6 +34,24 @@ const PlaystaionXboxConsoleSlider = () => {
     },
   ];
 
+  const mobileImgList = [
+    {
+      id: 1,
+      imgAddres:
+        "https://exo.ir/image/cache/catalog/New_Template/Banners/Mobile/Main%20Banners/Consoles%20TMB%20Mobile%20Playstation%20v1%20copy-656x180.webp",
+    },
+    {
+      id: 2,
+      imgAddres:
+        "https://exo.ir/image/cache/catalog/New_Template/Banners/Mobile/Main%20Banners/Consoles%20TMB%20Mobile%20Xbox%20v1%20copy-656x180.webp",
+    },
+    {
+      id: 3,
+      imgAddres:
+        "https://exo.ir/image/cache/catalog/New_Template/Banners/Mobile/Main%20Banners/Consoles%20TMB%20Mobile%20nintendo%20v1%20copy-656x180.webp",
+    },
+  ];
+
   const handelClickLink: Type_handelClickLink = (item) => {
     const { jsonServer, title } = item;
     navigate(`catgory/${title}`, {
@@ -41,18 +63,25 @@ const PlaystaionXboxConsoleSlider = () => {
     });
   };
 
+  const resultElmentImg: Type_resultElmentImg = (item) => {
+    const { id, img } = item;
+    const phoneWidth = 600;
+    const mobileImg = mobileImgList.find((fill) => fill.id === id)?.imgAddres;
+    const Result = xWindow > phoneWidth ? img : mobileImg;
+    return Result;
+  };
+
   return (
     <ParentDiv>
-      {itmes.map((item) => {
+      {itmesList.map((item) => {
         return (
-          <Box style={{ display: "flex" }} key={item.id}>
-            <Box
-              component="img"
-              onClick={() => handelClickLink(item)}
-              src={item.img}
-              sx={{ borderRadius: "5px", backgroundColor: "red" }}
-            ></Box>
-          </Box>
+          <ImgBox
+            key={item.id}
+            src={resultElmentImg(item)}
+            alt="🎨"
+            as="img"
+            onClick={() => handelClickLink(item)}
+          ></ImgBox>
         );
       })}
     </ParentDiv>

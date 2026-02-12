@@ -7,24 +7,30 @@ import { BrowserRouter } from "react-router";
 import { ShopCardStateContext } from "./exoGame/shopCardStateContext/ShopCardStateContext.jsx";
 import { PaginationConterCatgory } from "./exoGame/PaginationCatgoryProducts/PaginationCatgoryProducts.jsx";
 import { UserIdContext } from "./exoGame/userIdContext/userIdContext.jsx";
+import { YandXPositionWindow } from "./exoGame/Y-X-WindowContext/Y-X-WindowContext.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
-  <UserIdContext
+  <YandXPositionWindow
     childern={
-      <PaginationConterCatgory
+      <UserIdContext
         childern={
-          <ShopCardStateContext
+          <PaginationConterCatgory
             childern={
-              <BrowserRouter>
-                <App />
-              </BrowserRouter>
+              <ShopCardStateContext
+                childern={
+                  <BrowserRouter>
+                    <App />
+                  </BrowserRouter>
+                }
+              ></ShopCardStateContext>
             }
-          ></ShopCardStateContext>
+          ></PaginationConterCatgory>
         }
-      ></PaginationConterCatgory>
+      ></UserIdContext>
     }
-  ></UserIdContext>,
+  ></YandXPositionWindow>,
 );
 
 reportWebVitals();

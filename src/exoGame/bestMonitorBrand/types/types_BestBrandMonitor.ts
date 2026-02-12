@@ -1,6 +1,7 @@
 export interface Types_itmes {
-  imgs: string;
-  text: string;
-  id: number;
+  readonly imgs: string;
+  readonly text: string;
+  readonly id: number;
+  readonly gridArea: string;
 }
 export type Types_BestBrandLaptop = (item: Types_itmes) => void;

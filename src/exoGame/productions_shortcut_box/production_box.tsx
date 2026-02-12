@@ -1,12 +1,44 @@
 import styleComponent from "./Style-Componetn/StyleProduction";
 import { useNavigate } from "react-router-dom";
 import { Type_handelOnclick } from "./types/types_Production_Box";
+import { useXandYWindowPosition } from "../Y-X-WindowContext/Y-X-WindowContext.jsx";
 
 const ProductionBox = () => {
   const { ProductionItems, ContinerBox, ImgContiner } = styleComponent;
+  const { xWindow } = useXandYWindowPosition();
   const navigate = useNavigate();
 
   const ProductionItemsList = [
+    {
+      img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Main%20banner/Sub%20Main%20Slider%20V1%201-750x255.jpg",
+      id: 1,
+      valid: false,
+      gridArea: "",
+      allItems: "center",
+    },
+    {
+      img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Main%20banner/exo-sub_main_slider_v2_2-750x255.png",
+      id: 2,
+      jsonServer: " http://localhost:3300/pcProduct",
+      title: "pcProduct",
+      filterdLinkProduct: false,
+      valid: true,
+      gridArea: "",
+      allItems: "end",
+    },
+    {
+      img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Main%20banner/exo-sub_main_slider_v2_3-750x255.png",
+      id: 3,
+      title: "laptopProduct",
+      jsonServer: "http://localhost:3300/laptopProduct",
+      filterdLinkProduct: false,
+      valid: true,
+      gridArea: "",
+      allItems: "end",
+    },
+  ];
+
+  const show = [
     {
       img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Mobile/Main%20Banners/Sub%20Main%20Slider%20mobile%20V1%20copy-562x225.jpg",
       id: 1,
@@ -69,10 +101,13 @@ const ProductionBox = () => {
 
   return (
     <ContinerBox>
-      {ProductionItemsList.map((item) => {
+      {(xWindow > 600 ? ProductionItemsList : show).map((item) => {
         return (
           <ImgContiner
-            sx={{ gridArea: item.gridArea, justifyContent: item.allItems }}
+            sx={{
+              gridArea: item.gridArea,
+              justifyContent: item.allItems,
+            }}
           >
             <ProductionItems
               key={item.id}
