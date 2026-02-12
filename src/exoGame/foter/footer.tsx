@@ -12,28 +12,30 @@ const Footer = () => {
       title: "instagram",
       LinkAddres: "https://www.instagram.com/",
       component:
-        "https://img.icons8.com/?size=100&id=eRJfQw0Zs44S&format=png&color=000000",
+        "https://img.icons8.com/?size=100&id=BrU2BBoRXiWq&format=png&color=000000",
     },
     {
       id: 2,
       title: "telgram",
       LinkAddres: "https://telegram.org/",
       component:
-        "https://img.icons8.com/?size=100&id=9R1sV3QvY18K&format=png&color=000000",
+        "https://img.icons8.com/?size=100&id=5mIvDYZUWDCF&format=png&color=000000",
     },
     {
       id: 3,
       title: "youtube",
       LinkAddres: "https://www.youtube.com/",
       component:
-        "https://img.icons8.com/?size=100&id=37325&format=png&color=000000",
+        "https://img.icons8.com/?size=100&id=qLVB1tIe9Ts9&format=png&color=000000",
     },
     {
       id: 4,
       title: "linkdin",
       LinkAddres: "https://www.linkedin.com/",
       component:
-        "https://img.icons8.com/?size=100&id=447&format=png&color=000000",
+        "https://img.icons8.com/?size=100&id=MR3dZdlA53te&format=png&color=000000",
+      // component:
+      //   "https://img.icons8.com/?size=100&id=447&format=png&color=000000",
     },
   ];
 
@@ -42,16 +44,13 @@ const Footer = () => {
       <BoxFooter>
         {elmentsArray.map((value) => {
           return (
-            <Tooltip
-              title={value.title}
-              sx={{ display: "flex", gap: "20px", backgroundColor: "blue" }}
-            >
+            <Tooltip title={value.title}>
               <Link to={value.LinkAddres}>
                 <Box
                   component="img"
                   src={value.component}
                   alt="🖤"
-                  sx={{ textAlign: "center", width: "2.7%", height: "2.7%" }}
+                  sx={{ textAlign: "center", width: "5%", height: "5%" }}
                 ></Box>
               </Link>
             </Tooltip>

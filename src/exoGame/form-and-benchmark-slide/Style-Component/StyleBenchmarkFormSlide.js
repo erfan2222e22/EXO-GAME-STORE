@@ -1,18 +1,26 @@
 import { styled } from "@mui/material/styles";
 import { Box, Avatar } from "@mui/material";
 
-const ParentDiv = styled(Box)({
+const ParentDiv = styled(Box)(({ theme }) => ({
   width: "95%",
+  height: "100%",
   display: "flex",
   margin: "0 auto",
-  position: "relative",
-  top: "30px",
-});
+  marginTop: "20px",
+  gap: "10px",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    height: "300px",
+  },
+}));
 
 const DivImg = styled(Avatar)({
-  margin: "10px",
   width: "100%",
+  height: "100%",
+  display: "block",
+  objectFit: "cover",
   overflow: "hidden",
+  borderRadius: "0.5rem",
 });
 
 const styleComponents = {

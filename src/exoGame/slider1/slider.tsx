@@ -35,7 +35,6 @@ const FristSliderPage = () => {
     {
       img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Slider/Gaming%20System%20slider%20pc%20v1%20copy-1600x400.jpg",
       jsoneServer: "http://localhost:3300/pcProduct",
-      id: 2,
       title: "pcProduct",
     },
     {

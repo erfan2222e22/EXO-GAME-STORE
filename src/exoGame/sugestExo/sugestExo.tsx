@@ -2,7 +2,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Style-Component/sugest.css";
 import Slider from "react-slick";
-import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import styleComponent from "./Style-Component/StyleSugestExoSlider";
 import { Component_Props, Type_handelOnClick } from "./types/type-sugestExo";
@@ -15,8 +14,17 @@ const SugestExoSlider: Component_Props = ({ titeltext, arrayItems }) => {
     slidesToShow: 4,
     slidesToScroll: 1,
   };
-  const { BoxSugest, BoxParent, BoxContiner, HederTextBox, BoxImg } =
-    styleComponent;
+
+  const {
+    BoxSugest,
+    BoxParent,
+    BoxContiner,
+    HederTextBox,
+    BoxImg,
+    BoxText,
+    BoxPriceText,
+    ContinerBoxImg,
+  } = styleComponent;
 
   const navigate = useNavigate();
 
@@ -35,13 +43,11 @@ const SugestExoSlider: Component_Props = ({ titeltext, arrayItems }) => {
           return (
             <BoxParent key={index}>
               <BoxContiner onClick={(e) => handelOnClick(e, item)}>
-                <BoxImg src={item.img} as="img"></BoxImg>
-                <Typography sx={{ height: "4rem" }}>
-                  {item.nameProduct}
-                </Typography>
-                <Typography sx={{ overflow: "hidden" }}>
-                  {item.price}$
-                </Typography>
+                <ContinerBoxImg>
+                  <BoxImg src={item.img} as="img"></BoxImg>
+                </ContinerBoxImg>
+                <BoxText>{item.nameProduct}</BoxText>
+                <BoxPriceText>{item.price}$</BoxPriceText>
               </BoxContiner>
             </BoxParent>
           );

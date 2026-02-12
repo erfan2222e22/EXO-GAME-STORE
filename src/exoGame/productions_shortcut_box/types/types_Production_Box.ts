@@ -5,8 +5,8 @@ interface Type_handelOnclick_interfac {
   readonly title?: string;
   readonly filterdLinkProduct?: boolean;
   readonly valid: boolean;
+  readonly gridArea: string;
 }
 export type Type_handelOnclick = (
-  e: React.MouseEvent<HTMLDivElement>,
   item: Readonly<Type_handelOnclick_interfac>,
 ) => void;

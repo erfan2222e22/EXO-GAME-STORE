@@ -3,18 +3,18 @@ import { Box, Typography, Avatar } from "@mui/material";
 
 const BoxSugest = styled(Box)({
   width: "100%",
+  display: "flex",
   margin: "0 auto",
   padding: "0 50px",
-  position: "relative",
   marginTop: "2rem",
-  display: "flex",
   flexDirection: "column",
   gap: "1rem",
 });
 
-const BoxParent = styled(Box)({
+const BoxParent = styled(Box)(({ theme }) => ({
+  transitionDuration: "0.3s",
   border: "1px solid #dedede",
-  width: "95% !important",
+  width: "90% !important",
   margin: "0 5px",
   textAlign: "center",
   borderRadius: "10px",
@@ -23,30 +23,61 @@ const BoxParent = styled(Box)({
   "&:hover": {
     border: "1px solid #03c03c",
   },
-});
+  [theme.breakpoints.down("sm")]: {
+    overflow: "hidden",
+  },
+}));
+
 const HederTextBox = styled(Typography)({
   display: "flex",
   justifyContent: "flex-end",
 });
 
 const BoxImg = styled(Avatar)({
-  width: "90%",
-  height: "90%",
+  width: "100%",
+  height: "100%",
+  display: "block",
+  objectFit: "cover",
 });
 
-const BoxContiner = styled(Box)({
+const ContinerBoxImg = styled(Box)({
   width: "100%",
-  height: "350px",
-  marginTop: "5%",
+  height: "100%",
+});
+
+const BoxText = styled(Typography)(({ theme }) => ({
+  height: "5rem",
+  fontSize: "1rem",
+  [theme.breakpoints.down("sm")]: {
+    width: "80%",
+    height: "30%",
+    fontSize: "0.6rem",
+    overflow: "hidden",
+  },
+}));
+
+const BoxPriceText = styled(Typography)(({ theme }) => ({
+  overflow: "hidden",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "0.7rem",
+  },
+}));
+
+const BoxContiner = styled(Box)(({ theme }) => ({
+  width: "100%",
+  height: "100%",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  gap: "10px",
-  padding: "10px",
+  gap: "1px",
+  padding: "2%",
   cursor: "pointer",
   overflow: "hidden",
-});
+  [theme.breakpoints.down("sm")]: {
+    height: "190px",
+  },
+}));
 
 const styleComponent = {
   BoxParent,
@@ -54,6 +85,9 @@ const styleComponent = {
   BoxContiner,
   HederTextBox,
   BoxImg,
+  BoxText,
+  BoxPriceText,
+  ContinerBoxImg,
 };
 
 export default styleComponent;

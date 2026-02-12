@@ -22,7 +22,6 @@ import AssmbleContiner from "./exoGame/AssmblePc/AssmbleCntiner.tsx";
 import ShoppingCartCheckout from "./exoGame/ShoppingCartCheckout/ShoppingCartCheckout.tsx";
 import ShoppingStepBox from "./exoGame/ShoppingCartCheckout/Shopping Steps Box/Shopping Steps Box.tsx";
 import ScrollBtn from "./exoGame/ScrollBtn/ScrollBtn.tsx";
-import Test from "./test.jsx";
 import Page404Erroe from "./exoGame/404UndefindPage/404PageErroe.tsx";
 import RegisterCodeBox from "./exoGame/loginWithPhon/RegisterCodeBox/RegisterCode_Box.tsx";
 import FailToFetchDataPage from "./exoGame/failToFetchDataPage/failToFetchDataPage.tsx";
@@ -360,14 +359,6 @@ let rutes = [
         <HederPrentBox></HederPrentBox>
         <InformationEnquiry></InformationEnquiry>
         <Footer></Footer>
-      </div>
-    ),
-  },
-  {
-    path: "/test",
-    element: (
-      <div>
-        <Test></Test>
       </div>
     ),
   },

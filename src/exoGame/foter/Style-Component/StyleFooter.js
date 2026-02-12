@@ -5,12 +5,11 @@ const BoxFooter = styled(Box)({
   borderTop: "1px solid #ccc",
   marginTop: "80px",
   textAlign: "center",
-  position: "relative",
 });
 
 const Img = styled(Avatar)({
-  width: "60px",
-  height: "60px",
+  width: "10%",
+  height: "10%",
 });
 
 const styleComponents = {

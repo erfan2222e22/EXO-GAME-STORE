@@ -7,11 +7,11 @@ const SliderContainer = () => {
   const [offerItems, setOfferItems] = useState([]);
   const [lastFronExiItems, setLastFronExiItems] = useState([]);
   const [BestsellersExoItems, setBestsellersExoItems] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchDataFromServer();
   }, []);
-  const navigate = useNavigate();
 
   const fetchDataFromServer = async () => {
     const arrayAddres = {
@@ -37,7 +37,7 @@ const SliderContainer = () => {
   };
 
   return (
-    <div>
+    <>
       <SugestExoSlider
         arrayItems={offerItems}
         titeltext="exo offer"
@@ -50,7 +50,7 @@ const SliderContainer = () => {
         arrayItems={BestsellersExoItems}
         titeltext="BestsellersExoGame"
       ></SugestExoSlider>
-    </div>
+    </>
   );
 };
 export default SliderContainer;

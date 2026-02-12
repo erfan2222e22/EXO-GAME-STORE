@@ -11,10 +11,13 @@ const FilterCheckbox = ({
   FilterValue,
 }: Component_Props) => {
   const { ParntBox, ContinerBox } = styleComponent;
+
   const [filter, setFilter] = useState({});
+
   const [filterValues, setfilterValues] = useState<Type_FilterValuse>(
-    {} as Type_FilterValuse | [] as Type_FilterValuse
+    {} as Type_FilterValuse | [] as Type_FilterValuse,
   );
+
   useEffect(() => {
     setfilterValues(setingConsoleFilters[0]);
   }, []);

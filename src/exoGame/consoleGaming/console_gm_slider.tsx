@@ -22,28 +22,32 @@ const ConsoleGamingSlider = () => {
 
   return (
     <ParentDiv>
-      <BoxConsoleGm
-        as="img"
-        src="https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Main%20banner/Exo%20tbnl%20cats%20403%20v1%204%20(2)-1-760x380.jpg"
-        onClick={() =>
-          handelOnClick(
-            "http://localhost:3300/PortableConsolesProduct",
-            "catgory/PortableConsolesProduct",
-            false,
-          )
-        }
-      ></BoxConsoleGm>
-      <BoxConsoleGm
-        as="img"
-        src="https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Main%20banner/Exo%20tbnl%20cats%20403%20v1%205%20(2)-1-760x380.jpg"
-        onClick={() =>
-          handelOnClick(
-            "http://localhost:3300/productSonyConsole?id=3",
-            "catgory/productSonyConsole/",
-            true,
-          )
-        }
-      ></BoxConsoleGm>
+      <div style={{ width: "100%", height: "100%", margin: "0 auto" }}>
+        <BoxConsoleGm
+          as="img"
+          src="https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Main%20banner/Exo%20tbnl%20cats%20403%20v1%204%20(2)-1-760x380.jpg"
+          onClick={() =>
+            handelOnClick(
+              "http://localhost:3300/PortableConsolesProduct",
+              "catgory/PortableConsolesProduct",
+              false,
+            )
+          }
+        ></BoxConsoleGm>
+      </div>
+      <div style={{ width: "100%", height: "100%", margin: "0 auto" }}>
+        <BoxConsoleGm
+          as="img"
+          src="https://exo.ir/image/cache/catalog/New_Template/Banners/Desktop/Main%20banner/Exo%20tbnl%20cats%20403%20v1%205%20(2)-1-760x380.jpg"
+          onClick={() =>
+            handelOnClick(
+              "http://localhost:3300/productSonyConsole?id=3",
+              "catgory/productSonyConsole/",
+              true,
+            )
+          }
+        ></BoxConsoleGm>
+      </div>
     </ParentDiv>
   );
 };
