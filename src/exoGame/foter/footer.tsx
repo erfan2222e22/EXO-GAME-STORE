@@ -34,8 +34,6 @@ const Footer = () => {
       LinkAddres: "https://www.linkedin.com/",
       component:
         "https://img.icons8.com/?size=100&id=MR3dZdlA53te&format=png&color=000000",
-      // component:
-      //   "https://img.icons8.com/?size=100&id=447&format=png&color=000000",
     },
   ];
 
@@ -50,7 +48,11 @@ const Footer = () => {
                   component="img"
                   src={value.component}
                   alt="🖤"
-                  sx={{ textAlign: "center", width: "5%", height: "5%" }}
+                  sx={{
+                    textAlign: "center",
+                    width: "4%",
+                    height: "4%",
+                  }}
                 ></Box>
               </Link>
             </Tooltip>

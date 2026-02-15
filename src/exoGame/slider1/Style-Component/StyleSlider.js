@@ -3,10 +3,11 @@ import { Avatar } from "@mui/material";
 const ParentBox = styled(Box)({
   width: "95%",
   borderRadius: "20px",
-  height: "300px",
+  height: "100%",
   margin: "0 auto",
   marginTop: "140px",
   position: "relative",
+  backgroundClip: "red",
   "& .slick-slider": {
     height: "100%",
   },
@@ -27,8 +28,9 @@ const ParentBox = styled(Box)({
 const ImgBox = styled(Avatar)({
   width: "100%",
   height: "100%",
+  display: "flex",
   objectFit: "cover",
-  borderRadius: "8px",
+  borderRadius: "0.5rem",
   cursor: "pointer",
 });
 

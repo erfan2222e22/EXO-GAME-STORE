@@ -1,4 +1,5 @@
 import styleComponent from "./Style-Component/StyleSlider";
+import "./Style-Component/slide.css";
 import Slider from "react-slick";
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";

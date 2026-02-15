@@ -10,13 +10,13 @@ import {
   Type_sendItems,
   Type_sendError,
 } from "./types/types_ShoppingCart";
+import { Typography } from "@mui/material";
 
 const ShoppingCartPcParts = () => {
   const navigate = useNavigate();
   const {
     ParentBox,
     BtnBox,
-    HederText,
     ShopCartText,
     ContinerBox,
     ShopCartContiner,
@@ -31,14 +31,14 @@ const ShoppingCartPcParts = () => {
 
   const CalculateTotalPriceFunc = () => {
     const Validation = selectPCPartBox.filter(
-      (fill: Type_AsslbleContiner_for_shop) => fill.ProductArray.length > 0
+      (fill: Type_AsslbleContiner_for_shop) => fill.ProductArray.length > 0,
     );
 
     let counterPrice = 0;
     const CalculateTotalPrice =
       Validation.length > 0 &&
       Validation.map((items: Type_AsslbleContiner_for_shop) =>
-        items.ProductArray.map((item) => +item.price)
+        items.ProductArray.map((item) => +item.price),
       ).flatMap((items: number[]) => items);
 
     for (let i in CalculateTotalPrice) {
@@ -54,7 +54,7 @@ const ShoppingCartPcParts = () => {
     const selectedProducts = selectPCPartBox
       .map((value: Type_AsslbleContiner_for_shop) => value.ProductArray)
       .filter(
-        (fill: [Type_AsslbleContiner_ProductArray_shop]) => fill.length > 0
+        (fill: [Type_AsslbleContiner_ProductArray_shop]) => fill.length > 0,
       )
       .flatMap((item: Type_AsslbleContiner_ProductArray_shop[]) => item);
 
@@ -62,8 +62,8 @@ const ShoppingCartPcParts = () => {
       (value) =>
         selectPCPartBox.filter(
           (fill: Type_AsslbleContiner_for_shop) =>
-            fill.ProductArray.length === 0 && fill.text === value
-        )
+            fill.ProductArray.length === 0 && fill.text === value,
+        ),
     ).flatMap((item) => item);
 
     findedItems.length === 0
@@ -94,7 +94,7 @@ const ShoppingCartPcParts = () => {
     <>
       <ParentBox>
         <ShopCartContiner>
-          <HederText>Your computer!</HederText>
+          <Typography>Your computer!</Typography>
           <ContinerBox>
             <ShopCartText>{totalPrice}$</ShopCartText>
             <BtnBox onClick={handelOnclick}>Add to your cart</BtnBox>

@@ -6,7 +6,6 @@ import { useState } from "react";
 import CatgoryPcBox from "./CatgoryBox/CatgoryPcBox";
 import SelectedItemEdited from "../SelectedItemEdited/SelectedItemEdited";
 import * as Scroll from "react-scroll";
-import axios from "axios";
 
 import {
   Type_SelectPCPartBox,
@@ -91,7 +90,6 @@ const SelectPcProductBox = () => {
           setSelectPCPartBox={setSelectPCPartBox}
         ></CatgoryPcBox>
       </ScrollElement>
-
       <TextHederBox>Details</TextHederBox>
       {selectPCPartBox?.map((item: Type_SelectPCPartBox, key: number) => (
         <SelctedParentBox key={key}>

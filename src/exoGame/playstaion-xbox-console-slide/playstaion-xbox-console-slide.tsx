@@ -67,7 +67,7 @@ const PlaystaionXboxConsoleSlider = () => {
     const { id, img } = item;
     const phoneWidth = 600;
     const mobileImg = mobileImgList.find((fill) => fill.id === id)?.imgAddres;
-    const Result = xWindow > phoneWidth ? img : mobileImg;
+    const Result = xWindow > phoneWidth || xWindow === 0 ? img : mobileImg;
     return Result;
   };
 
