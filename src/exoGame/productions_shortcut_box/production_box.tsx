@@ -38,7 +38,7 @@ const ProductionBox = () => {
     },
   ];
 
-  const show = [
+  const MobileElmentList = [
     {
       img: "https://exo.ir/image/cache/catalog/New_Template/Banners/Mobile/Main%20Banners/Sub%20Main%20Slider%20mobile%20V1%20copy-562x225.jpg",
       id: 1,
@@ -99,9 +99,16 @@ const ProductionBox = () => {
     });
   };
 
+  const selectElmentList = () => {
+    const phoneWidthSize = 600 as const;
+    return xWindow === 0 || xWindow > phoneWidthSize
+      ? ProductionItemsList
+      : MobileElmentList;
+  };
+
   return (
     <ContinerBox>
-      {(xWindow > 600 ? ProductionItemsList : show).map((item) => {
+      {selectElmentList().map((item) => {
         return (
           <ImgContiner
             sx={{

@@ -8,6 +8,7 @@
   text-align: center;
   margin: 0 auto;
   height: 10%;
+  overflow: hidden;
 }
 
 .slick-list {

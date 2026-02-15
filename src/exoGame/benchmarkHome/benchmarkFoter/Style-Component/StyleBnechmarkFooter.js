@@ -1,5 +1,6 @@
 import { styled } from "@mui/material/styles";
 import { Box, Avatar } from "@mui/material";
+
 const ParentDiv = styled(Box)({
   display: "flex",
   gap: "15px",

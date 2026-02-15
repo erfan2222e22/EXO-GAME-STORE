@@ -2,15 +2,22 @@ import { styled, keyframes } from "@mui/material/styles";
 import { Box, Typography, Avatar } from "@mui/material";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-const ParentBox = styled(Box)({
+
+const ParentBox = styled(Box)(({ theme }) => ({
   width: "80%",
+  height: "100%",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  gap: "20px",
-  marginTop: "200px",
-});
+  gap: "10%",
+  marginTop: "150px",
+  [theme.breakpoints.down("sm")]: {
+    margin: "0 auto",
+    marginTop: "20px",
+    width: "100%",
+  },
+}));
 
 const SelctedParentBox = styled(Box)({
   width: "100%",
@@ -29,7 +36,8 @@ from {
     transform: rotate(360deg);
   }
 `;
-const AnimationBox = styled(Box)(({ theme }) => ({
+
+const AnimationBox = styled(Box)({
   width: "100%",
   display: "flex",
   flexDirection: "column",
@@ -53,34 +61,33 @@ const AnimationBox = styled(Box)(({ theme }) => ({
     inset: 5,
     borderRadius: "15px",
   },
-}));
+});
 
-const SelectBoxContiner = styled(Box)(({ theme }) => ({
+const SelectBoxContiner = styled(Box)({
   width: "100%",
   height: "4.5rem",
   padding: "10px",
-  backgroundColor: "#c0f5d0",
-  position: "relative",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
   overflow: "hidden",
-  borderRadius: "20px",
+  borderRadius: "1rem",
   zIndex: "1",
-}));
+});
 
 const SelectBoxSecendContiner = styled(Box)({
   display: "flex",
   gap: "10px",
   justifyContent: "center",
   alignItems: "center",
+  padding: "1%",
+  fontSize: "1rem",
 });
 
 const AddPcPartsButton = styled(Box)({
   padding: "5px",
-  borderRadius: "30%",
+  borderRadius: "0.5rem",
   backgroundColor: "#03c03c",
-  // backgroundColor: "red",
   color: "#fff",
   border: "none",
   display: "flex",
@@ -101,31 +108,29 @@ const AnimationBoxContainer = styled(Box)({
   zIndex: "1",
 });
 
-const SelctedPcPatBox = styled(Box)({
-  display: "flex",
-  justifyContent: "space-between",
-  width: "600px",
-  height: "80px",
-  padding: "15px",
-});
 const IconsDelete = styled(DeleteOutlinedIcon)({
   color: "#7f7d7d",
   fontSize: "200%",
   cursor: "pointer",
 });
+
 const IconsEdit = styled(EditOutlinedIcon)({
   color: "#7f7d7d",
   fontSize: "200%",
   cursor: "pointer",
 });
+
 const IconsContiner = styled(Avatar)({
   display: "flex",
   gap: "10px",
 });
+
 const ImgBox = styled(Avatar)({
-  width: "50px",
-  height: "50px",
+  width: "60px",
+  height: "60px",
+  padding: "10px",
 });
+
 const TextHederBox = styled(Typography)({
   fontSize: "1.5rem",
 });
@@ -135,7 +140,6 @@ const styleComponents = {
   SelctedParentBox,
   SelectBoxContiner,
   AddPcPartsButton,
-  SelctedPcPatBox,
   SelectBoxSecendContiner,
   IconsDelete,
   IconsEdit,
@@ -145,4 +149,5 @@ const styleComponents = {
   AnimationBox,
   AnimationBoxContainer,
 };
+
 export default styleComponents;

@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Box } from "@mui/material";
 import { Type_AsslbleContiner } from "./types/types-AssmbleCniter";
+import styleComponent from "./style-Component/StyleAssmbleContiner";
 
 const AssmbleContiner = () => {
   const [selectPCPartBox, setSelectPCPartBox] = useState<
@@ -15,18 +16,6 @@ const AssmbleContiner = () => {
     fetchElmentData();
   }, []);
 
-  const fetchElmentData = async () => {
-    try {
-      const { data: ElmentData } = await axios.get(
-        "http://localhost:3300/AssmbleContinerElmentsData",
-      );
-      setSelectPCPartBox(ElmentData);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  // Normalize MandatoryPcPart flags based on current selections
   useEffect(() => {
     setSelectPCPartBox((prev) => {
       let changed = false;
@@ -70,17 +59,34 @@ const AssmbleContiner = () => {
     });
   }, [selectPCPartBox]);
 
+  const { ParentHederImg, Img, Div, ComponentDiv } = styleComponent;
+
+  const fetchElmentData = async () => {
+    try {
+      const { data: ElmentData } = await axios.get(
+        "http://localhost:3300/AssmbleContinerElmentsData",
+      );
+      setSelectPCPartBox(ElmentData);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
-    <Box
-      sx={{
-        display: "flex",
-      }}
-    >
-      <contextUse.Provider value={{ selectPCPartBox, setSelectPCPartBox }}>
-        <SelectPcProductBox></SelectPcProductBox>
-        <ShoppingCart></ShoppingCart>
-      </contextUse.Provider>
-    </Box>
+    <Div>
+      <ParentHederImg>
+        <Img
+          alt="."
+          src="https://exo.ir/catalog/view/theme/exo/image/smart-assembly-header.jpg"
+        ></Img>
+      </ParentHederImg>
+      <ComponentDiv>
+        <contextUse.Provider value={{ selectPCPartBox, setSelectPCPartBox }}>
+          <SelectPcProductBox></SelectPcProductBox>
+          <ShoppingCart></ShoppingCart>
+        </contextUse.Provider>
+      </ComponentDiv>
+    </Div>
   );
 };
 export default AssmbleContiner;
