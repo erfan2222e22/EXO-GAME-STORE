@@ -1,7 +1,5 @@
-.vscode/
+
 snake-game/
-node_modules/
-public/
 src/fuqReact.tsx
 src/test.jsx
-.gitignore
+node_modules/
