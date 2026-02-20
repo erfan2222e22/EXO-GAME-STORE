@@ -52,10 +52,9 @@ const SelectPcProductBox = () => {
     Scroll.scroller.scrollTo("catgoryBox", {
       duration: 800,
       delay: 0,
-      smooth: 'easeInOutQuart',
+      smooth: "easeInOutQuart",
       offset: -50,
     });
-    console.log(false)
   };
 
   const switchtoChooseProducts: Type_switchtoChooseProducts = (item) => {
