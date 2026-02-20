@@ -1,4 +1,5 @@
 import { elmentValueList } from "../../EditeUserAccountParent/types/Type_EditUserAccountParent";
+import { JSX } from "react";
 
 interface elmentListStructure {
   EditAccount: elmentValueList[];
@@ -20,12 +21,12 @@ interface handelUpdateUser {
 
 export type Component_Props = ({
   ...props
-}: Props_Interface) => React.ReactNode;
+}: Props_Interface) => JSX.Element;
 
-export type Type_handelUpdateUser = (input: handelUpdateUser) => void;
+export type Type_handelUpdateUser = (input: handelUpdateUser) => Promise<void> | void;
 export type Type_handelOnChange = (
   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  title: string
+  title: string,
 ) => void;
 
 export type Type_handelOnChangePassUser = (e_value: string, id: number) => void;
