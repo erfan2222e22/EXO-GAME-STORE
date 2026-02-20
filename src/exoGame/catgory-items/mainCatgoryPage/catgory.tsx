@@ -1,6 +1,3 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import styleComponents from "./Style-Component/StyleCatgory.js";
 import CatgoryJsx from "./catgoryJsx";
@@ -12,6 +9,9 @@ import {
   Type_originalItems_extends,
   setPriceFunction,
 } from "./types/types-Catgory.js";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { usePaginationConterCatgory } from "../../PaginationCatgoryProducts/PaginationCatgoryProducts.jsx";
 
 import { AxiosError } from "axios";
@@ -124,7 +124,6 @@ const Catgory = ({
       minPrice: minPrice,
       maxPrice: maxPrice,
     }));
-    console.log(selectedValue);
   };
 
   const filterItmes = () => {

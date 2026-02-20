@@ -10,6 +10,7 @@ const FilterSlider: Props_Component = ({ setPriceFunction }) => {
     minValuePrice,
     maxValuePrice,
   ]);
+
   const handelOnchange: Type_handelOnchange = (event, newitem) => {
     setValueSlider(newitem);
     setPriceFunction({
