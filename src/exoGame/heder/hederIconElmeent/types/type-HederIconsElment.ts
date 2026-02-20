@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 type setStateBoolean = React.Dispatch<React.SetStateAction<boolean>>;
 
 export interface Props_Interface {
@@ -15,4 +17,4 @@ export interface Props_Interface {
 
 export type Component_Props_Type = ({
   ...props
-}: Props_Interface) => React.ReactNode;
+}: Props_Interface) => JSX.Element;

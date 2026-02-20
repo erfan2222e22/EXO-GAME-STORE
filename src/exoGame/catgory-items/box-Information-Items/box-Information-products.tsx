@@ -2,7 +2,7 @@ import { Link } from "react-scroll";
 import styleComponent from "./Style-Component/StyleBoxInformationProduction";
 import TableInformationProducts from "./table-Information-Products/table-Information-Products";
 import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 import { Typography } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import BoxDiscriptionItems from "./box-discription-items/box-discription-items";

@@ -1,4 +1,5 @@
 import { ElmentInputInterface } from "../../types/Types_Register-User";
+import { JSX } from "react";
 
 interface Props_types {
   item: ElmentInputInterface;
@@ -9,15 +10,15 @@ interface Props_types {
   inputElmentAtributes: ElmentInputInterface[];
 }
 
-export type ComponentType = ({ ...porps }: Props_types) => React.ReactNode;
+export type ComponentType = ({ ...porps }: Props_types) => JSX.Element;
 
 export type handelOnchangeInput_Types = (
   inputValue: string,
-  index: Readonly<number>
+  index: Readonly<number>,
 ) => void;
 
 export type handelInputPassEmail_Types = (
   inputValue: string,
   index: Readonly<number>,
-  type: Readonly<string>
+  type: Readonly<string>,
 ) => void;

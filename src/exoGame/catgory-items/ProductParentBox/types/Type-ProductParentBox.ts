@@ -1,5 +1,6 @@
 import { Type_AsslbleContiner } from "../../../AssmblePc/types/types-AssmbleCniter";
 import { Type_originalItems_extends } from "../../mainCatgoryPage/types/types-Catgory";
+import { JSX } from "react";
 
 export interface Type_Props {
   filteredItems: [] | Type_originalItems_extends[];
@@ -19,4 +20,4 @@ export type Type_handelOnClick = (
   e: React.MouseEvent<HTMLElement> | React.MouseEvent<SVGSVGElement>,
   item: Type_originalItems_extends,
 ) => void;
-export type Type_ComponentProps = ({ ...items }: Type_Props) => React.ReactNode;
+export type Type_ComponentProps = ({ ...items }: Type_Props) => JSX.Element;

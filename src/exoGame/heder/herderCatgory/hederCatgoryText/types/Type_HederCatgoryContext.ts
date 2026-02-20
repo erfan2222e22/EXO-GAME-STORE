@@ -1,4 +1,5 @@
 import { itemsType } from "../../types/Type_CatgoryHeder";
+import { JSX } from "react";
 
 interface propsType {
   readonly item: itemsType;
@@ -6,4 +7,4 @@ interface propsType {
   setCatgoryDisplay: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export type Component_Props = (prop: propsType) => React.ReactNode;
+export type Component_Props = (prop: propsType) => JSX.Element;

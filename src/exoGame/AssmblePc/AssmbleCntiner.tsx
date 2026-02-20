@@ -3,9 +3,8 @@ import SelectPcProductBox from "./selectPcProductBox/SelectPcProductBox";
 import ShoppingCart from "./shopping Cart Pc Parts/ShoppingCartPcParts";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Box } from "@mui/material";
 import { Type_AsslbleContiner } from "./types/types-AssmbleCniter";
-import styleComponent from "./style-Component/StyleAssmbleContiner";
+import styleComponent from "./style-Component/StyleAssmbleContiner.js";
 
 const AssmbleContiner = () => {
   const [selectPCPartBox, setSelectPCPartBox] = useState<
