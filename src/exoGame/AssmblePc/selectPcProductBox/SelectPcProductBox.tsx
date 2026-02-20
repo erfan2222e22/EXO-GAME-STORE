@@ -49,7 +49,12 @@ const SelectPcProductBox = () => {
     );
     setDisplayCatgoryAssmble(true);
     switchtoChooseProducts(item);
-    Scroll.scroller.scrollTo("catgoryBox");
+    Scroll.scroller.scrollTo("catgoryBox", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+      offset: -50,
+    });
   };
 
   const switchtoChooseProducts: Type_switchtoChooseProducts = (item) => {
