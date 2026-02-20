@@ -2,6 +2,7 @@ import {
   Type_FilterValuse,
   Type_originalItems_extends,
 } from "../../mainCatgoryPage/types/types-Catgory";
+import { JSX } from "react";
 
 interface Interface_Poprs {
   props: {
@@ -12,8 +13,6 @@ interface Interface_Poprs {
     >;
   };
 }
-export type Component_Porps = ({
-  ...props
-}: Interface_Poprs) => React.ReactNode;
+export type Component_Porps = ({ ...props }: Interface_Poprs) => JSX.Element;
 
 export type showDelteValueFilters = (arr: Type_FilterValuse) => boolean;

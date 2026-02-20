@@ -1,5 +1,5 @@
 import { Types_itemProduct } from "../../types/Types_ProductDiscription";
-
+import { JSX } from "react";
 type SelectNameProduct = Partial<Pick<Types_itemProduct, "nameProduct">>;
 type Recorded = Partial<
   Record<
@@ -10,4 +10,4 @@ type Recorded = Partial<
 type MergeTypes = SelectNameProduct & Recorded;
 interface Type_props extends MergeTypes {}
 
-export type fuctionType = ({ ...items }: Type_props) => React.ReactNode;
+export type fuctionType = ({ ...items }: Type_props) => JSX.Element;

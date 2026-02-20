@@ -1,7 +1,9 @@
+import { JSX } from "react";
+
 interface typeProps {
   setCatgoryDisplay: React.Dispatch<React.SetStateAction<boolean>>;
 }
-export type Component_Props = (props: typeProps) => React.ReactNode;
+export type Component_Props = (props: typeProps) => JSX.Element;
 
 export interface itemsType {
   readonly id: string | number;

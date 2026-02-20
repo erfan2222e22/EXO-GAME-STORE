@@ -1,4 +1,5 @@
 import React from "react";
+import { JSX } from "react";
 
 interface interface_Type_ComponentProps {
   allProductData: number;
@@ -7,4 +8,4 @@ interface interface_Type_ComponentProps {
 
 export type Type_ComponentProps = ({
   ...props
-}: interface_Type_ComponentProps) => React.ReactNode;
+}: interface_Type_ComponentProps) => JSX.Element;

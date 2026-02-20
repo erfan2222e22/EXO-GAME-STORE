@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 interface HederEditAccount {
   checkToRemoveNaviLinks: () => boolean;
   setShowEditAccountBox: React.Dispatch<React.SetStateAction<boolean>>;
@@ -5,4 +7,4 @@ interface HederEditAccount {
 
 export type TypePropsComponent = ({
   ...props
-}: HederEditAccount) => React.ReactNode;
+}: HederEditAccount) => JSX.Element;
