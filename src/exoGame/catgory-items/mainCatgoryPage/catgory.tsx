@@ -199,7 +199,6 @@ const Catgory = ({
         allProductData={allProductData.length}
         setPageConter={setPageConter}
       />
-      <p onClick={() => console.log(ProductJsonLink)}>click</p>
     </>
   );
 };
