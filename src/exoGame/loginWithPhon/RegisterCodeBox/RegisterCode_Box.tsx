@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useCallback } from "react";
 import styleComponent from "./style_Component/Style-RegisterCode-Box";
 import { useLocation } from "react-router-dom";
 import { Typography } from "@mui/material";
@@ -26,7 +26,7 @@ const RegisterCodeBox = () => {
   } = styleComponent;
 
   const [UserInputCode, setUserInputCode] = useState<string[]>( //input Box from code length
-    Array.from({ length: code.length }, () => "")
+    Array.from({ length: code.length }, () => ""),
   );
   const inputRefs = useRef<Array<HTMLInputElement | null>>([]);
   const [userId, setUserId] = useState(0);
@@ -40,14 +40,21 @@ const RegisterCodeBox = () => {
     return () => clearTimeout(timer);
   }, [validInterdCode]);
 
-  useEffect(() => {
-    fetchPhoneNumber();
-  }, []);
+  const handelCatchError: Type_handelCatchError = useCallback(
+    (err) => {
+      const errStatus = err as AxiosError;
+      axios.isAxiosError(err) &&
+        navigate("/failedToFetch", {
+          state: { errorStatus: errStatus.status },
+        });
+    },
+    [navigate],
+  );
 
-  const fetchPhoneNumber = async () => {
+  const fetchPhoneNumber = useCallback(async () => {
     try {
       const { data: dataUser } = await axios.get(
-        `http://localhost:3300/users?phoneNumber=${phoneNumber}`
+        `http://localhost:3300/users?phoneNumber=${phoneNumber}`,
       );
       const { id, logined, ...rest } = dataUser[0] || {
         id: "",
@@ -55,7 +62,7 @@ const RegisterCodeBox = () => {
         items: "",
       };
       const validating = Object.values(rest).every(
-        (items: any) => items.length > 0
+        (items: any) => items.length > 0,
       );
 
       if (dataUser.length === 0) {
@@ -71,7 +78,11 @@ const RegisterCodeBox = () => {
     } catch (err) {
       handelCatchError(err as AxiosError);
     }
-  };
+  }, [phoneNumber, handelCatchError]);
+
+  useEffect(() => {
+    fetchPhoneNumber();
+  }, [fetchPhoneNumber]);
   // userIsRegistered,
 
   const navigation = () => {
@@ -80,16 +91,8 @@ const RegisterCodeBox = () => {
       navigate,
       userId,
       phoneNumber,
-      handelCatchError
+      handelCatchError,
     );
-  };
-
-  const handelCatchError: Type_handelCatchError = (err) => {
-    const errStatus = err as AxiosError;
-    axios.isAxiosError(err) &&
-      navigate("/failedToFetch", {
-        state: { errorStatus: errStatus.status },
-      });
   };
 
   const SetColorElment = (): string => {

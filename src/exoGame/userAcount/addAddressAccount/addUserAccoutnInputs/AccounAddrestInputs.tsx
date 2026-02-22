@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useCallback } from "react";
 import contextUse from "../../../useContext/useContext";
 import axios from "axios";
 import { AxiosError } from "axios";
@@ -58,11 +58,15 @@ const AddAddressAccountInputs = () => {
   });
   const [provinceOptions, setProvinceOptions] = useState(null);
 
-  useEffect(() => {
-    fetchAutocompleteOptions();
-  }, []);
+  const handleError: type_handleError = useCallback((err) => {
+    const errStatus = err as AxiosError;
+    axios.isAxiosError(err) &&
+      navigate("/failedToFetch", {
+        state: { errorStatus: errStatus.status },
+      });
+  }, [navigate]);
 
-  const fetchAutocompleteOptions = async () => {
+  const fetchAutocompleteOptions = useCallback(async () => {
     try {
       const optionsDataList = [
         "http://localhost:3300/cityOption",
@@ -82,7 +86,11 @@ const AddAddressAccountInputs = () => {
     } catch (err) {
       handleError(err as AxiosError);
     }
-  };
+  }, [handleError]);
+
+  useEffect(() => {
+    fetchAutocompleteOptions();
+  }, [fetchAutocompleteOptions]);
 
   const handelButtonClick = () => {
     const EmptyInputLength = 0;
@@ -103,13 +111,6 @@ const AddAddressAccountInputs = () => {
       addDataOnServer(stateId, InputElmentsAbility, handleError, navigate);
   };
 
-  const handleError: type_handleError = (err) => {
-    const errStatus = err as AxiosError;
-    axios.isAxiosError(err) &&
-      navigate("/failedToFetch", {
-        state: { errorStatus: errStatus.status },
-      });
-  };
 
   return (
     <Div>

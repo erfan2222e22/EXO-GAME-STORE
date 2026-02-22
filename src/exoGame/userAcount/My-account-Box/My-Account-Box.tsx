@@ -3,12 +3,10 @@ import PersonIcon from "@mui/icons-material/Person";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import styleComponent from "./style-Component/Style-AccountBox";
-import { useNavigate } from "react-router-dom";
 import { Box } from "@mui/material";
 import contextUse from "../../useContext/useContext";
 import { useContext } from "react";
 const MyAccountBox = () => {
-  const navigate = useNavigate();
   const context = useContext(contextUse);
   const { stateId } = context;
 

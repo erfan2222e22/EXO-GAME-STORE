@@ -1,5 +1,5 @@
 import styleComponent from "./Style-Component/StyleCatgoryHeder";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import HederCatgoryContent from "./hederCatgoryText/HederCatgoryContent";
 import { AxiosError } from "axios";
@@ -28,7 +28,7 @@ const HederCatgory: Component_Props = ({ setCatgoryDisplay }) => {
   ]);
   const { fristHalfArray, secendHalfArray, imgAddrs } = ReciveDataValue[0];
   const navigate = useNavigate();
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       const { data: Dataitems } = await axios.get(
         "http://localhost:3300/CatgoryHederData"
@@ -41,11 +41,11 @@ const HederCatgory: Component_Props = ({ setCatgoryDisplay }) => {
           state: { errorStatus: errStatus.status },
         });
     }
-  };
+  }, [navigate]);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const onMouseHandel: Type_onMouseHandel = (e, ItemValus) => {
     const { img, productList } = ItemValus;

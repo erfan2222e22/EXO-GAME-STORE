@@ -1,6 +1,6 @@
 import React from "react";
 import styleComponent from "./style-Component/style-logUserPassUser";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { AxiosError } from "axios";

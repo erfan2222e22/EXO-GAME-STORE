@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 import contextUse from "../../useContext/useContext";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { elmentListStructure } from "./types/Type_EditUserAccountParent";
 import { AxiosError } from "axios";
@@ -42,11 +42,7 @@ const EditUserAccountParent = () => {
     ],
   });
 
-  useEffect(() => {
-    fetchUserData();
-  }, []);
-
-  const fetchUserData = async () => {
+  const fetchUserData = useCallback(async () => {
     try {
       const { data: userData } = await axios.get(
         `http://localhost:3300/users/${stateId}`,
@@ -69,7 +65,11 @@ const EditUserAccountParent = () => {
           state: { errorStatus: errStatus.status },
         });
     }
-  };
+  }, [stateId, navigate, setElmentValueList]);
+
+  useEffect(() => {
+    fetchUserData();
+  }, [fetchUserData]);
 
   return (
     <Box sx={{ width: "80%" }}>

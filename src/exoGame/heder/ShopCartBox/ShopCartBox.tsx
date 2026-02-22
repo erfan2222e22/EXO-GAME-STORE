@@ -43,7 +43,7 @@ const ShopCartBox: Component_Props = ({ sendmassage }) => {
           state: { errorStatus: errStatus.status },
         });
     }
-  }, []);
+  }, [navigate, setProductsInShopCart, setTotalPrice]);
 
   useEffect(() => {
     const handler: handlerType = (data) => {
@@ -77,7 +77,7 @@ const ShopCartBox: Component_Props = ({ sendmassage }) => {
         emmiter.off("massage", handler);
       }
     };
-  }, []);
+  }, [setProductsInShopCart]);
 
   // Save cart data to localStorage whenever ProductsInShopCart changes
   useEffect(() => {
@@ -95,7 +95,7 @@ const ShopCartBox: Component_Props = ({ sendmassage }) => {
     } catch (error) {
       console.log("Error saving cart to localStorage:", error);
     }
-  }, [ProductsInShopCart, sendmassage]);
+  }, [ProductsInShopCart, sendmassage, setTotalPrice]);
 
   return (
     <ParentBox>

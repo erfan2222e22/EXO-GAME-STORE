@@ -1,6 +1,5 @@
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/material";
-import { Typography } from "@mui/material";
 const PrentBox = styled(Box)({
   display: "flex",
   gap: "4%",

@@ -44,7 +44,7 @@ const InputElmentsAbilityMaped: Component_Props = ({
         return copyItems;
       });
     }
-  }, []);
+  }, [nowUserAddress, setInputElmentsAbility]);
 
   const handelInputEvent: type_handelInputEvent = (e, id) => {
     const InputValue = e.target.value;

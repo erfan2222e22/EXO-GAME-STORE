@@ -38,7 +38,7 @@ const ShoppingCartCheckout = () => {
         uniqueCode: Math.floor(Math.random() * 5000),
       }))
     );
-  }, []);
+  }, [setProductsInShopCart]);
 
   const IncreaseQty: Function_Types = (valueId) => {
     setProductsInShopCart((prev) =>
