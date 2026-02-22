@@ -13,8 +13,8 @@ import { useState, useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { usePaginationConterCatgory } from "../../PaginationCatgoryProducts/PaginationCatgoryProducts.jsx";
-
 import { AxiosError } from "axios";
+
 const Catgory = ({
   ProductLink: productLinkProps,
   pathName: pathNameProps,
@@ -85,7 +85,7 @@ const Catgory = ({
 
   const setProductOnOriginalItems = useCallback(async () => {
     try {
-      const jsonLink = `${ProductJsonLink}${filterdLinkProduct ? "&" : "?"}_page=${pageConter}&_limit=4`;
+      const jsonLink = `${ProductJsonLink}${filterdLinkProduct ? "&" : "?"}_page=${pageConter}&_limit=20`;
       const { data: userData } = await axios.get(jsonLink);
       setOriginalItems(userData);
       console.log(userData);
@@ -126,11 +126,14 @@ const Catgory = ({
       minPrice: minPrice,
       maxPrice: maxPrice,
     }));
+    console.log(selectedValue);
   };
 
   const filterItmes = () => {
     const { minPrice, maxPrice, ...restFilters } = FilterValue || {};
-    console.log(FilterValue);
+    // console.log(minPrice);
+    console.log(ProductJsonLink);
+
     const activeFilters = Object.entries(restFilters).filter(([_, value]) => {
       return (
         value !== "" && value !== 0 && value !== null && value !== undefined
@@ -153,6 +156,7 @@ const Catgory = ({
     });
     setFilteredItems(filtered);
   };
+
   useEffect(() => {
     setProductOnOriginalItems();
     fetchAllProductData();
@@ -195,6 +199,7 @@ const Catgory = ({
         allProductData={allProductData.length}
         setPageConter={setPageConter}
       />
+      <p onClick={() => console.log(ProductJsonLink)}>click</p>
     </>
   );
 };
