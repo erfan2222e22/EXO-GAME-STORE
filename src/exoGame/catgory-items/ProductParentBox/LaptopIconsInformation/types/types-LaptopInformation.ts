@@ -1,4 +1,5 @@
 import { Type_originalItems_extends } from "../../../mainCatgoryPage/types/types-Catgory";
+import { JSX } from "react";
 
 export interface LaptopItems_infromation extends Type_originalItems_extends {
   gpuModel: string;
@@ -13,7 +14,7 @@ export interface Type_Props {
   originalItems: Partial_Items;
 }
 
-export type Type_function = (props: Type_Props) => React.ReactNode;
+export type Type_function = (props: Type_Props) => JSX.Element;
 
 export interface Type_LaptopProduct {
   id: number;

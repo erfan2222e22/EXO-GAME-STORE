@@ -3,6 +3,7 @@ import {
   FilterConfigItem,
   setPriceFunction,
 } from "../../mainCatgoryPage/types/types-Catgory";
+import { JSX } from "react";
 import { Item_Setting_Interface } from "../../mainCatgoryPage/types/Type_CatgoryJsx";
 
 export interface Component_Props_Interface {
@@ -17,4 +18,4 @@ export interface Component_Props_Interface {
 
 export type Type_ComponentProps = ({
   ...props
-}: Component_Props_Interface) => React.ReactNode;
+}: Component_Props_Interface) => JSX.Element;

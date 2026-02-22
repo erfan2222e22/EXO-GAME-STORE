@@ -24,7 +24,7 @@ const BoxInfoProducts = () => {
 
   useEffect(() => {
     setProductsInformation(location.state);
-  }, [productsInformation]);
+  }, [location.state]);
 
   return (
     <>

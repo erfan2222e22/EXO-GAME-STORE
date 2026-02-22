@@ -16,7 +16,7 @@ import {
 
 const ScrollElement = Scroll.Element as React.ComponentType<{
   name: string;
-  children?: React.ReactNode;
+  children?: any;
 }>;
 
 const SelectPcProductBox = () => {

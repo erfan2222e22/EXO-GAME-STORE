@@ -37,6 +37,7 @@ import LogOutAccount from "./exoGame/userAcount/Log out Account/LogOutAccount.ts
 import UserTransactions from "./exoGame/userAcount/UserTransactions/userTransactions.tsx";
 import LogUserPassUser from "./exoGame/logUserWidthUserAndPass/logUserPassUser.tsx";
 import AddAddressAccountInputs from "./exoGame/userAcount/addAddressAccount/addUserAccoutnInputs/AccounAddrestInputs.tsx";
+
 let rutes = [
   {
     path: "/",

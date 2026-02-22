@@ -1,4 +1,6 @@
 import { elmentValueList } from "../../EditeUserAccountParent/types/Type_EditUserAccountParent";
+import { JSX } from "react";
+
 export interface elmentListStructure {
   EditAccount: elmentValueList[];
   EditPasswrodAccount: elmentValueList[];
@@ -11,4 +13,4 @@ export interface Props_Interface_Component {
 }
 export type Component_Props = ({
   ...props
-}: Props_Interface_Component) => React.ReactNode;
+}: Props_Interface_Component) => JSX.Element;

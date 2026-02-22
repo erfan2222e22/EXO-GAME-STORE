@@ -1,10 +1,12 @@
+import styleComponents from "../Style-Component/StyleCatgory";
+
 import {
   Type_originalItems_extends,
   Type_FilterValuse,
   FilterConfigItem,
 } from "./types-Catgory";
 import { Type_AsslbleContiner } from "../../../AssmblePc/types/types-AssmbleCniter";
-import styleComponents from "../Style-Component/StyleCatgory";
+import { JSX } from "react";
 const { MainBox, SmallSizeMainBox } = styleComponents;
 
 interface setPriceFunctionProps {
@@ -52,4 +54,4 @@ interface ComponentProps_Interface {
 
 export type ComponentProps = ({
   ...props
-}: ComponentProps_Interface) => React.ReactNode;
+}: ComponentProps_Interface) => JSX.Element;

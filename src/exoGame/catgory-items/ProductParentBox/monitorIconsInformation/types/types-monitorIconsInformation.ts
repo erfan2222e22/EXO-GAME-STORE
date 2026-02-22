@@ -1,5 +1,5 @@
 import { Type_originalItems_extends } from "../../../mainCatgoryPage/types/types-Catgory";
-
+import { JSX } from "react";
 interface Monitor_information extends Type_originalItems_extends {
   refreshRate: string;
   panelType: string;
@@ -14,8 +14,8 @@ interface MonitorIconsInformationProps {
 }
 
 export type Type_function = (
-  originalItems: MonitorIconsInformationProps
-) => React.ReactNode;
+  originalItems: MonitorIconsInformationProps,
+) => JSX.Element;
 
 export interface MonitorIconItem {
   id: number;

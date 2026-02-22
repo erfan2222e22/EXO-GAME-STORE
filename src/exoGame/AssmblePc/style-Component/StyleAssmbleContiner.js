@@ -14,8 +14,21 @@ const ParentHederImg = styled(Box)(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+
+  [theme.breakpoints.down("xl")]: {
+    top: "17vh",
+  },
+
+  [theme.breakpoints.down("lg")]: {
+    top: "21vh",
+  },
+
+  [theme.breakpoints.down("md")]: {
+    top: "27vh",
+  },
+
   [theme.breakpoints.down("sm")]: {
-    top: "35vh",
+    top: "21vh",
   },
 }));
 
@@ -33,10 +46,10 @@ const ComponentDiv = styled(Box)(({ theme }) => ({
 }));
 
 const styleComponents = {
-  Div,
-  ParentHederImg,
   Img,
+  ParentHederImg,
   ComponentDiv,
+  Div,
 };
 
 export default styleComponents;

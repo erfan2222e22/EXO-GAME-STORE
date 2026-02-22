@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 interface Porps_Type {
   readonly code: readonly number[][];
   readonly UserInputCode: readonly string[];
@@ -8,4 +10,4 @@ interface Porps_Type {
   navigation: () => void;
 }
 
-export type Component_Porps = ({ ...props }: Porps_Type) => React.ReactNode;
+export type Component_Porps = ({ ...props }: Porps_Type) => JSX.Element;

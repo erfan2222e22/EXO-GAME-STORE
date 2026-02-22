@@ -1,6 +1,7 @@
 import { cityOption_interface } from "../../types/Type_AccountAddresInuts";
 import { InputElmentsAbility_Interface } from "../../types/Type_AccountAddresInuts";
 import { provinceOptions_Interface } from "../../types/Type_AccountAddresInuts";
+import { JSX } from "react";
 
 export type type_handelAutoCompleteEvent = (
   e: React.SyntheticEvent<Element, Event>,
@@ -29,4 +30,4 @@ export interface Type_editeUserAddress extends InputElmentsAbility_Interface {}
 
 export type Component_Props = ({
   ...props
-}: component_Interface) => React.ReactNode;
+}: component_Interface) => JSX.Element;

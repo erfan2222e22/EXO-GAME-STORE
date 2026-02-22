@@ -1,4 +1,5 @@
 import { Type_originalItems_extends } from "../../../mainCatgoryPage/types/types-Catgory";
+import { JSX } from "react";
 
 export interface component_Type {
   filteredItems: Type_originalItems_extends[];
@@ -8,4 +9,4 @@ export interface component_Type {
 
 export type Types_ComponentProps = ({
   ...props
-}: component_Type) => React.ReactNode;
+}: component_Type) => JSX.Element;

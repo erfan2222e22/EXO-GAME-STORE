@@ -2,6 +2,7 @@ import {
   Type_originalItems_extends,
   Type_FilterValuse,
 } from "../../mainCatgoryPage/types/types-Catgory";
+import { JSX } from "react";
 import React from "react";
 
 export interface Component_Props_Types {
@@ -20,4 +21,4 @@ export interface Component_Props_Types {
 
 export type Component_Props = ({
   ...props
-}: Component_Props_Types) => React.ReactNode;
+}: Component_Props_Types) => JSX.Element;

@@ -12,24 +12,19 @@ const FilterCheckbox = ({
 }: Component_Props) => {
   const { ParntBox, ContinerBox } = styleComponent;
 
-  const [filter, setFilter] = useState({});
-
   const [filterValues, setfilterValues] = useState<Type_FilterValuse>(
     {} as Type_FilterValuse | [] as Type_FilterValuse,
   );
 
   useEffect(() => {
     setfilterValues(setingConsoleFilters[0]);
-  }, []);
+  }, [setingConsoleFilters]);
 
   const handeClickBox = (value: string) => {
-    setFilter((prev) => {
-      Object.keys(FilterValue).forEach((item) => {
-        if (filterType === item) {
-          onFilterChange(item, value); //send data to function
-        }
-      });
-      return prev;
+    Object.keys(FilterValue).forEach((item) => {
+      if (filterType === item) {
+        onFilterChange(item, value); //send data to function
+      }
     });
   };
 
@@ -45,7 +40,6 @@ const FilterCheckbox = ({
           </ContinerBox>
         );
       })}
-      <button onClick={() => console.log(setingConsoleFilters)}>slame </button>
     </ParntBox>
   );
 };

@@ -4,7 +4,6 @@ import { Box, Avatar } from "@mui/material";
 const BoxAboutUs = styled(Box)({
   width: "90%",
   height: "500px",
-  textAlign: "right",
   margin: "0 auto",
   marginTop: "150px",
   textAlign: "justify",

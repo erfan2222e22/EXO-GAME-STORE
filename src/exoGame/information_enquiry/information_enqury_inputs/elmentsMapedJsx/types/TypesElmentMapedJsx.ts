@@ -3,6 +3,7 @@ import {
   Type_HandelOnChange,
   Type_handelAutocomplete,
 } from "../../types/Types_information_enqury_inputs";
+import { JSX } from "react";
 
 type elmentsInArray = Pick<
   Types_useContext,
@@ -17,6 +18,4 @@ interface Props_Type_Interface extends elmentsInArray {
   handelAutocomplete: Type_handelAutocomplete;
 }
 
-export type Props_Type = ({
-  ...props
-}: Props_Type_Interface) => React.ReactNode;
+export type Props_Type = ({ ...props }: Props_Type_Interface) => JSX.Element;

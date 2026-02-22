@@ -21,7 +21,7 @@ const SendCodeAgainTimer: Component_Porps = ({
       setSecend(60);
       setConterTimer(0);
     }
-  }, []);
+  }, [sendCodeAgain]);
 
   useEffect(() => {
     //timer for send again code to user PhoneNumber
