@@ -1,7 +1,7 @@
 import React from "react";
 import styleComponent from "./style-Component/style-addAddressAccount";
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useCallback } from "react";
 import axios, { AxiosError } from "axios";
 import contextUse from "../../useContext/useContext";
 
@@ -26,11 +26,15 @@ const AddAddressAccount = () => {
     EditAddressBox,
   } = styleComponent;
 
-  useEffect(() => {
-    fetchUserAddress();
-  }, []);
+  const catchError = useCallback((err: AxiosError) => {
+    const errStatus = err as AxiosError;
+    axios.isAxiosError(err) &&
+      navigate("/failedToFetch", {
+        state: { errorStatus: errStatus.status },
+      });
+  }, [navigate]);
 
-  const fetchUserAddress = async () => {
+  const fetchUserAddress = useCallback(async () => {
     try {
       const { data: userAddress } = await axios.get(
         `http://localhost:3300/userAddres/${stateId}`,
@@ -39,7 +43,11 @@ const AddAddressAccount = () => {
     } catch (err) {
       catchError(err as AxiosError);
     }
-  };
+  }, [stateId, catchError]);
+
+  useEffect(() => {
+    fetchUserAddress();
+  }, [fetchUserAddress]);
 
   const handelRemoveUserAddress = async (id: number) => {
     try {
@@ -92,13 +100,6 @@ const AddAddressAccount = () => {
     });
   };
 
-  const catchError = (err: AxiosError) => {
-    const errStatus = err as AxiosError;
-    axios.isAxiosError(err) &&
-      navigate("/failedToFetch", {
-        state: { errorStatus: errStatus.status },
-      });
-  };
 
   return (
     <div style={{ width: "80%", padding: "5px" }}>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 import styleComponent from "./Style-Component/StyledComponentLoginPhone";
 import { Typography } from "@mui/material";
 import Alert from "@mui/material/Alert";
@@ -24,35 +24,39 @@ const LoginWithPhone = () => {
 
   const location = useLocation();
   const [phoneNumber, setPhoneNumber] = useState(
-    location.state?.phoneNumber || ""
+    location.state?.phoneNumber || "",
   );
   const [truePhoneNumber, setTruePhoneNumber] = useState(false);
   const [sendCodeAgain, setSendCodeAgain] = useState(false);
   const maxLength = 11;
-  const PATERN_IRAN_PHONE_NUMBER = /^09\d{9}$/;
+
+  const PATERN_IRAN_PHONE_NUMBER = useMemo(() => {
+    return /^09\d{9}$/;
+  }, []);
+
   //👆filter numbers 1 to 11 length and number start with 09
+  const checkPhoneNumber: Type_checkPhoneNumber = useCallback(
+    (phoneNumber, PATERN_IRAN_PHONE_NUMBER) => {
+      const valid = PATERN_IRAN_PHONE_NUMBER.test(phoneNumber);
+      return valid;
+    },
+    [],
+  );
+
   useEffect(() => {
     const validPhoneNumber = checkPhoneNumber(
       phoneNumber,
-      PATERN_IRAN_PHONE_NUMBER
+      PATERN_IRAN_PHONE_NUMBER,
     );
     validPhoneNumber && setTruePhoneNumber(true);
-  }, [phoneNumber]);
+  }, [phoneNumber, checkPhoneNumber, PATERN_IRAN_PHONE_NUMBER]);
 
   useEffect(() => {
     const valid = PATERN_IRAN_PHONE_NUMBER.test(phoneNumber);
     if (valid) {
       setSendCodeAgain(false);
     }
-  }, []);
-
-  const checkPhoneNumber: Type_checkPhoneNumber = (
-    phoneNumber,
-    PATERN_IRAN_PHONE_NUMBER
-  ) => {
-    const valid = PATERN_IRAN_PHONE_NUMBER.test(phoneNumber);
-    return valid;
-  };
+  }, [phoneNumber, PATERN_IRAN_PHONE_NUMBER]);
 
   const onChangHandelInput: Type_onChangHandelInput = (value, event) => {
     setPhoneNumber(value.slice(0, maxLength));

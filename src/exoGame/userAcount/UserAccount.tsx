@@ -22,7 +22,7 @@ const UserAccount = ({ Component }: any) => {
       localStorage.setItem("userId", stateId);
       setUserID((prev: number) => (prev = stateId));
     }
-  }, []);
+  }, [stateId, setUserID]);
 
   const boxLinksElement = [
     { id: 0, text: "My Account", routeAddres: "/acount/My-Account" },

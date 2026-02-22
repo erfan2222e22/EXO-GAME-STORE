@@ -2,7 +2,7 @@ import React from "react";
 import styleComponent from "./Style-EditePassword/Style-EditedPassword";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import PersonIcon from "@mui/icons-material/Person";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { AxiosError } from "axios";
 import BtnELment from "./BtnElment/BtnElment";
@@ -27,17 +27,12 @@ const EditPasswordUser: Component_Props = ({
   } = styleComponent;
 
   const [userPassword, setUserPassword] = useState("");
-
-  useEffect(() => {
-    handelChangeStatePass();
-  }, []);
-
   const navigate = useNavigate();
 
-  const handelChangeStatePass = async () => {
+  const handelChangeStatePass = useCallback(async () => {
     try {
       const { data: userData } = await axios.get(
-        `http://localhost:3300/users/${stateId}`
+        `http://localhost:3300/users/${stateId}`,
       );
       const { password } = userData;
       setUserPassword(password);
@@ -48,7 +43,11 @@ const EditPasswordUser: Component_Props = ({
           state: { errorStatus: errStatus.status },
         });
     }
-  };
+  }, [navigate, stateId]);
+
+  useEffect(() => {
+    handelChangeStatePass();
+  }, [handelChangeStatePass]);
 
   return (
     <Div>

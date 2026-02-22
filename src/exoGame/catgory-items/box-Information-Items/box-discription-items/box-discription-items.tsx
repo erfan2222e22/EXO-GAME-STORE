@@ -22,7 +22,7 @@ const BoxDiscriptionItems = ({ ...item }) => {
         })
         .catch((err) => FailToFetchDataPage());
     }
-  }, [arrayProducts, indexFristArrayProducts]);
+  }, [item.LinkDiscriptionPrdouct, item.ProductReview]);
 
   return (
     <>

@@ -9,7 +9,7 @@ import {
   Type_originalItems_extends,
   setPriceFunction,
 } from "./types/types-Catgory.js";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { usePaginationConterCatgory } from "../../PaginationCatgoryProducts/PaginationCatgoryProducts.jsx";
@@ -39,15 +39,6 @@ const Catgory = ({
     filterdLinkProduct: filterLinkProductState,
   } = location.state || {};
 
-  useEffect(() => {
-    setProductOnOriginalItems();
-    fetchAllProductData();
-  }, []);
-
-  useEffect(() => {
-    setProductOnOriginalItems();
-  }, [pageConter]);
-
   const filterValuesTols = allProductData[0]?.productSetting;
   const [FilterValue, setFilterValue] = useState<Type_FilterValuse>({});
 
@@ -66,6 +57,17 @@ const Catgory = ({
   const filterdLinkProduct = filterLinkProductState || filterdLinkBollProps;
   const pathName = pathNameProps || pathNameState;
 
+  const handelFetchError = useCallback(
+    (err: AxiosError) => {
+      const errStatus = err as AxiosError;
+      axios.isAxiosError(err) &&
+        navigate("/failedToFetch", {
+          state: { errorStatus: errStatus.status },
+        });
+    },
+    [navigate],
+  );
+
   useEffect(() => {
     const fetchFillterData = async () => {
       try {
@@ -79,9 +81,9 @@ const Catgory = ({
       }
     };
     fetchFillterData();
-  }, [filterValuesTols]);
+  }, [filterValuesTols, handelFetchError]);
 
-  const setProductOnOriginalItems = async () => {
+  const setProductOnOriginalItems = useCallback(async () => {
     try {
       const jsonLink = `${ProductJsonLink}${filterdLinkProduct ? "&" : "?"}_page=${pageConter}&_limit=4`;
       const { data: userData } = await axios.get(jsonLink);
@@ -90,9 +92,9 @@ const Catgory = ({
     } catch (err) {
       handelFetchError(err as AxiosError);
     }
-  };
+  }, [ProductJsonLink, filterdLinkProduct, pageConter, handelFetchError]);
 
-  const fetchAllProductData = async () => {
+  const fetchAllProductData = useCallback(async () => {
     try {
       const { data: ProductData } = await axios.get(ProductJsonLink);
       setAllProductData(ProductData);
@@ -100,7 +102,7 @@ const Catgory = ({
     } catch (err) {
       handelFetchError(err as AxiosError);
     }
-  };
+  }, [ProductJsonLink, setAllProductData, handelFetchError]);
 
   const SetEmptyDynamicFilterKeys = (itemData: Type_FilterValuse) => {
     const itemDataValue = itemData[0];
@@ -151,14 +153,14 @@ const Catgory = ({
     });
     setFilteredItems(filtered);
   };
+  useEffect(() => {
+    setProductOnOriginalItems();
+    fetchAllProductData();
+  }, [setProductOnOriginalItems, fetchAllProductData]);
 
-  const handelFetchError = (err: AxiosError) => {
-    const errStatus = err as AxiosError;
-    axios.isAxiosError(err) &&
-      navigate("/failedToFetch", {
-        state: { errorStatus: errStatus.status },
-      });
-  };
+  useEffect(() => {
+    setProductOnOriginalItems();
+  }, [setProductOnOriginalItems]);
 
   const props = {
     originalItems: originalItems,

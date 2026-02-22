@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import SugestExoSlider from "../sugestExo/sugestExo";
 import axios from "axios";
 import { AxiosError } from "axios";
@@ -9,11 +9,7 @@ const SliderContainer = () => {
   const [BestsellersExoItems, setBestsellersExoItems] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetchDataFromServer();
-  }, []);
-
-  const fetchDataFromServer = async () => {
+  const fetchDataFromServer = useCallback(async () => {
     const arrayAddres = {
       BESTSELLERS: "http://localhost:3300/BestsellersExoGameSliderProduct",
       LATEST: "http://localhost:3300/TheLatestFromExoSliderProduct",
@@ -34,7 +30,11 @@ const SliderContainer = () => {
           state: { errorStatus: errStatus.status },
         });
     }
-  };
+  }, [navigate]);
+
+  useEffect(() => {
+    fetchDataFromServer();
+  }, [fetchDataFromServer]);
 
   return (
     <>

@@ -12,15 +12,15 @@ const FilterCheckbox = ({
 }: Component_Props) => {
   const { ParntBox, ContinerBox } = styleComponent;
 
-  const [filter, setFilter] = useState({});
-
   const [filterValues, setfilterValues] = useState<Type_FilterValuse>(
     {} as Type_FilterValuse | [] as Type_FilterValuse,
   );
 
+  const [filter, setFilter] = useState({});
+
   useEffect(() => {
     setfilterValues(setingConsoleFilters[0]);
-  }, []);
+  }, [setingConsoleFilters]);
 
   const handeClickBox = (value: string) => {
     setFilter((prev) => {

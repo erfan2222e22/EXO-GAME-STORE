@@ -26,14 +26,17 @@ const TableInformationProducts = ({ ...item }) => {
     const timer = 10;
     setTimeout(() => {
       SetTableValus(obj);
-      if (tableValus.length > 0) {
-        SetRows(
-          (preve) =>
-            (preve = tableValus.map((key) => createData(key, item[key])))
-        );
-      }
     }, timer);
-  }, [tableValus]);
+  }, [obj]);
+
+  useEffect(() => {
+    if (tableValus.length > 0) {
+      SetRows(
+        (preve) =>
+          (preve = tableValus.map((key) => createData(key, item[key])))
+      );
+    }
+  }, [tableValus, item]);
 
   return (
     <TableContainer

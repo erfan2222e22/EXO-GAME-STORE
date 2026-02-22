@@ -6,7 +6,7 @@ import HerderIconElmmennt from "./hederIconElmeent/herderIconElmmennt.";
 import HederInputElment from "./HederInputElment/HederInputElment";
 import axios from "axios";
 
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect, useCallback } from "react";
 import emmiter, { EmmiterEvents } from "../../mitt/emmiter";
 import { useUserIdContext } from "../userIdContext/userIdContext.jsx";
 import { useNavigate } from "react-router-dom";
@@ -36,16 +36,7 @@ const Herder = () => {
     return () => window.removeEventListener("scroll", scroled);
   }, []);
 
-  useEffect(() => {
-    getLocalStorageUserId();
-  }, [userId, setUserID]);
-
-  const getLocalStorageUserId = () => {
-    const getLocalStorageId = localStorage.getItem("userId");
-    getLocalStorageId && checkUserlogined(+getLocalStorageId);
-  };
-
-  const checkUserlogined = async (getLocalStorageId: number) => {
+  const checkUserlogined = useCallback(async (getLocalStorageId: number) => {
     try {
       const { data: userData } = await axios.get(
         `http://localhost:3300/users/${getLocalStorageId}`,
@@ -60,7 +51,16 @@ const Herder = () => {
           state: { errorStatus: errStatus.status },
         });
     }
-  };
+  }, [setUserID, navigate]);
+
+  const getLocalStorageUserId = useCallback(() => {
+    const getLocalStorageId = localStorage.getItem("userId");
+    getLocalStorageId && checkUserlogined(+getLocalStorageId);
+  }, [checkUserlogined]);
+
+  useEffect(() => {
+    getLocalStorageUserId();
+  }, [userId, setUserID, getLocalStorageUserId]);
 
   const checkToRemoveNaviLinks = () => {
     const FristSliderYLocation = 129;

@@ -1,7 +1,7 @@
 import styleComponent from "./Style-Component/StyleShopCartPcParts";
 import { useContext } from "react";
 import contextUse from "../../useContext/useContext";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -29,7 +29,7 @@ const ShoppingCartPcParts = () => {
   const [errorText, setErrorText] = useState<string | string[]>("");
   const [BoleanError, setBoleanError] = useState(false);
 
-  const CalculateTotalPriceFunc = () => {
+  const CalculateTotalPriceFunc = useCallback(() => {
     const Validation = selectPCPartBox.filter(
       (fill: Type_AsslbleContiner_for_shop) => fill.ProductArray.length > 0,
     );
@@ -46,7 +46,7 @@ const ShoppingCartPcParts = () => {
     }
 
     setTotalPrice(counterPrice);
-  };
+  }, [selectPCPartBox]);
 
   const handelOnclick = () => {
     const ItemsTexts = ["MOTHERBORD", "RAM", "CPU COOLER"];
@@ -88,7 +88,7 @@ const ShoppingCartPcParts = () => {
 
   useEffect(() => {
     CalculateTotalPriceFunc();
-  }, [selectPCPartBox]);
+  }, [CalculateTotalPriceFunc]);
 
   return (
     <>

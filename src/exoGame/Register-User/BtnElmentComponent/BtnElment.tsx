@@ -54,7 +54,7 @@ const BtnELment: Component_Porps = ({
       const InputValues = inputElmentAtributes
         .filter((fill) => fill.importValue)
         .map((item) => item.value);
-      const [userName, LastName, email, _, password] = InputValues;
+      const [userName, LastName, email, , password] = InputValues;
 
       const sendItem = {
         name: userName,

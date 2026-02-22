@@ -1,4 +1,4 @@
-import { Box, Avatar } from "@mui/material";
+import { Box } from "@mui/material";
 import { styled, keyframes } from "@mui/system";
 
 const anime = keyframes`
