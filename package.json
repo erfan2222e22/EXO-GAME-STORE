@@ -13,9 +13,6 @@
     "@mui/x-data-grid": "^7.28.1",
     "@tailwindcss/cli": "^4.0.14",
     "@tailwindcss/vite": "^4.0.12",
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.10.0",
     "bootstrap": "^5.3.3",
@@ -40,8 +37,10 @@
   },
   "scripts": {
     "start": "concurrently --kill-others-on-fail \"json-server --watch data/db.json --port 3300\" \"react-scripts start\"",
-    "build": "concurrently --kill-others-on-fail \"json-server --watch data/db.json --port 3300\" \"react-scripts build\"",
-    "test": "react-scripts test",
+    "dev": "concurrently --kill-others-on-fail \"json-server --watch data/db.json --port 3300\" \"react-scripts start\"",
+    "server": "json-server --watch data/db.json --port 3300",
+    "build": "react-scripts build",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -63,15 +62,12 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.29.0",
-    "@babel/preset-env": "^7.29.0",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.4",
     "@types/react-dom": "^19.2.3",
     "@types/react-scroll": "^1.8.10",
     "@types/react-slick": "^0.23.13",
     "autoprefixer": "^10.4.21",
-    "babel-jest": "^30.2.0",
     "concurrently": "^9.2.1",
     "css-blank-pseudo": "^7.0.1",
     "postcss": "^8.5.3",
